@@ -20,7 +20,9 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 * **Poder adquisitivo**: Salario mínimo (Se resalta la oportunidad de adquirir ediciones económicas, usualmente denominadas "grapas")
 * **Intereses**: Adquisición de comics y mangas en formato físico. En adición, debido a su relación cercana, una persona que ve anime o series animadas basadas en comics es frecuentemente atraída a la lectura de este tipo de libros
 
-### 2. Descripción de los integrantes del equipo
+### 3. Descripción de los integrantes del equipo
 * María Herlandia Copete Perea [(Perfil en GitHub)](https://github.com/mariecp27)
 
 ¡Hola! Soy una ingeniera química de 26 años, soy de Medellín, Colombia. Me desempeño como analista de calidad de una línea de servicio al cliente bilingüe. Deseo iniciar una carrera en la industria Tech, razón por la cual actualmente estudio programación web Full Stack.
+
+### 4. Sitios de referencia
