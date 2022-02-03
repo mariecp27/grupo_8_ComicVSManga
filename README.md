@@ -25,4 +25,16 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 
 ¡Hola! Soy una ingeniera química de 26 años, soy de Medellín, Colombia. Me desempeño como analista de calidad de una línea de servicio al cliente bilingüe. Deseo iniciar una carrera en la industria Tech, razón por la cual actualmente estudio programación web Full Stack.
 
+* Erick José Leones Reyes [(Perfil en GitHub)](https://github.com/Erixk90)
+Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del Junior y de mi selección, soy el Project Manager de una Agencia de Publicidad y estoy familiarizado con proyectos de todo tipo. Quisiera ser programador Porque me considero una persona 100% tecnologica y quiesera aprender a desarrollar cualquier tipo de aplicación que me guste y que la vea conveniente para mi desarrollo emocional y profesional. 
+
+
 ### 4. Sitios de referencia
+
+Porqué se escogió DC Comics:
+
+Dc Comics: La página tiene varias funcionalidades que se puede tener como referente para poder implementar en nuestro sitio, además está relacionado con los productos que se ofrecen en la pagina que es similar a nuestro ecommerce, puede ser de gran ayuda para guiarnos con respecto a las imágenes,el UX y algunas interfaces de la página
+
+Porqué se escogió Nube Cómics
+Nube Cómics : Nubecomics fue escogido por la distribución de sitio, nos ayuda a comprender cómo puede estar la distribución de la tienda en cuanto al apartado de la tienda, donde se puede mostrar los productos y los efectos que podemos realizar para crear una mejor experiencia al cliente. 
+
