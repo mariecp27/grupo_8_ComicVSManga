@@ -28,6 +28,8 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 * Erick José Leones Reyes [(Perfil en GitHub)](https://github.com/Erixk90)
 Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del Junior y de mi selección, soy el Project Manager de una Agencia de Publicidad y estoy familiarizado con proyectos de todo tipo. Quisiera ser programador Porque me considero una persona 100% tecnologica y quiesera aprender a desarrollar cualquier tipo de aplicación que me guste y que la vea conveniente para mi desarrollo emocional y profesional. 
 
+*Felipe Vargas Sánchez
+!Hola¡ Me presento, soy estudiante de ingenieria de sistemas, soy de Yopal-Casanare, actualmente estoy trabajando para Sodimac como Auxiliar tecnico automotriz. Deseo mejorar mis habilidades de programacion para poder tener un empleo mejor y poder mejorar mi calidad de vida.
 
 ### 4. Sitios de referencia
 
@@ -37,4 +39,7 @@ Dc Comics: La página tiene varias funcionalidades que se puede tener como refer
 
 Porqué se escogió Nube Cómics
 Nube Cómics : Nubecomics fue escogido por la distribución de sitio, nos ayuda a comprender cómo puede estar la distribución de la tienda en cuanto al apartado de la tienda, donde se puede mostrar los productos y los efectos que podemos realizar para crear una mejor experiencia al cliente. 
+
+Porqué se escogió Bite-https://bitetoothpastebits.com/
+Bite : Esta pagina fue seleccionada ya que tiene un muy buen diseño tanto por la paleta de colores que usa y las ilustraciones que contiene, es un gran referente para hacer una pagina de gran calidad y de gran experiencia para el usuario.
 
