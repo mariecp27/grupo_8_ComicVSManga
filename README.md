@@ -31,6 +31,9 @@ Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del
 *Felipe Vargas Sánchez
 !Hola¡ Me presento, soy estudiante de ingenieria de sistemas, soy de Yopal-Casanare, actualmente estoy trabajando para Sodimac como Auxiliar tecnico automotriz. Deseo mejorar mis habilidades de programacion para poder tener un empleo mejor y poder mejorar mi calidad de vida.
 
+* Diana Sofía Osorio Perez
+Hola! soy Administradora en Finanzas y negocios internacionales de la ciudade de Montería, tengo 28 años y actualmente trabajo como Ejecutiva Cormercial para una agencia de asesorias financieras y de credito, estoy en este Bootcamp como el primer paso para ingresar al mundo Tech y aprender todo lo posible para aplicar a mejores oportunidades laborales.
+
 ### 4. Sitios de referencia
 
 Porqué se escogió DC Comics:
@@ -43,3 +46,6 @@ Nube Cómics : Nubecomics fue escogido por la distribución de sitio, nos ayuda 
 Porqué se escogió Bite-https://bitetoothpastebits.com/
 Bite : Esta pagina fue seleccionada ya que tiene un muy buen diseño tanto por la paleta de colores que usa y las ilustraciones que contiene, es un gran referente para hacer una pagina de gran calidad y de gran experiencia para el usuario.
 
+Se escogío Mundo coleccionable https://mundocoleccionable.com/ porque presenta una tematica muy similar a la nuestra, nos gusta que presenta un diseño practico y entendible en el cual se pueden indentificar los elementos con facilidad, facil acceso a la tienda, carritos de compras y registro.
+
+Se escogío Comics Total https://comicstotal.com/ porque a demas de parecernos practica para el usuario tambien tiene una estetica visual interesante utilizando en el Home una imagen grande que llama mucho la atencion e invita al usuario a permanecer en el sitio.
