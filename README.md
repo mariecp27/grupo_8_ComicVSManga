@@ -17,38 +17,49 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 * **Sexo**: Indiferente
 * **Ubicación**: Colombia
 * **Idioma**: Español
-* **Poder adquisitivo**: Salario mínimo (Se resalta la oportunidad de adquirir ediciones económicas, usualmente denominadas "grapas")
+* **Poder adquisitivo**: Salario mínimo (se resalta la oportunidad de adquirir ediciones económicas, usualmente denominadas "grapas")
 * **Intereses**: Adquisición de comics y mangas en formato físico. En adición, debido a su relación cercana, una persona que ve anime o series animadas basadas en comics es frecuentemente atraída a la lectura de este tipo de libros
 
 ### 3. Descripción de los integrantes del equipo
 * María Herlandia Copete Perea [(Perfil en GitHub)](https://github.com/mariecp27)
 
-¡Hola! Soy una ingeniera química de 26 años, soy de Medellín, Colombia. Me desempeño como analista de calidad de una línea de servicio al cliente bilingüe. Deseo iniciar una carrera en la industria Tech, razón por la cual actualmente estudio programación web Full Stack.
+¡Hola! Soy una ingeniera química de 26 años, soy de Medellín, Colombia. Me desempeño como Analista de Calidad de una línea de servicio al cliente bilingüe. Deseo iniciar una carrera en la industria Tech, razón por la cual actualmente estudio programación web Full Stack.
 
 * Erick José Leones Reyes [(Perfil en GitHub)](https://github.com/Erixk90)
-Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del Junior y de mi selección, soy el Project Manager de una Agencia de Publicidad y estoy familiarizado con proyectos de todo tipo. Quisiera ser programador Porque me considero una persona 100% tecnologica y quiesera aprender a desarrollar cualquier tipo de aplicación que me guste y que la vea conveniente para mi desarrollo emocional y profesional. 
 
-* Felipe Vargas Sánchez
-!Hola¡ Me presento, soy estudiante de ingenieria de sistemas, soy de Yopal-Casanare, actualmente estoy trabajando para Sodimac como Auxiliar tecnico automotriz. Deseo mejorar mis habilidades de programacion para poder tener un empleo mejor y poder mejorar mi calidad de vida.
+Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del Junior y de mi selección, soy el Project Manager de una Agencia de Publicidad y estoy familiarizado con proyectos de todo tipo. Quisiera ser programador porque me considero una persona 100% tecnológica y quisiera aprender a desarrollar cualquier tipo de aplicación que me guste y que la vea conveniente para mi desarrollo emocional y profesional. 
 
-* Diana Sofía Osorio Perez
-Hola! soy Administradora en Finanzas y negocios internacionales de la ciudade de Montería, tengo 28 años y actualmente trabajo como Ejecutiva Cormercial para una agencia de asesorias financieras y de credito, estoy en este Bootcamp como el primer paso para ingresar al mundo Tech y aprender todo lo posible para aplicar a mejores oportunidades laborales.
+* Felipe Vargas Sánchez [(Perfil en GitHub)](https://github.com/FelipeVargas19)
+
+¡Hola! Me presento, soy estudiante de ingeniería de sistemas, soy de Yopal-Casanare, actualmente estoy trabajando para Sodimac como Auxiliar técnico automotriz. Deseo mejorar mis habilidades de programación para poder tener un empleo mejor y poder mejorar mi calidad de vida.
+
+* Diana Sofía Osorio Perez [(Perfil en GitHub)](https://github.com/Dsofiaosorio)
+
+¡Hola!, soy Administradora en Finanzas y Negocios Internacionales de la ciudad de Montería, tengo 28 años y actualmente trabajo como Ejecutiva Comercial para una agencia de asesorías financieras y de crédito. Estoy en este Bootcamp como el primer paso para ingresar al mundo Tech y aprender todo lo posible para aplicar a mejores oportunidades laborales.
+
 
 ### 4. Sitios de referencia
 
-Porqué se escogió DC Comics:
+* [DC Comics](https://www.dccomics.com/)
 
-Dc Comics: La página tiene varias funcionalidades que se puede tener como referente para poder implementar en nuestro sitio, además está relacionado con los productos que se ofrecen en la pagina que es similar a nuestro ecommerce, puede ser de gran ayuda para guiarnos con respecto a las imágenes,el UX y algunas interfaces de la página
+La página tiene varias funcionalidades que se puede tener como referente para poder implementar en nuestro sitio; además, está relacionado con los productos que se ofrecen en la página que es similar a nuestro *e-commerce*, puede ser de gran ayuda para guiarnos con respecto a las imágenes, el UX y algunas interfaces de la página.
 
-Porqué se escogió Nube Cómics
-Nube Cómics : Nubecomics fue escogido por la distribución de sitio, nos ayuda a comprender cómo puede estar la distribución de la tienda en cuanto al apartado de la tienda, donde se puede mostrar los productos y los efectos que podemos realizar para crear una mejor experiencia al cliente. 
+* [Nube Comics](https://nubecomics.com/)
 
-Porqué se escogió Bite-https://bitetoothpastebits.com/
-Bite : Esta pagina fue seleccionada ya que tiene un muy buen diseño tanto por la paleta de colores que usa y las ilustraciones que contiene, es un gran referente para hacer una pagina de gran calidad y de gran experiencia para el usuario.
+Nube Comics fue escogido por la distribución de sitio, nos ayuda a comprender cómo puede estar la distribución de la tienda en cuanto al apartado de la tienda, donde se puede mostrar los productos y los efectos que podemos realizar para crear una mejor experiencia al cliente. 
 
-Se escogío Mundo coleccionable https://mundocoleccionable.com/ porque presenta una tematica muy similar a la nuestra, nos gusta que presenta un diseño practico y entendible en el cual se pueden indentificar los elementos con facilidad, facil acceso a la tienda, carritos de compras y registro.
+* [Bite](https://bitetoothpastebits.com/)
 
-Se escogío Comics Total https://comicstotal.com/ porque a demas de parecernos practica para el usuario tambien tiene una estetica visual interesante utilizando en el Home una imagen grande que llama mucho la atencion e invita al usuario a permanecer en el sitio.
+Esta página fue seleccionada ya que tiene un muy buen diseño tanto por la paleta de colores que usa y las ilustraciones que contiene, es un gran referente para hacer una página de gran calidad y de gran experiencia para el usuario.
 
-Porqué se escogió Comic Verse https://thecomicverse.com.co/
-Esta pagina fue seleccionada debido a su diseño muy arraigado a la tematica de comics y mangas, su tipografia y la forma de separar las categorias nos inspira mucho en crear una pagina con una idea similar
+* [Mundo Coleccionable](https://mundocoleccionable.com/)
+
+Se escogió Mundo Coleccionable porque presenta una temática muy similar a la nuestra, nos gusta que presenta un diseño practico y entendible en el cual se pueden identificar los elementos con facilidad, fácil acceso a la tienda, carritos de compras y registro.
+
+* [Comics Total](https://comicstotal.com/)
+
+Se escogió Comics Total porque además de parecernos práctica para el usuario, también tiene una estética visual interesante: utilizando en el *home* una imagen grande que llama mucho la atención e invita al usuario a permanecer en el sitio.
+
+* [The Comic-Verse](https://thecomicverse.com.co/)
+
+Esta página fue seleccionada debido a su diseño muy arraigado a la temática de comics y mangas, su tipografía y la forma de separar las categorías nos inspira mucho en crear una página con una idea similar.
