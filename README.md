@@ -28,7 +28,7 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 * Erick José Leones Reyes [(Perfil en GitHub)](https://github.com/Erixk90)
 Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del Junior y de mi selección, soy el Project Manager de una Agencia de Publicidad y estoy familiarizado con proyectos de todo tipo. Quisiera ser programador Porque me considero una persona 100% tecnologica y quiesera aprender a desarrollar cualquier tipo de aplicación que me guste y que la vea conveniente para mi desarrollo emocional y profesional. 
 
-*Felipe Vargas Sánchez
+* Felipe Vargas Sánchez
 !Hola¡ Me presento, soy estudiante de ingenieria de sistemas, soy de Yopal-Casanare, actualmente estoy trabajando para Sodimac como Auxiliar tecnico automotriz. Deseo mejorar mis habilidades de programacion para poder tener un empleo mejor y poder mejorar mi calidad de vida.
 
 * Diana Sofía Osorio Perez
@@ -49,3 +49,6 @@ Bite : Esta pagina fue seleccionada ya que tiene un muy buen diseño tanto por l
 Se escogío Mundo coleccionable https://mundocoleccionable.com/ porque presenta una tematica muy similar a la nuestra, nos gusta que presenta un diseño practico y entendible en el cual se pueden indentificar los elementos con facilidad, facil acceso a la tienda, carritos de compras y registro.
 
 Se escogío Comics Total https://comicstotal.com/ porque a demas de parecernos practica para el usuario tambien tiene una estetica visual interesante utilizando en el Home una imagen grande que llama mucho la atencion e invita al usuario a permanecer en el sitio.
+
+Porqué se escogió Comic Verse https://thecomicverse.com.co/
+Esta pagina fue seleccionada debido a su diseño muy arraigado a la tematica de comics y mangas, su tipografia y la forma de separar las categorias nos inspira mucho en crear una pagina con una idea similar
