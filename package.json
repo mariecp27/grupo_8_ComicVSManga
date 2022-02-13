@@ -1,0 +1,24 @@
+{
+  "name": "grupo_8_comicvsmanga",
+  "version": "1.0.0",
+  "description": "Proyecto integrador Digital House / cohorte 6 Protalento",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariecp27/grupo_8_ComicVSManga.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariecp27/grupo_8_ComicVSManga/issues"
+  },
+  "homepage": "https://github.com/mariecp27/grupo_8_ComicVSManga#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
