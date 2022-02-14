@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.listen(3030, () => {console.log("Vamos al manga")});
+const publicPath = path.resolve(__dirname, "./public");
 
-app.get('/', (req,res) => {res.sendFile(path.join(__dirname, '/views/index.html')) } );
+app.use(express.static(publicPath));
 
-app.use (express.static('public'));
+app.listen(3030, () => {console.log("Servidor corriendo en el puerto 3030, ¡vamos al Manga!")});
+
+app.get('/', (req,res) => {res.sendFile(path.join(__dirname, '/views/index.html'))});
