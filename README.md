@@ -2,10 +2,11 @@
 Proyecto integrador Digital House / cohorte 6 Protalento
 
 ### Tabla de contenidos
-1. Descripción de la oferta de productos.
-2. Público objetivo.
-3. Descripción de los integrantes del equipo.
-4. Sitios de referencia.
+1. [Descripción de la oferta de productos](#1-descripción-de-la-oferta-de-productos)
+2. [Público objetivo](#2-público-objetivo)
+3. [Descripción de los integrantes del equipo](#3-descripción-de-los-integrantes-del-equipo)
+4. [Sitios de referencia](#4-sitios-de-referencia)
+5. [Tableros de trabajo](#5-tableros-de-trabajo)
 
 ### 1. Descripción de la oferta de productos
 **“Comic vs Manga”** se presenta como una opción amigable y atractiva a todos los amantes de las historias descritas en estos formatos, sin importar si se es un experto en el área, con conocimiento sobre todos los universos de DC, o un entusiasta, quien ha descubierto hace poco que muchos de los animes que ve cada semana usualmente están basados en aclamados libros de origen oriental.
@@ -63,3 +64,9 @@ Se escogió Comics Total porque además de parecernos práctica para el usuario,
 * [The Comic-Verse](https://thecomicverse.com.co/)
 
 Esta página fue seleccionada debido a su diseño muy arraigado a la temática de comics y mangas, su tipografía y la forma de separar las categorías nos inspira mucho en crear una página con una idea similar.
+
+
+### 5. [Tableros de trabajo](https://trello.com/proyectointegradordigitalhouse9)
+Se puede acceder a los tableros de trabajo de cada *sprint* a través de los enlaces a continuación:
+* [Sprint 1](https://trello.com/b/QMIgDt8y/1-proyecto-integrador-digital-house-1st-sprint)
+* [Sprint 2](https://trello.com/b/hxSNBvd4/2-proyecto-integrador-digital-house-2nd-sprint)
