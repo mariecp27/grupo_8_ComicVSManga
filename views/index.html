@@ -14,12 +14,21 @@
 </head>
 <body>
     <header>
-        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
-        <div class="header__text">
-            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
-            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-            <input type="button" value="Iniciar Sesión" class="header__login">
-            <i class="fa-solid fa-bars"></i>
+        <div class="header-container">
+            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+            <div class="header__text">
+                <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="" class="header__link">Tienda</a></li>
+                        <li><a href="" class="header__link">Comics</a></li>
+                        <li><a href="" class="header__link">Mangas</a></li>
+                    </ul>
+                </nav>
+                <a href="" class="header__shopping"><i class="fa-solid fa-cart-shopping"></i></a>
+                <button type="submit" class="header__login">Iniciar<br>Sesión</button>
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </header>
     <main>

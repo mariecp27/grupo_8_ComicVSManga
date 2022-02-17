@@ -18,11 +18,17 @@ html{
     font-size: 62.5%;
 }
 
-header{
-    background-image: linear-gradient(to right, #1572A1 , #ffffff);
+.header-container{
+    background-image: linear-gradient(to bottom, #1572A1 , #ffffff00);
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    z-index: 1;
 }
 
 .header__logo{
@@ -30,11 +36,22 @@ header{
     margin: 5px;
 }
 
-.header__search-bar{
+.header__search-bar, .header__nav{
     display: none;
 }
 
+.header__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__shopping{
+    display: flex;
+}
+
 .fa-cart-shopping{
+    align-self: center;
     text-decoration: none;
     color: var(--myRed);
     font-size: 2rem;
@@ -46,20 +63,23 @@ header{
     background: var(--myRed);
     font-family: var(--myTitles);
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 5px;
     border: none;
     border-radius: 5px;
     margin: 0 5px;
+    text-align: center;
 }
 
 .fa-bars{
     background: var(--myRed);
     color: white;
     font-size: 1.5rem;
-    padding: 5px;
+    padding: 5px 7px;
     border: none;
     border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .main__slider{
@@ -99,17 +119,18 @@ header{
 
 .slider__text h2{
     font-family: var(--myTitles);
-    font-size: 5rem;
+    font-size: 3rem;
     color: white;
     text-align: center;
 }
 
 .slider__text h3{
     font-family: var(--myText);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
     font-weight: normal;
+    font-style: italic;
 }
 
 .slider__img{
@@ -128,4 +149,53 @@ header{
 
     75%{margin-left: -300%;}
     100%{margin-left: -300%;}
+}
+
+@media(min-width: 481px){
+    .header-container{
+        display: flex;
+        align-items: center;
+    }
+
+    .header__logo{
+        width: 30%;
+    }
+
+    .header__text{
+        width: 70%;
+    }
+    
+    .header__search-bar, .header__nav{
+        display: inline-block;
+    }
+
+    .header__search-bar{
+        width: 50%;
+        padding: 5px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        font-family: var(--myText);
+    }
+
+    .header__nav ul{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header__nav ul li{
+        list-style: none;
+    }
+
+    .header__nav ul li a{
+        text-decoration: none;
+        color: white;
+        margin: 2px;
+        font-family: var(--myTitles);
+        font-size: 1.5rem;
+    }
+    
+    .fa-bars{
+        display: none;
+    }
 }
