@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comic vs Manga</title>
+    <title>Cómic vs Manga</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -14,30 +14,46 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
-            <div class="header__text">
-                <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
-                <nav class="header__nav">
-                    <ul>
-                        <li><a href="" class="header__link">Tienda</a></li>
-                        <li><a href="" class="header__link">Comics</a></li>
-                        <li><a href="" class="header__link">Mangas</a></li>
-                    </ul>
-                </nav>
-                <a href="" class="header__shopping"><i class="fa-solid fa-cart-shopping"></i></a>
-                <button type="submit" class="header__login">Iniciar<br>Sesión</button>
-                <i class="fa-solid fa-bars"></i>
-            </div>
+        <!-- Logo -->
+        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+
+        <!-- Barra de búsqueda y botón -->
+        <form action="" method="" class="header__form">
+            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+            <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
+        <div class="header__text">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="" class="header__link">Tienda</a></li>
+                    <li><a href="" class="header__link">Cómics</a></li>
+                    <li><a href="" class="header__link">Mangas</a></li>
+                    <li>
+                        <a href="" class="header__shopping">
+                            <form action="" method=""></form>
+                            <div class="header__shopping-container">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="submit" class="header__login">Iniciar sesión</button>
+            <!-- Menú para la resolución mobile -->
+            <i class="fa-solid fa-bars"></i>
         </div>
     </header>
+
     <main>
+        <!-- Slider de imágenes -->
         <div class="main__slider">
             <ul>
                 <li>
                     <img src="/images/slider1.jpg" alt="Slider Marvel" class="slider__img" id="slider__img1">
-                    <div class="slider__text">
-                        <div class="slider__text2">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
                             <h2>Team Marvel</h2>
                             <h3>¡Increíbles batallas e historias!</h3>
                         </div>
@@ -45,8 +61,8 @@
                 </li>
                 <li>
                     <img src="/images/slider2.jpg" alt="Slider DC" class="slider__img" id="slider__img2">
-                    <div class="slider__text">
-                        <div class="slider__text2">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
                             <h2>Team DC</h2>
                             <h3>¡Historias de múltiples universos!</h3>
                         </div>
@@ -54,8 +70,8 @@
                 </li>
                 <li>
                     <img src="/images/slider3.jpg" alt="Slider Manga" class="slider__img" id="slider__img3">
-                    <div class="slider__text">
-                        <div class="slider__text2">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
                             <h2>Team Manga</h2>
                             <h3>¡La mejor fantasía!</h3>
                         </div>
@@ -63,8 +79,8 @@
                 </li>
                 <li>
                     <img src="/images/slider4.jpg" alt="Slider Independiente" class="slider__img" id="slider__img4">
-                    <div class="slider__text">
-                        <div class="slider__text2">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
                             <h2>Team Independiente</h2>
                             <h3>¡Máxima diversidad!</h3>
                         </div>

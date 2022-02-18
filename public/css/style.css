@@ -1,3 +1,4 @@
+/* Paleta de colores y fuente seleccionadas */
 :root{
     --myTitles: 'Bebas Neue', cursive;
     --myTitles2: 'Lato', sans-serif;
@@ -8,57 +9,77 @@
     --myBlue: #1572A1;
 }
 
+/* Normalización de estilos */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
 html{
     font-size: 62.5%;
 }
 
-.header-container{
+/* ESTILOS DEL HEADER */
+
+/* Permite que el header esté sobre el slider, el da un fondo en degradado y distribuye los elementos */
+header{
+    position: absolute;
+    top: 0;
+    z-index: 1;
     background-image: linear-gradient(to bottom, #1572A1 , #ffffff00);
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-header{
-    position: absolute;
-    top: 0;
-    z-index: 1;
-}
-
+/* Estilos del logo para la resolución mobile */
 .header__logo{
     width: 50%;
     margin: 5px;
 }
 
-.header__search-bar, .header__nav{
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__form, .header__link{
     display: none;
 }
 
+/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
 .header__text{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header__shopping{
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.fa-cart-shopping{
-    align-self: center;
-    text-decoration: none;
-    color: var(--myRed);
-    font-size: 2rem;
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+    list-style: none;
+}
+
+/* Estilos del carrito de compras, incluyendo su fondo */
+.header__shopping-container{
+    background-color: RGBA(255, 255, 255, 0.6);
+    border-radius: 50%;
+    padding: 5px;
     margin-left: 5px;
     margin-right: 5px;
 }
 
+.fa-cart-shopping{
+    align-self: center;
+    color: var(--myRed);
+    font-size: 2rem;
+}
+
+/* Estilos para el botón de inicio de sesión */
 .header__login{
     background: var(--myRed);
     font-family: var(--myTitles);
@@ -69,8 +90,10 @@ header{
     border-radius: 5px;
     margin: 0 5px;
     text-align: center;
+    border: white solid 1px;
 }
 
+/* Estilos para el menú en la resolución mobile */
 .fa-bars{
     background: var(--myRed);
     color: white;
@@ -80,13 +103,18 @@ header{
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    border: white solid 1px;
 }
 
+/* ESTILOS DEL SLIDER */
+
+/* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
 .main__slider{
     width: 100vw;
     overflow: hidden;
 }
 
+/* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
 .main__slider ul{
     display: flex;
     width: 400%;
@@ -94,12 +122,18 @@ header{
     animation: change 20s infinite alternate;
 }
 
+/* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del viewport */
 .main__slider li{
     list-style: none;
     width: 100%;
     position: relative;
 }
 
+.slider__img{
+    width: 100%;
+}
+
+/* Permite que los textos que se muestran junto con cada imagen del Slider esté sobre ellas, incluyendo su fondo */
 .slider__text{
     position: absolute;
     top: 0;
@@ -117,6 +151,7 @@ header{
     margin: 5px;
 }
 
+/* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
 .slider__text h2{
     font-family: var(--myTitles);
     font-size: 3rem;
@@ -124,6 +159,7 @@ header{
     text-align: center;
 }
 
+/* Estilos de los textos secundarios (descripciones) que se muestran junto con cada imagen del Slider */
 .slider__text h3{
     font-family: var(--myText);
     font-size: 1.2rem;
@@ -133,10 +169,7 @@ header{
     font-style: italic;
 }
 
-.slider__img{
-    width: 100%;
-}
-
+/* Animación del Slider, genera el desplazamiento de las imágenes y sus textos*/
 @keyframes change{
     0%{margin-left: 0;}
     20%{margin-left: 0%;}
@@ -151,42 +184,55 @@ header{
     100%{margin-left: -300%;}
 }
 
-@media(min-width: 481px){
-    .header-container{
-        display: flex;
-        align-items: center;
-    }
+/* ESTILOS PARA RESOLUCIÓN TABLET*/
 
+@media(min-width: 481px){
+    /* ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET */
+
+
+    /* Estilos del logo */
     .header__logo{
         width: 30%;
     }
 
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
     .header__text{
         width: 70%;
     }
     
-    .header__search-bar, .header__nav{
+    /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
+    .header__form, .header__link{
         display: inline-block;
     }
 
-    .header__search-bar{
+    /* Estilos de la barra de búsqueda (input y botón) */
+    .header__form{
         width: 50%;
-        padding: 5px;
-        margin: 5px;
-        border: none;
-        border-radius: 5px;
-        font-family: var(--myText);
-    }
-
-    .header__nav ul{
         display: flex;
-        flex-direction: row;
     }
 
-    .header__nav ul li{
-        list-style: none;
+    .header__search-bar{
+        width: 85%;
+        padding: 3px;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-family: var(--myText);
+        font-size: 1.5rem;
     }
 
+    .header__search-button{
+        padding: 3px;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-family: var(--myText);
+        font-size: 1.5rem;
+        background-color: white;
+        color: var(--myRed);
+    }
+
+    /* Estilos de los enlaces de la barra de navegación */
     .header__nav ul li a{
         text-decoration: none;
         color: white;
@@ -194,8 +240,63 @@ header{
         font-family: var(--myTitles);
         font-size: 1.5rem;
     }
+
+    /* Impide que el texto del botón de inicio de sesión pase a 2 líneas */
+    .header__login{
+        white-space: nowrap;
+    }
     
+    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
     .fa-bars{
         display: none;
+    }
+}
+
+/* ESTILOS PARA RESOLUCIÓN COMPUTADOR*/
+
+@media(min-width: 769px){
+    /* ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR */
+
+    /* Estilos del logo */
+    .header__logo{
+        width: 20%;
+    }
+
+    /* Estilos de la barra de búsqueda (input) */
+    .header__search-bar{
+        padding: 6px;
+        font-size: 1.7rem;
+    }
+
+    /* Estilos de la barra de búsqueda (botón) */
+    .header__search-button{
+        padding: 6px;
+        font-size: 1.7rem;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación y carrito de compras */
+    .header__nav{
+        width: 80%;
+    }
+
+    .header__nav ul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .header__nav ul li a{
+        font-size: 2rem;
+    }
+
+    /* Estilos para el botón de inicio de sesión */
+    .header__login{
+        font-size: 2rem;
+        margin-right: 30px;
     }
 }
