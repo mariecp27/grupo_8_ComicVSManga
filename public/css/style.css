@@ -110,8 +110,10 @@ header{
 
 /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
 .main__slider{
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
+    background: #000000;
+    padding-bottom: 5px;
 }
 
 /* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
@@ -147,7 +149,7 @@ header{
 /* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
 .slider__text2{
     /* background: RGBA(254, 48, 61, 0.6); */
-    background-image: linear-gradient(to bottom, #FE303D , #00000000);
+    background-image: linear-gradient(to bottom, var(--myRed), #00000000);
     padding: 5px;
     width: 60%;
     border-radius: 10px;
@@ -177,8 +179,9 @@ header{
 
 /* Fondo de la sección */
 .main__categories{
-    background-image: linear-gradient(to bottom, #AC2194 , #ffffff);
-    width: 100vw;
+    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff);
+    width: 100%;
+    padding-top: 10px;
 }
 
 /* Estilos contenedor de los títulos de la sección*/
@@ -250,33 +253,21 @@ header{
 /* Estilos texto que acompaña al Slider */
 .slider-title{
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     font-family: var(--myTitles);
     color: white;
     font-size: 2.2rem;
-    background-image: linear-gradient(to bottom, #AC2194 , #000000);
+    background: linear-gradient(135deg,  var(--myPurple) , #00000000);
+    box-shadow: 0px 10px 10px black;
     padding: 7px;
     border-radius: 10px;
+    text-align: center;
 }
-
-/* Animación del Slider de las categorias, genera el desplazamiento de las imágenes*/
-@keyframes changeCategories{
-    0%{margin-left: 0;}
-    30%{margin-left: 0%;}
-
-    35%{margin-left: -100%;}
-    65%{margin-left: -100%;}
-
-    70%{margin-left: -200%;}
-    100%{margin-left: -200%;}
-}
-
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
     /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
-
 
     /* Estilos del logo */
     .header__logo{
@@ -356,6 +347,32 @@ header{
         font-size: 1.5rem;
     }
 
+    /* =========ESTILOS DE LAS CATEGORÍAS PARA RESOLUCIÓN TABLET========= */
+
+    /* Distribución sección */
+    .main__categories{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Distrinución de todos los slider de categorias*/
+    .main__slider-all{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS PARA RESOLUCIÓN TABLET========= */
+
+    /* Contenederor del Slider, proporciona el borde*/
+    .main__slider-container{
+        width: 40vw;
+        margin: 0;
+        margin-bottom: 20px;
+    }
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
@@ -412,4 +429,62 @@ header{
     .slider__text2{
         width: 25%;
     }
+
+    /* =========ESTILOS DE LAS CATEGORÍAS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos título principal de la sección*/
+    .main__categories-title h2{
+        font-family: var(--myTitles);
+        font-size: 4rem;
+    }
+
+    /* Estilos título secundario de la sección*/
+    .main__categories-title h3{
+        font-size: 2rem;
+    }
+
+    /* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Contenederor del Slider, proporciona el borde*/
+    .main__slider-container{
+        width: 15vw;
+    }
+
+    /* Distribuciones especiales*/
+    .main__slider-container-DC{
+        position: relative;
+        bottom: 50px;
+    }
+
+    .main__slider-container-independent{
+        position: relative;
+        bottom: 50px;
+    }
+}
+
+/* Animación del Slider principal, genera el desplazamiento de las imágenes*/
+@keyframes change{
+    0%{margin-left: 0;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+/* Animación del Slider de las categorias, genera el desplazamiento de las imágenes*/
+@keyframes changeCategories{
+    0%{margin-left: 0;}
+    30%{margin-left: 0%;}
+
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
 }
