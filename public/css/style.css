@@ -21,7 +21,7 @@ html{
     font-size: 62.5%;
 }
 
-/* ESTILOS DEL HEADER */
+/* =========ESTILOS DEL HEADER========= */
 
 /* Permite que el header esté sobre el slider, el da un fondo en degradado y distribuye los elementos */
 header{
@@ -106,7 +106,7 @@ header{
     border: white solid 1px;
 }
 
-/* ESTILOS DEL SLIDER */
+/* =========ESTILOS DEL SLIDER========= */
 
 /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
 .main__slider{
@@ -123,7 +123,7 @@ header{
 }
 
 /* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del viewport */
-.main__slider li{
+.main__slider ul li{
     list-style: none;
     width: 100%;
     position: relative;
@@ -133,7 +133,7 @@ header{
     width: 100%;
 }
 
-/* Permite que los textos que se muestran junto con cada imagen del Slider esté sobre ellas, incluyendo su fondo */
+/* Permite que los textos que se muestran junto con cada imagen del Slider esté sobre ellas */
 .slider__text{
     position: absolute;
     top: 0;
@@ -144,11 +144,15 @@ header{
     justify-content: center;
 }
 
+/* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
 .slider__text2{
-    background: RGBA(254, 48, 61, 0.6);
+    /* background: RGBA(254, 48, 61, 0.6); */
+    background-image: linear-gradient(to bottom, #FE303D , #00000000);
+    padding: 5px;
     width: 60%;
     border-radius: 10px;
-    margin: 5px;
+    margin: 15px;
+    box-shadow: 0px 10px 10px black;
 }
 
 /* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
@@ -169,25 +173,109 @@ header{
     font-style: italic;
 }
 
-/* Animación del Slider, genera el desplazamiento de las imágenes y sus textos*/
-@keyframes change{
-    0%{margin-left: 0;}
-    20%{margin-left: 0%;}
+/* =========ESTILOS DE LAS CATEGORÍAS========= */
 
-    25%{margin-left: -100%;}
-    45%{margin-left: -100%;}
-
-    50%{margin-left: -200%;}
-    70%{margin-left: -200%;}
-
-    75%{margin-left: -300%;}
-    100%{margin-left: -300%;}
+/* Fondo de la sección */
+.main__categories{
+    background-image: linear-gradient(to bottom, #AC2194 , #ffffff);
+    width: 100vw;
 }
 
-/* ESTILOS PARA RESOLUCIÓN TABLET*/
+/* Estilos contenedor de los títulos de la sección*/
+.main__categories-title{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    width: auto;
+}
+
+/* Estilos título principal de la sección*/
+.main__categories-title h2{
+    font-family: var(--myTitles);
+    color: white;
+    font-size: 2.5rem;
+    width: auto;
+}
+
+/* Estilos título secundario de la sección*/
+.main__categories-title h3{
+    font-family: var(--myText);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS========= */
+
+/* Contenederor del Slider, proporciona el borde*/
+.main__slider-container{
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0px 10px 10px black;
+    position: relative;
+    background-color: white;
+}
+
+/* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 60% del viewport */
+.main__slider-categories{
+    width: 60vw;
+    overflow: hidden;
+    margin: 0 auto;
+    margin: 10px;
+}
+
+/* Preparación para que cada imagen individual tenga un 100% del contenedor. Se genera la animación que hace que las imagenes se desplacen */
+.main__slider-categories ul{
+    display: flex;
+    width: 300%;
+    animation: changeCategories 20s infinite alternate;
+}
+
+/* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del contenedor */
+.main__slider-categories li{
+    list-style: none;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider__img-categories{
+    width: 100%;
+}
+
+/* Estilos texto que acompaña al Slider */
+.slider-title{
+    position: absolute;
+    bottom: 15px;
+    font-family: var(--myTitles);
+    color: white;
+    font-size: 2.2rem;
+    background-image: linear-gradient(to bottom, #AC2194 , #000000);
+    padding: 7px;
+    border-radius: 10px;
+}
+
+/* Animación del Slider de las categorias, genera el desplazamiento de las imágenes*/
+@keyframes changeCategories{
+    0%{margin-left: 0;}
+    30%{margin-left: 0%;}
+
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
-    /* ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET */
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
 
 
     /* Estilos del logo */
@@ -250,12 +338,30 @@ header{
     .fa-bars{
         display: none;
     }
+
+    /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
+    .slider__text2{
+        width: 40%;
+    }
+
+    /* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
+    .slider__text h2{
+        font-size: 3.5rem;
+    }
+
+    /* Estilos de los textos secundarios (descripciones) que se muestran junto con cada imagen del Slider */
+    .slider__text h3{
+        font-size: 1.5rem;
+    }
+
 }
 
-/* ESTILOS PARA RESOLUCIÓN COMPUTADOR*/
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
 
 @media(min-width: 769px){
-    /* ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR */
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
 
     /* Estilos del logo */
     .header__logo{
@@ -298,5 +404,12 @@ header{
     .header__login{
         font-size: 2rem;
         margin-right: 30px;
+    }
+
+    /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
+    .slider__text2{
+        width: 25%;
     }
 }
