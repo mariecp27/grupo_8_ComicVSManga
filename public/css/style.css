@@ -23,7 +23,7 @@ html{
 
 /* =========ESTILOS DEL HEADER========= */
 
-/* Permite que el header esté sobre el slider, el da un fondo en degradado y distribuye los elementos */
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
 header{
     position: absolute;
     top: 0;
@@ -83,27 +83,27 @@ header{
 .header__login{
     background: var(--myRed);
     font-family: var(--myTitles);
-    color: white;
+    color: #ffffff;
     font-size: 1.3rem;
     padding: 5px;
     border: none;
     border-radius: 5px;
     margin: 0 5px;
     text-align: center;
-    border: white solid 1px;
+    border: #ffffff solid 1px;
 }
 
-/* Estilos para el menú en la resolución mobile */
+/* Estilos para el menú de la resolución mobile */
 .fa-bars{
     background: var(--myRed);
-    color: white;
+    color: #ffffff;
     font-size: 1.5rem;
     padding: 5px 7px;
     border: none;
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
-    border: white solid 1px;
+    border: #ffffff solid 1px;
 }
 
 /* =========ESTILOS DEL SLIDER========= */
@@ -146,7 +146,7 @@ header{
     justify-content: center;
 }
 
-/* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
+/* Estilos de los los contenedores (fondo) del texto que se muestran junto con cada imagen del Slider */
 .slider__text2{
     /* background: RGBA(254, 48, 61, 0.6); */
     background-image: linear-gradient(to bottom, var(--myRed), #00000000);
@@ -154,14 +154,14 @@ header{
     width: 60%;
     border-radius: 10px;
     margin: 15px;
-    box-shadow: 0px 10px 10px black;
+    box-shadow: 0px 10px 10px #000000;
 }
 
 /* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
 .slider__text h2{
     font-family: var(--myTitles);
     font-size: 3rem;
-    color: white;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -169,7 +169,7 @@ header{
 .slider__text h3{
     font-family: var(--myText);
     font-size: 1.2rem;
-    color: white;
+    color: #ffffff;
     text-align: center;
     font-weight: normal;
     font-style: italic;
@@ -179,12 +179,20 @@ header{
 
 /* Fondo de la sección */
 .main__categories{
-    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff);
+    /* background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff); */
     width: 100%;
     padding-top: 10px;
+    padding-bottom: 10px;
+    background: repeating-linear-gradient(
+      45deg,
+      #000000 20px,
+      #000000 40px,
+      var(--myBlue) 40px,
+      var(--myBlue) 60px
+    );
 }
 
-/* Estilos contenedor de los títulos de la sección*/
+/* Estilos contenedor de los títulos de la sección */
 .main__categories-title{
     display: flex;
     flex-direction: column;
@@ -192,18 +200,18 @@ header{
     width: auto;
 }
 
-/* Estilos título principal de la sección*/
+/* Estilos título principal de la sección */
 .main__categories-title h2{
     font-family: var(--myTitles);
-    color: white;
+    color: #ffffff;
     font-size: 2.5rem;
     width: auto;
 }
 
-/* Estilos título secundario de la sección*/
+/* Estilos título secundario de la sección */
 .main__categories-title h3{
     font-family: var(--myText);
-    color: white;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: normal;
     font-style: italic;
@@ -211,16 +219,16 @@ header{
 
 /* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS========= */
 
-/* Contenederor del Slider, proporciona el borde*/
+/* Contenedor del Slider, proporciona el borde */
 .main__slider-container{
     width: 65vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px auto;
-    box-shadow: 0px 10px 10px black;
+    box-shadow: 0px 10px 10px #000000;
     position: relative;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 60% del viewport */
@@ -255,13 +263,189 @@ header{
     position: absolute;
     bottom: 20px;
     font-family: var(--myTitles);
-    color: white;
+    color: #ffffff;
     font-size: 2.2rem;
     background: linear-gradient(135deg,  var(--myPurple) , #00000000);
-    box-shadow: 0px 10px 10px black;
+    box-shadow: 0px 10px 10px #000000;
     padding: 7px;
     border-radius: 10px;
     text-align: center;
+}
+
+/* =========ESTILOS DE LOS PRODUCTOS DESTACADOS========= */
+
+/* Fondo de la sección */
+.main__featured-products{
+    background-image: linear-gradient(to bottom, var(--myPurple) , #ffffff);
+    width: 100%;
+    padding-top: 10px;
+    border-top: solid #000000 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Estilos título principal de la sección */
+.featured-products__title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+    margin-right: 10px;
+    text-align: right;
+    align-self: flex-end;
+    background-image: linear-gradient(to bottom, var(--myRed), #ffffff00);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px #000000;
+    color: #ffffff;
+}
+
+.featured-products__title-img{
+    display: none;
+}
+
+/* Contenedor de los productos, proporciona el borde*/
+.featured-products__container{
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+.featured-products__container a{
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    width: 60vw;
+    margin: 10px;
+}
+
+.featured-products__img{
+    width: 100%;
+}
+
+/* Estilos título de cada producto */
+.featured-products__container h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+}
+
+/* Estilos precio de cada producto */
+.featured-products__container p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+/* =========ESTILOS DE LOS BENEFICIOS========= */
+
+/* Fondo y distribución de la sección */
+.main__advantages{
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos título principal de la sección */
+.advantages__title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+    margin-left: 10px;
+    background-image: linear-gradient(to bottom, var(--myRed), #ffffff00);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px #000000;
+    color: #000000;
+    width: 50%;
+}
+
+.advantages__title-img{
+    display: none;
+}
+
+/* Estilos contenedor de cada beneficio */
+.advantage__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* Estilos íconos de cada beneficio */
+.fa-truck, .fa-credit-card, .fa-face-grin-beam{
+    color: var(--myRed);
+    font-size: 3rem;
+}
+
+/* Estilos texto de cada beneficio */
+.advantage__container p{
+    font-family: var(--myText);
+    font-size: 2rem;
+    color: var(--myRed);
+    font-weight: bold;
+}
+
+/* =========ESTILOS FOOTER========= */
+
+/* Distribución y fondo del footer*/
+footer{
+    background-color: var(--myBlue);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos logo */
+.footer__logo{
+    width: 25%;
+    margin: 5px;
+}
+
+/* Estilos enlaces de información */
+.footer__links{
+    width: 35%;
+}
+
+.footer__links ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__links ul, .footer__social-media ul{
+    list-style: none;
+}
+
+.footer__links ul li a{
+    text-decoration: none;
+    font-family: var(--myTitles);
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* Estilos enlaces de redes sociales */
+.footer__social-media{
+    width: 40%;
+}
+
+.footer__social-media ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer__social-media ul li{
+    width: auto;
+}
+
+.footer_social-media-img{
+    width: 100%;
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
@@ -307,14 +491,14 @@ header{
         border-bottom-right-radius: 5px;
         font-family: var(--myText);
         font-size: 1.5rem;
-        background-color: white;
+        background-color: #ffffff;
         color: var(--myRed);
     }
 
     /* Estilos de los enlaces de la barra de navegación */
     .header__nav ul li a{
         text-decoration: none;
-        color: white;
+        color: #ffffff;
         margin: 2px;
         font-family: var(--myTitles);
         font-size: 1.5rem;
@@ -372,6 +556,117 @@ header{
         width: 40vw;
         margin: 0;
         margin-bottom: 20px;
+    }
+
+    /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos título principal de la sección */
+    .featured-products__title{
+        display: none;
+    }
+
+    .featured-products__title-img{
+        display: block;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        right: 5px;
+        top: -90px;
+    }
+
+    /* Distribución de todos los productos */
+    .featured-products__container-all{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Contenedor de los productos, proporciona el borde*/
+    .featured-products__container{
+        width: 40vw;
+        margin: 0;
+    }
+
+    /* =========ESTILOS DE LOS BENEFICIOS PARA RESOLUCIÓN TABLET========= */
+
+    /* Fondo y distribución de la sección */
+    .main__advantages{
+        flex-direction: row;
+    }
+
+    /* Estilos título principal de la sección */
+    .advantages__title{
+        display: none;
+    }
+
+    .advantages__title-img{
+        display: block;
+        width: 40%;
+        position: relative;
+        z-index: 1;
+        left: 5px;
+        top: -20px;
+    }
+
+    /* Distribución contenedor de todos los beneficios */
+    .advantage__container-all{
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Estilos contenedor de cada beneficio */
+    .advantage__container{
+        flex-direction: row;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        justify-content: flex-end;
+    }
+
+    /* Estilos íconos de cada beneficio */
+    .fa-truck, .fa-credit-card, .fa-face-grin-beam{
+        margin-right: 5px;
+    }
+
+    /* Estilos texto de cada beneficio */
+    .advantage__container p{
+        font-size: 1.5rem;
+        color: var(--myRed);
+    }
+
+    /* =========ESTILOS FOOTER========= */
+
+    /* Estilos logo */
+    .footer__logo{
+        width: 15%;
+    }
+
+    /* Estilos enlaces de información */
+    .footer__links{
+        width: 45%;
+    }
+
+    .footer__links ul{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer__links ul li a{
+        font-size: 1.7rem;
+    }
+
+    /* Estilos enlaces de redes sociales */
+    .footer__social-media{
+        width: 40%;
+    }
+
+    .footer_social-media-img{
+        width: 80%;
     }
 }
 
@@ -459,6 +754,87 @@ header{
     .main__slider-container-independent{
         position: relative;
         bottom: 50px;
+    }
+    
+    /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos título principal de la sección */
+    .featured-products__title-img{
+        width: 20%;
+        top: -100px;
+    }
+
+    /* Contenedor de los productos, proporciona el borde*/
+    .featured-products__container{
+        width: 15vw;
+    }
+
+    /* =========ESTILOS DE LOS BENEFICIOS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Fondo y distribución de la sección4444444 */
+    .main__advantages{
+        flex-direction: row;
+    }
+
+    .advantages__title-img{
+        width: 20%;
+    }
+
+    /* Distribución contenedor de todos los beneficios */
+    .advantage__container-all{
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Estilos contenedor de cada beneficio */
+    .advantage__container{
+        flex-direction: row;
+        margin: 0;
+        justify-content: center;
+        width: auto;
+    }
+
+    /* Estilos íconos de cada beneficio */
+    .fa-truck, .fa-credit-card, .fa-face-grin-beam{
+        margin-right: 5px;
+        font-size: 8rem;
+    }
+
+    /* Estilos texto de cada beneficio */
+    .advantage__container p{
+        font-size: 2rem;
+        color: var(--myRed);
+    }
+
+    /* =========ESTILOS FOOTER========= */
+
+    /* Estilos logo */
+    .footer__logo{
+        width: 10%;
+    }
+
+    /* Estilos enlaces de información */
+    .footer__links{
+        width: 60%;
+    }
+
+    .footer__links ul{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .footer__links ul li a{
+        font-size: 2rem;
+    }
+
+    /* Estilos enlaces de redes sociales */
+    .footer__social-media{
+        width: 30%;
+    }
+
+    .footer_social-media-img{
+        width: 60%;
     }
 }
 
