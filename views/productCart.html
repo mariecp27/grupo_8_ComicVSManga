@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómic vs Manga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0a3fef0c68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/stylecarrito.css">
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+
+        <!-- Barra de búsqueda y botón -->
+        <form action="" method="" class="header__form">
+            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+            <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
+        <div class="header__text">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="" class="header__link">Tienda</a></li>
+                    <li><a href="" class="header__link">Cómics</a></li>
+                    <li><a href="" class="header__link">Mangas</a></li>
+                    <li>
+                        <a href="" class="header__shopping">
+                            <form action="" method=""></form>
+                            <div class="header__shopping-container">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="submit" class="header__login">Iniciar sesión</button>
+            <!-- Menú para la resolución mobile -->
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- Slider de imágenes -->
+        <div class="main__slider">
+            <ul>
+                <li>
+                    <img src="/images/mainSlider/slider1.jpg" alt="Slider Marvel" class="slider__img" id="slider__img1">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
+                            <h2>Team Marvel</h2>
+                            <h3>¡Increíbles batallas e historias!</h3>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/mainSlider/slider2.jpg" alt="Slider DC" class="slider__img" id="slider__img2">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
+                            <h2>Team DC</h2>
+                            <h3>¡Historias de múltiples universos!</h3>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/mainSlider/slider3.jpg" alt="Slider Manga" class="slider__img" id="slider__img3">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
+                            <h2>Team Manga</h2>
+                            <h3>¡La mejor fantasía!</h3>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="/images/mainSlider/slider4.jpg" alt="Slider Independiente" class="slider__img" id="slider__img4">
+                    <div class="slider__text"> <!-- Contenedor del texto con su fondo -->
+                        <div class="slider__text2"> <!-- Fondo del texto -->
+                            <h2>Team Independiente</h2>
+                            <h3>¡Máxima diversidad!</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <h2 class="carrito">Carrito de compras</h2>
+    <section class="carritoCompleto">
+        <article>
+                <div class="contenedorPrincipal">
+                    <img  class="imagenProducto" src="/images/productsCar/product1.jpg" alt="Producto1">
+                </div>
+                <div class="muevete">
+                    <h3 class="dc"> Joker Num. 1 </h3>
+                    <h4>Categorias:</h4> <a href="#"> Comic en español </a>
+                    <a href="#"> /Fantasia</a>
+                        <div class="aumentador">
+                            <button id='disminuir'> - </button>
+                            <input class="numeroaumentador" type='text' value='1'>
+                            <button id='aumentar'> + </button>
+                        </div>
+                    <p class="precio">$ 23 000</p>
+                </div>
+        </article>
+        <article>
+            <div class="contenedorPrincipal">
+                <img  class="imagenProducto" src="/images/productsCar/product2.jpg" alt="Producto2">
+            </div>
+            <div class="muevete">
+                <h3 class="marvel"> El Renacimiento de Thanos </h3>
+                <h4>Categorias:</h4> <a href="#"> Comic en español </a> 
+                <a href="#"> /Ciencia ficción</a>
+                    <div class="aumentador">
+                        <button id='disminuir'> - </button>
+                        <input class="numeroaumentador" type='text' value='1'>
+                        <button id='aumentar'> + </button>
+                    </div>
+                <p class="precio">$ 34 000</p>
+            </div>
+        </article>
+
+        <article>
+            <div class="contenedorPrincipal">
+                <img  class="imagenProducto" src="/images/productsCar/product3.jpg" alt="Producto3">
+            </div>
+            <div class="muevete">
+                <h3 class="manga"> Haruko Ichikawa </h3>
+                <h4>Categorias:</h4> <a href="#"> Manga en español </a> 
+                <a href="#"> /Realidad utopica</a>
+                    <div class="aumentador">
+                        <button id='disminuir'> - </button>
+                        <input class="numeroaumentador" type='text' value='1'>
+                        <button id='aumentar'> + </button>
+                </div>
+                <p class="precio">$ 46 000</p>
+            </div>
+        </article>
+    </section>
+    <section class="subtotal-section">
+    <div class="subtotal-container">
+            <h3 class="subtotal">Subtotal</h3>
+            <p class="precio-subtotal"> $ 103 000 </p>
+        </div>
+        <p class="adicional">Tambien puedes llevar</p>
+    </section>
+    <section class="minifooter">
+            <div class="aditional">
+                <div class="aditional1">
+                    <img  class="imagenProducto1" src="/images/productsCar/product1.jpg" alt="Producto1">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="aditional1" >
+                    <img  class="imagenProducto1" src="/images/productsCar/product2.jpg" alt="Producto2">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="aditional1">
+                    <img  class="imagenProducto1" src="/images/productsCar/product3.jpg" alt="Producto3">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="aditional1">
+                    <img  class="imagenProducto1" src="/images/productsCar/product4.jpg" alt="Producto4">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+    </section>
+        <div class="contenedor-compra">
+            <button class="compra"> Finalizar Compra </button>
+        </div>
+    </main>
+    <footer>
+        <img src="/images/logoAbreviado.png" alt="Logo" class="footer__logo">
+        <section class="footer__links">
+            <ul>
+                <li><a href="">Sobre nosotros</a></li>
+                <li><a href="">Correo</a></li>
+                <li><a href="">Teléfono</a></li>
+            </ul>
+        </section>
+        <section class="footer__social-media">
+            <ul>
+                <li><a href=""><img src="/images/socialMedia/facebook.png" alt="Facebook" class="footer_social-media-img"></a></li>
+                <li><a href=""><img src="/images/socialMedia/instagram.png" alt="Instagram" class="footer_social-media-img"></a></li>
+                <li><a href=""><img src="/images/socialMedia/whatsapp.png" alt="Whatsapp" class="footer_social-media-img"></a></li>
+            </ul>
+        </section>
+    </footer>
+</section>
+
+</body>
+</html>

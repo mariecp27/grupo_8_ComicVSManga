@@ -20,5 +20,7 @@
   "homepage": "https://github.com/mariecp27/grupo_8_ComicVSManga#readme",
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }
