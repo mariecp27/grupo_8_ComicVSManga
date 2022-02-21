@@ -1,0 +1,262 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
+/* =========ESTILOS DEL PRODUCTO========= */
+
+/* Fondo de la sección */
+.main__product{
+    margin: 100px 0 0 0;
+}
+
+.main__product-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor de los productos, proporciona el borde*/
+.main__product-img{
+    width: 70vw;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.main__product-img:hover{
+    background-color: var(--myRed);
+}
+
+/* Estilos título de cada producto */
+.main__product-container h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+    margin-top: 10px;
+}
+
+/* Estilos precio de cada producto */
+.main__product-container p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.main__product-details{
+    margin: 10px auto;
+    opacity: 0.8;
+    line-height: 25px;
+}
+
+.main__product-details h4{
+    font-family: var(--myTitles);
+    font-size: 1.5rem;
+}
+
+.main__product-details p{
+    font-family: var(--myText);
+    font-size: 1.3rem;
+}
+
+.main__product-shopping{
+    display: flex;
+    align-items: center;
+}
+
+.main__product-count{
+    margin: 10px;
+    display: flex;
+}
+
+.main__product-button-count{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--myText);
+    border: none;
+    font-size: 2rem;
+    background-color: var(--myBlue);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.minus{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.plus{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.main__product-button-count:active{
+    border: 2px solid var(--myBlue);
+    background-color: #ffffff;
+    color: var(--myBlue);
+}
+
+.main__product-shopping input{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-top: 2px solid var(--myBlue);
+    border-bottom: 2px solid var(--myBlue);
+    font-family: var(--myText);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.main__product-button-shopping{
+    background: var(--myBlue);
+    font-family: var(--myTitles);
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    border: #ffffff solid 1px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+}
+
+.main__product-button-shopping:hover{
+    border: 2px solid var(--myBlue);
+    background: #ffffff;
+    color: var(--myBlue);
+}
+
+.main__description-review{
+    width: 80%;
+    margin: 10px auto;
+}
+
+.main__description-review h3{
+    font-family: var(--myTitles);
+    font-size: 2rem;
+    color: var(--myBlue);
+    margin: 5px 0;
+}
+
+.main__description-review p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+/* =========ESTILOS DE LOS PRODUCTOS RELACIONADOS========= */
+
+/* Fondo de la sección */
+.main__related-products{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Estilos título principal de la sección */
+.main__related-products-title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+    margin-left: 20px;
+    padding: 5px;
+    color: var(--myBlue)
+}
+
+/* Contenedor de los productos, proporciona el borde*/
+.main__related-products-container{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.main__related-products-container:hover{
+    background-color: var(--myRed);
+}
+
+/* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+.main__related-products-container a{
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    width: 60vw;
+    margin: 10px;
+    position: relative;
+}
+
+.main__related-products-img{
+    width: 100%;
+}
+
+/* Estilos carrito de compras de los productos destacados */
+.fa-cart-shopping-products{
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    top: -20px;
+    margin: 0;
+    border: 2px solid #ffffff;
+}
+
+.fa-cart-shopping-products:hover{
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: var(--myRed)
+}
+
+/* Estilos título de cada producto */
+.main__related-products-container h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+}
+
+.main__related-products-container:hover h3{
+    color: #ffffff;
+}
+
+/* Estilos precio de cada producto */
+.main__related-products-container p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.main__related-products-container:hover p{
+    color: #ffffff;
+}

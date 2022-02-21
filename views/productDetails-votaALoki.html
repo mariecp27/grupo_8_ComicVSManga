@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vota a Loki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0a3fef0c68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <a href="/" class="header__logo-link">
+            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        </a>
+
+        <!-- Barra de búsqueda y botón -->
+        <form action="" method="" class="header__form">
+            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+            <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
+        <div class="header__text">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="" class="header__link">Tienda</a></li>
+                    <li><a href="" class="header__link">Cómics</a></li>
+                    <li><a href="" class="header__link">Mangas</a></li>
+                    <li>
+                        <a href="/carrito" class="header__shopping">
+                            <div class="header__shopping-container">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="submit" class="header__login">Iniciar sesión</button>
+            <!-- Menú para la resolución mobile -->
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- Producto -->
+        <section class="main__product">
+            <article class="main__product-container">
+                <img src="/images/product/product1.png" alt="Vota a Loki" class="main__product-img">
+                <h3>Vota a Loki</h3>
+                <p>$81 000</p>
+                <div class="main__product-details">
+                    <h4>Autor(es):</h4>
+                    <p>Langdon Foss, Christopher Hastings</p>
+                    <h4>Páginas:</h4>
+                    <p>120</p>
+                    <h4>Formato:</h4>
+                    <p>Tapa blanda</p>
+                </div>
+                <div class="main__product-shopping">
+                    <div class="main__product-count">
+                        <button class="main__product-button-count minus">-</button>
+                        <input type="number" value="1">
+                        <button class="main__product-button-count plus">+</button>
+                    </div>
+                    <button type="submit" class="main__product-button-shopping">Añadir al carrito</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Descripción -->
+        <section class="main__description-review">
+            <h3>Descripción</h3>
+            <p>
+                Loki quiere convertirse en el próximo presidente de Estados Unidos. ¡Es cierto! El Dios de las Mentiras quiere gobernar el mundo libre. ¿Será otra de sus maquinaciones? Un hecho es cierto: con su sonrisa ganadora y lengua de plata, la campaña será más interesante. 
+            </p>
+        </section>
+
+        <!-- Valoraciones -->
+        <section class="main__description-review">
+            <h3>Valoraciones</h3>
+            <p>No hay valoraciones de usuarios en este momento.</p>
+        </section>
+
+        <!-- Productos relacionados -->
+        <section class="main__related-products">
+            <h2 class="main__related-products-title">Productos relacionados</h2>
+                <article class="main__related-products-container">
+                    <a href="">
+                        <img src="/images/product/product2.png" alt="La noche más oscura" class="main__related-products-img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <h3>La noche más oscura (deluxe)</h3>
+                        <p>$375 000</p>
+                    </a>
+                </article>
+                <article class="main__related-products-container">
+                    <a href="">
+                        <img src="/images/product/product3.png" alt="Shingeki no Kyojin 27" class="main__related-products-img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <h3>Shingeki no Kyojin VOL. 27</h3>
+                        <p>$56 000</p>
+                    </a>
+                </article>
+                <article class="main__related-products-container">
+                    <a href="">
+                        <img src="/images/product/product4.png" alt="Scott Pilgrim 4" class="main__related-products-img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <h3>Scott Pilgrim VOL. 04</h3>
+                        <p>$53 000</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="/images/logoAbreviado.png" alt="Logo" class="footer__logo">
+        <section class="footer__links">
+            <ul>
+                <li><a href="">Sobre nosotros</a></li>
+                <li><a href="">Correo</a></li>
+                <li><a href="">Teléfono</a></li>
+            </ul>
+        </section>
+        <section class="footer__social-media">
+            <ul>
+                <li><a href=""><img src="/images/socialMedia/facebook.png" alt="Facebook" class="footer_social-media-img"></a></li>
+                <li><a href=""><img src="/images/socialMedia/instagram.png" alt="Instagram" class="footer_social-media-img"></a></li>
+                <li><a href=""><img src="/images/socialMedia/whatsapp.png" alt="Whatsapp" class="footer_social-media-img"></a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+</html>

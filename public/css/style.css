@@ -547,11 +547,6 @@ footer{
         display: inline-block;
     }
 
-    .header__link:hover{
-        color: var(--myRed);
-        transform: scale(1.2);
-    }
-
     /* Estilos de la barra de búsqueda (input y botón) */
     .header__form{
         width: 50%;
@@ -568,6 +563,20 @@ footer{
         font-size: 1.5rem;
     }
 
+    .header__search-bar:focus{
+        outline: none;
+        border-top: 2px solid var(--myRed);
+        border-bottom: 2px solid var(--myRed);
+        border-left: 2px solid var(--myRed);
+    }
+
+    .header__search-bar:focus + .header__search-button{
+        outline: none;
+        border-top: 2px solid var(--myRed);
+        border-bottom: 2px solid var(--myRed);
+        border-right: 2px solid var(--myRed);
+    }
+
     .header__search-button{
         padding: 3px;
         border: none;
@@ -579,6 +588,11 @@ footer{
         color: var(--myRed);
     }
 
+    .header__search-button:hover .fa-magnifying-glass{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
     /* Estilos de los enlaces de la barra de navegación */
     .header__nav ul li a{
         text-decoration: none;
@@ -586,6 +600,11 @@ footer{
         margin: 2px;
         font-family: var(--myTitles);
         font-size: 1.5rem;
+    }
+
+    .header__link:hover{
+        color: var(--myRed);
+        transform: scale(1.2);
     }
 
     /* Impide que el texto del botón de inicio de sesión pase a 2 líneas */
