@@ -1,0 +1,516 @@
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--myText);
+  }
+  /* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+  width: 30%;
+  margin: 5px;
+}
+
+.header__logo{
+  width: 90%;
+}
+
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__form, .header__link{
+  display: none;
+}
+
+/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
+.header__text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+  list-style: none;
+}
+
+/* Estilos del carrito de compras, incluyendo su fondo */
+.header__shopping-container{
+  background-color: RGBA(255, 255, 255, 0.6);
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.fa-cart-shopping{
+  align-self: center;
+  color: var(--myRed);
+  font-size: 2rem;
+}
+
+.header__shopping:hover .header__shopping-container{
+  background-color: RGBA(254, 48, 61, 0.6);
+}
+
+.header__shopping:hover .fa-cart-shopping{
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.header__login{
+  background: var(--myRed);
+  font-family: var(--myTitles);
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  text-align: center;
+  border: #ffffff solid 1px;
+  cursor: pointer;
+}
+
+.header__login:hover{
+  background: #ffffff;
+  color: var(--myRed);
+  transform: scale(1.2);
+}
+
+/* Estilos para el menú de la resolución mobile */
+.fa-bars{
+  background: var(--myRed);
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 5px 7px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: #ffffff solid 1px;
+  cursor: pointer;
+}
+
+.fa-bars:hover{
+  background: #ffffff;
+  color: var(--myRed);
+  transform: scale(1.2);
+}
+
+/*ESTILOS FELIPE*/
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .container{
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.15);
+  }
+  .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  .container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  }
+  .content form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+  form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+  form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid{
+    border-color: var(--myPurple);
+  }
+   form .gender-details .gender-title{
+    font-size: 20px;
+    font-weight: 500;
+   }
+   form .category{
+     display: flex;
+     width: 80%;
+     margin: 14px 0 ;
+     justify-content: space-between;
+   }
+   form .category label{
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+   }
+   form .category label .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+  }
+   #dot-1:checked ~ .category label .one,
+   #dot-2:checked ~ .category label .two,
+   #dot-3:checked ~ .category label .three{
+     background: var(--myPurple);
+     border-color: #d9d9d9;
+   }
+   form input[type="radio"]{
+     display: none;
+   }
+   form .button{
+     height: 45px;
+     margin: 35px 0
+   }
+
+    form .policy{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    }
+
+   form .button input{
+     height: 100%;
+     width: 100%;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 18px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   }
+   form .button input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+
+/* =========ESTILOS FOOTER========= */
+
+/* Distribución y fondo del footer*/
+footer{
+  background-color: var(--myBlue);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  max-height: 20vh;
+}
+
+/* Estilos logo */
+.footer__logo{
+  width: auto;
+  margin: 5px;
+  max-height: 10vh;
+}
+
+/* Estilos enlaces de información */
+.footer__links{
+  width: 35%;
+}
+
+.footer__links ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__links ul, .footer__social-media ul{
+  list-style: none;
+}
+
+.footer__links ul li a{
+  text-decoration: none;
+  font-family: var(--myTitles);
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.footer__links ul li a:hover{
+  color: #FE303D;
+  transform: scale(1.2);
+}
+
+/* Estilos enlaces de redes sociales */
+.footer__social-media{
+  width: 40%;
+  
+}
+
+.footer__social-media ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer__social-media ul li{
+  width: auto;
+}
+
+.footer_social-media-img{
+  width: 100%;
+}
+
+   @media(max-width: 584px){
+   .container{
+    max-width: 100%;
+  }
+  form .user-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    form .category{
+      width: 100%;
+    }
+    .content form .user-details{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+      width: 5px;
+    }
+    }
+    @media(max-width: 459px){
+    .container .content .category{
+      flex-direction: column;
+    }
+    /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+  /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
+
+  /* Estilos del logo */
+  .header__logo-link{
+      width: 30%;
+  }
+
+  /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+  .header__text{
+      width: 70%;
+  }
+  
+  /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
+  .header__form, .header__link{
+      display: inline-block;
+  }
+
+  .header__link:hover{
+      color: var(--myRed);
+      transform: scale(1.2);
+  }
+
+  /* Estilos de la barra de búsqueda (input y botón) */
+  .header__form{
+      width: 50%;
+      display: flex;
+  }
+
+  .header__search-bar{
+      width: 85%;
+      padding: 3px;
+      border: none;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      font-family: var(--myText);
+      font-size: 1.5rem;
+  }
+
+  .header__search-button{
+      padding: 3px;
+      border: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      font-family: var(--myText);
+      font-size: 1.5rem;
+      background-color: #ffffff;
+      color: var(--myRed);
+  }
+
+  /* Estilos de los enlaces de la barra de navegación */
+  .header__nav ul li a{
+      text-decoration: none;
+      color: #ffffff;
+      margin: 2px;
+      font-family: var(--myTitles);
+      font-size: 1.5rem;
+  }
+
+  /* Impide que el texto del botón de inicio de sesión pase a 2 líneas */
+  .header__login{
+      white-space: nowrap;
+  }
+  
+  /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
+  .fa-bars{
+      display: none;
+  }
+  /* Estilos logo */
+  .footer__logo{
+    width: 15%;
+}
+
+/* Estilos enlaces de información */
+.footer__links{
+    width: 45%;
+}
+
+.footer__links ul{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer__links ul li a{
+    font-size: 1.7rem;
+}
+
+/* Estilos enlaces de redes sociales */
+.footer__social-media{
+    width: 40%;
+}
+
+.footer_social-media-img{
+    width: 80%;
+}
+
+  @media(min-width: 769px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 20%;
+        margin: 5px;
+    }
+
+    /* Estilos de la barra de búsqueda (input) */
+    .header__search-bar{
+        padding: 6px;
+        font-size: 1.7rem;
+    }
+
+    /* Estilos de la barra de búsqueda (botón) */
+    .header__search-button{
+        padding: 6px;
+        font-size: 1.7rem;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación y carrito de compras */
+    .header__nav{
+        width: 80%;
+    }
+
+    .header__nav ul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .header__nav ul li a{
+        font-size: 2rem;
+    }
+
+    /* Estilos para el botón de inicio de sesión */
+    .header__login{
+        font-size: 2rem;
+        margin-right: 30px;
+    }
+     /* =========ESTILOS FOOTER========= */
+
+    /* Estilos logo */
+    .footer__logo{
+      width: 10%;
+  }
+
+  /* Estilos enlaces de información */
+  .footer__links{
+      width: 60%;
+  }
+
+  .footer__links ul{
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+
+  .footer__links ul li a{
+      font-size: 2rem;
+  }
+
+  /* Estilos enlaces de redes sociales */
+  .footer__social-media{
+      width: 30%;
+  }
+
+  .footer_social-media-img{
+      width: 60%;
+  }
+  }
+  }
+    }

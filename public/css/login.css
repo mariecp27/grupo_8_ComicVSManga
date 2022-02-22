@@ -1,0 +1,233 @@
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--myText);
+  }
+  /* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+  width: 30%;
+  margin: 5px;
+}
+
+.header__logo{
+  width: 90%;
+}
+
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__form, .header__link{
+  display: none;
+}
+
+/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
+.header__text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+  list-style: none;
+}
+
+/* Estilos del carrito de compras, incluyendo su fondo */
+.header__shopping-container{
+  background-color: RGBA(255, 255, 255, 0.6);
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.fa-cart-shopping{
+  align-self: center;
+  color: var(--myRed);
+  font-size: 2rem;
+}
+
+.header__shopping:hover .header__shopping-container{
+  background-color: RGBA(254, 48, 61, 0.6);
+}
+
+.header__shopping:hover .fa-cart-shopping{
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.header__login{
+  background: var(--myRed);
+  font-family: var(--myTitles);
+  color: #ffffff;
+  font-size: 1.3rem;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 5px;
+  text-align: center;
+  border: #ffffff solid 1px;
+  cursor: pointer;
+}
+
+.header__login:hover{
+  background: #ffffff;
+  color: var(--myRed);
+  transform: scale(1.2);
+}
+
+/* Estilos para el menú de la resolución mobile */
+.fa-bars{
+  background: var(--myRed);
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 5px 7px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: #ffffff solid 1px;
+  cursor: pointer;
+}
+
+.fa-bars:hover{
+  background: #ffffff;
+  color: var(--myRed);
+  transform: scale(1.2);
+}
+body{
+    overflow: hidden;
+}
+::selection{
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+}
+.container{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
+}
+.wrapper{
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 90px;
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: var(--myPurple);
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+  color: black;
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: var(--myBlue);
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapper form .button input{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  background: linear-gradient(135deg, var(--myBlue), var(--myPurple));
+  cursor: pointer;
+}
+form .button input:hover{
+  background: var(--myPurple);
+}
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+}
+.wrapper form .signup-link a{
+  color: var(--myBlue);
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+@media (max-width : 548px) {
+  .container{
+    max-width: 100%;
+  }
+}
