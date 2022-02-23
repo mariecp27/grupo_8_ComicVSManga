@@ -14,6 +14,8 @@ app.get('/iniciar-sesion', (req,res) => {res.sendFile(path.join(__dirname, '/vie
 
 app.get('/producto-vota-a-Loki', (req,res) => {res.sendFile(path.join(__dirname, '/views/productDetails-votaALoki.html'))});
 
+app.get('/producto-noche-mas-oscura', (req,res) => {res.sendFile(path.join(__dirname, '/views/productDetails-nocheMasOscura.html'))});
+
 app.get('/carrito', (req,res) => {res.sendFile(path.join(__dirname, '/views/productCart.html'))});
 
 app.get('/registro', (req,res) => {res.sendFile(path.join(__dirname, '/views/register.html'))});
