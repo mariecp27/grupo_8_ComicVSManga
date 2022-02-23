@@ -1,104 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0a3fef0c68.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
-    
-   </head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Registro</title>
+</head>
 <body>
- <header>
-    <!-- Logo -->
-    <a href="/" class="header__logo-link">
-        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
-    </a>
+    <header>
+        <!-- Logo -->
+        <a href="/" class="header__logo-link">
+            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        </a>
 
-    <!-- Barra de búsqueda y botón -->
-    <form action="" method="" class="header__form">
-        <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
-        <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
+        <!-- Barra de búsqueda y botón -->
+        <form action="" method="" class="header__form">
+            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+            <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
 
-    <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
-    <div class="header__text">
-        <nav class="header__nav">
-            <ul>
-                <li><a href="" class="header__link">Tienda</a></li>
-                <li><a href="" class="header__link">Cómics</a></li>
-                <li><a href="" class="header__link">Mangas</a></li>
-                <li>
-                    <a href="/carrito" class="header__shopping">
-                        <div class="header__shopping-container">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <button type="submit" class="header__login">Iniciar sesión</button>
-        <!-- Menú para la resolución mobile -->
-        <i class="fa-solid fa-bars"></i>
-    </div>
-</header>
-  <div class="container">
-    <div class="title">REGISTRATE</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Nombre completo</span>
-            <input type="text" placeholder="Ingresa tu nombre" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Usuario</span>
-            <input type="text" placeholder="Ingresa tu usuario" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Ingresa tu correo electronico" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Contraseña</span>
-            <input type="password" placeholder="Ingresa tu contraseña" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Confirmar Contraseña</span>
-            <input type="text" placeholder="Confirma tu contraseña" required>
-          </div>
+        <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
+        <div class="header__text">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="" class="header__link">Tienda</a></li>
+                    <li><a href="" class="header__link">Cómics</a></li>
+                    <li><a href="" class="header__link">Mangas</a></li>
+                    <li>
+                        <a href="/carrito" class="header__shopping">
+                            <div class="header__shopping-container">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type="submit" class="header__login">Iniciar sesión</button>
+            <!-- Menú para la resolución mobile -->
+            <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="policy">
-            <input type="checkbox">
-            <h3>Acepto todos los terminos y condiciones</h3>
-          </div>
-        <div class="button">
-          <input type="submit" value="Registrate">
+    </header>
+    <section>
+        <div class="imgBx">
+            <img src="/images/manga.jpg" alt="">
         </div>
-      </form>
-    </div>
-  </div>
-  <footer>
-    <img src="/images/logoAbreviado.png" alt="Logo" class="footer__logo">
-    <section class="footer__links">
-        <ul>
-            <li><a href="">Sobre nosotros</a></li>
-            <li><a href="">Correo</a></li>
-            <li><a href="">Teléfono</a></li>
-        </ul>
+        <div class="contentBx">
+            <div class="formBx">
+                <h2>Registro</h2>
+                <form> 
+                    <div class="inputBx">
+                        <span>Usuario</span>
+                        <input type="text" name="Usuario" required>
+                    </div>
+                    <div class="inputBx">
+                        <span>Correo electronico</span>
+                        <input type="password" name="Contraseña" required>
+                    </div>
+                    <div class="inputBx">
+                        <span>Contraseña</span>
+                        <input type="password" name="Contraseña" required>
+                    </div>
+                    <div class="inputBx">
+                        <span>Confirmar Contraseña</span>
+                        <input type="password" name="Contraseña" required>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Crear cuenta" name="" required>
+                    </div>
+                    <div class="inputBx">
+                        <p>¿Ya tienes una cuenta? <a href="#">Incia sesión</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
-    <section class="footer__social-media">
-        <ul>
-            <li><a href=""><img src="/images/socialMedia/facebook.png" alt="Facebook" class="footer_social-media-img"></a></li>
-            <li><a href=""><img src="/images/socialMedia/instagram.png" alt="Instagram" class="footer_social-media-img"></a></li>
-            <li><a href=""><img src="/images/socialMedia/whatsapp.png" alt="Whatsapp" class="footer_social-media-img"></a></li>
-        </ul>
-    </section>
-</footer>
-
 </body>
 </html>
