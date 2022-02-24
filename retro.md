@@ -30,8 +30,16 @@ Nuestra reunión se basó en dejar claro que actividades o tareas se necesitan d
 
 ### Less of:
 
+<<<<<<< HEAD
 * No hay conductas negativas descubiertas hasta el momento.
 
 ### Stop doing:
  
 * No hay conductas negativas descubiertas hasta el momento..
+=======
+* Continuar con la planeación, actualización y finalización de tareas en Trello.
+
+### Stop doing:
+ 
+* Mantener un ambiente de trabajo agradable y abierto a la retroalimentación.
+>>>>>>> 84cad9c20c86520bb9e1129b0c9d75db8d094a1b
