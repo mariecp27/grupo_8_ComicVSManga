@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómic vs Manga</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0a3fef0c68.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/stylecarrito.css">
+    <title>Login</title>
 </head>
 <body>
     <header>
         <!-- Logo -->
-        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        <a href="/" class="header__logo-link">
+            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        </a>
 
         <!-- Barra de búsqueda y botón -->
         <form action="" method="" class="header__form">
@@ -32,8 +35,7 @@
                     <li><a href="" class="header__link">Cómics</a></li>
                     <li><a href="" class="header__link">Mangas</a></li>
                     <li>
-                        <a href="" class="header__shopping">
-                            <form action="" method=""></form>
+                        <a href="/carrito" class="header__shopping">
                             <div class="header__shopping-container">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
@@ -41,7 +43,7 @@
                     </li>
                 </ul>
             </nav>
-            <button type="submit" class="header__login">Iniciar sesión</button>
+            <button type="submit" class="header__login" onclick="window.location.href='/iniciar-sesion'">Iniciar sesión</button>
             <!-- Menú para la resolución mobile -->
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -89,37 +91,43 @@
                 </li>
             </ul>
         </div>
+
+        <!--Sección del carrito de compras-->
         <h2 class="carrito">Carrito de compras</h2>
     <section class="carritoCompleto">
-        <article>
+               <article>
                 <div class="contenedorPrincipal">
-                    <img  class="imagenProducto" src="/images/productsCar/product1.jpg" alt="Producto1">
+                    <img  class="imagenProducto" src="/images/productsCar/joker.jpg" alt="Producto1">
                 </div>
                 <div class="muevete">
-                    <h3 class="dc"> Joker Num. 1 </h3>
-                    <h4>Categorias:</h4> <a href="#"> Comic en español </a>
+                    <h3 class="nombrecomic"> Joker Num. 1 </h3>
+                    <h4 class="categoria">Categorias:</h4> <a href="#"> Comic en español </a>
                     <a href="#"> /Fantasia</a>
-                        <div class="aumentador">
-                            <button id='disminuir'> - </button>
-                            <input class="numeroaumentador" type='text' value='1'>
-                            <button id='aumentar'> + </button>
+                    <div class="main__product-shopping" >
+                        <div class="main__product-count">
+                            <button class="main__product-button-count minus">-</button>
+                            <input class="main_button" type="number" value="1">
+                            <button class="main__product-button-count plus">+</button>
                         </div>
+                    </div>
                     <p class="precio">$ 23 000</p>
                 </div>
         </article>
         <article>
             <div class="contenedorPrincipal">
-                <img  class="imagenProducto" src="/images/productsCar/product2.jpg" alt="Producto2">
+                <img  class="imagenProducto" src="/images/productsCar/thanos.jpg" alt="Producto2">
             </div>
             <div class="muevete">
-                <h3 class="marvel"> El Renacimiento de Thanos </h3>
-                <h4>Categorias:</h4> <a href="#"> Comic en español </a> 
+                <h3 class="nombrecomic"> El Renacimiento de Thanos </h3>
+                <h4 class="categoria">Categorias:</h4> <a href="#"> Comic en español </a> 
                 <a href="#"> /Ciencia ficción</a>
-                    <div class="aumentador">
-                        <button id='disminuir'> - </button>
-                        <input class="numeroaumentador" type='text' value='1'>
-                        <button id='aumentar'> + </button>
+                <div class="main__product-shopping" >
+                    <div class="main__product-count">
+                        <button class="main__product-button-count minus">-</button>
+                        <input class="main_button" type="number" value="1">
+                        <button class="main__product-button-count plus">+</button>
                     </div>
+                </div>
                 <p class="precio">$ 34 000</p>
             </div>
         </article>
@@ -129,18 +137,22 @@
                 <img  class="imagenProducto" src="/images/productsCar/product3.jpg" alt="Producto3">
             </div>
             <div class="muevete">
-                <h3 class="manga"> Haruko Ichikawa </h3>
-                <h4>Categorias:</h4> <a href="#"> Manga en español </a> 
+                <h3 class="nombrecomic"> Haruko Ichikawa </h3>
+                <h4 class="categoria">Categorias:</h4> <a href="#"> Manga en español </a> 
                 <a href="#"> /Realidad utopica</a>
-                    <div class="aumentador">
-                        <button id='disminuir'> - </button>
-                        <input class="numeroaumentador" type='text' value='1'>
-                        <button id='aumentar'> + </button>
+                <div class="main__product-shopping" >
+                    <div class="main__product-count">
+                        <button class="main__product-button-count minus">-</button>
+                        <input class="main_button" type="number" value="1">
+                        <button class="main__product-button-count plus">+</button>
+                    </div>
                 </div>
                 <p class="precio">$ 46 000</p>
             </div>
         </article>
     </section>
+<!--Sección Subtotal-->
+
     <section class="subtotal-section">
     <div class="subtotal-container">
             <h3 class="subtotal">Subtotal</h3>
@@ -148,25 +160,41 @@
         </div>
         <p class="adicional">Tambien puedes llevar</p>
     </section>
-    <section class="minifooter">
-            <div class="aditional">
-                <div class="aditional1">
-                    <img  class="imagenProducto1" src="/images/productsCar/product1.jpg" alt="Producto1">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="aditional1" >
-                    <img  class="imagenProducto1" src="/images/productsCar/product2.jpg" alt="Producto2">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="aditional1">
-                    <img  class="imagenProducto1" src="/images/productsCar/product3.jpg" alt="Producto3">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div class="aditional1">
-                    <img  class="imagenProducto1" src="/images/productsCar/product4.jpg" alt="Producto4">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div>
+    <section class="main__featured-products">
+        <div class="featured-products__container-all">
+            <article class="featured-products__container">
+                <a href="/producto-vota-a-Loki">
+                    <img src="/images/product/product1.png" alt="Primer producto destacado" class="featured-products__img">
+                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                    <h3>Vota a Loki</h3>
+                    <p>$81 000</p>
+                </a>
+            </article>
+            <article class="featured-products__container">
+                <a href="/producto-noche-mas-oscura">
+                    <img src="/images/product/product2.png" alt="Segundo producto destacado" class="featured-products__img">
+                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                    <h3>La noche más oscura (deluxe)</h3>
+                    <p>$375 000</p>
+                </a>
+            </article>
+            <article class="featured-products__container">
+                <a href="/producto-shingeky-no-kyojin">
+                    <img src="/images/product/product3.png" alt="Tercer producto destacado" class="featured-products__img">
+                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                    <h3>Shingeki no Kyojin VOL. 27</h3>
+                    <p>$56 000</p>
+                </a>
+            </article>
+            <article class="featured-products__container">
+                <a href="/producto-scott-pilgrim">
+                    <img src="/images/product/product4.png" alt="Cuardo producto destacado" class="featured-products__img">
+                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                    <h3>Scott Pilgrim VOL. 04</h3>
+                    <p>$53 000</p>
+                </a>
+            </article>
+        </div>
     </section>
         <div class="contenedor-compra">
             <button class="compra"> Finalizar Compra </button>

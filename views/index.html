@@ -15,7 +15,9 @@
 <body>
     <header>
         <!-- Logo -->
-        <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        <a href="/" class="header__logo-link">
+            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
+        </a>
 
         <!-- Barra de búsqueda y botón -->
         <form action="" method="" class="header__form">
@@ -31,8 +33,7 @@
                     <li><a href="" class="header__link">Cómics</a></li>
                     <li><a href="" class="header__link">Mangas</a></li>
                     <li>
-                        <a href="" class="header__shopping">
-                            <form action="" method=""></form>
+                        <a href="/carrito" class="header__shopping">
                             <div class="header__shopping-container">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
@@ -40,7 +41,7 @@
                     </li>
                 </ul>
             </nav>
-            <button type="submit" class="header__login">Iniciar sesión</button>
+            <button type="submit" class="header__login" onclick="window.location.href='/iniciar-sesion'">Iniciar sesión</button>
             <!-- Menú para la resolución mobile -->
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -173,29 +174,33 @@
             <img src="/images/battles.png" alt="Titulo productos destacados" class="featured-products__title-img">
             <div class="featured-products__container-all">
                 <article class="featured-products__container">
-                    <a href="">
+                    <a href="/producto-vota-a-Loki">
                         <img src="/images/product/product1.png" alt="Primer producto destacado" class="featured-products__img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3>Vota a Loki</h3>
                         <p>$81 000</p>
                     </a>
                 </article>
                 <article class="featured-products__container">
-                    <a href="">
+                    <a href="/producto-noche-mas-oscura">
                         <img src="/images/product/product2.png" alt="Segundo producto destacado" class="featured-products__img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3>La noche más oscura (deluxe)</h3>
                         <p>$375 000</p>
                     </a>
                 </article>
                 <article class="featured-products__container">
-                    <a href="">
+                    <a href="/producto-shingeky-no-kyojin">
                         <img src="/images/product/product3.png" alt="Tercer producto destacado" class="featured-products__img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3>Shingeki no Kyojin VOL. 27</h3>
                         <p>$56 000</p>
                     </a>
                 </article>
                 <article class="featured-products__container">
-                    <a href="">
+                    <a href="/producto-scott-pilgrim">
                         <img src="/images/product/product4.png" alt="Cuardo producto destacado" class="featured-products__img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3>Scott Pilgrim VOL. 04</h3>
                         <p>$53 000</p>
                     </a>

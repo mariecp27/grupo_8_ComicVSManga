@@ -1,0 +1,406 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
+/* =========ESTILOS DEL PRODUCTO========= */
+
+/* Distribución de la sección */
+.main__product{
+    margin: 100px 0 0 0;
+}
+
+/* Distribución del producto */
+.main__product-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilos de la imagen */
+.main__product-img{
+    width: 70vw;
+    align-items: center;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.main__product-img:hover{
+    background-color: var(--myRed);
+}
+
+/* Estilos título del producto */
+.main__product-container .main__product-text h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+    margin-top: 10px;
+}
+
+/* Estilos precio del producto */
+.main__product-container .main__product-text p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+/* Estilos detalles del producto y textos incluídos */
+.main__product-details{
+    margin: 10px auto;
+    opacity: 0.8;
+    line-height: 25px;
+}
+
+.main__product-details h4{
+    font-family: var(--myTitles);
+    font-size: 1.5rem;
+}
+
+.main__product-container .main__product-text .main__product-details p{
+    font-family: var(--myText);
+    font-size: 1.3rem;
+}
+
+/* Distribución botones de +, -, input de cantidad y añadir al carrito */
+.main__product-shopping{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Distribución botones de +, - e input de cantidad */
+.main__product-count{
+    margin: 10px;
+    display: flex;
+}
+
+/* Estilos  botones de + y - */
+.main__product-button-count{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--myText);
+    border: none;
+    font-size: 2rem;
+    background-color: var(--myBlue);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.minus{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.plus{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.main__product-button-count:active{
+    border: 2px solid var(--myBlue);
+    background-color: #ffffff;
+    color: var(--myBlue);
+}
+
+/* Estilos input de cantidad */
+.main__product-shopping input{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-top: 2px solid var(--myBlue);
+    border-bottom: 2px solid var(--myBlue);
+    font-family: var(--myText);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* Se eliminan los botones por defecto del input tipo number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Estilos botón de añadir al carrito */
+.main__product-button-shopping{
+    background: var(--myBlue);
+    font-family: var(--myTitles);
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    border: #ffffff solid 1px;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+}
+
+.main__product-button-shopping:hover{
+    border: 2px solid var(--myBlue);
+    background: #ffffff;
+    color: var(--myBlue);
+}
+
+/* Estilos secciones de descripción y valoraciones, incluídos los textos */
+.main__description-review{
+    width: 80%;
+    margin: 10px auto;
+}
+
+.main__description-review h3{
+    font-family: var(--myTitles);
+    font-size: 2rem;
+    color: var(--myBlue);
+    margin: 5px 0;
+}
+
+.main__description-review p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+/* =========ESTILOS DE LOS PRODUCTOS RELACIONADOS========= */
+
+/* Fondo y distribución de la sección */
+.main__related-products{
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: linear-gradient(to top, var(--myBlue) , #ffffff00);
+}
+
+/* Estilos título principal de la sección */
+.main__related-products-title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+    margin-left: 20px;
+    padding: 5px;
+    color: #000000;
+}
+
+/* Estilo contenedor de todos los productos */
+.main__related-products-container-all{
+    width: 100%;
+}
+
+/* Contenedor individual de los productos, proporciona el borde*/
+.main__related-products-container{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.main__related-products-container:hover{
+    background-color: var(--myRed);
+}
+
+/* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+.main__related-products-container a{
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    width: 60vw;
+    margin: 10px;
+    position: relative;
+}
+
+.main__related-products-img{
+    width: 100%;
+}
+
+/* Estilos carrito de compras de los productos relacionados */
+.fa-cart-shopping-products{
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    top: -20px;
+    margin: 0;
+    border: 2px solid #ffffff;
+}
+
+.fa-cart-shopping-products:hover{
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: var(--myRed)
+}
+
+/* Estilos título de cada producto */
+.main__related-products-container h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+}
+
+.main__related-products-container:hover h3{
+    color: #ffffff;
+}
+
+/* Estilos precio de cada producto */
+.main__related-products-container p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.main__related-products-container:hover p{
+    color: #ffffff;
+}
+
+@media(min-width: 481px){
+    /* =========ESTILOS DEL PRODUCTO PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos de la imagen */
+    .main__product-img{
+        width: 50vw;
+        align-items: center;
+        margin: 10px auto;
+        padding: 10px;
+        box-shadow: 0px 10px 10px #000000;
+        position: relative;
+        background-color: #ffffff;
+    }
+    
+    /* Estilos secciones de descripción y valoraciones */
+    .main__description-review{
+        width: 70%;
+    }
+
+    /* =========ESTILOS DE LOS PRODUCTOS RELACIONADOS PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilo contenedor de todos los productos */
+    .main__related-products-container-all{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10px 0 20px 0;
+    }
+
+    /* Contenedor individual de los productos, proporciona el borde*/
+    .main__related-products-container{
+        width: 25vw;
+        margin: 0;
+    }
+
+    /* Estilos título de cada producto */
+    .main__related-products-container h3{
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 769px){
+
+    /* =========ESTILOS DEL PRODUCTO PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Distribución del producto */
+    .main__product-container{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Estilos de la imagen */
+    .main__product-img{
+        width: 20vw;
+        align-items: center;
+        margin: 10px 0 10px 0;
+        margin-right: 10px;
+    }
+
+    /* Estilos título de cada producto */
+    .main__product-container .main__product-text h3{
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    /* Estilos precio de cada producto */
+    .main__product-container .main__product-text p{
+        font-size: 1.8rem;
+    }
+
+    /* Estilos detalles del producto y textos incluídos */
+    .main__product-details h4{
+        font-family: var(--myTitles);
+        font-size: 1.8rem;
+    }
+
+    .main__product-container .main__product-text .main__product-details p{
+        font-size: 1.5rem;
+    }
+
+    /* Estilos secciones de descripción y valoraciones, incluídos los textos */
+    .main__description-review-container{
+        width: 80%;
+        display: flex;
+        margin: 10px auto;
+    }
+
+    .main__description-review{
+        width: 50%;
+        margin: 20px;
+    }
+
+    .main__description-review h3{
+        font-size: 2.5rem;
+    }
+
+    .main__description-review p{
+        font-size: 1.8rem;
+    }
+
+    /* =========ESTILOS DE LOS PRODUCTOS RELACIONADOS PARA RESOLUCIÓN COMPUTADOR ========= */
+
+    /* Estilo contenedor de todos los productos */
+    .main__related-products-container-all{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 40px 0;
+    }
+
+    /* Contenedor individual de los productos, proporciona el borde*/
+    .main__related-products-container{
+        width: 15vw;
+        margin: 0 20px 0 20px;
+    }
+
+    .main__related-products-container:hover{
+        transform: scale(1.1);
+    }
+
+    /* Estilos título de cada producto */
+    .main__related-products-container h3{
+        font-size: 2.2rem;
+    }
+}

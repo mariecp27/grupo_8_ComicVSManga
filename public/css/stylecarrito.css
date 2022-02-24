@@ -1,4 +1,4 @@
-/* Paleta de colores y fuente seleccionadas */
+* Paleta de colores y fuente seleccionadas */
 :root{
     --myTitles: 'Bebas Neue', cursive;
     --myTitles2: 'Lato', sans-serif;
@@ -21,100 +21,81 @@ html{
     font-size: 62.5%;
 }
 
-h2{
+/*Estilos Al titulo*/
+
+h2.carrito{
     font-family: var(--myTitles);
     font-size: 3rem;
     color: #ffffff;
     text-align: center;
     background-color: var(--myBlue);
+    border-left: solid 1rem black;
+    border-right: solid 1rem black;
 }
 
-h2.carrito{
-    display: block;
-    text-align: center;
-    font-size: 48px;
-}
+
 
 .imagenProducto { /* Aqui colocamos 
     las imagenes a un tamaño adecuado*/
-    width: 12rem;
-    height: 20rem;
+    width: 100%;
     padding: 5px;
+    box-shadow: 0px 10px 10px var(--myYellow);
 }
 
 section.carritoCompleto { /* Aqui centramos las cajas de los 
-    productos para que queden en el centro*/
+    productos para que queden en el centro y con el contenido ajustado*/
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     width: 100%;
     margin: auto;
-    border: solid 1rem black;
-    background-image: repeating-linear-gradient( 45deg, #000000 20px,
-    #000000 40px, var(--myBlue) 40px, var(--myBlue) 60px );
+    border-left: solid 1rem black;
+    border-right: solid 1rem black;
+    
 }
 
 
 
 article{ /*Aqui colocamos las cajas del articulo
-    una al lado de la otra */
-    width: 60%;
-    margin: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    background-image: linear-gradient(30deg, #FEB431, #eeb758);
-}
-
-.contenedorPrincipal{ /* con este alineamos la 
-    imagen */
-    width: 40%;
-    text-align: center;
-    padding: 10px;
-
-}
-
-.muevete{  /* Aqui le colocamos el nombre
-    y lo que acompaña al lado de la imagen*/
-    width: 60%;
+    una debajo de la otra */
+    width: 80%;
+    margin: 1rem 0;
     display: block;
-    align-items: center;
-    margin-top: 2rem;
+    background-color:  #fff;
+    box-shadow: 0px 10px 10px #000000;
+}
+.muevete{  /* Aqui le colocamos el nombre
+    y lo que acompaña debajo de la imagen*/
+    display: block;
+    align-items: center ;
+    margin: 2rem;
 }
 
-h3 { /* Color  y tamaño para los nombres*/
+h3.nombrecomic { /* Color  y tamaño para los nombres*/
     font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    font-family: var(--myTitles2);
+    font-family: var(--myTitles);
 }
 
-h4 {  /*para que el categorias no se baje de su puesto*/
+h4.categorias {  /*para que el categorias no se baje de su puesto*/
     width: 100%;
     font-family: var(--myText);
+    }
+
+    /*Quitarle la linea los enlaces*/
+a{
+    text-decoration: none;
+    color: #000000;
 }
 
-.aumentador{ /*para separar el boton de aumentar de las categorias*/
-    margin: 2rem 0rem;
+/*Quitar la linea entre el subtotal y la otra sección */
+.main__featured-products{
+    border: none;
 }
 
-.aumentador #disminuir, .aumentador #aumentar{ /*colores y forma de los botones + y - */
-    background-color: #1572A1;
-    color: #fff;
-    font-weight: bolder;
-    font-size: larger;
-    width: 2rem;
-}
-
-.numeroaumentador{ /*para el numero de items tenga estilo*/
-    font-weight: bolder;
-    font-size: larger;
-    width: 2rem;
-    text-align: center;
-}
 
 .precio{  /*los colores y tamaños del precio*/
-    background-color: #AC2194;
+    background-color: #000;
     color: #fff;
     font-weight: bolder;
     font-size: 2.4rem;
@@ -125,135 +106,157 @@ h4 {  /*para que el categorias no se baje de su puesto*/
     }
 
 
-h3.subtotal{ /*cambiar el estilo de la palabra subtotal*/
-    color: #fff;
-}
-.subtotal{ /*contenedor de la palabra subtotal*/
-    width: 100%;
-    font-family: var(--myText);
-    text-align: center;
-    padding: 1rem;
-}
+    h3.subtotal{ /*cambiar el estilo de la palabra subtotal*/
+        color: #000;
+    }
+    .subtotal{ /*contenedor de la palabra subtotal*/
+        width: 100%;
+        font-family: var(--myText);
+        text-align: center;
+        padding: 1rem;
+        border-left: solid 1rem black;
+    border-right: solid 1rem black;
+    }
 
-.adicional{ /*Cambiar el texto la frase tambien puedes llevar*/
-    font-size: 3.6rem;
-    font-weight: 700;
-    font-family: var(--myTitles);
-    margin: 1rem;
-}
-.subtotal-section{ /*alineamos el subtotal y la frase para llevar*/
-       display: flex;
+    /*Colocandole estilo al precio subtotal*/
+    p.precio-subtotal{
+        background-color: #000000;
+        font-family: var(--myTitles);
+        color: var(--myPurple);
+        font-size: 3.6rem;
+        text-align: center;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .adicional{ /*Cambiar el texto la frase tambien puedes llevar*/
+        font-size: 3.6rem;
+        font-weight: 700;
+        font-family: var(--myTitles);
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .subtotal-section{ /*alineamos el subtotal y la frase para llevar*/
+        display: flex;
     align-items: center;
-    border: solid 1rem black;
     flex-direction: column;
+    border-top: #000 1rem solid;
     background-image:linear-gradient( to bottom, var(--myPurple),#fff);
+ }
+
+/*------------Estilos de la sección adicionales----------*/
+
+    .imagenProducto1{ /*Colocando las imagenes de abajo
+        con otro tamaño*/
+            width: 12rem;
+            height: auto;
+            padding: 10px 5px;
+            padding-left: auto;
+            align-items: center;
+        }
+
+
+        .aditional1{
+            display: flex;
+            justify-items: center;
+        }
+
+        .contenedor-compra{
+            text-align: center;
+        }
+        button.compra{
+            padding: 1rem;
+            margin: 5rem;
+            border-radius: 15px;
+            font-family: var(--myTitles);
+            color: #fff;
+            background-color: var(--myPurple);
+            font-size: 2.2rem;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button.compra:hover{
+        background-color: var(--myRed);
+        }
+
+        footer{
+            height: 20rem;
+        }
+
+/*Estilos para la sección de tablets*/
+
+
+@media(min-width: 481px){
+
+h2.carrito{
+font-size: 5rem;
 }
-
-p.precio-subtotal{
-    background-color: #000000;
-    font-family: var(--myTitles);
-    color: var(--myPurple);
-    font-size: 3.6rem;
-    border-radius: 1rem;
-    text-align: center;
-    align-items: center;
-    padding: 1rem;
-    width: 100%;
-    -webkit-border-radius: 1rem;
-    -moz-border-radius: 1rem;
-    -ms-border-radius: 1rem;
-    -o-border-radius: 1rem;
-}
-
-
-section.minifooter{ /*Par agradanr la zona de llevar*/
-    width: 100%;
+section.carritoCompleto{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border: solid 1rem black;
-
-}
-
-.aditional{ /*para que las imagenes dentro
-del contenedor se expandan y ocupen el mismo espacio*/
-display: flex;
-justify-content: space-around;
-width: 90%;
-}
-
-
-.imagenProducto1{ /*Colocando las imagenes de abajo
-con otro tamaño*/
-    width: 12rem;
-    height: auto;
-    padding: 10px 5px;
-    padding-left: auto;
-    align-items: center;
-}
-
-.imagenProducto1:hover{
-    box-shadow: 0px 10px 10px #000000;
-    width: 15rem;
-    transition: 450ms;
-    -webkit-transition: 450ms;
-    -moz-transition: 450ms;
-    -ms-transition: 450ms;
-    -o-transition: 450ms;
-    cursor:pointer;
-}
-
-.aditional1{
-    display: flex;
-    justify-items: center;
-}
-
-
-div i.fa-solid{
+    flex-wrap: wrap;
     position: relative;
-    left: -8rem;
-    top: 6rem;
-    background-color: RGBA(255, 255, 255, 0.6);
-    border-radius: 50%;
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
-div i.fa-solid:hover{
-   width: 20%;
-}
-
-.contenedor-compra{
-    text-align: center;
-    border: solid 1rem black;
-}
-button.compra{
-    padding: 1rem;
-    margin: 5rem;
-    border-radius: 15px;
-    font-family: var(--myTitles);
-    color: #fff;
-    background-color: var(--myPurple);
-    font-size: 2.2rem;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-}
-
-button.compra:hover{
-background-color: var(--myRed);
+article{
+    display: flex;
+    max-width: 80%;
+    justify-content: flex-start ;
 
 }
 
-
-footer{
-    height: 20rem;
+div.contenedorPrincipal{
+    width: 60%;
 }
 
+div.muevete{
+    display: block;
+    margin: auto;
+    max-width: 300px;
+}
+}
 
+/*Estilos para la sección de PC*/
+@media(min-width: 769px){
+   div.muevete{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+   }
 
+   h3.nombrecomic{
+       font-size: 2rem;
+       margin: 1rem;
+       text-align: center;
+   }
+h4.categoria{
+    font-size: 1.4rem;
+}
 
+img.imagenProducto{
+max-width: 200px;
+}
+}
+/*Estilos para la sección de Monitores*/
+@media (min-width: 1000px){
+
+    section.carritoCompleto{
+        max-width: 1000px;
+    }
+    .contenedor-principal{
+        max-width: 400px;
+    }
+
+    h2.carrito{
+        border-bottom: solid #000 1rem;
+    }
+    section.carritoCompleto {
+        border: none;
+    }
+}

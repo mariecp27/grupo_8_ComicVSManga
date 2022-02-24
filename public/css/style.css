@@ -28,16 +28,20 @@ header{
     position: absolute;
     top: 0;
     z-index: 1;
-    background-image: linear-gradient(to bottom, #1572A1 , #ffffff00);
+    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 /* Estilos del logo para la resolución mobile */
-.header__logo{
+.header__logo-link{
     width: 50%;
     margin: 5px;
+}
+
+.header__logo{
+    width: 100%;
 }
 
 /* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
@@ -79,6 +83,15 @@ header{
     font-size: 2rem;
 }
 
+.header__shopping:hover .header__shopping-container{
+    background-color: RGBA(254, 48, 61, 0.6);
+}
+
+.header__shopping:hover .fa-cart-shopping{
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
 /* Estilos para el botón de inicio de sesión */
 .header__login{
     background: var(--myRed);
@@ -91,6 +104,13 @@ header{
     margin: 0 5px;
     text-align: center;
     border: #ffffff solid 1px;
+    cursor: pointer;
+}
+
+.header__login:hover{
+    background: #ffffff;
+    color: var(--myRed);
+    transform: scale(1.2);
 }
 
 /* Estilos para el menú de la resolución mobile */
@@ -104,6 +124,13 @@ header{
     margin-left: 5px;
     margin-right: 5px;
     border: #ffffff solid 1px;
+    cursor: pointer;
+}
+
+.fa-bars:hover{
+    background: #ffffff;
+    color: var(--myRed);
+    transform: scale(1.2);
 }
 
 /* =========ESTILOS DEL SLIDER========= */
@@ -231,6 +258,10 @@ header{
     background-color: #ffffff;
 }
 
+.main__slider-container:hover{
+    background-color: var(--myRed);
+}
+
 /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 60% del viewport */
 .main__slider-categories{
     width: 60vw;
@@ -270,6 +301,10 @@ header{
     padding: 7px;
     border-radius: 10px;
     text-align: center;
+}
+
+.main__slider-container:hover .slider-title{
+    background: linear-gradient(135deg,  var(--myRed) , #00000000);
 }
 
 /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS========= */
@@ -315,6 +350,10 @@ header{
     background-color: #ffffff;
 }
 
+.featured-products__container:hover{
+    background-color: var(--myRed);
+}
+
 /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
 .featured-products__container a{
     text-align: center;
@@ -322,10 +361,28 @@ header{
     text-decoration: none;
     width: 60vw;
     margin: 10px;
+    position: relative;
 }
 
 .featured-products__img{
     width: 100%;
+}
+
+/* Estilos carrito de compras de los productos destacados */
+.fa-cart-shopping-products{
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    top: -20px;
+    margin: 0;
+    border: 2px solid #ffffff;
+}
+
+.fa-cart-shopping-products:hover{
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: var(--myRed)
 }
 
 /* Estilos título de cada producto */
@@ -334,10 +391,18 @@ header{
     font-size: 2.2rem;
 }
 
+.featured-products__container:hover h3{
+    color: #ffffff;
+}
+
 /* Estilos precio de cada producto */
 .featured-products__container p{
     font-family: var(--myText);
     font-size: 1.5rem;
+}
+
+.featured-products__container:hover p{
+    color: #ffffff;
 }
 
 /* =========ESTILOS DE LOS BENEFICIOS========= */
@@ -382,6 +447,11 @@ header{
     color: var(--myRed);
     font-size: 3rem;
 }
+
+.fa-truck:hover, .fa-credit-card:hover, .fa-face-grin-beam:hover{
+    transform: scale(1.1);
+    color: var(--myPurple);
+} 
 
 /* Estilos texto de cada beneficio */
 .advantage__container p{
@@ -429,6 +499,11 @@ footer{
     font-size: 1.5rem;
 }
 
+.footer__links ul li a:hover{
+    color: #FE303D;
+    transform: scale(1.2);
+}
+
 /* Estilos enlaces de redes sociales */
 .footer__social-media{
     width: 40%;
@@ -448,13 +523,17 @@ footer{
     width: 100%;
 }
 
+.footer_social-media-img:hover{
+    transform: scale(1.2);
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
     /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
 
     /* Estilos del logo */
-    .header__logo{
+    .header__logo-link{
         width: 30%;
     }
 
@@ -484,6 +563,20 @@ footer{
         font-size: 1.5rem;
     }
 
+    .header__search-bar:focus{
+        outline: none;
+        border-top: 2px solid var(--myRed);
+        border-bottom: 2px solid var(--myRed);
+        border-left: 2px solid var(--myRed);
+    }
+
+    .header__search-bar:focus + .header__search-button{
+        outline: none;
+        border-top: 2px solid var(--myRed);
+        border-bottom: 2px solid var(--myRed);
+        border-right: 2px solid var(--myRed);
+    }
+
     .header__search-button{
         padding: 3px;
         border: none;
@@ -495,6 +588,11 @@ footer{
         color: var(--myRed);
     }
 
+    .header__search-button:hover .fa-magnifying-glass{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
     /* Estilos de los enlaces de la barra de navegación */
     .header__nav ul li a{
         text-decoration: none;
@@ -502,6 +600,11 @@ footer{
         margin: 2px;
         font-family: var(--myTitles);
         font-size: 1.5rem;
+    }
+
+    .header__link:hover{
+        color: var(--myRed);
+        transform: scale(1.2);
     }
 
     /* Impide que el texto del botón de inicio de sesión pase a 2 líneas */
@@ -587,7 +690,7 @@ footer{
     /* Contenedor de los productos, proporciona el borde*/
     .featured-products__container{
         width: 40vw;
-        margin: 0;
+        margin-bottom: 10px;
     }
 
     /* =========ESTILOS DE LOS BENEFICIOS PARA RESOLUCIÓN TABLET========= */
@@ -676,8 +779,9 @@ footer{
     /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
 
     /* Estilos del logo */
-    .header__logo{
+    .header__logo-link{
         width: 20%;
+        margin: 5px;
     }
 
     /* Estilos de la barra de búsqueda (input) */
@@ -745,6 +849,10 @@ footer{
         width: 15vw;
     }
 
+    .main__slider-container:hover{
+        transform: scale(1.1);
+    }
+
     /* Distribuciones especiales*/
     .main__slider-container-DC{
         position: relative;
@@ -767,6 +875,10 @@ footer{
     /* Contenedor de los productos, proporciona el borde*/
     .featured-products__container{
         width: 15vw;
+    }
+
+    .featured-products__container:hover{
+        transform: scale(1.1);
     }
 
     /* =========ESTILOS DE LOS BENEFICIOS PARA RESOLUCIÓN COMPUTADOR========= */

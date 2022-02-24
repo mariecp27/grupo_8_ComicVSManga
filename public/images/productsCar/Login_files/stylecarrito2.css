@@ -1,0 +1,260 @@
+* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
+/*Estilos Al titulo*/
+
+h2{
+    font-family: var(--myTitles);
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    background-color: var(--myBlue);
+    border-left: solid 1rem black;
+    border-right: solid 1rem black;
+}
+
+
+
+.imagenProducto { /* Aqui colocamos 
+    las imagenes a un tamaño adecuado*/
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0px 10px 10px var(--myYellow);
+}
+
+section.carritoCompleto { /* Aqui centramos las cajas de los 
+    productos para que queden en el centro y con el contenido ajustado*/
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    border-left: solid 1rem black;
+    border-right: solid 1rem black;
+    background-color: var( --myYellow);
+}
+
+article{ /*Aqui colocamos las cajas del articulo
+    una debajo de la otra */
+    width: 80%;
+    margin: 1rem 0;
+    display: block;
+    background-color:  #fff;
+    box-shadow: 0px 10px 10px #000000;
+}
+.muevete{  /* Aqui le colocamos el nombre
+    y lo que acompaña debajo de la imagen*/
+    display: block;
+    align-items: center ;
+    margin: 2rem;
+}
+
+h3 { /* Color  y tamaño para los nombres*/
+    font-size: 2.2rem;
+    font-family: var(--myTitles);
+}
+
+h4 {  /*para que el categorias no se baje de su puesto*/
+    width: 100%;
+    font-family: var(--myText);
+    }
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+.aumentador{ /*para separar el boton de aumentar de las categorias*/
+    margin: 2rem 0rem;
+}
+
+
+.aumentador #disminuir, .aumentador #aumentar{ /*colores y forma de los botones + y - */
+    background-color: #1572A1;
+    color: #fff;
+    font-weight: bolder;
+    font-size: larger;
+    width: 2rem;
+}
+
+.numeroaumentador{ /*para el numero de items tenga estilo*/
+    font-weight: 700;
+    font-size: var(--myText);
+    text-align: center;
+    width: 30%;
+
+}
+
+.precio{  /*los colores y tamaños del precio*/
+    background-color: #000;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 2.4rem;
+    width: 10rem;
+    text-align: center;
+    margin-top: 3rem;
+    align-items: center;
+    }
+
+
+    h3.subtotal{ /*cambiar el estilo de la palabra subtotal*/
+        color: #000;
+    }
+    .subtotal{ /*contenedor de la palabra subtotal*/
+        width: 100%;
+        font-family: var(--myText);
+        text-align: center;
+        padding: 1rem;
+        border-left: solid 1rem black;
+    border-right: solid 1rem black;
+    }
+
+    p.precio-subtotal{
+        background-color: #000000;
+        font-family: var(--myTitles);
+        color: var(--myPurple);
+        font-size: 3.6rem;
+        text-align: center;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .adicional{ /*Cambiar el texto la frase tambien puedes llevar*/
+        font-size: 3.6rem;
+        font-weight: 700;
+        font-family: var(--myTitles);
+        margin: 1rem;
+        text-align: center;
+    }
+
+    .subtotal-section{ /*alineamos el subtotal y la frase para llevar*/
+        display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top: #000 1rem solid;
+    background-image:linear-gradient( to bottom, var(--myPurple),#fff);
+ }
+
+
+
+    .imagenProducto1{ /*Colocando las imagenes de abajo
+        con otro tamaño*/
+            width: 12rem;
+            height: auto;
+            padding: 10px 5px;
+            padding-left: auto;
+            align-items: center;
+        }
+
+
+        .aditional1{
+            display: flex;
+            justify-items: center;
+        }
+
+        .contenedor-compra{
+            text-align: center;
+        }
+        button.compra{
+            padding: 1rem;
+            margin: 5rem;
+            border-radius: 15px;
+            font-family: var(--myTitles);
+            color: #fff;
+            background-color: var(--myPurple);
+            font-size: 2.2rem;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button.compra:hover{
+        background-color: var(--myRed);
+        }
+
+        footer{
+            height: 20rem;
+        }
+
+
+
+
+@media(min-width: 481px){
+
+h2.carrito{
+font-size: 5rem;
+}
+section.carritoCompleto{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+article{
+    display: flex;
+    width: 60%;
+    justify-content: flex-start ;
+
+}
+
+div.contenedorPrincipal{
+    width: 60%;
+}
+
+div.muevete{
+    display: block;
+    margin: auto;
+    max-width: 300px;
+}
+
+
+
+}
+
+@media(min-width: 769px){
+   div.muevete{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+   }
+
+   h3{
+       font-size: 4rem;
+       margin: 3rem;
+   }
+
+
+
+}
+
+
+
+
+
+
