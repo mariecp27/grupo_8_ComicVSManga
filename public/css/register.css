@@ -107,7 +107,7 @@ section .contentBx .formBx .inputBx input[type="submit"]{
     color: #fff;
     outline: none;
     border: none;
-    font-weight: 500;
+    font-weight: 300;
     font-family: var(--myText);
     cursor: pointer;
 }
@@ -116,21 +116,15 @@ section .contentBx .formBx .inputBx input[type="submit"]:hover{
     background: var(--myYellow);
 }
 
-section .contentBx .formBx .remember{
-    margin-bottom: 10px;
-    color:#607d8b;
-    font-weight:400;
-    font-size: 14px;
-    font-family: var(--myText)
-}
 
 section .contentBx .formBx .inputBx p{
     color: #607d8b;
-    font-size: large;
+    font-size: 16px;
 }
 
 section .contentBx .formBx .inputBx p a{
     color: var(--myBlue);
+    font-size: 16px;
 }
 
 .header__search-bar{

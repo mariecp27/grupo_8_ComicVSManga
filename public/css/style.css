@@ -176,7 +176,7 @@ header{
 /* Estilos de los los contenedores (fondo) del texto que se muestran junto con cada imagen del Slider */
 .slider__text2{
     /* background: RGBA(254, 48, 61, 0.6); */
-    background-image: linear-gradient(to bottom, var(--myRed), #00000000);
+    background-image: linear-gradient(to top, var(--myRed), #00000000);
     padding: 5px;
     width: 60%;
     border-radius: 10px;
@@ -195,7 +195,7 @@ header{
 /* Estilos de los textos secundarios (descripciones) que se muestran junto con cada imagen del Slider */
 .slider__text h3{
     font-family: var(--myText);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #ffffff;
     text-align: center;
     font-weight: normal;
@@ -557,8 +557,8 @@ footer{
         width: 85%;
         padding: 3px;
         border: none;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
         font-family: var(--myText);
         font-size: 1.5rem;
     }
@@ -580,8 +580,8 @@ footer{
     .header__search-button{
         padding: 3px;
         border: none;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
         font-family: var(--myText);
         font-size: 1.5rem;
         background-color: #ffffff;
