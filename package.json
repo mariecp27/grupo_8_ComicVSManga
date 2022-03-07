@@ -2,10 +2,10 @@
   "name": "grupo_8_comicvsmanga",
   "version": "1.0.0",
   "description": "Proyecto integrador Digital House / cohorte 6 Protalento",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/mariecp27/grupo_8_ComicVSManga#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2"
   },
-  "devDependencies": {},
   "keywords": []
 }
