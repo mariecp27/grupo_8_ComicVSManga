@@ -35,3 +35,37 @@ Nuestra reunión se basó en dejar claro que actividades o tareas se necesitan d
 ### Stop doing:
  
 * No hay conductas negativas descubiertas hasta el momento.
+<----------------------------------------------Retrospectiva #2------------------------------------------------------------------------------------------------>
+
+# Starfish Retrospective 2
+Desarrollamos una pequeña reunión para revisar nuestras actividades en los ultimos 10 dias. Esta estrategia sirve para realizar *feedbacks*  especificos del equipo de trabajo de forma rápida.
+
+## Conclusiones:
+
+### Start doing:
+
+* Asignar due dates.
+* Crear un cronograma (buscar e implementar una plataforma para desarrollarlo).
+
+### More of:
+
+* Comprometerse con las daily task en horas de la mañana se enviará un mensaje con las actividades o tareas que se han hecho el día anterior, resumiendo y dejando claro:
+  - En que se tuvo problemas.
+  - Obstáculos que se presentaron.
+  - Ayuda que se necesitará para avanzar en actividades.
+  - Actividades a realizar en dicho día.
+
+### Keep doing:
+
+* Mantener las reuniones de seguimiento para fortalecer la comunicación y realizar una buena revisión de las tareas del proyecto.
+* Continuar con la planeación, actualización y finalización de tareas en Trello.
+* Mantener un ambiente de trabajo agradable y abierto a la retroalimentación.
+* Presentar ideas creativas para la mejora de la comunicación y relación en el grupo.
+
+### Less of:
+
+* No hay conductas negativas descubiertas hasta el momento.
+
+### Stop doing:
+
+* Realizar seguimiento de algunos compañeros para mejorar la comunicación y aumentar el flujo de actividades.
