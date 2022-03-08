@@ -70,3 +70,4 @@ Esta página fue seleccionada debido a su diseño muy arraigado a la temática d
 Se puede acceder a los tableros de trabajo de cada *sprint* a través de los enlaces a continuación:
 * [Sprint 1](https://trello.com/b/QMIgDt8y/1-proyecto-integrador-digital-house-1st-sprint)
 * [Sprint 2](https://trello.com/b/hxSNBvd4/2-proyecto-integrador-digital-house-2nd-sprint)
+* [Sprint 3](https://trello.com/b/5NV9TSYP/3-proyecto-integrador-digital-house-3rd-sprint)
