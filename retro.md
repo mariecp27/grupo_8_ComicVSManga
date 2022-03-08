@@ -35,7 +35,7 @@ Nuestra reunión se basó en dejar claro que actividades o tareas se necesitan d
 ### Stop doing:
  
 * No hay conductas negativas descubiertas hasta el momento.
-<----------------------------------------------Retrospectiva #2------------------------------------------------------------------------------------------------>
+
 
 # Starfish Retrospective 2
 Desarrollamos una pequeña reunión para revisar nuestras actividades en los ultimos 10 dias. Esta estrategia sirve para realizar *feedbacks*  especificos del equipo de trabajo de forma rápida.

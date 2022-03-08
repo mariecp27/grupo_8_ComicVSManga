@@ -231,17 +231,19 @@ div.muevete{
    }
 
    h3.nombrecomic{
-       font-size: 2rem;
+       font-size: 4rem;
        margin: 1rem;
        text-align: center;
    }
 h4.categoria{
-    font-size: 1.4rem;
+    font-size: 3.4rem;
 }
 
 img.imagenProducto{
 max-width: 200px;
 }
+
+
 }
 /*Estilos para la sección de Monitores*/
 @media (min-width: 1000px){
@@ -259,4 +261,6 @@ max-width: 200px;
     section.carritoCompleto {
         border: none;
     }
+
+   
 }
