@@ -1,7 +1,4 @@
 let mainController = {
-    carrito: (req, res) =>{
-        return res.render('products/productCart');
-    },
     votaLoki: (req, res) =>{
         return res.render('products/productDetails-votaALoki');
     },

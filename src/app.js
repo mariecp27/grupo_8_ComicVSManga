@@ -15,15 +15,10 @@ const mainRoutes = require('./routes/mainRouter');
 app.use('/', mainRoutes);
 
 const userRoutes = require('./routes/usersRouter');
-app.get('/iniciar-sesion', userRoutes);
-app.get('/registro', userRoutes);
+app.use('/usuarios', userRoutes);
 
 const productsRoutes = require('./routes/productsRouter');
-app.get('/carrito', productsRoutes);
-app.get('/vota-a-Loki', productsRoutes);
-app.get('/noche-mas-oscura', productsRoutes);
-app.get('/shingeki-no-kyojin', productsRoutes);
-app.get('/scott-pilgrim', productsRoutes);
+app.use('/productos', productsRoutes);
 
 
 //Servidor
