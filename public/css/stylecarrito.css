@@ -32,7 +32,7 @@ h2.carrito{
     border-left: solid 1rem black;
     border-right: solid 1rem black;
     padding-top: 100px;
-
+    background: radial-gradient(circ ) 
 }
 
 
@@ -54,7 +54,7 @@ section.carritoCompleto { /* Aqui centramos las cajas de los
     margin: auto;
     border-left: solid 1rem black;
     border-right: solid 1rem black;
-    
+    background-image: url(../images/productsCar/fondo.jpg);
 }
 
 
@@ -64,10 +64,10 @@ article{ /*Aqui colocamos las cajas del articulo
     width: 80%;
     margin: 1rem 0;
     display: block;
-    background-color:  #fff;
+    background-color:  rgba(255, 255, 255, 0.8);
     box-shadow: 0px 10px 10px #000000;
 }
-.muevete{  /* Aqui le colocamos el nombre
+.contenidoSecundario{  /* Aqui le colocamos el nombre
     y lo que acompaña debajo de la imagen*/
     display: block;
     align-items: center ;
@@ -97,14 +97,14 @@ a{
 
 
 .precio{  /*los colores y tamaños del precio*/
-    background-color: #000;
-    color: #fff;
+    color: #000;
     font-weight: bolder;
     font-size: 2.4rem;
     width: 10rem;
     text-align: center;
     margin-top: 3rem;
     align-items: center;
+    font-family: var(--myText) ;
     }
 
 
@@ -171,18 +171,19 @@ a{
         button.compra{
             padding: 1rem;
             margin: 5rem;
-            border-radius: 15px;
+            border-radius: 30px;
             font-family: var(--myTitles);
             color: #fff;
             background-color: var(--myPurple);
             font-size: 2.2rem;
-            -webkit-border-radius: 15px;
-            -moz-border-radius: 15px;
-            -ms-border-radius: 15px;
-            -o-border-radius: 15px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            -ms-border-radius: 30px;
+            -o-border-radius: 30px;
             text-align: center;
             cursor: pointer;
-        }
+            border: var(--myPurple);
+}
 
         button.compra:hover{
         background-color: var(--myRed);
@@ -197,44 +198,77 @@ a{
 
 @media(min-width: 481px){
 
+    /*para aumentar el tamaño del titulo "carrito de compras"*/
 h2.carrito{
 font-size: 5rem;
 }
-section.carritoCompleto{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-}
 
+/* Para dejar el article centrado */
 article{
     display: flex;
-    max-width: 80%;
-    justify-content: flex-start ;
+    justify-content: center;
+}
 
+/* Para el nombre del comic */
+.nombrecomic h3{
+    margin: 0;
+    font-family: var(--myTitles);
+    text-align: center;
+    width: 100%;
+}
+
+/* Para el nombre de la categoria*/
+h4.categoria{
+    font-size: 1.6rem;
+    font-family: var(--myTitles2);
+}
+ /* Para las opciones de las categorias */
+a.opciones{
+    font-family: var(--myText);
+    font-size: 1.2rem;
 }
 
 div.contenedorPrincipal{
-    width: 60%;
+    width: 30%;
 }
 
-div.muevete{
-    display: block;
-    margin: auto;
+div.contenidoSecundario{
+    display: flex;
     max-width: 300px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
+
+img.imagenProducto{
+    max-width: 230px;
+    padding: 5px 0;
+    margin: auto;
+}
+
 }
 
 /*Estilos para la sección de PC*/
 @media(min-width: 769px){
-   
- 
 
+article{
+    display: flex;
+    justify-content: space-evenly;
+}
+div.contenidoSecundario{
+    display: flex;
+    max-width: 50%;
+}
+
+h3.subtotal{
+    font-size:  1.9rem;
 }
 /*Estilos para la sección de Monitores*/
 @media (min-width: 1000px){
 
     section.carritoCompleto{
-        max-width: 1000px;
+        max-width: 100%;
     }
     .contenedor-principal{
         max-width: 400px;
@@ -245,6 +279,18 @@ div.muevete{
     }
     section.carritoCompleto {
         border: none;
+    }
+
+    h3.nombrecomic{
+        font-size: 3.6rem;
+    }
+    h4.categoria{
+        font-size: 3rem;
+    }
+    a.opciones{
+        font-size: 2.6rem;
+    }
+
     }
 
    
