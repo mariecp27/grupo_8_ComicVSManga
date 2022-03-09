@@ -1,9 +1,13 @@
 let mainController = {
     index: (req, res) =>{
-        return res.render('main/index');
+        return res.render('main/index',{
+            title: 'Cómic vs Manga',
+        });
     },
     carrito: (req, res) =>{
-        return res.render('main/productCart');
+        return res.render('main/productCart',{
+            title: 'Carrito de Compras',
+        });
     },
 };
 

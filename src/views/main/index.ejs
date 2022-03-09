@@ -1,50 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómic vs Manga</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0a3fef0c68.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include('../partials/head.ejs') %>
 </head>
 <body>
     <header>
-        <!-- Logo -->
-        <a href="/" class="header__logo-link">
-            <img src="/images/logoCompleto.png" alt="Logo del sitio" class="header__logo">
-        </a>
-
-        <!-- Barra de búsqueda y botón -->
-        <form action="" method="" class="header__form">
-            <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
-            <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-        <!-- Enlaces de la barra de navegación: tienda, cómics, mangas, carrito de compras y botón de inicio de sesión -->
-        <div class="header__text">
-            <nav class="header__nav">
-                <ul>
-                    <li><a href="" class="header__link">Tienda</a></li>
-                    <li><a href="" class="header__link">Cómics</a></li>
-                    <li><a href="" class="header__link">Mangas</a></li>
-                    <li>
-                        <a href="/carrito" class="header__shopping">
-                            <div class="header__shopping-container">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <button type="submit" class="header__login" onclick="window.location.href='/usuarios/iniciar-sesion'">Iniciar sesión</button>
-            <!-- Menú para la resolución mobile -->
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <%- include('../partials/header.ejs') %>
     </header>
 
     <main>
@@ -230,21 +191,7 @@
     </main>
 
     <footer>
-        <img src="/images/logoAbreviado.png" alt="Logo" class="footer__logo">
-        <section class="footer__links">
-            <ul>
-                <li><a href="">Sobre nosotros</a></li>
-                <li><a href="">Correo</a></li>
-                <li><a href="">Teléfono</a></li>
-            </ul>
-        </section>
-        <section class="footer__social-media">
-            <ul>
-                <li><a href=""><img src="/images/socialMedia/facebook.png" alt="Facebook" class="footer_social-media-img"></a></li>
-                <li><a href=""><img src="/images/socialMedia/instagram.png" alt="Instagram" class="footer_social-media-img"></a></li>
-                <li><a href=""><img src="/images/socialMedia/whatsapp.png" alt="Whatsapp" class="footer_social-media-img"></a></li>
-            </ul>
-        </section>
+        <%- include('../partials/footer.ejs') %>
     </footer>
 </body>
 </html>
