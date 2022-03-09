@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title class="titulo">Pagina de Creación de productos </title>
+ <title><%- title%></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+    <header>
+        <h2 class="titulo-intro">Pagina para la Edición</h2> 
+    </header>
+    <section class="form-register">
+        <div class="contenedor-formulario">
+            <div class="formulario">
+                <h2 class="titulo-form">Editar productos</h2>
+                <form>
+                    <div class="Campo1">
+                        <span>Nombre del producto</span>
+                        <input class="inputs" type="text" name="name" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Descripción</span>
+                        <input  class="inputs"type="text" name="description" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Imagen</span>
+                        <input class="inputs" type="text" name="image" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Categoría</span>
+                        <input  class="inputs"type="text" name="category" required>
+                    </div>
+                        <div class="Campo1">
+                        <span>Autores</span>
+                        <input class="inputs" type="text" name="author" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Formato</span>
+                        <input class="inputs" type="text" name="format" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Precio</span>
+                        <input class="inputs" type="text" name="price" required>
+                    </div>
+                    <div class="Campo1">
+                        <span>Valoraciones</span>
+                        <input class="inputs" type="text" name="ratings" required>
+                    </div>
+                </form>
+            </div>
+
+            <p>
+                ¿Esta seguro de editar este elemento?
+            </p>
+
+            <div class="contenedor-boton">
+                <input  class="boton" type="submit" value="Editar" name="" required>
+            </div>
+            <div class="contenedor-boton">
+                <input  class="boton" type="reset" value="Cancelar" name="" required>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

@@ -7,5 +7,8 @@ router.get('/vota-a-Loki', productsController.votaLoki);
 router.get('/noche-mas-oscura', productsController.nocheMasOscura);
 router.get('/shingeki-no-kyojin', productsController.shingekiNoKyojin);
 router.get('/scott-pilgrim', productsController.scottPilgrim);
+router.get('/productCreation', productsController.productCreations);
+router.get('/productEdition', productsController.productEditions);
+
 
 module.exports = router;

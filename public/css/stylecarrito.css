@@ -31,6 +31,8 @@ h2.carrito{
     background-color: var(--myBlue);
     border-left: solid 1rem black;
     border-right: solid 1rem black;
+    padding-top: 100px;
+
 }
 
 
@@ -224,25 +226,8 @@ div.muevete{
 
 /*Estilos para la sección de PC*/
 @media(min-width: 769px){
-   div.muevete{
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-   }
-
-   h3.nombrecomic{
-       font-size: 4rem;
-       margin: 1rem;
-       text-align: center;
-   }
-h4.categoria{
-    font-size: 3.4rem;
-}
-
-img.imagenProducto{
-max-width: 200px;
-}
-
+   
+ 
 
 }
 /*Estilos para la sección de Monitores*/
