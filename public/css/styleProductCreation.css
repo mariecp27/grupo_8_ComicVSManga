@@ -1,0 +1,329 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-image: url('/images/formBackground.svg');
+    height: auto;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+/* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+    width: 50%;
+    margin: 5px;
+}
+
+.header__logo{
+    width: 100%;
+}
+
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__link{
+    display: none;
+}
+
+/* Distribuye el ícono de usuario y menú */
+.header__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+    list-style: none;
+}
+
+/* Estilos para el botón de usuario y menú de la resolución mobile */
+.fa-user-gear, .fa-bars{
+    background: var(--myRed);
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 5px 7px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: #ffffff solid 1px;
+    cursor: pointer;
+}
+
+.fa-user-gear:hover, .fa-bars:hover{
+    background: #ffffff;
+    color: var(--myRed);
+    transform: scale(1.2);
+}
+
+/* =========ESTILOS DEL FORMULARIO========= */
+
+main{
+    display: flex;
+    width: 100%;
+}
+
+/* Estilos contenedor del formulario y título */
+.main-container{
+    width: 90%;
+    background: rgba( 21, 114, 161, 0.75 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 20px;
+    margin: 10px auto;
+}
+
+/* Estilos título */
+.main__form-tittle{
+    font-family: var(--myTitles);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    border-bottom: 4px solid #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 2px
+}
+
+/* Estilos formulario */
+.main__form{
+    font-family: var(--myText);
+    color: #ffffff;
+    width: 100%;
+}
+
+/* Estilos label del formulario */
+.main__form label{
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Se especifica que las label que describen los inputs están en negrilla */
+.main__form-label{
+    font-weight: bold;
+}
+
+/* Estilos de los inputs de texto y números */
+.main__form input[type=text], .main__form input[type=number], .main__form div textarea{
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    font-family: var(--myText);
+    font-size: 1.5rem;
+    width: 100%;
+    resize: none;
+}
+
+.main__form input:focus, .main__form div textarea:focus{
+    outline: none;
+    border: 1px solid var(--myYellow);
+}
+
+/* Se eliminan los botones por defecto del input tipo number */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Estilos input para subir la imagen */
+input[type="file"]{
+    display: none;
+}
+
+.main__form-upload{
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    font-family: var(--myText);
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--myBlue);
+    font-family: var(--myTitles);
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.main__form-upload:hover{
+    border: 2px solid #ffffff;
+    background-color: var(--myYellow);
+    color: #ffffff;
+}
+
+/*  Estilos del Select del formato*/
+select{
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    font-family: var(--myText);
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--myBlue);
+    font-family: var(--myTitles);
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+select:hover{
+    border: 2px solid #ffffff;
+    background-color: var(--myYellow);
+    color: #ffffff;
+}
+
+/* Estilos de los botones y su contenedor */
+.main__form-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button{
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    font-family: var(--myText);
+    width: 40%;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--myBlue);
+    font-family: var(--myTitles);
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+
+button:hover{
+    border: 2px solid #ffffff;
+    background-color: var(--myYellow);
+    color: #ffffff;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 30%;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación,*/
+    .header__text{
+        width: 70%;
+        justify-content: flex-end;
+    }
+    
+    /* Muestra los enlaces para la resolución tablet y superiores */
+    .header__link{
+        display: inline-block;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación e ícono de usuario */
+    .header__nav ul li{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .header__nav ul li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-family: var(--myTitles);
+        font-size: 1.5rem;   
+    }
+
+    .header__link:hover{
+        color: var(--myRed);
+        transform: scale(1.2);
+    }
+    
+    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
+    .fa-bars{
+        display: none;
+    }
+
+    /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos contenedor del formulario y título */
+    .main-container{
+        width: 80%;
+        padding: 30px;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 20%;
+        margin: 5px;
+    }
+
+    /* Distribuye los enlaces e ícono de usuario */
+    .header__text{
+        width: 80%;
+    }
+
+    .header__nav ul li a{
+        font-size: 2rem;
+    }
+
+    /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos contenedor del formulario y título */
+    .main-container{
+        width: 50%;
+        padding: 60px;
+    }
+}
