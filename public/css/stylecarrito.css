@@ -32,8 +32,7 @@ h2.carrito{
     border-left: solid 1rem black;
     border-right: solid 1rem black;
     padding-top: 100px;
-    background: radial-gradient(circ ) 
-}
+    }
 
 
 
@@ -55,7 +54,11 @@ section.carritoCompleto { /* Aqui centramos las cajas de los
     border-left: solid 1rem black;
     border-right: solid 1rem black;
     background-image: url(../images/productsCar/fondo.jpg);
-}
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
 
 
 
@@ -192,6 +195,8 @@ a{
         footer{
             height: 20rem;
         }
+
+
 
 /*Estilos para la sección de tablets*/
 

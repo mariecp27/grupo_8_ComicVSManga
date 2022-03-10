@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form.css">
-    <title class="titulo">Pagina de Creación de productos </title>
- <title><%- title%></title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/form.css">
+    <%- include('../partials/headAdmin.ejs') %>
+    <link rel="stylesheet" href="/css/styleProductCreation.css">
 </head>
 <body>
     <header>
-        <h2 class="titulo-intro">Pagina para la Edición</h2> 
+        <%- include('../partials/headerAdmin.ejs') %>
     </header>
-    <section class="form-register">
-        <div class="contenedor-formulario">
-            <div class="formulario">
-                <h2 class="titulo-form">Editar productos</h2>
-                <form>
-                    <div class="Campo1">
-                        <span>Nombre del producto</span>
-                        <input class="inputs" type="text" name="name" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Descripción</span>
-                        <input  class="inputs"type="text" name="description" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Imagen</span>
-                        <input class="inputs" type="text" name="image" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Categoría</span>
-                        <input  class="inputs"type="text" name="category" required>
-                    </div>
-                        <div class="Campo1">
-                        <span>Autores</span>
-                        <input class="inputs" type="text" name="author" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Formato</span>
-                        <input class="inputs" type="text" name="format" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Precio</span>
-                        <input class="inputs" type="text" name="price" required>
-                    </div>
-                    <div class="Campo1">
-                        <span>Valoraciones</span>
-                        <input class="inputs" type="text" name="ratings" required>
-                    </div>
-                </form>
-            </div>
 
-            <p>
-                ¿Esta seguro de editar este elemento?
-            </p>
-
-            <div class="contenedor-boton">
-                <input  class="boton" type="submit" value="Editar" name="" required>
-            </div>
-            <div class="contenedor-boton">
-                <input  class="boton" type="reset" value="Cancelar" name="" required>
-            </div>
-
+    <main>
+        <div class="main-container">
+            <h2 class="main__form-tittle">Edición de productos</h2>
+            <form action="" method="post" class="main__form">
+                <div>
+                    <label for="name" class="main__form-label">Nombre del producto</label>
+                    <input type="text" name="name" id="name" class="" required>
+                </div>
+                
+                <div>
+                    <label for="description" class="main__form-label">Descripción</label>
+                    <textarea name="description" id="description" class="" rows="5"></textarea>
+                </div>
+    
+                <div>
+                    <label for="image" class="main__form-upload">Subir imagen</label>
+                    <input type="file" name="image" id="image" accept="image/*" class="">
+                </div>
+    
+                <div>
+                    <label for="category" class="main__form-label">Categorías</label>
+                    <label><input type="checkbox" name="category" value="dc" class="">Cómic DC</label>
+                    <label><input type="checkbox" name="category" value="marvel" class="">Cómic Marvel</label>
+                    <label><input type="checkbox" name="category" value="independiente" class="">Cómic Independiente</label>
+                    <label><input type="checkbox" name="category" value="manga" class="">Manga</label>
+                    <label><input type="checkbox" name="category" value="fantasia" class="">Fantasía</label>
+                    <label><input type="checkbox" name="category" value="terror" class="">Terror</label>
+                    <label><input type="checkbox" name="category" value="ficcion" class="">Ciencia Ficción</label>
+                    <label><input type="checkbox" name="category" value="drama" class="">Drama</label>
+                </div>
+                
+                <div>
+                    <label for="author" class="main__form-label">Autores</label>
+                    <input type="text" name="author" id="author" class="" required>
+                </div>
+                
+                <select name="format" class="" required>
+                    <option disabled selected>Seleccione formato</option>
+                    <option value="blanda">Tapa blanda</option>
+                    <option value="dura">Tapa dura</option>
+                    <option value="deluxe">Deluxe</option>
+                </select>
+                
+                <div>
+                    <label for="pages" class="main__form-label">Páginas</label>
+                    <input type="number" name="pages" id="pages" class="" required>
+                </div>
+                
+                <div>
+                    <label for="price" class="main__form-label">Precio</label>
+                    <input type="number" name="price" id="price" class="" required>
+                </div>
+                
+                <div class="main__form-buttons">
+                    <button type="submit">Modificar</button>
+                    <button type="reset">Borrar</button>
+                </div>
+            </form>
         </div>
-    </section>
+    </main>
 </body>
 </html>
