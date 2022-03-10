@@ -10,15 +10,13 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
 
 * **María Herlandia Copete Perea**
   - ***¿Qué hizo durante la semana anterior?***: Una vez finalizado el Sprint previo, se lleva a cabo la reunión retrospectiva junto con el equipo, cuyas conclusiones están disponibles en el archivo [retro.md](https://github.com/mariecp27/grupo_8_ComicVSManga/blob/main/retro.md). Posterior a ello, se verifica el *Sprint* actual, realizando una revisión general de conceptos para la comprensión de las tareas a realizar, las cuales son listadas en el [tablero](https://trello.com/b/5NV9TSYP/3-proyecto-integrador-digital-house-3rd-sprint).
-  
   - ***¿Encontró con algún impedimento?***: Debido a que los conocimientos técnicos necesarios para llevar a cabo el tercer Sprint aún no habían sido presentados en clase, el avance general sufre un considerable retraso.
-  
   - ***¿Qué va a hacer durante la presente semana?***: Una vez se presenten los temas correspondientes en clase (patrón MVC y EJS) se implementará el motor de vistas.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***: Se realiza la  reunión retrospectiva y se deja consigna de los compromisos adquiridos al  terminar el segundo sprint. Revisamos junto con los compañeros las actividades pactadas, haciendo incapie en el trabajo en equipo.
-  - ***¿Encontró con algún impedimento?***: Por la falta de tiempo y de las activaciones de las clases en la plataforma se ha retrasado el inicio de actividades. Ademas por los tiempos reducidos de algunos compañeros nos vemos en la tarea de solicitar ayuda unos a otros.
-  - ***¿Qué va a hacer durante la presente semana?***:Adelantar en la plataforma de playground los temas activos para poder  separar las vistas de las carpetas y realizar los formularios en EJS.
+  - ***¿Qué hizo durante la semana anterior?***: Se realiza la  reunión retrospectiva y se deja consigna de los compromisos adquiridos al  terminar el segundo *Sprint*. Revisamos junto con los compañeros las actividades pactadas, haciendo hincapié en el trabajo en equipo.
+  - ***¿Encontró con algún impedimento?***: Por la falta de tiempo y de las activaciones de las clases en la plataforma se ha retrasado el inicio de actividades. Además por los tiempos reducidos de algunos compañeros nos vemos en la tarea de solicitar ayuda unos a otros.
+  - ***¿Qué va a hacer durante la presente semana?***: Adelantar en la plataforma de *Playground* los temas activos para poder separar las vistas de las carpetas y realizar los formularios en EJS.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***:
@@ -29,15 +27,14 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
  ## Semana 11 (Marzo 07/2022 - Marzo 13/2022)
 
 * **María Herlandia Copete Perea**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Con base en los requerimientos para el presente *Sprint*, se realiza: implementación del motor de vistas (aplicar el módulo EJS y la creación de las rutas y controladores para los archivos del *Sprint* anterior) y creación de archivos parciales (se considera el **head**, **header** y **footer**, siendo posteriormente aplicados en las vistas del *Sprint* anterior).
+  - ***¿Encontró con algún impedimento?***: Los avances estuvieron restringidos a ser realizados después de clase, ya que los temas necesarios para llevar a cabo las actividades fueron presentados a lo largo de la semana.
+  - ***¿Qué va a hacer durante la presente semana?***: Verificar las tareas faltantes con el equipo. Focalizar los esfuerzos en el desarrollo de uno de los formularios requeridos: creación de productos.
 
 * **Erick José Leones Reyes**
   - ***¿Qué hizo durante la semana anterior?***: Se ha tenido un retraso en cuanto a tiempos por actividades ajenas al curso, no se ha podido realizar la separación de carpetas. 
-  - ***¿Encontró con algún impedimento?***: He encontrado problemas en el playground, debido a la poca dedicación a realizar las actividades del temario actual.
-  - ***¿Qué va a hacer durante la presente semana?***:
-  Normalizar algunos detalles del sprint anterior y terminar las tareas asignadas durante la semana anterior.
+  - ***¿Encontró con algún impedimento?***: He encontrado problemas en el *Playground*, debido a la poca dedicación a realizar las actividades del temario actual.
+  - ***¿Qué va a hacer durante la presente semana?***: Normalizar algunos detalles del *Sprint* anterior y terminar las tareas asignadas durante la semana anterior.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***:
