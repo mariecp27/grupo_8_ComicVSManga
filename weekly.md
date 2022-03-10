@@ -19,9 +19,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Adelantar en la plataforma de *Playground* los temas activos para poder separar las vistas de las carpetas y realizar los formularios en EJS.
 
 * **Felipe Vargas Sánchez**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se realizo la  reunión retrospectiva y se deja consigna de los compromisos adquiridos al  terminar el segundo *Sprint*. Revisamos junto con los compañeros las actividades pactadas, haciendo hincapié en el trabajo en equipo.
+  - ***¿Encontró con algún impedimento?***: Al finalizar el segundo sprint procedemos a repartirnos las diferentes actividades del tercer sprint, sin embargo al carecer de lo conocimientos tecnicos nos retrasamos.
+  - ***¿Qué va a hacer durante la presente semana?***: Adelantar las actividades de *Playground* y fortalecer los conocimientos necesarios para poder concluir el tercer sprint de manera eficiente.
  
  
  ## Semana 11 (Marzo 07/2022 - Marzo 13/2022)
@@ -37,6 +37,6 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Normalizar algunos detalles del *Sprint* anterior y terminar las tareas asignadas durante la semana anterior.
 
 * **Felipe Vargas Sánchez**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: He tenido un retraso en cuanto a tiempo por actividades ajenas al curso, lo cual me ha impedido realizar las actividades.
+  - ***¿Encontró con algún impedimento?***: El tiempo, ya que me han surgido actividades laborales que no me han dejado avanzar tanto en *Playground* como en el desarrollo del sprint.
+  - ***¿Qué va a hacer durante la presente semana?***:  Normalizar algunos detalles del *Sprint* anterior, adelantar actividades en *Playground* y lograr adquirir conocimientos necesarios para el desarrollo del siguiemte sprint.
