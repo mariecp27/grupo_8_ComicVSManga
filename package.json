@@ -20,7 +20,9 @@
   "homepage": "https://github.com/mariecp27/grupo_8_ComicVSManga#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.4"
   },
   "keywords": []
 }

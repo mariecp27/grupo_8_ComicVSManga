@@ -1,0 +1,207 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Bebas Neue', cursive;
+    --myTitles2: 'Lato', sans-serif;
+    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    --myYellow: #FEB431;
+    --myRed: #FE303D;
+    --myPurple: #AC2194;
+    --myBlue: #1572A1;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
+/* ========= ESTILOS BANNER ========= */
+
+.main__banner{
+    width: 100%;
+    position: relative;
+}
+
+.main__banner img{
+    width: 100%;
+}
+
+.main__banner-text{
+    position: absolute;
+    top: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.main__banner-text h2{
+    font-family: var(--myTitles);
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 5px 5px 5px #000000;
+}
+
+.main__side-image{
+    display: none;
+}
+
+/* ========= ESTILOS DE LOS PRODUCTOS ========= */
+
+/* Fondo de la sección */
+.main__products{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
+}
+
+/* Contenedor de los productos, proporciona el borde*/
+.product__container{
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    box-shadow: 0px 10px 10px #000000;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.product__container:hover{
+    background-color: var(--myRed);
+}
+
+/* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+.product__container a{
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    width: 60vw;
+    margin: 10px;
+    position: relative;
+}
+
+.product__container img{
+    width: 100%;
+}
+
+/* Estilos carrito de compras de los productos destacados */
+.fa-cart-shopping-products{
+    position: relative;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    top: -20px;
+    margin: 0;
+    border: 2px solid #ffffff;
+}
+
+.fa-cart-shopping-products:hover{
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: var(--myRed)
+}
+
+/* Estilos título de cada producto */
+.product__container h3{
+    font-family: var(--myTitles);
+    font-size: 2.2rem;
+}
+
+.product__container:hover h3{
+    color: #ffffff;
+}
+
+/* Estilos precio de cada producto */
+.product__container p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.product__container:hover p{
+    color: #ffffff;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* ========= ESTILOS BANNER PARA RESOLUCIÓN TABLET ========= */
+
+    .main__banner-text h2{
+        font-size: 4rem;
+    }
+
+    /* =========ESTILOS DE LOS PRODUCTOS PARA RESOLUCIÓN TABLET========= */
+
+    /* Distribución de todos los productos */
+    .main__products{
+        width: 100%;
+        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 20px;
+    }
+
+    /* Contenedor de los productos, proporciona el borde*/
+    .product__container{
+        width: 40vw;
+        margin-bottom: 10px;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* ========= ESTILOS BANNER PARA RESOLUCIÓN COMPUTADOR ========= */
+
+    .main__banner-text h2{
+        font-size: 7rem;
+        text-shadow: 8px 8px 8px #000000;
+    }
+
+    /* =========ESTILOS DE LOS PRODUCTOS PARA RESOLUCIÓN COMPUTADOR ========= */
+
+    main{
+        background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
+    }
+
+    .main__products{
+        width: 75%;
+        background-image: linear-gradient(to top, #ffffff00, #ffffff00);
+        margin: 0 auto;
+    }
+    
+    /* Contenedor de los productos, proporciona el borde*/
+    .product__container{
+        width: 15vw;
+        margin: 0 0 40px 0;
+    }
+
+    .product__container:hover{
+        transform: scale(1.1);
+    }
+
+    .main__side-container{
+        position: sticky;
+        top: 0;
+    }
+
+    .main__side-image{
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 12vw;
+    }
+}

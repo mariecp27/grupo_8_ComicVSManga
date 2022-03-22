@@ -153,11 +153,17 @@ main{
     font-size: 1.5rem;
     width: 100%;
     resize: none;
+    color: #ffffff;
 }
 
 .main__form input:focus, .main__form div textarea:focus{
     outline: none;
     border: 1px solid var(--myYellow);
+}
+
+.main__form input::placeholder{
+    color: #ffffff;
+    font-style: italic;
 }
 
 /* Se eliminan los botones por defecto del input tipo number */

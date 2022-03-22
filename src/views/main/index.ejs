@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head.ejs', {title: 'Comic vs Manga'}) %>
 </head>
 <body>
     <header>
@@ -134,38 +134,16 @@
             <h2 class="featured-products__title">Batallas<br>destacadas</h2>
             <img src="/images/battles.png" alt="Titulo productos destacados" class="featured-products__title-img">
             <div class="featured-products__container-all">
-                <article class="featured-products__container">
-                    <a href="/productos/vota-a-Loki">
-                        <img src="/images/product/product1.png" alt="Primer producto destacado" class="featured-products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
-                        <h3>Vota a Loki</h3>
-                        <p>$81 000</p>
-                    </a>
-                </article>
-                <article class="featured-products__container">
-                    <a href="/productos/noche-mas-oscura">
-                        <img src="/images/product/product2.png" alt="Segundo producto destacado" class="featured-products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
-                        <h3>La noche más oscura (deluxe)</h3>
-                        <p>$375 000</p>
-                    </a>
-                </article>
-                <article class="featured-products__container">
-                    <a href="/productos/shingeki-no-kyojin">
-                        <img src="/images/product/product3.png" alt="Tercer producto destacado" class="featured-products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
-                        <h3>Shingeki no Kyojin VOL. 27</h3>
-                        <p>$56 000</p>
-                    </a>
-                </article>
-                <article class="featured-products__container">
-                    <a href="/productos/scott-pilgrim">
-                        <img src="/images/product/product4.png" alt="Cuardo producto destacado" class="featured-products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
-                        <h3>Scott Pilgrim VOL. 04</h3>
-                        <p>$53 000</p>
-                    </a>
-                </article>
+                <% for(let i = 0; i < featuredProducts.length; i++) { %>
+                    <article class="featured-products__container">
+                        <a href="/products/detail/<%= featuredProducts[i].id %>">
+                            <img src="/images/product/<%= featuredProducts[i].image %>" alt="Imagen del producto" class="featured-products__img">
+                            <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                            <h3><%= featuredProducts[i].name %></h3>
+                            <p>$<%= featuredProducts[i].price %></p>
+                        </a>
+                    </article>
+                <% } %>
             </div>
         </section>
 

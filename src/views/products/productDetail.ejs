@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs', {title: desiredProduct.name}) %>
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+
+    <main>
+        <!-- Producto -->
+        <section class="main__product">
+            <article class="main__product-container">
+                <img src="/images/product/<%= desiredProduct.image %>" alt="Imagen del producto" class="main__product-img">
+                <div class="main__product-text">
+                    <h3><%= desiredProduct.name %></h3>
+                    <p>$<%= desiredProduct.price %></p>
+                    <div class="main__product-details">
+                        <h4>Autor(es):</h4>
+                        <p><%= desiredProduct.author %></p>
+                        <h4>Páginas:</h4>
+                        <p><%= desiredProduct.pages %></p>
+                        <h4>Formato:</h4>
+                        <p><%= desiredProduct.format %></p>
+                    </div>
+                    <div class="main__product-shopping">
+                        <div class="main__product-count">
+                            <button class="main__product-button-count minus">-</button>
+                            <input type="number" value="1">
+                            <button class="main__product-button-count plus">+</button>
+                        </div>
+                        <button type="submit" class="main__product-button-shopping">Añadir al carrito</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="main__description-review-container">
+            <!-- Descripción -->
+            <section class="main__description-review">
+                <h3>Descripción</h3>
+                <p>
+                    <%= desiredProduct.description %>
+                </p>
+            </section>
+
+            <!-- Valoraciones -->
+            <section class="main__description-review">
+                <h3>Valoraciones</h3>
+                <p>No hay valoraciones de usuarios en este momento.</p>
+            </section>
+        </div>
+        
+        <!-- Productos relacionados -->
+        <section class="main__related-products">
+            <h2 class="main__related-products-title">Productos relacionados</h2>
+            <div class="main__related-products-container-all">
+                <% for(let i = 0; i < relatedProducts.length; i++) { %>
+                    <% if (relatedProducts[i].id != desiredProduct.id) { %>
+                        <article class="main__related-products-container">
+                            <a href="/products/detail/<%= relatedProducts[i].id %>">
+                                <img src="/images/product/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
+                                <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                                <h3><%= relatedProducts[i].name %></h3>
+                                <p>$<%= relatedProducts[i].price %></p>
+                            </a>
+                        </article>
+                    <% } %>
+                    <% if(i >= 3) {
+                        break;
+                    } %>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

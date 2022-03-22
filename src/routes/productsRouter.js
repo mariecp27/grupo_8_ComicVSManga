@@ -1,14 +1,37 @@
+// Módulos
 const express = require('express');
+const path = require('path');
+const multer = require('multer');
+
+// Ejecución
 const router = express.Router();
 
+// Configuración
+let storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../../public/images/product'));
+    },
+    filename: (req, file, cb) => {
+        cb(null, 'product_' + Date.now() + path.extname(file.originalname));
+    }
+})
+
+let upload = multer({ storage });
+
+// Rutas
 const productsController = require('../controllers/productsController');
 
-router.get('/vota-a-Loki', productsController.votaLoki);
-router.get('/noche-mas-oscura', productsController.nocheMasOscura);
-router.get('/shingeki-no-kyojin', productsController.shingekiNoKyojin);
-router.get('/scott-pilgrim', productsController.scottPilgrim);
-router.get('/productCreation', productsController.productCreations);
-router.get('/productEdition', productsController.productEditions);
+// Todos los productos: Tienda
+router.get('/', productsController.list);
 
+// Detalle de cada producto
+router.get('/detail/:id', productsController.detail);
+
+// Formulario de creación de productos
+router.get('/create', productsController.create);
+router.post('/create', upload.single('image'), productsController.store);
+
+// Formulario de edición de productos
+router.get('/:id/edit', productsController.edit);
 
 module.exports = router;

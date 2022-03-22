@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/headAdmin.ejs') %>
+    <%- include('../partials/headAdmin.ejs', {title: 'Creación de Productos'}) %>
     <link rel="stylesheet" href="/css/styleProductCreation.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <main>
         <div class="main-container">
             <h2 class="main__form-tittle">Creación de productos</h2>
-            <form action="" method="post" class="main__form">
+            <form action="/products/create" method="post" class="main__form" enctype="multipart/form-data">
                 <div>
                     <label for="name" class="main__form-label">Nombre del producto</label>
                     <input type="text" name="name" id="name" class="" required>
@@ -60,6 +60,19 @@
                 <div>
                     <label for="price" class="main__form-label">Precio</label>
                     <input type="number" name="price" id="price" class="" required>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" name="featured" class="" id="featured">Producto destacado</label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" name="onSale" class="" id="onSale">Producto en oferta</label>
+                </div>
+
+                <div>
+                    <label for="discount" class="main__form-label">Descuento</label>
+                    <input type="number" name="discount" class="" required placeholder="Si no está en oferta, es cero (0)">
                 </div>
                 
                 <div class="main__form-buttons">
