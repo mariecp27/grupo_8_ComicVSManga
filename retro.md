@@ -69,3 +69,31 @@ Desarrollamos una pequeña reunión para revisar nuestras actividades en los ult
 ### Stop doing:
 
 * Realizar seguimiento de algunos compañeros para mejorar la comunicación y aumentar el flujo de actividades.
+
+
+# Starfish Retrospective 3
+Desarrollamos una pequeña reunión para revisar nuestras actividades en los ultimos 14 dias. Se  llega a la conclusión que el grupo no se integró de buena forma en este sprint, ya que realizamos las tareas cada uno por su lado, sin recibir  recomendaciones de los compañeros o actuando de forma individual, todo esto por falta de tiempo de sus integrantes. Realizando esta retrospectiva nos proponemos lo siguiente:
+
+## Conclusiones:
+
+### Start doing:
+* Asignar due dates.
+* Solicitar asistencia oportuna de parte de los compañeros por si se presentan inconvenientes durante la realización de tareas.
+* Solicitar explicaciones de las actividades realizadas por los compañeros cuando no se entienda una parte.
+
+
+### More of:
+* Aumentar el compromiso de actividades que aporten valor al proyecto.
+* Presentar ideas creativas para la mejora de la comunicación y relación en el grupo.
+
+### Keep doing:
+* Continuar con el registro de actividades semanales en el archivo weekly.md
+* Mantener las reuniones de seguimiento para fortalecer la comunicación y realizar una buena revisión de las tareas del proyecto.
+* Continuar con la planeación, actualización y finalización de tareas en Trello.
+
+### Less of:
+* Detener el inclumpliemiento de las actividades, tareas y reuniones acordadas en el transcurso del sprint.
+
+### Stop doing:
+* Detener el registro de actividades diarias, debido a que se reemplazará esta actividad por los registros semanales.
+

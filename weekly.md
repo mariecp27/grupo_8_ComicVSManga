@@ -32,7 +32,7 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Verificar las tareas faltantes con el equipo. Focalizar los esfuerzos en el desarrollo de uno de los formularios requeridos: creación de productos.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***: Se ha tenido un retraso en cuanto a tiempos por actividades ajenas al curso, no se ha podido realizar la separación de carpetas. 
+  - ***¿Qué hizo durante la semana anterior?***: Se ha tenido un retraso en cuanto a tiempos por actividades ajenas al curso, no se ha podido realizar la separación de carpetas.
   - ***¿Encontró con algún impedimento?***: He encontrado problemas en el *Playground*, debido a la poca dedicación a realizar las actividades del temario actual.
   - ***¿Qué va a hacer durante la presente semana?***: Normalizar algunos detalles del *Sprint* anterior y terminar las tareas asignadas durante la semana anterior.
 
@@ -50,9 +50,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Se dará inicio a las actividades del cuarto *Sprint*, empezando con la base de datos de JSON de los productos.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: se diseñó el formulario para la edición de productos, añadiendole sus estilos. Se agregaron algunos estilos a la pagina del carrito de compras, para normalizar los estilos con las otras views. De igual forma se verificó junto a los compañeros que las actividades estuvieran completas para hacer la entrega del tercer  *Sprint*.
+  - ***¿Encontró con algún impedimento?***: Se encontraron varios inconvenientes con respecto al tiempo para realizar las tareas propuestas.
+  - ***¿Qué va a hacer durante la presente semana?***: Se dará inicio a las actividades del cuarto *Sprint*, empezando con la base de datos de JSON de los Usuarios.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***:
@@ -68,9 +68,10 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Verificar las tareas faltantes con el equipo. Focalizar los esfuerzos en: Página dinámica de detalle de producto, funcionalidad del formulario de creación de productos.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se han iniciado las actividades del cuarto *Sprint*:
+  crear el Archivo Json de los usuarios, y funcionalidades de la edición de productos.
+  - ***¿Encontró con algún impedimento?***: Dsiponibilidad de tiempo un poco nula, y la poca interacción con los compañeros me ha llevado a solicitar ayuda. De igual forma tengo retrasos en las clases.
+  - ***¿Qué va a hacer durante la presente semana?***: Realizar las tareas restantes, y conversar con los compañeros para poder terminar las diferentes tareas en las que encontremos problemas.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***:

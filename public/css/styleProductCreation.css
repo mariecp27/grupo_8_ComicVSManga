@@ -252,6 +252,13 @@ button:hover{
     color: #ffffff;
 }
 
+.delete-button{
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){

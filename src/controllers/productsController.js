@@ -53,9 +53,9 @@ let mainController = {
 
     // Método para almacenar los productos creados
 	store: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const filename = req.file.filename;
+		let filename = req.file.filename;
 
         let isfeatured = false;
         if (req.body.featured == "on"){
@@ -94,10 +94,83 @@ let mainController = {
 		res.redirect('/products');
 	},
 
+    // Formulario de edición de productos
     edit: (req, res) =>{
-        res.render('products/productEdition');
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        let idProduct = req.params.id;
+
+        let productToEdit = products.find(product => product.id == idProduct);
+
+        res.render('products/productEdition', { productToEdit });
     },
 
+    // Método para actualizar los productos almacenados
+    update: (req, res) => {
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        let idProduct = req.params.id;
+
+        let filename = '';
+        if(req.file){
+            filename = req.file.filename;
+        };
+
+        let allcategories = [];
+        allcategories.push(req.body.category);
+        let storedCategories = allcategories.join(', ');
+
+        let isfeatured = false;
+        if (req.body.featured == "on"){
+            isfeatured = true;
+        }
+
+        let isOnSale = false;
+        if (req.body.onSale == "on"){
+            isOnSale = true;
+        }
+
+		products.forEach(product => {
+            if(product.id == idProduct){
+                product.name = req.body.name;
+                product.description= req.body.description;
+                if(filename != ''){
+					product.image = filename;
+				};
+                if(storedCategories != ''){
+                    product.category = storedCategories;
+                };
+                product.author = req.body.author;
+                if(req.body.format != "default"){
+                    product.format = req.body.format;
+                };
+                product.pages = Number(req.body.pages);
+                product.price = Number(req.body.price);
+                product.featured = isfeatured;
+                product.onSale = isOnSale;
+                product.discount = Number(req.body.discount);
+            }
+        })
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+
+		res.redirect('/products/detail/' + idProduct);
+	},
+
+    // Método para eliminar productos almacenados
+	destroy : (req, res) => {
+        		
+		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		let idProduct = req.params.id;
+
+		let remainingProducts = products.filter(product => product.id != idProduct);
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(remainingProducts, null, 2));
+
+		products = remainingProducts;
+
+		res.redirect('/products');
+	}
 };
 
 module.exports = mainController;

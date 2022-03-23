@@ -11,23 +11,23 @@
 
     <main>
         <div class="main-container">
-            <h2 class="main__form-tittle">Edición de productos</h2>
-            <form action="" method="post" class="main__form">
+            <h2 class="main__form-tittle">Producto a editar: <%= productToEdit.name %></h2>
+            <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
                 <div>
                     <label for="name" class="main__form-label">Nombre del producto</label>
-                    <input type="text" name="name" id="name" class="" required>
+                    <input type="text" name="name" id="name" class="" value="<%= productToEdit.name %>" required>
                 </div>
-                
+
                 <div>
                     <label for="description" class="main__form-label">Descripción</label>
-                    <textarea name="description" id="description" class="" rows="5"></textarea>
+                    <textarea name="description" id="description" class="" rows="5"><%= productToEdit.description %></textarea>
                 </div>
-    
+
                 <div>
                     <label for="image" class="main__form-upload">Subir imagen</label>
                     <input type="file" name="image" id="image" accept="image/*" class="">
                 </div>
-    
+
                 <div>
                     <label for="category" class="main__form-label">Categorías</label>
                     <label><input type="checkbox" name="category" value="dc" class="">Cómic DC</label>
@@ -39,33 +39,51 @@
                     <label><input type="checkbox" name="category" value="ficcion" class="">Ciencia Ficción</label>
                     <label><input type="checkbox" name="category" value="drama" class="">Drama</label>
                 </div>
-                
+
                 <div>
                     <label for="author" class="main__form-label">Autores</label>
-                    <input type="text" name="author" id="author" class="" required>
+                    <input type="text" name="author" id="author" value="<%= productToEdit.author %>" class="" required>
                 </div>
-                
-                <select name="format" class="" required>
-                    <option disabled selected>Seleccione formato</option>
+
+                <select name="format" class="">
+                    <option selected value="default">Seleccione formato</option>
                     <option value="blanda">Tapa blanda</option>
                     <option value="dura">Tapa dura</option>
                     <option value="deluxe">Deluxe</option>
                 </select>
-                
+
                 <div>
                     <label for="pages" class="main__form-label">Páginas</label>
-                    <input type="number" name="pages" id="pages" class="" required>
+                    <input type="number" name="pages" id="pages" value="<%= productToEdit.pages %>" class="" required>
                 </div>
-                
+
                 <div>
                     <label for="price" class="main__form-label">Precio</label>
-                    <input type="number" name="price" id="price" class="" required>
+                    <input type="number" name="price" id="price" value="<%= productToEdit.price %>" class="" required>
                 </div>
-                
+
+                <div>
+                    <label><input type="checkbox" name="featured" class="" id="featured">Producto destacado</label>
+                </div>
+
+                <div>
+                    <label><input type="checkbox" name="onSale" class="" id="onSale">Producto en oferta</label>
+                </div>
+
+                <div>
+                    <label for="discount" class="main__form-label">Descuento</label>
+                    <input type="number" name="discount" value="<%= productToEdit.discount %>" class="" required placeholder="Si no está en oferta, es cero (0)">
+                </div>
+
                 <div class="main__form-buttons">
                     <button type="submit">Modificar</button>
-                    <button type="reset">Borrar</button>
+                    <button type="reset">Resetear datos</button>
                 </div>
+
+            </form>
+
+            <form action="/products/<%= productToEdit.id %>/delete?_method=DELETE" method="POST" class="delete-button">
+                <button type="submit">Eliminar producto</button>
             </form>
         </div>
     </main>
