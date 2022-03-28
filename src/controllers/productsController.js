@@ -7,7 +7,16 @@ let mainController = {
     // Todos los productos: Tienda
     list: (req, res) => {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render('products/products', { products });
+
+        let wantedProducts = [];
+
+        if(req.query.search){
+            wantedProducts = products.filter(product => product.name.toLowerCase().includes(req.query.search.toLowerCase()));
+        }else{
+            wantedProducts = products;
+        }
+
+        res.render('products/products', { wantedProducts });
 
     },
 
@@ -55,6 +64,8 @@ let mainController = {
 	store: (req, res) => {
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+        let nextId = products[products.length - 1].id + 1;
+
 		let filename = req.file.filename;
 
         let isfeatured = false;
@@ -73,7 +84,7 @@ let mainController = {
 
 		
 		let newProduct = {
-			id: (products.length + 1),
+			id: nextId,
 			name: req.body.name,
             description: req.body.description,
 			image: filename,
@@ -137,13 +148,9 @@ let mainController = {
                 if(filename != ''){
 					product.image = filename;
 				};
-                if(storedCategories != ''){
-                    product.category = storedCategories;
-                };
+                product.category = storedCategories;
                 product.author = req.body.author;
-                if(req.body.format != "default"){
-                    product.format = req.body.format;
-                };
+                product.format = req.body.format;
                 product.pages = Number(req.body.pages);
                 product.price = Number(req.body.price);
                 product.featured = isfeatured;
@@ -170,7 +177,57 @@ let mainController = {
 		products = remainingProducts;
 
 		res.redirect('/products');
-	}
+	},
+
+    // Categorias
+    marvelCategory: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productsInCategory = products.filter(product => product.category.includes('marvel'));
+
+        res.render('products/productsMarvel', { productsInCategory });
+
+    },
+    dcCategory: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productsInCategory = products.filter(product => product.category.includes('dc'));
+
+        res.render('products/productsDC', { productsInCategory });
+
+    },
+    mangaCategory: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productsInCategory = products.filter(product => product.category.includes('manga'));
+
+        res.render('products/productsManga', { productsInCategory });
+
+    },
+    independentCategory: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productsInCategory = products.filter(product => product.category.includes('independiente'));
+
+        res.render('products/productsIndependiente', { productsInCategory });
+
+    },
+    comicCategory: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        const productsInCategoryMarvel = products.filter(product => product.category.includes('marvel'));
+        const productsInCategoryDC = products.filter(product => product.category.includes('dc'));
+        const productsInCategoryIndependent = products.filter(product => product.category.includes('independiente'));
+
+        const productsInCategory = [
+            ...productsInCategoryMarvel,
+            ...productsInCategoryDC,
+            ...productsInCategoryIndependent
+        ]
+
+        res.render('products/productsComic', { productsInCategory });
+
+    },
 };
 
 module.exports = mainController;

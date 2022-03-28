@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs', {title: 'Independent Team'}) %>
+    <link rel="stylesheet" href="/css/productsStyle.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <div class="main__banner">
+            <img src="/images/categories/bannerIndependent.png" alt="Banner">
+            <div class="main__banner-text">
+                <img src="/images/categories/bannerIndependentTittle.png" alt="Título">
+            </div>
+        </div>
+
+        <!-- Productos -->
+        <section class="main__products">
+            <% for(let i = 0; i < productsInCategory.length; i++) {%>
+                <article class="product__container">
+                    <a href="/products/detail/<%= productsInCategory[i].id %>">
+                        <img src="/images/product/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <h3><%= productsInCategory[i].name %></h3>
+                        <p>$<%= productsInCategory[i].price %></p>
+                    </a>
+                </article>
+             <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

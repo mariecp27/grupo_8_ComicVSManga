@@ -14,9 +14,11 @@ let mainController = {
     },
 
     carrito: (req, res) =>{
-        return res.render('main/productCart',{
-            title: 'Carrito de Compras',
-        });
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		
+        let featuredProducts = products.filter(product => product.featured == true);
+
+        return res.render('main/productCart',{ featuredProducts });
     },
 };
 

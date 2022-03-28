@@ -30,14 +30,14 @@
 
                 <div>
                     <label for="category" class="main__form-label">Categorías</label>
-                    <label><input type="checkbox" name="category" value="dc" class="">Cómic DC</label>
-                    <label><input type="checkbox" name="category" value="marvel" class="">Cómic Marvel</label>
-                    <label><input type="checkbox" name="category" value="independiente" class="">Cómic Independiente</label>
-                    <label><input type="checkbox" name="category" value="manga" class="">Manga</label>
-                    <label><input type="checkbox" name="category" value="fantasia" class="">Fantasía</label>
-                    <label><input type="checkbox" name="category" value="terror" class="">Terror</label>
-                    <label><input type="checkbox" name="category" value="ficcion" class="">Ciencia Ficción</label>
-                    <label><input type="checkbox" name="category" value="drama" class="">Drama</label>
+                    <label><input type="checkbox" name="category" value="dc" class="" <%= locals.productToEdit && productToEdit.category.includes('dc') ? 'checked' : ''; %>>Cómic DC</label>
+                    <label><input type="checkbox" name="category" value="marvel" class="" <%= locals.productToEdit && productToEdit.category.includes('marvel') ? 'checked' : ''; %>>Cómic Marvel</label>
+                    <label><input type="checkbox" name="category" value="independiente" class="" <%= locals.productToEdit && productToEdit.category.includes('independiente') ? 'checked' : ''; %>>Cómic Independiente</label>
+                    <label><input type="checkbox" name="category" value="manga" class="" <%= locals.productToEdit && productToEdit.category.includes('manga') ? 'checked' : ''; %>>Manga</label>
+                    <label><input type="checkbox" name="category" value="fantasia" class="" <%= locals.productToEdit && productToEdit.category.includes('fantasia') ? 'checked' : ''; %>>Fantasía</label>
+                    <label><input type="checkbox" name="category" value="terror" class="" <%= locals.productToEdit && productToEdit.category.includes('terror') ? 'checked' : ''; %>>Terror</label>
+                    <label><input type="checkbox" name="category" value="ficcion" class="" <%= locals.productToEdit && productToEdit.category.includes('ficcion') ? 'checked' : ''; %>>Ciencia Ficción</label>
+                    <label><input type="checkbox" name="category" value="drama" class="" <%= locals.productToEdit && productToEdit.category.includes('drama') ? 'checked' : ''; %>>Drama</label>
                 </div>
 
                 <div>
@@ -45,11 +45,11 @@
                     <input type="text" name="author" id="author" value="<%= productToEdit.author %>" class="" required>
                 </div>
 
-                <select name="format" class="">
-                    <option selected value="default">Seleccione formato</option>
-                    <option value="blanda">Tapa blanda</option>
-                    <option value="dura">Tapa dura</option>
-                    <option value="deluxe">Deluxe</option>
+                <select name="format" class="" required>
+                    <option disabled>Seleccione formato</option>
+                    <option value="blanda" <%= locals.productToEdit && productToEdit.format === 'blanda' ? 'selected' : ''; %>>Tapa blanda</option>
+                    <option value="dura" <%= locals.productToEdit && productToEdit.format === 'dura' ? 'selected' : ''; %>>Tapa dura</option>
+                    <option value="deluxe" <%= locals.productToEdit && productToEdit.format === 'deluxe' ? 'selected' : ''; %>>Deluxe</option>
                 </select>
 
                 <div>
@@ -63,11 +63,11 @@
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="featured" class="" id="featured">Producto destacado</label>
+                    <label><input type="checkbox" name="featured" class="" id="featured" <%= locals.productToEdit && productToEdit.featured === true ? 'checked' : ''; %>>Producto destacado</label>
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="onSale" class="" id="onSale">Producto en oferta</label>
+                    <label><input type="checkbox" name="onSale" class="" id="onSale" <%= locals.productToEdit && productToEdit.onSale === true ? 'checked' : ''; %>>Producto en oferta</label>
                 </div>
 
                 <div>

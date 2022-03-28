@@ -4,8 +4,8 @@
 </a>
 
 <!-- Barra de búsqueda y botón -->
-<form action="" method="" class="header__form">
-    <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar">
+<form action="/products" method="GET" class="header__form">
+    <input type="text" placeholder="¡Vamos a navegar!" class="header__search-bar" name="search">
     <button type="submit" class="header__search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
 </form>
 
@@ -14,8 +14,8 @@
     <nav class="header__nav">
         <ul>
             <li><a href="/products" class="header__link">Tienda</a></li>
-            <li><a href="" class="header__link">Cómics</a></li>
-            <li><a href="" class="header__link">Mangas</a></li>
+            <li><a href="/products/comic" class="header__link">Cómics</a></li>
+            <li><a href="/products/manga" class="header__link">Mangas</a></li>
             <li>
                 <a href="/carrito" class="header__shopping">
                     <div class="header__shopping-container">

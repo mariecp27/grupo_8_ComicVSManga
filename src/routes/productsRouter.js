@@ -36,6 +36,13 @@ router.get('/:id/edit', productsController.edit);
 router.put('/:id/edit', upload.single('image'), productsController.update);
 
 // Acción de eliminación
-router.delete('/:id/delete', productsController.destroy); 
+router.delete('/:id/delete', productsController.destroy);
+
+// Categorias
+router.get('/marvel', productsController.marvelCategory);
+router.get('/dc', productsController.dcCategory);
+router.get('/manga', productsController.mangaCategory);
+router.get('/independent', productsController.independentCategory);
+router.get('/comic', productsController.comicCategory);
 
 module.exports = router;

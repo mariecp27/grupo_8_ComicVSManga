@@ -50,11 +50,21 @@ html{
     text-shadow: 5px 5px 5px #000000;
 }
 
+.main__banner-text img{
+    margin: 0 auto;
+    width: 40vw;
+}
+
 .main__side-image{
     display: none;
 }
 
 /* ========= ESTILOS DE LOS PRODUCTOS ========= */
+
+main{
+    min-height: 100vh;
+    background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
+}
 
 /* Fondo de la sección */
 .main__products{
@@ -63,7 +73,6 @@ html{
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
 }
 
 /* Contenedor de los productos, proporciona el borde*/
@@ -173,13 +182,8 @@ html{
 
     /* =========ESTILOS DE LOS PRODUCTOS PARA RESOLUCIÓN COMPUTADOR ========= */
 
-    main{
-        background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
-    }
-
     .main__products{
         width: 75%;
-        background-image: linear-gradient(to top, #ffffff00, #ffffff00);
         margin: 0 auto;
     }
     
