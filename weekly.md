@@ -55,9 +55,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Se dará inicio a las actividades del cuarto *Sprint*, empezando con la base de datos de JSON de los Usuarios.
 
 * **Felipe Vargas Sánchez**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
 
 
 ## Semana 13 (Marzo 21/2022 - Marzo 27/2022)
@@ -74,6 +74,24 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Realizar las tareas restantes, y conversar con los compañeros para poder terminar las diferentes tareas en las que encontremos problemas.
 
 * **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 14 (Marzo 28/2022 - Abril 03/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Se crearon las páginas de detalle de producto (dinámica) y la lógica para la creación de productos. Durante el pasado viernes se tuvo una clase de repaso con los docentes, con lo que se planea realizar el filtro de la barra de búsqueda. 
+  - ***¿Encontró con algún impedimento?***: Poca disponibilidad de tiempo para avanzar a un ritmo deseado.
+  - ***¿Qué va a hacer durante la presente semana?***: Entrega del cuarto *Sprint* e iniciar tareas para el quinto. Se planea, igualmente, desarrollar las páginas de las diferentes categorías de productos al tiempo que la barra de búsqueda ofrece la funcionalidad deseada.
+
+* **Erick José Leones Reyes**
   - ***¿Qué hizo durante la semana anterior?***:
   - ***¿Encontró con algún impedimento?***:
   - ***¿Qué va a hacer durante la presente semana?***:
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
