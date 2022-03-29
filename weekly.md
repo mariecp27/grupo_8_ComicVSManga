@@ -87,9 +87,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Entrega del cuarto *Sprint* e iniciar tareas para el quinto. Se planea, igualmente, desarrollar las páginas de las diferentes categorías de productos al tiempo que la barra de búsqueda ofrece la funcionalidad deseada.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se ha creado el Archivo Json de los usuarios y funcionalidades de la pagina de edición de productos.
+  - ***¿Encontró con algún impedimento?***: La disponibilidad del recurso del tiempo fue poca para realizar las tareas asignada.
+  - ***¿Qué va a hacer durante la presente semana?***: Se hará entrega del cuarto *Sprint* y continuaremos en las tareas para el quinto *Sprint*. Se realizarán las diferentes tareas que resulten desde la retrospectiva, y realizar cambios visuales en los archivos .ejs 
  
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
