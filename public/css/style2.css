@@ -1,0 +1,513 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-color: #ffffff;
+}
+
+/* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    background-image: linear-gradient(to bottom, #00000080 , transparent);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+    width: 50%;
+    margin: 5px;
+}
+
+.header__logo{
+    width: 100%;
+}
+
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__form, .header__link, .header__shopping{
+    display: none;
+}
+
+.header__shop{
+    display: block;
+}
+
+/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
+.header__text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+    list-style: none;
+}
+
+.header__nav ul li a{
+    text-decoration: none;
+}
+
+.header__shop{
+    font-family: var(--myTitles);
+    color: #ffffff;
+    background-color: var(--myPink);
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--myPink);
+    cursor: pointer;
+}
+
+.header__shop:hover{
+    background-color: #ffffffff;
+    color: var(--myPink);
+}
+
+/* Estilos para el menú de la resolución mobile */
+.fa-bars{
+    background: var(--myPink);
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 5px 7px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid var(--myPink);
+    cursor: pointer;
+}
+
+.fa-bars:hover{
+    background-color: #ffffffff;
+    color: var(--myPink);
+}
+
+/* =========ESTILOS DEL SLIDER========= */
+
+/* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+.main__slider{
+    width: 95%;
+    overflow: hidden;
+    background: var(--myYellow);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    height: auto;
+    padding-bottom: 50px;
+    margin: 10px auto;
+}
+
+/* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
+.main__slider ul{
+    display: flex;
+    width: 400%;
+    height: 100%;
+
+    animation: change 20s infinite alternate;
+}
+
+/* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del viewport */
+.main__slider ul li{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+/* Estilos palabra "Team" del slider */
+.slider__title-1{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    margin-left: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.slider__title1-marvel{
+    color: var(--myPink);
+}
+
+.slider__title1-dc{
+    color: var(--myBlue);
+}
+
+.slider__title1-independent{
+    color: var(--myGreen);
+}
+
+/* Estilos palabra segunda línea de texto del slider */
+.main__slider div{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.slider__title-2{
+    display: flex;
+    align-items: center;
+}
+
+.slider__title-2 div{
+    border-top: 8px solid #000000;
+    width: 9%;
+    margin: 0;
+    position: relative;
+}
+
+.slider__title2-marvel div{
+    border-top: 8px solid var(--myPink);
+}
+
+.slider__title2-dc div{
+    border-top: 8px solid var(--myBlue);
+}
+
+.slider__title2-independent div{
+    border-top: 8px solid var(--myGreen);
+}
+
+.slider__title-2 h1{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.135em;
+    color: var(--myYellow);
+    text-shadow:
+        -1px -1px 0 #FFFFFFFF,  
+        1px -1px 0 #FFFFFFFF,
+        -1px 1px 0 #FFFFFFFF,
+        1px 1px 0 #FFFFFFFF;
+    margin-left: 5px;
+    position: relative;
+    z-index: 4;
+}
+
+.main__slider ul li h2{
+    font-family: var(--myText);
+    font-style: italic;
+    margin-left: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+/* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+.main__slider-img{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    top: 40px;
+}
+
+.main__slider-img-nooverlay{
+    mix-blend-mode: initial;
+    top: 30px;
+    right: 5px;
+    z-index: 3;
+}
+
+/* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
+.main__slider-img ul{
+    display: flex;
+    width: 400%;
+
+    animation: change 20s infinite alternate;
+}
+
+/* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del viewport */
+.main__slider-img ul li{
+    list-style: none;
+    width: 100%;
+    position: relative;
+}
+
+.slider__img{
+    width: 100%;
+    height: auto;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 30%;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+    }
+    
+    /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
+    .header__form, .header__link, .header__shopping{
+        display: inline-block;
+    }
+
+    /* Estilos de la barra de búsqueda (input y botón) */
+    .header__form{
+        width: 20%;
+        display: flex;
+    }
+
+    .header__search-bar{
+        width: 85%;
+        padding: 3px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        font-family: var(--myText);
+        border: 2px solid #000000;
+    }
+
+    .header__search-button{
+        padding: 3px;
+        border: 2px solid #000000;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-family: var(--myText);
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .header__search-bar:focus{
+        outline: none;
+        border: 2px solid var(--myPink);
+    }
+
+    .header__search-bar:focus + .header__search-button{
+        outline: none;
+        border: 2px solid var(--myPink);
+        background-color: var(--myPink);
+    }
+
+    .header__search-button:hover .fa-magnifying-glass{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación */
+    .header__nav{
+        width: 100%;
+    }
+
+    .header__nav ul{
+        justify-content: space-around;
+    }
+
+    .header__nav ul li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-family: var(--myTitles);
+        font-weight: bold;
+    }
+
+    .header__link:hover{
+        color: var(--myPink);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .header__shop:hover{
+        text-decoration: none;
+    }
+
+    .header__shopping:hover{
+        color: var(--myPink);
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+
+    .header__login{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header__login:first-child{
+        font-weight: normal;
+        margin-right: 2px;
+    }
+
+    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
+    .fa-bars{
+        display: none;
+    }
+
+    /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos palabra "Team" del slider */
+    .slider__title-1{
+        font-size: 4rem;
+        margin-left: 50px;
+    }
+
+    /* Estilos palabra segunda línea de texto del slider */
+    .main__slider div{
+        margin-left: 50px;
+    }
+
+    .slider__title-2 div{
+        margin: 0;
+    }
+
+    .slider__title-2 h1{
+        font-size: 4rem;
+    }
+
+    .main__slider ul li h2{
+        font-size: 1.5rem;
+        margin-left: 50px;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 35%;
+    }
+
+    .header__logo-link img{
+        width: 50%;
+    }
+
+    .header__form{
+        width: 15%;
+        display: flex;
+    }
+
+    /* Estilos de la barra de búsqueda (input) */
+    .header__search-bar{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* Estilos de la barra de búsqueda (botón) */
+    .header__search-button{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación */
+    .header__nav{
+        width: 100%;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación y carrito de compras */
+    .header__nav ul{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .header__nav ul li a{
+        font-size: 1.5rem;
+    }
+
+    /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+    .main__slider{
+        width: 99%;
+        padding-bottom: 100px;
+    }
+
+    /* Estilos palabra "Team" del slider */
+    .slider__title-1{
+        font-size: 7rem;
+        margin-top: 100px;
+    }
+
+    .slider__title-2 div{
+        margin: 0;
+    }
+
+    .slider__title-2 div{
+        border-top: 20px solid;
+        width: 5%;
+        margin: 0;
+    }
+    
+    .slider__title2-marvel div{
+        border-top: 20px solid var(--myPink);
+    }
+    
+    .slider__title2-dc div{
+        border-top: 20px solid var(--myBlue);
+    }
+    
+    .slider__title2-independent div{
+        border-top: 20px solid var(--myGreen);
+    }
+
+    .slider__title-2 h1{
+        font-size: 7rem;
+    }
+
+    .main__slider ul li h2{
+        font-size: 2rem;
+    }
+
+    /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+    .main__slider-img{
+        top: -20px;
+    }
+
+    .main__slider-img-nooverlay{
+        top: -30px;
+    }
+}
+
+/* Animación del Slider principal, genera el desplazamiento de las imágenes*/
+@keyframes change{
+    0%{margin-left: 0;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
