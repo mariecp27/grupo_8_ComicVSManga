@@ -1,0 +1,360 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-color: #ffffff;
+}
+
+/* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    background-image: linear-gradient(to bottom, #00000080 , transparent);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+    width: 50%;
+    margin: 5px;
+}
+
+.header__logo{
+    width: 100%;
+}
+
+/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
+.header__form, .header__link, .header__shopping{
+    display: none;
+}
+
+.header__shop{
+    display: block;
+}
+
+/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
+.header__text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Permite que los enlaces de la barra de navegación estén en una fila */
+.header__nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Elimina las viñetas de los enlaces de la barra de navegación */
+.header__nav ul li{
+    list-style: none;
+}
+
+.header__nav ul li a{
+    text-decoration: none;
+}
+
+/* Estilos del botón para la tienda */
+.header__shop{
+    font-family: var(--myTitles);
+    color: #ffffff;
+    background-color: var(--myPink);
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--myPink);
+    cursor: pointer;
+}
+
+.header__shop:hover{
+    background-color: #ffffffff;
+    color: var(--myPink);
+}
+
+/* Estilos para el menú de la resolución mobile */
+.header__menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--myPink);
+    border-radius: 5px;
+    border: 1px solid var(--myPink);
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 3px 7px;
+}
+
+.header__menu1, .header__menu2, .header__menu3{
+    width: 15px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 1.5px 0;
+    transition: transform 0.4s ease-out;
+}
+
+.header__menu:hover{
+    background-color: #ffffffff;
+}
+
+.header__menu:hover .header__menu1, .header__menu:hover .header__menu2, .header__menu:hover .header__menu3{
+    background-color: var(--myPink);
+}
+
+.cross{
+    height: 22px;
+}
+
+.cross .header__menu1{
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+.cross .header__menu2{
+    opacity: 0;
+}
+
+.cross .header__menu3{
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+/* Estilos para el menú desplegable de la resolución mobile */
+.header__nav-mobile{
+    background-color: var(--myBlue);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 0;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    min-height: 200px;
+
+    transition: width 0.5s ease-out;
+}
+
+.active{
+    width: 300px;
+    border: 1px solid #ffffff;
+}
+
+.header__nav-mobile ul{
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__nav-mobile ul li{
+    list-style: none;
+}
+
+.header__nav-link{
+    display: none;
+    width: 300px;
+    text-decoration: none;
+    font-family: var(--myTitles);
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 5px 0;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    transition: all 0.5s;
+}
+
+.activeLink{
+    display: block;
+}
+
+.activeLink:hover{
+    background: #ffffff34;
+    color: var(--myPink);
+    font-weight: 900;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 30%;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+    }
+    
+    /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
+    .header__form, .header__link, .header__shopping{
+        display: inline-block;
+    }
+
+    /* Estilos de la barra de búsqueda (input y botón) */
+    .header__form{
+        width: 20%;
+        display: flex;
+    }
+
+    .header__search-bar{
+        width: 85%;
+        padding: 3px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        font-family: var(--myText);
+        border: 2px solid #000000;
+    }
+
+    .header__search-button{
+        padding: 3px;
+        border: 2px solid #000000;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        font-family: var(--myText);
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .header__search-bar:focus{
+        outline: none;
+        border: 2px solid var(--myPink);
+    }
+
+    .header__search-bar:focus + .header__search-button{
+        outline: none;
+        border: 2px solid var(--myPink);
+        background-color: var(--myPink);
+    }
+
+    .header__search-button:hover .fa-magnifying-glass{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación */
+    .header__nav{
+        width: 100%;
+    }
+
+    .header__nav ul{
+        justify-content: space-around;
+    }
+
+    .header__nav ul li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-family: var(--myTitles);
+        font-weight: bold;
+    }
+
+    .header__link:hover{
+        color: var(--myPink);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .header__shop:hover{
+        text-decoration: none;
+    }
+
+    .header__shopping:hover{
+        color: var(--myPink);
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+
+    .header__login{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .header__login:first-child{
+        font-weight: normal;
+        margin-right: 2px;
+    }
+
+    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
+    .header__menu{
+        display: none;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 35%;
+    }
+
+    .header__logo-link img{
+        width: 50%;
+    }
+
+    .header__form{
+        width: 15%;
+        display: flex;
+    }
+
+    /* Estilos de la barra de búsqueda (input) */
+    .header__search-bar{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* Estilos de la barra de búsqueda (botón) */
+    .header__search-button{
+        padding: 5px;
+        font-size: 1.5rem;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación */
+    .header__nav{
+        width: 100%;
+    }
+
+    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
+    .header__text{
+        width: 50%;
+    }
+
+    /* Estilos de los enlaces de la barra de navegación y carrito de compras */
+    .header__nav ul{
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .header__nav ul li a{
+        font-size: 1.5rem;
+    }
+}

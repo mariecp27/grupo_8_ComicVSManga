@@ -1,0 +1,159 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
+/* =========ESTILOS FOOTER========= */
+
+/* Distribución y fondo del footer*/
+footer{
+    background-color: var(--myYellow);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Estilos logo */
+.footer__logo{
+    width: 25%;
+    margin: 5px;
+}
+
+/* Estilos enlaces de información */
+.footer__links{
+    width: 35%;
+}
+
+.footer__links ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__links ul, .footer__social-media ul{
+    list-style: none;
+}
+
+.footer__links ul li a{
+    text-decoration: none;
+    font-family: var(--myTitles);
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.footer__links ul li a:hover{
+    color: var(--myPink);
+    transform: scale(1.2);
+    font-weight: 900;
+}
+
+/* Estilos enlaces de redes sociales */
+.footer__social-media{
+    width: 40%;
+}
+
+.footer__social-media ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer__social-media ul li{
+    width: auto;
+}
+
+.footer_social-media-img{
+    width: 100%;
+}
+
+.footer_social-media-img:hover{
+    transform: scale(1.2);
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* =========ESTILOS FOOTER========= */
+
+    /* Estilos logo */
+    .footer__logo{
+        width: 15%;
+    }
+
+    /* Estilos enlaces de información */
+    .footer__links{
+        width: 45%;
+    }
+
+    .footer__links ul{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .footer__links ul li a{
+        font-size: 1.7rem;
+    }
+
+    /* Estilos enlaces de redes sociales */
+    .footer__social-media{
+        width: 40%;
+    }
+
+    .footer_social-media-img{
+        width: 80%;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS FOOTER========= */
+
+    /* Distribución y fondo del footer*/
+
+    /* Estilos logo */
+    .footer__logo{
+        width: 10%;
+    }
+
+    /* Estilos enlaces de información */
+    .footer__links{
+        width: 60%;
+    }
+
+    .footer__links ul{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .footer__links ul li a{
+        font-size: 2rem;
+    }
+
+    /* Estilos enlaces de redes sociales */
+    .footer__social-media{
+        width: 30%;
+    }
+
+    .footer_social-media-img{
+        width: 60%;
+    }
+}

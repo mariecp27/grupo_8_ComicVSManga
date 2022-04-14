@@ -65,7 +65,7 @@
     "format": "blanda",
     "pages": 228,
     "price": 42900,
-    "featured": false,
+    "featured": true,
     "onSale": false,
     "discount": 0
   },
@@ -79,7 +79,7 @@
     "format": "dura",
     "pages": 376,
     "price": 103500,
-    "featured": false,
+    "featured": true,
     "onSale": false,
     "discount": 0
   },
@@ -93,7 +93,7 @@
     "format": "dura",
     "pages": 376,
     "price": 82000,
-    "featured": false,
+    "featured": true,
     "onSale": false,
     "discount": 0
   },
@@ -107,7 +107,7 @@
     "format": "dura",
     "pages": 184,
     "price": 94000,
-    "featured": false,
+    "featured": true,
     "onSale": false,
     "discount": 0
   },
