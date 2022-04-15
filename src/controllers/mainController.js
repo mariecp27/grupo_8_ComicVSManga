@@ -10,7 +10,7 @@ let mainController = {
 		
         let featuredProducts = products.filter(product => product.featured == true);
 
-        res.render('main/index', { featuredProducts });
+        res.render('web/index', { featuredProducts });
     },
 
     carrito: (req, res) =>{
@@ -18,7 +18,7 @@ let mainController = {
 		
         let featuredProducts = products.filter(product => product.featured == true);
 
-        return res.render('main/productCart',{ featuredProducts });
+        return res.render('web/productCart',{ featuredProducts });
     },
 };
 

@@ -11,22 +11,21 @@
 
     <main>
         <!-- Banner -->
-        <div class="main__banner">
-            <img src="/images/categories/bannerManga.png" alt="Banner">
-            <div class="main__banner-text">
-                <img src="/images/categories/bannerMangaTittle.png" alt="Título">
-            </div>
+        <img src="/images/mainSlider/slider1.png" alt="Banner Manga" class="main__banner-img main__banner-img-above">
+        <img src="/images/mainSlider/slider1.png" alt="Banner Manga" class="main__banner-img">
+        <div class="main__banner main__banner-manga">
+            <video src="/images/categories/introManga.mp4" alt="Banner" autoplay muted loop></video>
         </div>
 
         <!-- Productos -->
         <section class="main__products">
             <% for(let i = 0; i < productsInCategory.length; i++) {%>
-                <article class="product__container">
+                <article class="product__container product__container-manga">
                     <a href="/products/detail/<%= productsInCategory[i].id %>">
                         <img src="/images/product/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products fa-cart-shopping-products-manga"></i>
                         <h3><%= productsInCategory[i].name %></h3>
-                        <p>$<%= productsInCategory[i].price %></p>
+                        <p><b><%= productsInCategory[i].price %></b> COP</p>
                     </a>
                 </article>
              <% } %>

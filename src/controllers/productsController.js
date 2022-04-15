@@ -57,7 +57,7 @@ let mainController = {
 
     // Formulario de creación de productos
     create: (req, res) => {
-        res.render('products/productCreation');
+        res.render('admin/productCreation');
     },
 
     // Método para almacenar los productos creados
@@ -113,7 +113,7 @@ let mainController = {
 
         let productToEdit = products.find(product => product.id == idProduct);
 
-        res.render('products/productEdition', { productToEdit });
+        res.render('admin/productEdition', { productToEdit });
     },
 
     // Método para actualizar los productos almacenados
@@ -209,7 +209,7 @@ let mainController = {
 
         const productsInCategory = products.filter(product => product.category.includes('independiente'));
 
-        res.render('products/productsIndependiente', { productsInCategory });
+        res.render('products/productsIndependent', { productsInCategory });
 
     },
     comicCategory: (req, res) => {

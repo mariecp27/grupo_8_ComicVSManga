@@ -1,12 +1,11 @@
 /* Paleta de colores y fuente seleccionadas */
 :root{
-    --myTitles: 'Bebas Neue', cursive;
-    --myTitles2: 'Lato', sans-serif;
-    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    --myYellow: #FEB431;
-    --myRed: #FE303D;
-    --myPurple: #AC2194;
-    --myBlue: #1572A1;
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
 }
 
 /* Normalización de estilos */
@@ -23,18 +22,47 @@ html{
 
 /* ========= ESTILOS BANNER ========= */
 
+/* Fondo de la sección y forma */
 .main__banner{
-    width: 100%;
+    width: 95%;
+    margin: 10px auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    height: 30vh;
+    background-image: linear-gradient(to bottom, #000000, #ffffff00);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
+.main__banner-marvel{
+    background-image: linear-gradient(to bottom, var(--myPink), #ffffff00);
+}
+
+.main__banner-DC{
+    background-image: linear-gradient(to bottom, var(--myBlue), #ffffff00);
+}
+
+.main__banner-manga,
+.main__banner-comic{
+    background-image: linear-gradient(to bottom, #000000, #ffffff00);
+}
+
+.main__banner-independent{
+    background-image: linear-gradient(to bottom, var(--myGreen), #ffffff00);
+}
+
+/* Estilos imagenes o video del banner*/
 .main__banner img{
-    width: 100%;
+    max-width: 200%;
+    opacity: 70%;
 }
 
 .main__banner-text{
     position: absolute;
     top: 0;
+    text-transform: uppercase;
     display: flex;
     height: 100%;
     width: 100%;
@@ -47,7 +75,16 @@ html{
     font-family: var(--myTitles);
     font-size: 3rem;
     color: #ffffff;
-    text-shadow: 5px 5px 5px #000000;
+    text-shadow:
+        -2px    -2px    0   #000000,
+        0       -1px    0   #000000,
+        2px     -2px    0   #000000,
+        2px     0       0   #000000,
+        2px     2px     0   #000000,
+        0       2px     0   #000000,
+        -2px    2px     0   #000000,
+        -2px    0       0   #000000;
+    letter-spacing: 0.135em;
 }
 
 .main__banner-text img{
@@ -55,18 +92,42 @@ html{
     width: 40vw;
 }
 
+.main__banner video{
+    width: 120%;
+    opacity: 60%;
+}
+
+/* Estilos de las imágenes del Slider */
+.main__banner-img{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    top: 40px;
+    opacity: 50%;
+}
+
+.main__banner-img-above{
+    opacity: 100%;
+    mix-blend-mode: initial;
+    top: 30px;
+    right: 5px;
+    z-index: 3;
+}
+
+/* Estilos imagen lateral */
 .main__side-image{
     display: none;
 }
 
 /* ========= ESTILOS DE LOS PRODUCTOS ========= */
 
+/* Fondo y distribución de la sección */
 main{
     min-height: 100vh;
-    background-image: linear-gradient(to top, var(--myBlue), #ffffff00);
+    padding-bottom: 10px;
 }
 
-/* Fondo de la sección */
 .main__products{
     width: 100%;
     padding-top: 10px;
@@ -88,7 +149,24 @@ main{
 }
 
 .product__container:hover{
-    background-color: var(--myRed);
+    background-color: #000000;
+}
+
+.product__container-marvel:hover{
+    background-color: var(--myPink);
+}
+
+.product__container-DC:hover{
+    background-color: var(--myBlue);
+}
+
+.product__container-manga:hover,
+.product__container-comic:hover{
+    background-color: #000000;
+}
+
+.product__container-independent:hover{
+    background-color: var(--myGreen);
 }
 
 /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
@@ -99,6 +177,7 @@ main{
     width: 60vw;
     margin: 10px;
     position: relative;
+    text-transform: uppercase;
 }
 
 .product__container img{
@@ -107,30 +186,57 @@ main{
 
 /* Estilos carrito de compras de los productos destacados */
 .fa-cart-shopping-products{
-    position: relative;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 50%;
-    top: -20px;
     margin: 0;
+    margin-top: -20px;
     border: 2px solid #ffffff;
 }
 
 .fa-cart-shopping-products:hover{
-    color: #ffffff;
     transform: scale(1.1);
-    background-color: var(--myRed)
+    color: #ffffff;
+    background-color: #000000;
 }
+
+.fa-cart-shopping-products-marvel:hover{
+    color: #ffffff;
+    background-color: var(--myPink);
+}
+
+.fa-cart-shopping-products-DC:hover{
+    color: #ffffff;
+    background-color: var(--myBlue);
+}
+
+.fa-cart-shopping-products-manga:hover,
+.fa-cart-shopping-products-comic:hover{
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.fa-cart-shopping-products-independent:hover{
+    color: #ffffff;
+    background-color: var(--myGreen);
+}
+
 
 /* Estilos título de cada producto */
 .product__container h3{
     font-family: var(--myTitles);
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
-.product__container:hover h3{
+.product__container:hover h3,
+.product__container-comic:hover h3,
+.product__container-marvel:hover h3,
+.product__container-DC:hover h3,
+.product__container-manga:hover h3,
+.product__container-independent:hover h3{
     color: #ffffff;
 }
+
 
 /* Estilos precio de cada producto */
 .product__container p{
@@ -138,19 +244,18 @@ main{
     font-size: 1.5rem;
 }
 
-.product__container:hover p{
+.product__container:hover p,
+.product__container-comic:hover p,
+.product__container-marvel:hover p,
+.product__container-DC:hover p,
+.product__container-manga:hover p,
+.product__container-independent:hover p{
     color: #ffffff;
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
-    /* ========= ESTILOS BANNER PARA RESOLUCIÓN TABLET ========= */
-
-    .main__banner-text h2{
-        font-size: 4rem;
-    }
-
     /* =========ESTILOS DE LOS PRODUCTOS PARA RESOLUCIÓN TABLET========= */
 
     /* Distribución de todos los productos */
@@ -175,9 +280,28 @@ main{
 @media(min-width: 769px){
     /* ========= ESTILOS BANNER PARA RESOLUCIÓN COMPUTADOR ========= */
 
+    /* Fondo de la sección y forma */
+    .main__banner{
+        width: 99%;
+        height: 40vh;
+    }
+
+    /* Estilos imagenes o video del banner*/
+    .main__banner img{
+        width: 100%;
+    }
+
     .main__banner-text h2{
-        font-size: 7rem;
-        text-shadow: 8px 8px 8px #000000;
+        font-size: 5rem;
+    }
+
+    /* Estilos de las imágenes del Slider */
+    .main__banner-img{
+        top: -20px;
+    }
+
+    .main__banner-img-above{
+        top: -30px;
     }
 
     /* =========ESTILOS DE LOS PRODUCTOS PARA RESOLUCIÓN COMPUTADOR ========= */
@@ -185,18 +309,26 @@ main{
     .main__products{
         width: 75%;
         margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
     
     /* Contenedor de los productos, proporciona el borde*/
     .product__container{
         width: 15vw;
-        margin: 0 0 40px 0;
+        margin: 0 5px 40px 5px;
     }
 
-    .product__container:hover{
-        transform: scale(1.1);
+    .product__container p{
+        opacity: 0;
     }
 
+    .product__container:hover p{
+        opacity: 100;
+    }
+
+    /* Estilos imagen lateral */
     .main__side-container{
         position: sticky;
         top: 0;
@@ -207,5 +339,26 @@ main{
         position: absolute;
         right: 0;
         width: 12vw;
+    }
+}
+
+@keyframes banner{
+    0%, 30% {
+        background-image: url('/images/mainSlider/slider2V2.png');
+        opacity: 1;
+    }
+    31%, 34% {
+        opacity: 0.1;
+    }
+    35%, 65% {
+        background-image: url('/images/mainSlider/slider3V2.png');
+        opacity: 1;
+    }
+    66%, 69% {
+        opacity: 0.1;
+    }
+    70%, 100% {
+        background-image: url('/images/mainSlider/slider4V2.png');
+        opacity: 1;
     }
 }

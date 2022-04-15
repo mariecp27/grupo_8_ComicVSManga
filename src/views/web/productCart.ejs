@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs', {title: 'Carrito de compras'}) %>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
+    <link rel="stylesheet" href="/css/stylecarrito.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <!--Sección del carrito de compras-->
+        <h2 class="carrito">Carrito de compras</h2>
+        <section class="carritoCompleto">
+                <article>
+                    <div class="contenedorPrincipal">
+                        <img  class="imagenProducto" src="/images/productsCar/joker.jpg" alt="Producto1">
+                    </div>
+                    <div class="contenidoSecundario">
+                        <h3 class="nombrecomic"> Joker Num. 1 </h3>
+                        <h4 class="categoria">Categorias:</h4> <a class="opciones" href="#"> Comic en español </a>
+                        <a  class="opciones" href="#"> /Fantasia</a>
+                        <div class="main__product-shopping" >
+                            <div class="main__product-count">
+                                <button class="main__product-button-count minus">-</button>
+                                <input class="main_button" type="number" value="1">
+                                <button class="main__product-button-count plus">+</button>
+                            </div>
+                        </div>
+                        <p class="precio">$ 23 000</p>
+                    </div>
+            </article>
+            <article>
+                <div class="contenedorPrincipal">
+                    <img  class="imagenProducto" src="/images/productsCar/thanos.jpg" alt="Producto2">
+                </div>
+                <div class="contenidoSecundario">
+                    <h3 class="nombrecomic"> Thanos  <br> El Renacimiento</h3>
+                    <h4 class="categoria">Categorias:</h4> <a class="opciones" href="#"> Comic en español </a> 
+                    <a  class="opciones" class="enlace-categoria" href="#"> /Ciencia ficción</a>
+                    <div class="main__product-shopping" >
+                        <div class="main__product-count">
+                            <button class="main__product-button-count minus">-</button>
+                            <input class="main_button" type="number" value="1">
+                            <button class="main__product-button-count plus">+</button>
+                        </div>
+                    </div>
+                    <p class="precio">$ 34 000</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="contenedorPrincipal">
+                    <img  class="imagenProducto" src="/images/productsCar/haruko.jpg" alt="Producto3">
+                </div>
+                <div class="contenidoSecundario">
+                    <h3 class="nombrecomic"> Haruko Ichikawa </h3>
+                    <h4 class="categoria">Categorias:</h4> <a class="opciones" href="#"> Manga en español </a> 
+                    <a class="opciones" href="#"> /Realidad utopica</a>
+                    <div class="main__product-shopping" >
+                        <div class="main__product-count">
+                            <button class="main__product-button-count minus">-</button>
+                            <input class="main_button" type="number" value="1">
+                            <button class="main__product-button-count plus">+</button>
+                        </div>
+                    </div>
+                    <p class="precio">$ 46 000</p>
+                </div>
+            </article>
+        </section>
+
+        <!--Sección Subtotal-->
+        <section class="subtotal-section">
+        <div class="subtotal-container">
+                <h3 class="subtotal">Subtotal</h3>
+                <p class="precio-subtotal"> $ 103 000 </p>
+            </div>
+            <p class="adicional">Tambien puedes llevar</p>
+        </section>
+        
+        <!-- Productos destacados -->
+        <section class="main__featured-products">
+            <div class="featured-products__container-all">
+                <% for(let i = 0; i < featuredProducts.length; i++) { %>
+                    <article class="featured-products__container">
+                        <a href="/products/detail/<%= featuredProducts[i].id %>">
+                            <img src="/images/product/<%= featuredProducts[i].image %>" alt="Imagen del producto" class="featured-products__img">
+                            <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                            <h3><%= featuredProducts[i].name %></h3>
+                            <p>$<%= featuredProducts[i].price %></p>
+                        </a>
+                    </article>
+                <% } %>
+            </div>
+        </section>
+
+        <div class="contenedor-compra">
+            <button class="compra"> Finalizar Compra </button>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</section>
+
+</body>
+</html>

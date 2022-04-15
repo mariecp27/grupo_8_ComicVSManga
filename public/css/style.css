@@ -1,12 +1,11 @@
 /* Paleta de colores y fuente seleccionadas */
 :root{
-    --myTitles: 'Bebas Neue', cursive;
-    --myTitles2: 'Lato', sans-serif;
-    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    --myYellow: #FEB431;
-    --myRed: #FE303D;
-    --myPurple: #AC2194;
-    --myBlue: #1572A1;
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
 }
 
 /* Normalización de estilos */
@@ -19,134 +18,27 @@
 /* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
 html{
     font-size: 62.5%;
-}
-
-/* =========ESTILOS DEL HEADER========= */
-
-/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
-header{
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-/* Estilos del logo para la resolución mobile */
-.header__logo-link{
-    width: 50%;
-    margin: 5px;
-}
-
-.header__logo{
-    width: 100%;
-}
-
-/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
-.header__form, .header__link{
-    display: none;
-}
-
-/* Distribuye el carrito de compras, botón de inicio de sesión y menú */
-.header__text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Permite que los enlaces de la barra de navegación estén en una fila */
-.header__nav ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* Elimina las viñetas de los enlaces de la barra de navegación */
-.header__nav ul li{
-    list-style: none;
-}
-
-/* Estilos del carrito de compras, incluyendo su fondo */
-.header__shopping-container{
-    background-color: RGBA(255, 255, 255, 0.6);
-    border-radius: 50%;
-    padding: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.fa-cart-shopping{
-    align-self: center;
-    color: var(--myRed);
-    font-size: 2rem;
-}
-
-.header__shopping:hover .header__shopping-container{
-    background-color: RGBA(254, 48, 61, 0.6);
-}
-
-.header__shopping:hover .fa-cart-shopping{
-    transform: scale(1.2);
-    color: #ffffff;
-}
-
-/* Estilos para el botón de inicio de sesión */
-.header__login{
-    background: var(--myRed);
-    font-family: var(--myTitles);
-    color: #ffffff;
-    font-size: 1.3rem;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    margin: 0 5px;
-    text-align: center;
-    border: #ffffff solid 1px;
-    cursor: pointer;
-}
-
-.header__login:hover{
-    background: #ffffff;
-    color: var(--myRed);
-    transform: scale(1.2);
-}
-
-/* Estilos para el menú de la resolución mobile */
-.fa-bars{
-    background: var(--myRed);
-    color: #ffffff;
-    font-size: 1.5rem;
-    padding: 5px 7px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border: #ffffff solid 1px;
-    cursor: pointer;
-}
-
-.fa-bars:hover{
-    background: #ffffff;
-    color: var(--myRed);
-    transform: scale(1.2);
+    background-color: #ffffff;
 }
 
 /* =========ESTILOS DEL SLIDER========= */
 
-/* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+/* Permite que solo un texto del Slider se muestre a la vez */
 .main__slider{
-    width: 100%;
+    width: 95%;
     overflow: hidden;
-    background: #000000;
-    padding-bottom: 5px;
+    background: var(--myYellow);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    height: auto;
+    padding-bottom: 50px;
+    margin: 10px auto;
 }
 
 /* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
 .main__slider ul{
     display: flex;
     width: 400%;
+    height: 100%;
 
     animation: change 20s infinite alternate;
 }
@@ -155,68 +47,156 @@ header{
 .main__slider ul li{
     list-style: none;
     width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+
+/* Estilos palabra "Team" del slider */
+.slider__title-1{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    margin-left: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+.slider__title1-marvel{
+    color: var(--myPink);
+}
+
+.slider__title1-dc{
+    color: var(--myBlue);
+}
+
+.slider__title1-independent{
+    color: var(--myGreen);
+}
+
+/* Estilos palabra segunda línea de texto del slider */
+.main__slider div{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.slider__title-2{
+    display: flex;
+    align-items: center;
+}
+
+.slider__title-2 div{
+    border-top: 8px solid #000000;
+    width: 9%;
+    margin: 0;
+    position: relative;
+}
+
+.slider__title2-marvel div{
+    border-top: 8px solid var(--myPink);
+}
+
+.slider__title2-dc div{
+    border-top: 8px solid var(--myBlue);
+}
+
+.slider__title2-independent div{
+    border-top: 8px solid var(--myGreen);
+}
+
+.slider__title-2 h1{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 0.135em;
+    color: var(--myYellow);
+    text-shadow:
+        -1px    -1px    0   #FFFFFFFF,
+        0       -1px    0   #FFFFFFFF,
+        1px     -1px    0   #FFFFFFFF,
+        1px     0       0   #FFFFFFFF,
+        1px     1px     0   #FFFFFFFF,
+        0       1px     0   #FFFFFFFF,
+        -1px    1px     0   #FFFFFFFF,
+        -1px    0       0   #FFFFFFFF;
+    margin-left: 5px;
+    position: relative;
+    z-index: 4;
+}
+
+.main__slider ul li h2{
+    font-family: var(--myText);
+    font-style: italic;
+    margin-left: 20px;
+    position: relative;
+    z-index: 4;
+}
+
+/* Estilos de las imágenes del Slider */
+.main__slider-img{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    mix-blend-mode: overlay;
+    top: 40px;
+}
+
+.main__slider-img-nooverlay{
+    mix-blend-mode: initial;
+    top: 30px;
+    right: 10px;
+    z-index: 3;
+}
+
+/* Preparación para que cada imagen individual tenga un 100% del viewport. Se genera la animación que hace que las imagenes se desplacen */
+.main__slider-img ul{
+    display: flex;
+    width: 400%;
+
+    animation: change 20s infinite alternate;
+}
+
+/* Elimina las viñetas de las imágenes del Slider y hace que cada imagen individual tenga un 100% del viewport */
+.main__slider-img ul li{
+    list-style: none;
+    width: 100%;
     position: relative;
 }
 
 .slider__img{
     width: 100%;
-}
-
-/* Permite que los textos que se muestran junto con cada imagen del Slider esté sobre ellas */
-.slider__text{
-    position: absolute;
-    top: 0;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Estilos de los los contenedores (fondo) del texto que se muestran junto con cada imagen del Slider */
-.slider__text2{
-    /* background: RGBA(254, 48, 61, 0.6); */
-    background-image: linear-gradient(to top, var(--myRed), #00000000);
-    padding: 5px;
-    width: 60%;
-    border-radius: 10px;
-    margin: 15px;
-    box-shadow: 0px 10px 10px #000000;
-}
-
-/* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
-.slider__text h2{
-    font-family: var(--myTitles);
-    font-size: 3rem;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Estilos de los textos secundarios (descripciones) que se muestran junto con cada imagen del Slider */
-.slider__text h3{
-    font-family: var(--myText);
-    font-size: 1.4rem;
-    color: #ffffff;
-    text-align: center;
-    font-weight: normal;
-    font-style: italic;
+    height: auto;
 }
 
 /* =========ESTILOS DE LAS CATEGORÍAS========= */
 
 /* Fondo de la sección */
+.main__categories1{
+    clip-path: polygon(0 0, 100% 60%, 100% 100%, 0 100%);
+    background-color: var(--myPink);
+    width: 100%;
+    height: 10vh;
+    margin-top: -35px;
+}
+
+.main__categories2{
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+    background-color: var(--myPink);
+    width: 100%;
+    height: 10vh;
+    margin-top: -5px;
+}
+
 .main__categories{
-    /* background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff); */
+    background-color: var(--myPink);
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: repeating-linear-gradient(
-      45deg,
-      #000000 20px,
-      #000000 40px,
-      var(--myBlue) 40px,
-      var(--myBlue) 60px
-    );
+    margin-top: -5px;
 }
 
 /* Estilos contenedor de los títulos de la sección */
@@ -230,8 +210,10 @@ header{
 /* Estilos título principal de la sección */
 .main__categories-title h2{
     font-family: var(--myTitles);
+    font-weight: 900;
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    letter-spacing: 10px;
     width: auto;
 }
 
@@ -242,6 +224,10 @@ header{
     font-size: 1.5rem;
     font-weight: normal;
     font-style: italic;
+}
+
+.main__categories-title2{
+    display: none;
 }
 
 /* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS========= */
@@ -259,7 +245,7 @@ header{
 }
 
 .main__slider-container:hover{
-    background-color: var(--myRed);
+    background-color: var(--myYellow);
 }
 
 /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 60% del viewport */
@@ -295,43 +281,58 @@ header{
     bottom: 20px;
     font-family: var(--myTitles);
     color: #ffffff;
-    font-size: 2.2rem;
-    background: linear-gradient(135deg,  var(--myPurple) , #00000000);
+    font-size: 2.8rem;
+    background: linear-gradient(135deg,  var(--myPink) , #00000000);
     box-shadow: 0px 10px 10px #000000;
     padding: 7px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
 }
 
 .main__slider-container:hover .slider-title{
-    background: linear-gradient(135deg,  var(--myRed) , #00000000);
+    background: linear-gradient(135deg,  var(--myYellow) , #00000000);
 }
 
 /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS========= */
 
 /* Fondo de la sección */
+.main__featured-products1{
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+    background-color: var(--myBlue);
+    width: 95%;
+    height: 10vh;
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+.main__featured-products2{
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+    background-color: var(--myBlue);
+    width: 95%;
+    height: 10vh;
+    margin: 0 auto;
+    margin-top: -5px;
+}
+
 .main__featured-products{
-    background-image: linear-gradient(to bottom, var(--myPurple) , #ffffff);
-    width: 100%;
-    padding-top: 10px;
-    border-top: solid #000000 5px;
+    background-color: var(--myBlue);
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin-top: -5px;
     position: relative;
 }
 
 /* Estilos título principal de la sección */
 .featured-products__title{
     font-family: var(--myTitles);
-    font-size: 2.5rem;
-    margin-right: 10px;
-    text-align: right;
-    align-self: flex-end;
-    background-image: linear-gradient(to bottom, var(--myRed), #ffffff00);
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 10px #000000;
+    font-weight: 900;
     color: #ffffff;
+    font-size: 2.8rem;
+    letter-spacing: 10px;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
 .featured-products__title-img{
@@ -351,7 +352,7 @@ header{
 }
 
 .featured-products__container:hover{
-    background-color: var(--myRed);
+    background-color: var(--myPink);
 }
 
 /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
@@ -362,6 +363,7 @@ header{
     width: 60vw;
     margin: 10px;
     position: relative;
+    text-transform: uppercase;
 }
 
 .featured-products__img{
@@ -370,25 +372,24 @@ header{
 
 /* Estilos carrito de compras de los productos destacados */
 .fa-cart-shopping-products{
-    position: relative;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 50%;
-    top: -20px;
     margin: 0;
+    margin-top: -20px;
     border: 2px solid #ffffff;
 }
 
 .fa-cart-shopping-products:hover{
     color: #ffffff;
     transform: scale(1.1);
-    background-color: var(--myRed)
+    background-color: var(--myPink);
 }
 
 /* Estilos título de cada producto */
 .featured-products__container h3{
     font-family: var(--myTitles);
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .featured-products__container:hover h3{
@@ -408,27 +409,37 @@ header{
 /* =========ESTILOS DE LOS BENEFICIOS========= */
 
 /* Fondo y distribución de la sección */
+.main__advantages1{
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+    background-color: var(--myPink);
+    width: 100%;
+    height: 10vh;
+    margin-top: -10px;
+}
+
 .main__advantages{
     width: 100%;
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
+    background-color: var(--myPink);
+    margin-top: -5px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 /* Estilos título principal de la sección */
 .advantages__title{
     font-family: var(--myTitles);
-    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     margin-left: 10px;
-    background-image: linear-gradient(to bottom, var(--myRed), #ffffff00);
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 10px #000000;
-    color: #000000;
-    width: 50%;
 }
 
-.advantages__title-img{
+.advantages__title-img, .advantages__title-img2{
     display: none;
 }
 
@@ -444,197 +455,60 @@ header{
 
 /* Estilos íconos de cada beneficio */
 .fa-truck, .fa-credit-card, .fa-face-grin-beam{
-    color: var(--myRed);
     font-size: 3rem;
 }
 
 .fa-truck:hover, .fa-credit-card:hover, .fa-face-grin-beam:hover{
     transform: scale(1.1);
-    color: var(--myPurple);
+    color: var(--myYellow);
 } 
 
 /* Estilos texto de cada beneficio */
 .advantage__container p{
     font-family: var(--myText);
     font-size: 2rem;
-    color: var(--myRed);
     font-weight: bold;
-}
-
-/* =========ESTILOS FOOTER========= */
-
-/* Distribución y fondo del footer*/
-footer{
-    background-color: var(--myBlue);
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-/* Estilos logo */
-.footer__logo{
-    width: 25%;
-    margin: 5px;
-}
-
-/* Estilos enlaces de información */
-.footer__links{
-    width: 35%;
-}
-
-.footer__links ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer__links ul, .footer__social-media ul{
-    list-style: none;
-}
-
-.footer__links ul li a{
-    text-decoration: none;
-    font-family: var(--myTitles);
-    color: #ffffff;
-    font-size: 1.5rem;
-}
-
-.footer__links ul li a:hover{
-    color: #FE303D;
-    transform: scale(1.2);
-}
-
-/* Estilos enlaces de redes sociales */
-.footer__social-media{
-    width: 40%;
-}
-
-.footer__social-media ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.footer__social-media ul li{
-    width: auto;
-}
-
-.footer_social-media-img{
-    width: 100%;
-}
-
-.footer_social-media-img:hover{
-    transform: scale(1.2);
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
-    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
-
-    /* Estilos del logo */
-    .header__logo-link{
-        width: 30%;
-    }
-
-    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
-    .header__text{
-        width: 70%;
-    }
-    
-    /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
-    .header__form, .header__link{
-        display: inline-block;
-    }
-
-    /* Estilos de la barra de búsqueda (input y botón) */
-    .header__form{
-        width: 50%;
-        display: flex;
-    }
-
-    .header__search-bar{
-        width: 85%;
-        padding: 3px;
-        border: none;
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        font-family: var(--myText);
-        font-size: 1.5rem;
-    }
-
-    .header__search-bar:focus{
-        outline: none;
-        border-top: 2px solid var(--myRed);
-        border-bottom: 2px solid var(--myRed);
-        border-left: 2px solid var(--myRed);
-    }
-
-    .header__search-bar:focus + .header__search-button{
-        outline: none;
-        border-top: 2px solid var(--myRed);
-        border-bottom: 2px solid var(--myRed);
-        border-right: 2px solid var(--myRed);
-    }
-
-    .header__search-button{
-        padding: 3px;
-        border: none;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        font-family: var(--myText);
-        font-size: 1.5rem;
-        background-color: #ffffff;
-        color: var(--myRed);
-    }
-
-    .header__search-button:hover .fa-magnifying-glass{
-        transform: scale(1.2);
-        cursor: pointer;
-    }
-
-    /* Estilos de los enlaces de la barra de navegación */
-    .header__nav ul li a{
-        text-decoration: none;
-        color: #ffffff;
-        margin: 2px;
-        font-family: var(--myTitles);
-        font-size: 1.5rem;
-    }
-
-    .header__link:hover{
-        color: var(--myRed);
-        transform: scale(1.2);
-    }
-
-    /* Impide que el texto del botón de inicio de sesión pase a 2 líneas */
-    .header__login{
-        white-space: nowrap;
-    }
-    
-    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
-    .fa-bars{
-        display: none;
-    }
-
     /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN TABLET========= */
 
-    /* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
-    .slider__text2{
-        width: 40%;
+    /* Estilos palabra "Team" del slider */
+    .slider__title-1{
+        font-size: 4rem;
+        margin-left: 50px;
     }
 
-    /* Estilos de los textos principales que se muestran junto con cada imagen del Slider */
-    .slider__text h2{
-        font-size: 3.5rem;
+    /* Estilos palabra segunda línea de texto del slider */
+    .main__slider div{
+        margin-left: 50px;
     }
 
-    /* Estilos de los textos secundarios (descripciones) que se muestran junto con cada imagen del Slider */
-    .slider__text h3{
+    .slider__title-2 div{
+        margin: 0;
+    }
+
+    .slider__title-2 h1{
+        font-size: 4rem;
+    }
+
+    .main__slider ul li h2{
         font-size: 1.5rem;
+        margin-left: 50px;
     }
 
     /* =========ESTILOS DE LAS CATEGORÍAS PARA RESOLUCIÓN TABLET========= */
+
+    /* Fondo de la sección */
+    .main__categories1{
+        clip-path: polygon(0 0, 100% 70%, 100% 100%, 0 100%);
+    }
+
+    .main__categories2{
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    }
 
     /* Distribución sección */
     .main__categories{
@@ -656,12 +530,26 @@ footer{
 
     /* Contenederor del Slider, proporciona el borde*/
     .main__slider-container{
-        width: 40vw;
+        width: 35vw;
         margin: 0;
         margin-bottom: 20px;
     }
 
+    /* Estilos texto que acompaña al Slider */
+    .slider-title{
+        font-size: 1.5rem;
+    }
+
+    .no-active{
+        opacity: 50%;
+    }
+
     /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS PARA RESOLUCIÓN TABLET========= */
+    
+    /* Fondo de la sección */
+    .main__featured-products1{
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+    }
 
     /* Estilos título principal de la sección */
     .featured-products__title{
@@ -674,7 +562,15 @@ footer{
         position: absolute;
         z-index: 1;
         right: 5px;
-        top: -90px;
+        top: -120px;
+        mix-blend-mode: overlay;
+    }
+
+    .featured-products__title-img-above{
+        z-index: 2;
+        right: 10px;
+        top: -130px;
+        mix-blend-mode: normal;
     }
 
     /* Distribución de todos los productos */
@@ -698,6 +594,8 @@ footer{
     /* Fondo y distribución de la sección */
     .main__advantages{
         flex-direction: row;
+        align-items: center;
+        padding-bottom: 20px;
     }
 
     /* Estilos título principal de la sección */
@@ -707,11 +605,16 @@ footer{
 
     .advantages__title-img{
         display: block;
-        width: 40%;
-        position: relative;
-        z-index: 1;
-        left: 5px;
-        top: -20px;
+        width: 50%;
+        mix-blend-mode: overlay;
+    }
+
+    .advantages__title-img-above{
+        position: absolute;
+        top: -10px;
+        left: -5px;
+        z-index: 2;
+        mix-blend-mode: normal;
     }
 
     /* Distribución contenedor de todos los beneficios */
@@ -741,95 +644,97 @@ footer{
         font-size: 1.5rem;
         color: var(--myRed);
     }
-
-    /* =========ESTILOS FOOTER========= */
-
-    /* Estilos logo */
-    .footer__logo{
-        width: 15%;
-    }
-
-    /* Estilos enlaces de información */
-    .footer__links{
-        width: 45%;
-    }
-
-    .footer__links ul{
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .footer__links ul li a{
-        font-size: 1.7rem;
-    }
-
-    /* Estilos enlaces de redes sociales */
-    .footer__social-media{
-        width: 40%;
-    }
-
-    .footer_social-media-img{
-        width: 80%;
-    }
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
 
 @media(min-width: 769px){
-    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
-
-    /* Estilos del logo */
-    .header__logo-link{
-        width: 20%;
-        margin: 5px;
-    }
-
-    /* Estilos de la barra de búsqueda (input) */
-    .header__search-bar{
-        padding: 6px;
-        font-size: 1.7rem;
-    }
-
-    /* Estilos de la barra de búsqueda (botón) */
-    .header__search-button{
-        padding: 6px;
-        font-size: 1.7rem;
-    }
-
-    /* Distribuye los enlaces de la barra de navegación, carrito de compras y botón de incio de sesión en el espacio no ocupado por el logo */
-    .header__text{
-        width: 50%;
-        justify-content: space-between;
-    }
-
-    /* Estilos de los enlaces de la barra de navegación y carrito de compras */
-    .header__nav{
-        width: 80%;
-    }
-
-    .header__nav ul{
-        width: 100%;
-        justify-content: space-evenly;
-    }
-
-    .header__nav ul li a{
-        font-size: 2rem;
-    }
-
-    /* Estilos para el botón de inicio de sesión */
-    .header__login{
-        font-size: 2rem;
-        margin-right: 30px;
-    }
-
     /* =========ESTILOS DEL SLIDER PARA RESOLUCIÓN COMPUTADOR========= */
 
-    /* Estilos de los los contenedores del texto que se muestran junto con cada imagen del Slider */
-    .slider__text2{
-        width: 25%;
+    /* Permite que solo un texto del Slider se muestre a la vez */
+    .main__slider{
+        width: 99%;
+        padding-bottom: 100px;
+    }
+
+    /* Estilos palabra "Team" del slider */
+    .slider__title-1{
+        font-size: 7rem;
+        margin-top: 100px;
+    }
+
+    /* Estilos palabra segunda línea de texto del slider */
+    .slider__title-2 div{
+        margin: 0;
+    }
+
+    .slider__title-2 div{
+        border-top: 20px solid;
+        width: 5%;
+        margin: 0;
+    }
+    
+    .slider__title2-marvel div{
+        border-top: 20px solid var(--myPink);
+    }
+    
+    .slider__title2-dc div{
+        border-top: 20px solid var(--myBlue);
+    }
+    
+    .slider__title2-independent div{
+        border-top: 20px solid var(--myGreen);
+    }
+
+    .slider__title-2 h1{
+        font-size: 7rem;
+        text-shadow:
+            -2px    -2px    0   #FFFFFFFF,
+            0       -2px    0   #FFFFFFFF,
+            2px     -2px    0   #FFFFFFFF,
+            2px     0       0   #FFFFFFFF,
+            2px     2px     0   #FFFFFFFF,
+            0       2px     0   #FFFFFFFF,
+            -2px    2px     0   #FFFFFFFF,
+            -2px    0       0   #FFFFFFFF;
+    }
+
+    .main__slider ul li h2{
+        font-size: 2rem;
+    }
+
+    /* Permite que solo una imagen del Slider se muestre a la vez y que esta ocupe el 100% del viewport */
+    .main__slider-img{
+        top: -20px;
+    }
+
+    .main__slider-img-nooverlay{
+        top: -30px;
     }
 
     /* =========ESTILOS DE LAS CATEGORÍAS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Fondo de la sección */
+    .main__categories1{
+        clip-path: polygon(0 0, 100% 55%, 100% 100%, 0 100%);
+        height: 20vh;
+        margin-top: -65px;
+    }
+
+    .main__categories2{
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
+        background-color: var(--myPink);
+        width: 100%;
+        height: 10vh;
+    }
+
+    /* Distribución sección */
+    .main__categories{
+        background-color: var(--myPink);
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 
     /* Estilos título principal de la sección*/
     .main__categories-title h2{
@@ -842,6 +747,72 @@ footer{
         font-size: 2rem;
     }
 
+    /* =========ESTILOS DE LAS CATEGORÍAS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos título principal previo de la sección */
+    .main__categories-title{
+        display: none;
+    }
+
+    /* Distribución sección */
+    .main__categories{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main__slider-all{
+        width: 80%;
+    }
+
+    /* Estilos nuevos títulos principal y secundario de la sección */
+    .main__categories-title2{
+        display: block;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .main__categories-title2 h2{
+        font-family: var(--myTitles);
+        color: #ffffff;
+        font-size: 7rem;
+        letter-spacing: 10px;
+    }
+
+    .main__categories-title2 h3{
+        font-family: var(--myText);
+        color: #ffffff;
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    /* Estilos nuevos botones de la sección */
+    .main__categories-title2 div a{
+        display: block;
+        font-family: var(--myTitles);
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 2rem;
+        letter-spacing: 10px;
+        border-radius: 20px;
+        border: solid 1px #ffffff;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+    .main__categories-title2 div a:hover{
+        background-color: var(--myYellow);
+    }
+
     /* =========ESTILOS DE LOS SLIDER DE CATEGORÍAS PARA RESOLUCIÓN COMPUTADOR========= */
 
     /* Contenederor del Slider, proporciona el borde*/
@@ -849,47 +820,104 @@ footer{
         width: 15vw;
     }
 
-    .main__slider-container:hover{
-        transform: scale(1.1);
+    .slider-title{
+        display: none;
     }
 
-    /* Distribuciones especiales*/
-    .main__slider-container-DC{
-        position: relative;
-        bottom: 50px;
+    /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Fondo de la sección */
+    .main__featured-products1{
+        clip-path: polygon(0 80%, 100% 0, 100% 100%, 0% 100%);
+        width: 99%;
+        margin-top: -40px;
     }
 
-    .main__slider-container-independent{
-        position: relative;
-        bottom: 50px;
+    .main__featured-products2{
+        clip-path: polygon(0 0, 100% 0, 100% 20%, 0 100%);
+        width: 99%;
     }
     
-    /* =========ESTILOS DE LOS PRODUCTOS DESTACADOS PARA RESOLUCIÓN COMPUTADOR========= */
+    .main__featured-products{
+        width: 99%;
+    }
+
+    /* Distribución de la sección */
+    .main__featured-products{
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .featured-products__container-all{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 75%;
+    }
 
     /* Estilos título principal de la sección */
     .featured-products__title-img{
-        width: 20%;
-        top: -100px;
+        left: 0;
+        top: -160px;
+        width: 30vw;
+        height: 25vw;
+        mix-blend-mode: overlay;
+    }
+
+    .featured-products__title-img-above{
+        position: absolute;
+        z-index: 2;
+        mix-blend-mode: normal;
+        width: 30vw;
+        height: 25vw;
+        left: -20px;
+        top: -170px;
     }
 
     /* Contenedor de los productos, proporciona el borde*/
     .featured-products__container{
         width: 15vw;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    
+    .featured-products__container p{
+        opacity: 0;
     }
 
-    .featured-products__container:hover{
-        transform: scale(1.1);
+    .featured-products__container:hover p{
+        opacity: 100;
     }
 
     /* =========ESTILOS DE LOS BENEFICIOS PARA RESOLUCIÓN COMPUTADOR========= */
 
     /* Fondo y distribución de la sección */
-    .main__advantages{
-        flex-direction: row;
+    .main__advantages1{
+        clip-path: polygon(0 80%, 100% 0, 100% 100%, 0% 100%);
+        margin-top: -40px;
     }
 
+    .main__advantages{
+        margin-bottom: 30px;
+    }
+
+    /* Estilos título principal de la sección */
     .advantages__title-img{
+        display: none;
+    }
+
+    .advantages__title-img2{
+        display: block;
         width: 20%;
+        mix-blend-mode: overlay;
+    }
+
+    .advantages__title-img-above2{
+        position: absolute;
+        top: -10px;
+        right: 5px;
+        z-index: 2;
+        mix-blend-mode: normal;
     }
 
     /* Distribución contenedor de todos los beneficios */
@@ -902,7 +930,7 @@ footer{
     /* Estilos contenedor de cada beneficio */
     .advantage__container{
         flex-direction: row;
-        margin: 0;
+        margin-top: 0;
         justify-content: center;
         width: auto;
     }
@@ -916,37 +944,6 @@ footer{
     /* Estilos texto de cada beneficio */
     .advantage__container p{
         font-size: 2rem;
-        color: var(--myRed);
-    }
-
-    /* =========ESTILOS FOOTER========= */
-
-    /* Estilos logo */
-    .footer__logo{
-        width: 10%;
-    }
-
-    /* Estilos enlaces de información */
-    .footer__links{
-        width: 60%;
-    }
-
-    .footer__links ul{
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .footer__links ul li a{
-        font-size: 2rem;
-    }
-
-    /* Estilos enlaces de redes sociales */
-    .footer__social-media{
-        width: 30%;
-    }
-
-    .footer_social-media-img{
-        width: 60%;
     }
 }
 

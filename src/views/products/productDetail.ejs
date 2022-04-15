@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs', {title: desiredProduct.name}) %>
-    <link rel="stylesheet" href="/css/styleProductDetails.css">
+    <link rel="stylesheet" href="/css/productDetailsStyle.css">
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
                 <img src="/images/product/<%= desiredProduct.image %>" alt="Imagen del producto" class="main__product-img">
                 <div class="main__product-text">
                     <h3><%= desiredProduct.name %></h3>
-                    <p>$<%= desiredProduct.price %></p>
+                    <p><b><%= desiredProduct.price %></b> COP</p>
                     <div class="main__product-details">
                         <h4>Autor(es):</h4>
                         <p><%= desiredProduct.author %></p>
@@ -65,7 +65,7 @@
                                 <img src="/images/product/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
                                 <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                                 <h3><%= relatedProducts[i].name %></h3>
-                                <p>$<%= relatedProducts[i].price %></p>
+                                <p><b><%= relatedProducts[i].price %></b> COP</p>
                             </a>
                         </article>
                     <% } %>

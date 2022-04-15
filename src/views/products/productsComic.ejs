@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head.ejs', {title: 'Comic Team'}) %>
     <link rel="stylesheet" href="/css/productsStyle.css">
+    <script defer src="/js/video.js"></script>
 </head>
 <body>
     <header>
@@ -11,22 +12,24 @@
 
     <main>
         <!-- Banner -->
-        <div class="main__banner">
-            <img src="/images/categories/bannerComic.png" alt="Banner">
-            <div class="main__banner-text">
-                <img src="/images/categories/bannerComicTittle.png" alt="Título">
-            </div>
+        <div class="main__banner main__banner-comic">
+            <video src="/images/categories/introMarvel.mp4" id="bannerVideos" alt="Banner" autoplay muted></video>
+        </div>
+
+        <!-- Imagen lateral -->
+        <div class="main__side-container">
+            <img src="/images/ironMan.png" alt="Superman" class="main__side-image">
         </div>
 
         <!-- Productos -->
         <section class="main__products">
             <% for(let i = 0; i < productsInCategory.length; i++) {%>
-                <article class="product__container">
+                <article class="product__container product__container-comic">
                     <a href="/products/detail/<%= productsInCategory[i].id %>">
                         <img src="/images/product/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products fa-cart-shopping-products-comic"></i>
                         <h3><%= productsInCategory[i].name %></h3>
-                        <p>$<%= productsInCategory[i].price %></p>
+                        <p><b><%= productsInCategory[i].price %></b> COP</p>
                     </a>
                 </article>
              <% } %>
