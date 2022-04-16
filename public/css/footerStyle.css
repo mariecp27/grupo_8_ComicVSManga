@@ -47,7 +47,8 @@ footer{
     align-items: center;
 }
 
-.footer__links ul, .footer__social-media ul{
+.footer__links ul,
+.footer__social-media ul{
     list-style: none;
 }
 

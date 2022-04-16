@@ -439,7 +439,8 @@ html{
     margin-left: 10px;
 }
 
-.advantages__title-img, .advantages__title-img2{
+.advantages__title-img,
+.advantages__title-img2{
     display: none;
 }
 
@@ -454,11 +455,15 @@ html{
 }
 
 /* Estilos íconos de cada beneficio */
-.fa-truck, .fa-credit-card, .fa-face-grin-beam{
+.fa-truck,
+.fa-credit-card, 
+.fa-face-grin-beam{
     font-size: 3rem;
 }
 
-.fa-truck:hover, .fa-credit-card:hover, .fa-face-grin-beam:hover{
+.fa-truck:hover,
+.fa-credit-card:hover,
+.fa-face-grin-beam:hover{
     transform: scale(1.1);
     color: var(--myYellow);
 } 
@@ -635,7 +640,9 @@ html{
     }
 
     /* Estilos íconos de cada beneficio */
-    .fa-truck, .fa-credit-card, .fa-face-grin-beam{
+    .fa-truck,
+    .fa-credit-card,
+    .fa-face-grin-beam{
         margin-right: 5px;
     }
 
@@ -936,7 +943,8 @@ html{
     }
 
     /* Estilos íconos de cada beneficio */
-    .fa-truck, .fa-credit-card, .fa-face-grin-beam{
+    .fa-truck, .fa-credit-card,
+    .fa-face-grin-beam{
         margin-right: 5px;
         font-size: 8rem;
     }

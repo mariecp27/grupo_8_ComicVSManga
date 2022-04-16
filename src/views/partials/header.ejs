@@ -13,7 +13,14 @@
 <div class="header__text">
     <nav class="header__nav">
         <ul>
-            <li><a href="/products/comic" class="header__link">CÓMICS</a></li>
+            <li class="header__nav-inner-container">
+                <a href="/products/comic" class="header__link">CÓMICS <i class="fa-solid fa-angle-right"></i></a>
+                <ul class="header__nav-inner">
+                    <li><a class="header__nav-link" href="/products/marvel">MARVEL</a></li>
+                    <li><a class="header__nav-link" href="/products/dc">DC COMICS</a></li>
+                    <li><a class="header__nav-link" href="/products/independent">INDEPENDIENTE</a></li>
+                </ul>
+            </li>
             <li><a href="/products/manga" class="header__link">MANGAS</a></li>
             <li><a href="/products" class="header__link header__shop"><i class="fa-solid fa-basket-shopping"></i> TIENDA</a></li>
             <li>
@@ -37,7 +44,15 @@
     </div>
     <nav class="header__nav-mobile">
         <ul>
-            <li><a href="/products/comic" class="header__nav-link">CÓMICS</a></li>
+            <li>
+                <a href="#" class="header__nav-inner-btn header__nav-link">CÓMICS <i class="fa-solid fa-angle-right"></i></a>  
+                <ul class="header__nav-inner">
+                    <li><a class="header__nav-link" href="/products/comic">TODOS LOS CÓMICS</a></li>
+                    <li><a class="header__nav-link" href="/products/marvel">MARVEL</a></li>
+                    <li><a class="header__nav-link" href="/products/dc">DC COMICS</a></li>
+                    <li><a class="header__nav-link" href="/products/independent">INDEPENDIENTE</a></li>
+                </ul>
+            </li>
             <li><a href="/products/manga" class="header__nav-link">MANGAS</a></li>
             <li><a href="/carrito" class="header__nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
             <li><a href="/users/login" class="header__nav-link">LOGIN</a></li>

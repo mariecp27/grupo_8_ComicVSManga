@@ -95,3 +95,39 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 15 (Abril 04/2022 - Abril 10/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Se finalizan los detalles del cuarto *Sprint*, implementando las barra de búsqueda según se deseaba. Se realiza la entrega correspondiente.
+  - ***¿Encontró con algún impedimento?***: Ninguna.
+  - ***¿Qué va a hacer durante la presente semana?***: Debido a la ampliación del plazo para la entrega del quinto *Sprint*, se buscará asesoría con la [mentora](https://github.com/GisellG) asignada por *ProTalento* para realizar cambios en la parte visual del proyecto, ya que la página de inicio tiene áreas de oportunidad en ese aspecto.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 16 (Abril 11/2022 - Abril 17/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Posterior a la reunión con la mentora asignada por *ProTalento* para mejorar los estilos del proyecto, se dio inicio a la implementación de los mismos.
+  - ***¿Encontró con algún impedimento?***: Los nuevos estilos contenían herramientas que no se conocían, por lo que cierta parte de la implementación fue retadora.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuación de la implementación de los nuevos estilos, junto con ciertas herramientas a través de JavaScript para mejorar el dinamismo del proyecto. Se planea iniciar con las tareas propias del quinto *Sprint*.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**

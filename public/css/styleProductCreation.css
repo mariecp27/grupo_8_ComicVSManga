@@ -72,7 +72,8 @@ header{
 }
 
 /* Estilos para el botón de usuario y menú de la resolución mobile */
-.fa-user-gear, .fa-bars{
+.fa-user-gear,
+.fa-bars{
     background: var(--myRed);
     color: #ffffff;
     font-size: 1.5rem;
@@ -85,7 +86,8 @@ header{
     cursor: pointer;
 }
 
-.fa-user-gear:hover, .fa-bars:hover{
+.fa-user-gear:hover,
+.fa-bars:hover{
     background: #ffffff;
     color: var(--myRed);
     transform: scale(1.2);
@@ -144,7 +146,9 @@ main{
 }
 
 /* Estilos de los inputs de texto y números */
-.main__form input[type=text], .main__form input[type=number], .main__form div textarea{
+.main__form input[type=text],
+.main__form input[type=number],
+.main__form div textarea{
     background-color: transparent;
     border-radius: 30px;
     padding: 10px 20px;

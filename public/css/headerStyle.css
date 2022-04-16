@@ -45,7 +45,10 @@ header{
 }
 
 /* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
-.header__form, .header__link, .header__shopping{
+.header__form, 
+.header__link, 
+.header__shopping, 
+.header__nav-inner-container{
     display: none;
 }
 
@@ -108,7 +111,9 @@ header{
     padding: 3px 7px;
 }
 
-.header__menu1, .header__menu2, .header__menu3{
+.header__menu1, 
+.header__menu2, 
+.header__menu3{
     width: 15px;
     height: 2px;
     background-color: #ffffff;
@@ -120,7 +125,9 @@ header{
     background-color: #ffffffff;
 }
 
-.header__menu:hover .header__menu1, .header__menu:hover .header__menu2, .header__menu:hover .header__menu3{
+.header__menu:hover .header__menu1, 
+.header__menu:hover .header__menu2, 
+.header__menu:hover .header__menu3{
     background-color: var(--myPink);
 }
 
@@ -147,26 +154,25 @@ header{
     background-color: var(--myBlue);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    width: 0;
+    width: 80%;
     position: absolute;
     top: 50px;
     left: 0;
-    min-height: 200px;
+    border: 1px solid #ffffff;
+    margin-left: -80%;
+    padding: 10px;
 
-    transition: width 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .active{
-    width: 300px;
-    border: 1px solid #ffffff;
+    margin-left: 0px;
 }
 
 .header__nav-mobile ul{
     display: flex;
     flex-direction: column;
-    min-height: 200px;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
 
 .header__nav-mobile ul li{
@@ -174,28 +180,32 @@ header{
 }
 
 .header__nav-link{
-    display: none;
-    width: 300px;
+    display: block;
+    width: 100%;
     text-decoration: none;
     font-family: var(--myTitles);
     color: #ffffff;
     font-size: 2rem;
     margin: 5px 0;
-    text-align: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
 
     transition: all 0.5s;
 }
 
-.activeLink{
-    display: block;
-}
-
-.activeLink:hover{
+.header__nav-link:hover{
     background: #ffffff34;
     color: var(--myPink);
     font-weight: 900;
+}
+
+.header__nav-inner{
+    margin-left: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.down{
+    transform: rotate(90deg);
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
@@ -214,7 +224,10 @@ header{
     }
     
     /* Muestra la barra de búsqueda y los enlaces para la resolución tablet y superiores */
-    .header__form, .header__link, .header__shopping{
+    .header__form, 
+    .header__link, 
+    .header__shopping, 
+    .header__nav-inner-container{
         display: inline-block;
     }
 
@@ -302,8 +315,60 @@ header{
     }
 
     /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
-    .header__menu{
+    .header__menu, 
+    .header__nav-mobile{
         display: none;
+    }
+
+    /* Estilos menú desplegable */
+    .header__nav-inner-container{
+        position: relative;
+    }
+
+    .header__nav-inner-container .header__nav-inner{
+        position: absolute;
+        top: 20px;
+        min-width: auto;
+        height: auto;
+        overflow: visible;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--myBlue);
+        padding: 5px 10px;
+
+        transition: all 0.5s;
+    }
+
+    .header__nav-inner li{
+        width: 100%;
+    }
+
+    .header__nav-link{
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .header__nav-link:hover{
+        color: var(--myPink);
+        background-color: #ffffff34;
+    }
+
+    .header__nav-inner-container:hover .header__nav-inner{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header__nav-inner-container .header__link .fa-angle-right{
+        transition: all 0.5s;
+    }
+
+    .header__nav-inner-container:hover .header__link .fa-angle-right{
+        transform: rotate(90deg);
     }
 }
 
@@ -357,4 +422,10 @@ header{
     .header__nav ul li a{
         font-size: 1.5rem;
     }
+
+    /* Estilos menú desplegable */
+    .header__nav-inner-container .header__nav-inner{
+        min-width: 150px;
+    }
+
 }
