@@ -22,11 +22,18 @@ const registerValidations = [
 	body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		let fileExtension  = '';
 
-		let fileExtension = path.extname(file.originalname);
-			if (!acceptedExtensions.includes(fileExtension)) {
-				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-			}
+		if(!file){
+			fileExtension = 'noImage';
+		} else{
+			fileExtension = path.extname(file.originalname);
+		}
+		
+		if (!acceptedExtensions.includes(fileExtension) && fileExtension != 'noImage') {
+			throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+		}
+
 		return true;
 	})
 ]
