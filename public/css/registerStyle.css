@@ -22,7 +22,7 @@ body{
 section{
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100%;
     display: flex;
 }
 
@@ -58,6 +58,7 @@ section .contentBx{
     align-items: center;
     width: 50%;
     height: 100%;
+    margin-top: 150px;
 }
 
 section .contentBx .formBx{
@@ -80,7 +81,7 @@ section .contentBx .formBx .inputBx{
     margin-bottom: 20px;
 }
 
-section .contentBx .formBx .inputBx span{
+section .contentBx .formBx .inputBx label{
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -136,6 +137,41 @@ section .contentBx .formBx .inputBx p a{
     display: none;
 }
 
+/* Estilos input para subir la imagen */
+input[type="file"]{
+    display: none;
+}
+
+.main__form-upload{
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--myBlue);
+    font-family: var(--myTitles);
+    text-align: center;
+    letter-spacing: 1px;
+    border: 1px solid var(--myBlue);
+}
+
+.main__form-upload:hover{
+    background-color: var(--myYellow);
+    color: #ffffff;
+}
+
+/* Estilos para los errores */
+section .contentBx .formBx .inputBx .invalid-value{
+    border: 1px solid var(--myPink);
+}
+
+.form-errors{
+    font-family: var(--myText);
+    color: var(--myPink);
+    font-weight: bold;
+    font-size: 16px;
+}
+
 @media (max-width:768px){
     section .imgBx{
         position: absolute;
@@ -160,6 +196,33 @@ section .contentBx .formBx .inputBx p a{
         background: rgba(255 255 255 / 0.9);
         margin: 50px;
         font-size: 10px;
+    }
+}
+
+@media(min-width: 769px){
+    section{
+        height: auto;
+    }
+
+    section .imgBx{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    section .contentBx{
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        margin: 0;
+    }
+
+    section .contentBx .formBx{
+        width: 30%;
+        margin-right: 10%;
     }
 }
     

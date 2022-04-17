@@ -18,11 +18,15 @@
         </div>
 
         <!-- Productos -->
+        <div class="main__products-tittle">
+            <h1>TEAM</h1>
+            <h1>MANGA</h1>
+        </div>
         <section class="main__products">
             <% for(let i = 0; i < productsInCategory.length; i++) {%>
                 <article class="product__container product__container-manga">
                     <a href="/products/detail/<%= productsInCategory[i].id %>">
-                        <img src="/images/product/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
+                        <img src="/images/products/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
                         <i class="fa-solid fa-cart-shopping fa-cart-shopping-products fa-cart-shopping-products-manga"></i>
                         <h3><%= productsInCategory[i].name %></h3>
                         <p><b><%= productsInCategory[i].price %></b> COP</p>

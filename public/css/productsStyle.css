@@ -128,6 +128,46 @@ main{
     padding-bottom: 10px;
 }
 
+.main__products-tittle{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main__products-tittle h1{
+    font-family: var(--myTitles);
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.main__products-tittle-marvel h1:first-child{
+    color: var(--myPink);
+}
+
+.main__products-tittle-DC h1:first-child{
+    color: var(--myBlue);
+}
+
+.main__products-tittle-independent h1:first-child{
+    color: var(--myGreen);
+}
+
+.main__products-tittle h1:last-child{
+    margin-left: 10px;
+    color: #ffffff;
+    text-shadow:
+        -2px    -2px    0   #000000,
+        0       -1px    0   #000000,
+        2px     -2px    0   #000000,
+        2px     0       0   #000000,
+        2px     2px     0   #000000,
+        0       2px     0   #000000,
+        -2px    2px     0   #000000,
+        -2px    0       0   #000000;
+    letter-spacing: 0.135em;
+}
+
+
 .main__products{
     width: 100%;
     padding-top: 10px;
@@ -312,6 +352,10 @@ main{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+
+    .main__products-tittle h1{
+        font-size: 5rem;
     }
     
     /* Contenedor de los productos, proporciona el borde*/

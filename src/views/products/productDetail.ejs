@@ -14,7 +14,7 @@
         <!-- Producto -->
         <section class="main__product">
             <article class="main__product-container">
-                <img src="/images/product/<%= desiredProduct.image %>" alt="Imagen del producto" class="main__product-img">
+                <img src="/images/products/<%= desiredProduct.image %>" alt="Imagen del producto" class="main__product-img">
                 <div class="main__product-text">
                     <h3><%= desiredProduct.name %></h3>
                     <p><b><%= desiredProduct.price %></b> COP</p>
@@ -62,7 +62,7 @@
                     <% if (relatedProducts[i].id != desiredProduct.id) { %>
                         <article class="main__related-products-container">
                             <a href="/products/detail/<%= relatedProducts[i].id %>">
-                                <img src="/images/product/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
+                                <img src="/images/products/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
                                 <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                                 <h3><%= relatedProducts[i].name %></h3>
                                 <p><b><%= relatedProducts[i].price %></b> COP</p>

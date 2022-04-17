@@ -6,10 +6,13 @@ const multer = require('multer');
 // Ejecución
 const router = express.Router();
 
+//Controlador
+const productsController = require('../controllers/productsController');
+
 // Configuración
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/images/product'));
+        cb(null, path.join(__dirname, '../../public/images/products'));
     },
     filename: (req, file, cb) => {
         cb(null, 'product_' + Date.now() + path.extname(file.originalname));
@@ -19,7 +22,6 @@ let storage = multer.diskStorage({
 let upload = multer({ storage });
 
 // Rutas
-const productsController = require('../controllers/productsController');
 
 // Todos los productos: Tienda
 router.get('/', productsController.list);

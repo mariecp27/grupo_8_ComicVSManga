@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": 1,
     "username": "bcisco0",
     "email": "ikinsman0@ehow.com",
@@ -7,7 +7,8 @@
     "confirm_password": "g8bIoMH7Zd1",
     "type_user": "administrator",
     "image": ""
-  }, {
+  },
+  {
     "id": 2,
     "username": "acasillis1",
     "email": "tdarrach1@epa.gov",
@@ -15,7 +16,8 @@
     "confirm_password": "8a17x5lPfr",
     "type_user": "administrator",
     "image": ""
-  }, {
+  },
+  {
     "id": 3,
     "username": "pmeadmore2",
     "email": "vrubbert2@geocities.com",
@@ -23,7 +25,8 @@
     "confirm_password": "sLkopoD",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 4,
     "username": "ctrood3",
     "email": "aspragge3@cafepress.com",
@@ -31,7 +34,8 @@
     "confirm_password": "o6ubdxLd",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 5,
     "username": "cnoury4",
     "email": "tsugars4@etsy.com",
@@ -39,7 +43,8 @@
     "confirm_password": "iavYOKqaLHvm",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 6,
     "username": "zroches5",
     "email": "ptortoishell5@oaic.gov.au",
@@ -47,7 +52,8 @@
     "confirm_password": "Obt5RZqvH",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 7,
     "username": "lrayworth6",
     "email": "cfawloe6@statcounter.com",
@@ -55,7 +61,8 @@
     "confirm_password": "kZ1P8M1P7",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 8,
     "username": "parsey7",
     "email": "awandtke7@tripod.com",
@@ -63,7 +70,8 @@
     "confirm_password": "ywlKW5",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 9,
     "username": "wcurr8",
     "email": "gkeling8@g.co",
@@ -71,7 +79,8 @@
     "confirm_password": "TQHbhWUg6",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 10,
     "username": "ameriot9",
     "email": "kcoleiro9@hubpages.com",
@@ -79,7 +88,8 @@
     "confirm_password": "kQhleC6dn",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 11,
     "username": "rbubbingsa",
     "email": "rkitcata@slideshare.net",
@@ -87,7 +97,8 @@
     "confirm_password": "oa4nVcgMw",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 12,
     "username": "cvongladbachb",
     "email": "afortinb@mapy.cz",
@@ -95,7 +106,8 @@
     "confirm_password": "VmVz6id",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 13,
     "username": "aleasec",
     "email": "vproswellc@phpbb.com",
@@ -103,7 +115,8 @@
     "confirm_password": "cgYv9jCZBVJ",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 14,
     "username": "jpalumbod",
     "email": "hcripsd@wufoo.com",
@@ -111,7 +124,8 @@
     "confirm_password": "z2JmNc",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 15,
     "username": "tlavene",
     "email": "groelofsene@jimdo.com",
@@ -119,7 +133,8 @@
     "confirm_password": "Iq2GCHWAPh",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 16,
     "username": "maddersonf",
     "email": "rsaintf@hud.gov",
@@ -127,7 +142,8 @@
     "confirm_password": "Zpw7JKuk6",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 17,
     "username": "pburfieldg",
     "email": "deschelleg@chronoengine.com",
@@ -135,7 +151,8 @@
     "confirm_password": "2nvaWich9fJG",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 18,
     "username": "wdoddh",
     "email": "abuggh@comcast.net",
@@ -143,7 +160,8 @@
     "confirm_password": "brEKqRnEg",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 19,
     "username": "fmacaleesei",
     "email": "yyousefi@typepad.com",
@@ -151,7 +169,8 @@
     "confirm_password": "bWowkke",
     "type_user": "user",
     "image": ""
-  }, {
+  },
+  {
     "id": 20,
     "username": "knabarroj",
     "email": "lmcinilityj@miibeian.gov.cn",

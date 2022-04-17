@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head.ejs', {title: 'Registro'}) %>
     <link rel="stylesheet" href="/css/registerStyle.css">
 </head>
 <body>
@@ -15,25 +15,100 @@
         <div class="contentBx">
             <div class="formBx">
                 <h2>Registro</h2>
-                <form method="post">
+                <form method="post" action="/users/sign-up" enctype="multipart/form-data">
                     <div class="inputBx">
-                        <span>Usuario</span>
-                        <input type="text" name="Usuario" required>
+                        <label>Usuario</label>
+                        <input 
+                            type="text" 
+                            name="user"
+                            class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.user : null %>"
+                        >
+                        <% if (locals.errors && errors.user) { %>
+                            <div class="form-errors">
+                                <%= errors.user.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="inputBx">
-                        <span>Correo electronico</span>
-                        <input type="password" name="Contraseña" required>
+                        <label>Nombre(s)</label>
+                        <input
+                            type="text"
+                            name="name"
+                            class="<%= locals.errors && errors.name ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.name : null %>"
+                        >
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="form-errors">
+                                <%= errors.name.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="inputBx">
-                        <span>Contraseña</span>
-                        <input type="password" name="Contraseña" required>
+                        <label>Apellido(s)</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.lastName : null %>"
+                        >
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="form-errors">
+                                <%= errors.lastName.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="inputBx">
-                        <span>Confirmar Contraseña</span>
-                        <input type="password" name="Contraseña" required>
+                        <label>Correo electronico</label>
+                        <input
+                            type="email"
+                            name="email"
+                            class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="form-errors">
+                                <%= errors.email.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="inputBx">
-                        <input type="submit" value="Crear cuenta" name="" required>
+                        <label>Contraseña</label>
+                        <input
+                            type="password"
+                            name="password1"
+                            class="<%= locals.errors && errors.password1 ? "invalid-value" : null %>"
+                        >
+                        <% if (locals.errors && errors.password1) { %>
+                            <div class="form-errors">
+                                <%= errors.password1.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="inputBx">
+                        <label>Confirmar contraseña</label>
+                        <input
+                            type="password"
+                            name="password2"
+                            class="<%= locals.errors && errors.password2 ? "invalid-value" : null %>"
+                        >
+                        <% if (locals.errors && errors.password2) { %>
+                            <div class="form-errors">
+                                <%= errors.password2.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="inputBx">
+                        <label for="avatar" class="main__form-upload">Imagen de perfil</label>
+                        <input type="file" name="avatar" id="avatar">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="form-errors">
+                                <%= errors.avatar.msg %> 
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Crear cuenta">
                     </div>
                     <div class="inputBx">
                         <p>¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión</a></p>

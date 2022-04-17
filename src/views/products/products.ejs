@@ -28,7 +28,7 @@
             <% for(let i = 0; i < wantedProducts.length; i++) {%>
                 <article class="product__container">
                     <a href="/products/detail/<%= wantedProducts[i].id %>">
-                        <img src="/images/product/<%= wantedProducts[i].image %>" alt="Imagen de producto" class="products__img">
+                        <img src="/images/products/<%= wantedProducts[i].image %>" alt="Imagen de producto" class="products__img">
                         <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3><%= wantedProducts[i].name %></h3>
                         <p>$<%= wantedProducts[i].price %></p>
