@@ -52,7 +52,7 @@
                             class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
                             value="<%= locals.oldData ? oldData.lastName : null %>"
                         >
-                        <% if (locals.errors && errors.name) { %>
+                        <% if (locals.errors && errors.lastName) { %>
                             <div class="form-errors">
                                 <%= errors.lastName.msg %> 
                             </div>
