@@ -31,8 +31,17 @@
                 </a>
             </li>
             <div class="header__login">
-                <li><a href="/users/login" class="header__link header__login">LOGIN</a></li>
-                <li><a href="/users/sign-up" class="header__link">SIGN UP</a></li>
+                <% if (locals.isLogged) { %>
+                    <li class="header__nav-inner-container">
+                        <a href="/users/profile" class="header__link">¡Hola, <%= locals.userLogged.name %>! <i class="fa-solid fa-angle-right"></i></a>
+                        <ul class="header__nav-inner header__nav-inner2">
+                            <li><a class="header__nav-link" href="/users/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                <% } else{%>
+                    <li><a href="/users/login" class="header__link header__login">LOGIN</a></li>
+                    <li><a href="/users/sign-up" class="header__link">SIGN UP</a></li>
+                <% } %>
             </div>
         </ul>
     </nav>
@@ -55,8 +64,13 @@
             </li>
             <li><a href="/products/manga" class="header__nav-link">MANGAS</a></li>
             <li><a href="/carrito" class="header__nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li><a href="/users/login" class="header__nav-link">LOGIN</a></li>
-            <li><a href="/users/sign-up" class="header__nav-link">SIGN UP</a></li>
+            <% if (locals.isLogged) { %>
+                <li><a href="/users/profile" class="header__nav-link">TU PERFIL</a></li>
+                <li><a href="/users/logout" class="header__nav-link">CERRAR SESIÓN</a></li>
+            <% } else{%>
+                <li><a href="/users/login" class="header__nav-link">LOGIN</a></li>
+                <li><a href="/users/sign-up" class="header__nav-link">SIGN UP</a></li>
+            <% } %>
         </ul>
     </nav>
 </div>

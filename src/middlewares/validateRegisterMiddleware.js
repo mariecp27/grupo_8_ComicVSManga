@@ -3,6 +3,7 @@ const path = require('path');
 
 const registerValidations = [
 	body('user').notEmpty().withMessage('Ingresa tu nombre de usuario').bail()
+		.isLength({ min: 1, max: 8 }).withMessage('El máximo de caracteres es de 8').bail()
 		.custom(value => !/\s/.test(value)).withMessage('Tu nombre de usuario no debe contener espacios'),
 	body('name').notEmpty().withMessage('Ingresa tu(s) nombre(s)'),
 	body('lastName').notEmpty().withMessage('Ingresa tu(s) apellido(s)'),

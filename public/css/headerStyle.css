@@ -428,4 +428,8 @@ header{
         min-width: 150px;
     }
 
+    .header__nav-inner-container .header__nav-inner2{
+        min-width: auto;
+    }
+
 }

@@ -33,6 +33,11 @@
                             <button class="main__product-button-count plus">+</button>
                         </div>
                         <button type="submit" class="main__product-button-shopping">Añadir al carrito</button>
+                        <% if (locals.isLogged && locals.userLogged.userType == 'administrator') { %>
+                            <a href="/products/<%= desiredProduct.id %>/edit">
+                                <button type="submit" class="main__product-button-shopping">EDITAR</button>
+                            </a>
+                        <% } %>
                     </div>
                 </div>
             </article>

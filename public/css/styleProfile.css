@@ -1,0 +1,192 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-color: #ffffff;
+}
+
+/* =========ESTILOS PARA EL TÍTULO=========*/
+.main__title{
+    width: 95%;
+    margin: 10px auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    height: 30vh;
+    background-color: var(--myYellow);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.main__title h1:first-child{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.main__title h1:last-child{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0 10px;
+    color: #ffffff;
+    text-shadow:
+        -1px    -1px    0   #000000,
+        0       -1px    0   #000000,
+        1px     -1px    0   #000000,
+        1px     0       0   #000000,
+        1px     1px     0   #000000,
+        0       1px     0   #000000,
+        -1px    1px     0   #000000,
+        -1px    0       0   #000000;
+    letter-spacing: 0.135em;
+}
+
+/* =========ESTILOS INFORMACIÓN DEL USUARIO=========*/
+.main__information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__information-img{
+    width: 50vw;
+    min-height: 30vh;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--myBlue);
+    margin-bottom: 10px;
+}
+
+.main__information{
+    text-align: center;
+}
+
+.main__information h4{
+    font-family: var(--myTitles);
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.main__information p{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.main__information-buttons{
+    margin: 15px 0;
+}
+
+.main__information-buttons a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--myTitles);
+    border-radius: 30px;
+    border: 1px solid var(--myBlue);
+    background-color: var(--myBlue);
+    margin-bottom: 10px;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.main__information-buttons a:hover{
+    background-color: var(--myYellow);
+}
+
+/* =========ESTILOS IMAGEN INFERIOR=========*/
+.main__botton-img{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main__botton-img img{
+    width: 50vw;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+
+    /* =========ESTILOS INFORMACIÓN DEL USUARIO PARA RESOLUCIÓN TABLET==========*/
+    .main__information{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__information-img{
+        width: 30vw;
+        min-height: 20vh;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    /* =========ESTILOS IMAGEN INFERIOR PARA RESOLUCIÓN TABLET==========*/
+
+    .main__botton-img img{
+        width: 45vw;
+    }
+    
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS PARA EL TÍTULO PARA RESOLUCIÓN COMPUTADOR=========*/
+    .main__title{
+        width: 99%;
+    }
+
+    /* =========ESTILOS PARA EL TÍTULO PARA RESOLUCIÓN COMPUTADOR=========*/
+    .main__title h1:first-child{
+        font-size: 5rem;
+    }
+
+    .main__title h1:last-child{
+        font-size: 5rem;
+        text-shadow:
+            -2px    -2px    0   #000000,
+            0       -2px    0   #000000,
+            2px     -2px    0   #000000,
+            2px     0       0   #000000,
+            2px     2px     0   #000000,
+            0       2px     0   #000000,
+            -2px    2px     0   #000000,
+            -2px    0       0   #000000;
+    }
+
+    /* =========ESTILOS INFORMACIÓN DEL USUARIO PARA RESOLUCIÓN COMPUTADOR==========*/
+    .main__information-img{
+        width: 20vw;
+    }
+
+    /* =========ESTILOS IMAGEN INFERIOR=========*/
+    .main__botton-img img{
+        width: 30vw;
+    }
+}

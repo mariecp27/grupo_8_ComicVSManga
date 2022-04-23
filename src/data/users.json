@@ -178,5 +178,25 @@
     "confirm_password": "g7jT1S",
     "type_user": "administrator",
     "image": ""
+  },
+  {
+    "id": 21,
+    "user": "userPrueba",
+    "name": "User",
+    "lastName": "User",
+    "email": "user@email.com",
+    "password": "$2a$10$etSr70X/vY4OeVcxRPDMA.8vNKOKHIs4quSTrZ/2Ur5ORfRUUlc52",
+    "image": "default.png",
+    "userType": "user"
+  },
+  {
+    "id": 22,
+    "user": "marie27",
+    "name": "María",
+    "lastName": "Copete",
+    "email": "maria@email.com",
+    "password": "$2a$10$dm/TUZgmLnQTxyPdGDH25.C/NdOxar8Vv5Wkbi.SiD09GtRi3v8vO",
+    "image": "user_1650666569840.png",
+    "userType": "administrator"
   }
 ]

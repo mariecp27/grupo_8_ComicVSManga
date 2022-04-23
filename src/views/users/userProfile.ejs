@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs', {title: 'Perfil'}) %>
+    <link rel="stylesheet" href="/css/styleProfile.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section class="main__title">
+            <h1>Bienvenido, </h1>
+            <h1><%= user.user %></h1>
+        </section>
+
+        <!-- Perfil -->
+        <section class="main__information">
+            <img src="/images/users/<%= user.image %>" alt="Foto de perfil" class="main__information-img">
+            <div>
+                <h4>Nombre:</h4>
+                <p><%= user.name %></p>
+                <h4>Apellido:</h4>
+                <p><%= user.lastName %></p>
+                <h4>Correo electrónico:</h4>
+                <p><%= user.email %></p>
+                <div class="main__information-buttons">
+                    <% if (locals.isLogged && locals.userLogged.userType == 'administrator') { %>
+                        <a href="/products/create">Crear producto</a>
+                    <% } %>
+                    <a href="/users/logout">Cerrar sesión</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imágen inferior -->
+        <section class="main__botton-img">
+            <img src="/images/choperProfile.png" alt="Chopper">
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>
