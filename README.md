@@ -1,19 +1,32 @@
 # grupo_8_ComicVSManga
 Proyecto integrador Digital House / cohorte 6 Protalento
 
-### Tabla de contenidos
-1. [Descripción de la oferta de productos](#1-descripción-de-la-oferta-de-productos)
-2. [Público objetivo](#2-público-objetivo)
-3. [Descripción de los integrantes del equipo](#3-descripción-de-los-integrantes-del-equipo)
-4. [Sitios de referencia](#4-sitios-de-referencia)
-5. [Tableros de trabajo](#5-tableros-de-trabajo)
 
-### 1. Descripción de la oferta de productos
+### Tabla de contenidos
+1. [Ejecución del proyecto](#1-ejecución-del-proyecto)
+2. [Descripción de la oferta de productos](#2-descripción-de-la-oferta-de-productos)
+3. [Público objetivo](#3-público-objetivo)
+4. [Descripción de los integrantes del equipo](#4-descripción-de-los-integrantes-del-equipo)
+5. [Sitios de referencia](#5-sitios-de-referencia)
+6. [Tableros de trabajo](#6-tableros-de-trabajo)
+
+
+### 1. Ejecución del proyecto
+* Requerimiento: Node.js
+* Proceso:
+  1. Descargar/clonar el proyecto actual
+  2. Ejecutar en consola el comando: ```npm install```
+  3. Esperar que los módulos requeridos sean instalados
+  4. Ejecutar en consola el comando: ```npm run dev```
+
+
+### 2. Descripción de la oferta de productos
 **“Comic vs Manga”** se presenta como una opción amigable y atractiva a todos los amantes de las historias descritas en estos formatos, sin importar si se es un experto en el área, con conocimiento sobre todos los universos de DC, o un entusiasta, quien ha descubierto hace poco que muchos de los animes que ve cada semana usualmente están basados en aclamados libros de origen oriental.
 
 Nuestro *e-commerce* tendrá gran variedad de productos originales al español en ambos formatos (comic y manga), con envíos a toda Colombia, para que nuestros clientes puedan acceder a las historias que todos amamos, con la mejor calidad, y en la comodidad de su casa.
 
-### 2. Público objetivo
+
+### 3. Público objetivo
 * Edad: 11 - 40 [(Fuente)](https://robimes.blogspot.com/2021/05/the-aging-demographic-of-comic-book.html#:~:text=They%20found%20that%20%22The%20most,the%20majority%20were%20from%20teenagers.)
 * **Sexo**: Indiferente
 * **Ubicación**: Colombia
@@ -21,7 +34,8 @@ Nuestro *e-commerce* tendrá gran variedad de productos originales al español e
 * **Poder adquisitivo**: Salario mínimo (se resalta la oportunidad de adquirir ediciones económicas, usualmente denominadas "grapas")
 * **Intereses**: Adquisición de comics y mangas en formato físico. En adición, debido a su relación cercana, una persona que ve anime o series animadas basadas en comics es frecuentemente atraída a la lectura de este tipo de libros
 
-### 3. Descripción de los integrantes del equipo
+
+### 4. Descripción de los integrantes del equipo
 * María Herlandia Copete Perea [(Perfil en GitHub)](https://github.com/mariecp27)
 
 ¡Hola! Soy una ingeniera química de 26 años, soy de Medellín, Colombia. Me desempeño como Analista de Calidad de una línea de servicio al cliente bilingüe. Deseo iniciar una carrera en la industria Tech, razón por la cual actualmente estudio programación web Full Stack.
@@ -39,7 +53,7 @@ Me presento, soy ingeniero industrial, orgullosamente Barranquillero, hincha del
 ¡Hola!, soy Administradora en Finanzas y Negocios Internacionales de la ciudad de Montería, tengo 28 años y actualmente trabajo como Ejecutiva Comercial para una agencia de asesorías financieras y de crédito. Estoy en este Bootcamp como el primer paso para ingresar al mundo Tech y aprender todo lo posible para aplicar a mejores oportunidades laborales.
 
 
-### 4. Sitios de referencia
+### 5. Sitios de referencia
 
 * [DC Comics](https://www.dccomics.com/)
 
@@ -66,7 +80,7 @@ Se escogió Comics Total porque además de parecernos práctica para el usuario,
 Esta página fue seleccionada debido a su diseño muy arraigado a la temática de comics y mangas, su tipografía y la forma de separar las categorías nos inspira mucho en crear una página con una idea similar.
 
 
-### 5. [Tableros de trabajo](https://trello.com/proyectointegradordigitalhouse9)
+### 6. [Tableros de trabajo](https://trello.com/proyectointegradordigitalhouse9)
 Se puede acceder a los tableros de trabajo de cada *sprint* a través de los enlaces a continuación:
 * [Sprint 1](https://trello.com/b/QMIgDt8y/1-proyecto-integrador-digital-house-1st-sprint)
 * [Sprint 2](https://trello.com/b/hxSNBvd4/2-proyecto-integrador-digital-house-2nd-sprint)
