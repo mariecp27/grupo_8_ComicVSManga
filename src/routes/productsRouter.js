@@ -9,17 +9,9 @@ const router = express.Router();
 //Controlador
 const productsController = require('../controllers/productsController');
 
-// Configuración
-let storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../../public/images/products'));
-    },
-    filename: (req, file, cb) => {
-        cb(null, 'product_' + Date.now() + path.extname(file.originalname));
-    }
-})
-
-let upload = multer({ storage });
+// Middlewares
+const uploadFileProduct = require('../middlewares/multerMiddlewareProducts');
+const onlyAdminMiddleware = require('../middlewares/onlyAdminMiddleware');
 
 // Rutas
 
@@ -30,12 +22,12 @@ router.get('/', productsController.list);
 router.get('/detail/:id', productsController.detail);
 
 // Formulario de creación de productos
-router.get('/create', productsController.create);
-router.post('/create', upload.single('image'), productsController.store);
+router.get('/create', onlyAdminMiddleware, productsController.create);
+router.post('/create', uploadFileProduct.single('image'), productsController.store);
 
 // Formulario de edición de productos
-router.get('/:id/edit', productsController.edit);
-router.put('/:id/edit', upload.single('image'), productsController.update);
+router.get('/:id/edit', onlyAdminMiddleware, productsController.edit);
+router.put('/:id/edit', uploadFileProduct.single('image'), productsController.update);
 
 // Acción de eliminación
 router.delete('/:id/delete', productsController.destroy);
