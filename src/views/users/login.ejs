@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/head.ejs', {title: 'Inicio de Sesión'}) %>
     <link rel="stylesheet" href="/css/loginStyle.css">
 </head>
 <body>
@@ -15,20 +15,39 @@
         <div class="contentBx">
             <div class="formBx">
                 <h2>Inicio de sesión</h2>
-                <form>
+                <form action="/users/login" method="post">
                     <div class="inputBx">
-                        <span>Usuario</span>
-                        <input type="text" name="Usuario" required>
+                        <span>Correo electrónico</span>
+                        <input
+                            type="text"
+                            name="email"
+                            class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="form-errors">
+                                <%= errors.email.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="inputBx">
                         <span>Contraseña</span>
-                        <input type="password" name="Contraseña" required>
+                        <input
+                            type="password"
+                            name="password"
+                            class="<%= locals.errors && errors.password ? "invalid-value" : null %>"
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="form-errors">
+                                <%= errors.password.msg %> 
+                            </div>
+                        <% } %>
                     </div>
                     <div class="remember">
-                        <label><input type="checkbox">Recuerdame</label>
+                        <label><input type="checkbox" name="rememberMe">Recuérdame</label>
                     </div>
                     <div class="inputBx">
-                        <input type="submit" value="Ingresar" name="" required>
+                        <input type="submit" value="Ingresar">
                     </div>
                     <div class="inputBx">
                         <p>¿No tienes una cuenta? <a href="/users/sign-up">Crear cuenta</a></p>

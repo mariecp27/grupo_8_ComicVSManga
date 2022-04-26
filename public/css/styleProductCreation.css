@@ -1,12 +1,11 @@
 /* Paleta de colores y fuente seleccionadas */
 :root{
-    --myTitles: 'Bebas Neue', cursive;
-    --myTitles2: 'Lato', sans-serif;
-    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    --myYellow: #FEB431;
-    --myRed: #FE303D;
-    --myPurple: #AC2194;
-    --myBlue: #1572A1;
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
 }
 
 /* Normalización de estilos */
@@ -19,78 +18,7 @@
 /* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
 html{
     font-size: 62.5%;
-    background-image: url('/images/formBackground.svg');
-    height: auto;
-    width: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-}
-
-/* =========ESTILOS DEL HEADER========= */
-
-/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-image: linear-gradient(to bottom, var(--myBlue) , #ffffff00);
-}
-
-/* Estilos del logo para la resolución mobile */
-.header__logo-link{
-    width: 50%;
-    margin: 5px;
-}
-
-.header__logo{
-    width: 100%;
-}
-
-/* Oculta la barra de búsqueda y los enlaces para la resolución mobile */
-.header__link{
-    display: none;
-}
-
-/* Distribuye el ícono de usuario y menú */
-.header__text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Permite que los enlaces de la barra de navegación estén en una fila */
-.header__nav ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* Elimina las viñetas de los enlaces de la barra de navegación */
-.header__nav ul li{
-    list-style: none;
-}
-
-/* Estilos para el botón de usuario y menú de la resolución mobile */
-.fa-user-gear,
-.fa-bars{
-    background: var(--myRed);
-    color: #ffffff;
-    font-size: 1.5rem;
-    padding: 5px 7px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border: #ffffff solid 1px;
-    cursor: pointer;
-}
-
-.fa-user-gear:hover,
-.fa-bars:hover{
-    background: #ffffff;
-    color: var(--myRed);
-    transform: scale(1.2);
+    background-color: #ffffff;
 }
 
 /* =========ESTILOS DEL FORMULARIO========= */
@@ -110,6 +38,7 @@ main{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 20px;
     margin: 10px auto;
+    margin-top: 90px;
 }
 
 /* Estilos título */
@@ -235,7 +164,7 @@ select:hover{
     margin-bottom: 10px;
 }
 
-button{
+.main__form-buttons button{
     border-radius: 30px;
     padding: 10px 20px;
     border: 2px solid #ffffff;
@@ -250,7 +179,7 @@ button{
     font-size: 1.5rem;
 }
 
-button:hover{
+.main__form-buttons button:hover{
     border: 2px solid #ffffff;
     background-color: var(--myYellow);
     color: #ffffff;
@@ -266,47 +195,6 @@ button:hover{
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
-    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
-
-    /* Estilos del logo */
-    .header__logo-link{
-        width: 30%;
-    }
-
-    /* Distribuye los enlaces de la barra de navegación,*/
-    .header__text{
-        width: 70%;
-        justify-content: flex-end;
-    }
-    
-    /* Muestra los enlaces para la resolución tablet y superiores */
-    .header__link{
-        display: inline-block;
-    }
-
-    /* Estilos de los enlaces de la barra de navegación e ícono de usuario */
-    .header__nav ul li{
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    
-    .header__nav ul li a{
-        text-decoration: none;
-        color: #ffffff;
-        font-family: var(--myTitles);
-        font-size: 1.5rem;   
-    }
-
-    .header__link:hover{
-        color: var(--myRed);
-        transform: scale(1.2);
-    }
-    
-    /* Oculta el menú de la barra de navegación para la resolución tablet y superiores */
-    .fa-bars{
-        display: none;
-    }
-
     /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN TABLET========= */
 
     /* Estilos contenedor del formulario y título */
@@ -319,23 +207,6 @@ button:hover{
 /* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
 
 @media(min-width: 769px){
-    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
-
-    /* Estilos del logo */
-    .header__logo-link{
-        width: 20%;
-        margin: 5px;
-    }
-
-    /* Distribuye los enlaces e ícono de usuario */
-    .header__text{
-        width: 80%;
-    }
-
-    .header__nav ul li a{
-        font-size: 2rem;
-    }
-
     /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN COMPUTADOR========= */
 
     /* Estilos contenedor del formulario y título */

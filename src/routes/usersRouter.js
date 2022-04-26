@@ -10,14 +10,24 @@ const usersController = require('../controllers/usersController');
 // Middlewares
 const uploadFileUser = require('../middlewares/multerMiddlewareUsers');
 const validateRegister = require('../middlewares/validateRegisterMiddleware');
+const validateLogin = require('../middlewares/validateLoginMiddleware');
+const ifGuestMiddleware = require('../middlewares/ifGuestMiddleware');
+const ifLoggedMiddleware = require('../middlewares/ifLoggedMiddleware');
 
 // Rutas
 
 // Formulario de registro de usuarios
-router.get('/sign-up', usersController.register);
+router.get('/sign-up', ifLoggedMiddleware, usersController.register);
 router.post('/sign-up', uploadFileUser.single('avatar'), validateRegister, usersController.store);
 
+// Formulario de inicio de sesión
+router.get('/login', ifLoggedMiddleware, usersController.login);
+router.post('/login', validateLogin, usersController.access);
 
-router.get('/login', usersController.login);
+// Pefil del usuario
+router.get('/profile', ifGuestMiddleware, usersController.profile);
+
+// Cerrar sesión
+router.get('/logout', usersController.logout);
 
 module.exports = router;

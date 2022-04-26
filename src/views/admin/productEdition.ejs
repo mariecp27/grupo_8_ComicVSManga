@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/headAdmin.ejs', {title: 'Edición de Productos'}) %>
+    <%- include('../partials/head.ejs', {title: 'Edición de Productos'}) %>
     <link rel="stylesheet" href="/css/styleProductCreation.css">
 </head>
 <body>
     <header>
-        <%- include('../partials/headerAdmin.ejs') %>
+        <%- include('../partials/header.ejs') %>
     </header>
 
     <main>
@@ -83,7 +83,9 @@
             </form>
 
             <form action="/products/<%= productToEdit.id %>/delete?_method=DELETE" method="POST" class="delete-button">
-                <button type="submit">Eliminar producto</button>
+                <div class="main__form-buttons">
+                    <button type="submit">Eliminar producto</button>
+                </div>
             </form>
         </div>
     </main>

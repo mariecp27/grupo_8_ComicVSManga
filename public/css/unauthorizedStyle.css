@@ -1,0 +1,155 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-color: #ffffff;
+}
+
+/* =========ESTILOS DEL HEADER========= */
+
+/* Permite que el header esté sobre el slider, le da un fondo en degradado y distribuye los elementos */
+header{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    background-image: linear-gradient(to bottom, #000000e3 , transparent);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilos del logo para la resolución mobile */
+.header__logo-link{
+    width: 50%;
+    margin: 5px;
+}
+
+.header__logo{
+    width: 100%;
+}
+
+/* Estilos cuerpo de la página */
+main{
+    background-color: #000000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: var(--myTitles);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 5rem;
+    color: #ffffff;
+}
+
+h2{
+    font-family: var(--myTitles);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 5px 20px 5px;
+}
+
+p{
+    font-family: var(--myText);
+    color: #ffffff;
+    text-align: center;
+    margin: 0 5px 20px 5px;
+    font-size: 1.5rem;
+}
+
+p a{
+    text-decoration: none;
+    color: var(--myPink);
+    font-weight: bold;
+}
+
+p a:hover{
+    color: var(--myYellow);
+}
+
+img{
+    width: 60%;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN TABLET========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 30%;
+    }
+
+    /* Estilos cuerpo de la página */
+    main{
+        padding-top: 80px;
+    }
+
+    img{
+        width: 40%;
+    }
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS DEL HEADER PARA RESOLUCIÓN COMPUTADOR========= */
+
+    /* Estilos del logo */
+    .header__logo-link{
+        width: 35%;
+    }
+
+    .header__logo-link img{
+        width: 50%;
+    }
+
+    /* Estilos cuerpo de la página */
+    main{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1{
+        font-size: 7rem;
+    }
+    
+    h2{
+        font-size: 2rem;
+    }
+    
+    p{
+        font-size: 2rem;
+    }
+    
+    img{
+        width: 20%;
+    }
+    
+}

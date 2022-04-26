@@ -2,6 +2,9 @@
 const express = require('express');
 const path = require('path');
 const methodOverride =  require('method-override');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const userLogged = require('./middlewares/userLoggedMiddleware');
 
 // Ejecución
 const app = express();
@@ -12,6 +15,13 @@ app.use(express.static(publicPath))
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({
+	secret: "Secret word",
+	resave: false,
+	saveUninitialized: false,
+}));
+app.use(cookies());
+app.use(userLogged);
 
 // Motor de vistas
 app.set('view engine', 'ejs');
