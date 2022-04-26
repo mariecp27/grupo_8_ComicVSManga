@@ -105,9 +105,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Debido a la ampliación del plazo para la entrega del quinto *Sprint*, se buscará asesoría con la [mentora](https://github.com/GisellG) asignada por *ProTalento* para realizar cambios en la parte visual del proyecto, ya que la página de inicio tiene áreas de oportunidad en ese aspecto.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***:Se finalizan los detalles del cuarto *Sprint*, compartiendo los avances de las compañeras Se realiza la entrega correspondiente.
+  - ***¿Encontró con algún impedimento?***: Tenemos problemas con el tiempo para realizar las tareas.
+  - ***¿Qué va a hacer durante la presente semana?***: Esperamos adelantar en Playground para colocarnos al día para poder comenzar el siguiente sprint. De igual forma agendamos una reunión con la mentora de la compañera María para realizar cambios visuales en nuestras vistas.
  
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
@@ -123,9 +123,45 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Continuación de la implementación de los nuevos estilos, junto con ciertas herramientas a través de JavaScript para mejorar el dinamismo del proyecto. Se planea iniciar con las tareas propias del quinto *Sprint*.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se realiza la reunión con la mentora de la compañera, y se comienzan a ver algunos cambios. Comenzamos a indagar formas de cambiar el carrito.
+  - ***¿Encontró con algún impedimento?***: Tengo problemas con el javascript, y algunos problemas en el playground para entender la dinamica de la tematica.
+  - ***¿Qué va a hacer durante la presente semana?***:Continuación de la implementación de los nuevos estilos, junto con ciertas herramientas a través de JavaScript para mejorar el dinamismo del proyecto. Se planea iniciar con las tareas propias del quinto *Sprint*.
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 17 (Abril 18/2022 - Abril 24/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Implementación de cierto dinamismo en la página, como la creación del menú funcional para la resolución de celular. Se da inicio a las tareas del quinto *Sprint*, a través del registro funcional de los usuarios.
+  - ***¿Encontró con algún impedimento?***: Se tiene conocimiento básico en JavaScript para front-end, por lo que se requirió investigación iniciar en el dinamismo de la página.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuar con las tareas del quinto *Sprint*. Se buscará dividir los pendientes (inicio de sesión, cookies, división de rutas) con los compañeros de equipo.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: Se buscó documentación para poder implementar un carrito de compras, de igual forma se han visto cambios con la compañera maria en las demas paginas, en cuanto a vistas.
+  - ***¿Encontró con algún impedimento?***: He tenido problemas con Javascript tanto en el back-end como en front-end, no he podido terminar las tareas de playground.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuar las tareas del quinto *Sprint*. dividiremos las tareas pendientes entre todos los compañeros.
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 18 (Abril 25/2022 - Mayo 01/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Continuación de las tareas del quinto *Sprint*: login funcional (incluido middlewares), creación del perfil del usuario, acceso a rutas limitando si se ha iniciado sesión o el tipo de usuario.
+  - ***¿Encontró con algún impedimento?***: Se debieron retomar tópicos de clases no recientes.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del quinto *Sprint*, reunión retrospectiva y evaluar el sexto *Sprint* para dar inicio al mismo.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: He buscado documentación front-end para las vistas del carrito porque queria implementar en el carrito. No he podido terminar playground.
+  - ***¿Encontró con algún impedimento?***:Actividades del playground han estado pesadas, y no me han dejado avanzar en el  quinto *Sprint*. La compañera Maria nos ha explicado muchas funcionalidades del sprint las cuales hemos revisado.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del quinto *Sprint*, reunión retrospectiva y evaluar el sexto *Sprint* para dar inicio al mismo.
  
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
