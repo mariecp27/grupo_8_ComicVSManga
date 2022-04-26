@@ -131,3 +131,39 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 17 (Abril 18/2022 - Abril 24/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Implementación de cierto dinamismo en la página, como la creación del menú funcional para la resolución de celular. Se da inicio a las tareas del quinto *Sprint*, a través del registro funcional de los usuarios.
+  - ***¿Encontró con algún impedimento?***: Se tiene conocimiento básico en JavaScript para front-end, por lo que se requirió investigación iniciar en el dinamismo de la página.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuar con las tareas del quinto *Sprint*. Se buscará dividir los pendientes (inicio de sesión, cookies, división de rutas) con los compañeros de equipo.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 18 (Abril 25/2022 - Mayo 01/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Continuación de las tareas del quinto *Sprint*: login funcional (incluido middlewares), creación del perfil del usuario, acceso a rutas limitando si se ha iniciado sesión o el tipo de usuario.
+  - ***¿Encontró con algún impedimento?***: Se debieron retomar tópicos de clases no recientes.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del quinto *Sprint*, reunión retrospectiva y evaluar el sexto *Sprint* para dar inicio al mismo.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+ 
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
