@@ -162,7 +162,42 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué hizo durante la semana anterior?***: He buscado documentación front-end para las vistas del carrito porque queria implementar en el carrito. No he podido terminar playground.
   - ***¿Encontró con algún impedimento?***:Actividades del playground han estado pesadas, y no me han dejado avanzar en el  quinto *Sprint*. La compañera Maria nos ha explicado muchas funcionalidades del sprint las cuales hemos revisado.
   - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del quinto *Sprint*, reunión retrospectiva y evaluar el sexto *Sprint* para dar inicio al mismo.
- 
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+## Semana 19 (Mayo 02/2022 - Mayo 08/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: 
+  - ***¿Encontró con algún impedimento?***: 
+  - ***¿Qué va a hacer durante la presente semana?***: 
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: se realizaron todos los ajustes de la entrega del quinto *Sprint* se realizó la reunión retrospectiva para tener en cuenta algunos aspectos olvidados del sprint anterior. y se comenzó a revisar los entregables del siguiente *Sprint*.
+  - ***¿Encontró con algún impedimento?***: El unico inconveniente fue el tiempo, pero se pudo solventar con la ayuda de la compañera.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará el esquema de la base de datos, y se realizará el script, para ser compartido con la compañera, socializar y definir los campos a entregar. 
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+  ## Semana 20 (Mayo 09/2022 - Mayo 15/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: 
+  - ***¿Encontró con algún impedimento?***: 
+  - ***¿Qué va a hacer durante la presente semana?***: 
+
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: Se definió el esquema de la base de datos, se revisaron las tablas y las diferentes conexiones entre ellas. Se desarrolló el script de la base de datos inicial, aunque se han propuesto algunos cambios.
+  - ***¿Encontró con algún impedimento?***: Hice cambios en el software que utilizaba para la creación de base de datos ya que me generaba problemas el dbeaver. 
+  - ***¿Qué va a hacer durante la presente semana?***: Esta semana terminaremos de ajustar los diferentes campos de las tablas de la base de datos, y esperar pasar a la siguiente consigna del *Sprint*.
+
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
