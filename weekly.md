@@ -160,7 +160,7 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
 
 * **Erick José Leones Reyes**
   - ***¿Qué hizo durante la semana anterior?***: He buscado documentación front-end para las vistas del carrito porque queria implementar en el carrito. No he podido terminar playground.
-  - ***¿Encontró con algún impedimento?***:Actividades del playground han estado pesadas, y no me han dejado avanzar en el  quinto *Sprint*. La compañera Maria nos ha explicado muchas funcionalidades del sprint las cuales hemos revisado.
+  - ***¿Encontró con algún impedimento?***: Actividades del playground han estado pesadas, y no me han dejado avanzar en el  quinto *Sprint*. La compañera Maria nos ha explicado muchas funcionalidades del sprint las cuales hemos revisado.
   - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del quinto *Sprint*, reunión retrospectiva y evaluar el sexto *Sprint* para dar inicio al mismo.
 
 * **Felipe Vargas Sánchez**
@@ -168,15 +168,16 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
 
+
 ## Semana 19 (Mayo 02/2022 - Mayo 08/2022)
 
 * **María Herlandia Copete Perea**
-  - ***¿Qué hizo durante la semana anterior?***: 
-  - ***¿Encontró con algún impedimento?***: 
-  - ***¿Qué va a hacer durante la presente semana?***: 
+  - ***¿Qué hizo durante la semana anterior?***: Se llevó a cabo la entrega del quinto *Sprint* en conjunto con la reunión retrospectiva. Finalmente, se evaluaron los componentes de la entrega del sexto *Sprint* para plantearlos en el tablero.
+  - ***¿Encontró con algún impedimento?***: Ninguno.
+  - ***¿Qué va a hacer durante la presente semana?***: Se espera dar inicio al sexto *Sprint*, a partir de la creación de la base de datos con el equipo, acordando cuál es la mejor estructura para la misma.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***: se realizaron todos los ajustes de la entrega del quinto *Sprint* se realizó la reunión retrospectiva para tener en cuenta algunos aspectos olvidados del sprint anterior. y se comenzó a revisar los entregables del siguiente *Sprint*.
+  - ***¿Qué hizo durante la semana anterior?***: Se realizaron todos los ajustes de la entrega del quinto *Sprint* se realizó la reunión retrospectiva para tener en cuenta algunos aspectos olvidados del sprint anterior, y se comenzó a revisar los entregables del siguiente *Sprint*.
   - ***¿Encontró con algún impedimento?***: El unico inconveniente fue el tiempo, pero se pudo solventar con la ayuda de la compañera.
   - ***¿Qué va a hacer durante la presente semana?***: Se realizará el esquema de la base de datos, y se realizará el script, para ser compartido con la compañera, socializar y definir los campos a entregar. 
 
@@ -185,13 +186,13 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
 
-  ## Semana 20 (Mayo 09/2022 - Mayo 15/2022)
+
+## Semana 20 (Mayo 09/2022 - Mayo 15/2022)
 
 * **María Herlandia Copete Perea**
-  - ***¿Qué hizo durante la semana anterior?***: 
-  - ***¿Encontró con algún impedimento?***: 
-  - ***¿Qué va a hacer durante la presente semana?***: 
-
+  - ***¿Qué hizo durante la semana anterior?***: Se realizó el diagrama entidad-relación en conjunto con los miembros del equipo y se dividieron las tareas iniciales: creación de la base de datos (a cargo de Erick) y llenado de información (a mi cargo).
+  - ***¿Encontró con algún impedimento?***: Ninguno.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuación de las tareas para el sexto *Sprint*, con la implementación en Sequelize del modelo propuesto.
 
 * **Erick José Leones Reyes**
   - ***¿Qué hizo durante la semana anterior?***: Se definió el esquema de la base de datos, se revisaron las tablas y las diferentes conexiones entre ellas. Se desarrolló el script de la base de datos inicial, aunque se han propuesto algunos cambios.

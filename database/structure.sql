@@ -12,11 +12,11 @@ CREATE TABLE users_types (
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 	user_id INT AUTO_INCREMENT NOT NULL,
-	user VARCHAR(8) NOT NULL,
+	user VARCHAR(10) NOT NULL,
 	name VARCHAR(50) NOT NULL,
 	last_name VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL UNIQUE,
-	password VARCHAR(25) NOT NULL,
+	password VARCHAR(100) NOT NULL,
 	image VARCHAR(50) NOT NULL DEFAULT 'default.png',
 	user_type_id INT NOT NULL,
 	PRIMARY KEY (user_id),
