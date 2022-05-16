@@ -24,7 +24,7 @@
                         <h4>Páginas:</h4>
                         <p><%= desiredProduct.pages %></p>
                         <h4>Formato:</h4>
-                        <p><%= desiredProduct.format %></p>
+                        <p><%= desiredProduct.formats.format %></p>
                     </div>
                     <div class="main__product-shopping">
                         <div class="main__product-count">
@@ -64,9 +64,9 @@
             <h2 class="main__related-products-title">Productos relacionados</h2>
             <div class="main__related-products-container-all">
                 <% for(let i = 0; i < relatedProducts.length; i++) { %>
-                    <% if (relatedProducts[i].id != desiredProduct.id) { %>
+                    <% if (relatedProducts[i].product_id != desiredProduct.product_id) { %>
                         <article class="main__related-products-container">
-                            <a href="/products/detail/<%= relatedProducts[i].id %>">
+                            <a href="/products/detail/<%= relatedProducts[i].product_id %>">
                                 <img src="/images/products/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
                                 <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                                 <h3><%= relatedProducts[i].name %></h3>

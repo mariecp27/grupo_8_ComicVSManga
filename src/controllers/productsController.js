@@ -1,19 +1,31 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 let mainController = {
     // Todos los productos: Tienda
-    list: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    list: async(req, res) => {
 
         let wantedProducts = [];
 
         if(req.query.search){
-            wantedProducts = products.filter(product => product.name.toLowerCase().includes(req.query.search.toLowerCase()));
+            wantedProducts = await db.Product.findAll({
+                where:{
+                    name: { [Op.like]: '%' + req.query.search + '%'}
+                },
+                order: [
+                    ['name', 'ASC']
+                ],
+            }).catch(function(errors){
+                console.log(errors);
+            });
         }else{
-            wantedProducts = products;
+            wantedProducts = await db.Product.findAll({
+                order: [
+                    ['name', 'ASC']
+                ],
+            }).catch(function(errors){
+                console.log(errors);
+            });
         }
 
         res.render('products/products', { wantedProducts });
@@ -21,209 +33,373 @@ let mainController = {
     },
 
     // Detalle de cada producto
-    detail: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    detail: async(req, res) => {
 		
         let idProduct = req.params.id;
 
-		let desiredProduct = products.find(product => product.id == idProduct);
+		let desiredProduct = await db.Product.findByPk(idProduct, {
+            include: [
+                {association: 'formats'},
+                {association: 'categories'},
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
 		if(!desiredProduct){
-			res.redirect('products/products');
+			res.redirect('/products');
 		}
 
         let relatedProducts = [];
-  
-        if (desiredProduct.category.includes('marvel')){
-            relatedProducts = products.filter(product =>{
-                return product.category.includes('marvel');
-            })
-        } else if (desiredProduct.category.includes('dc')){
-            relatedProducts = products.filter(product =>{
-                return product.category.includes('dc');
-            })
-        }else if (desiredProduct.category.includes('manga')){
-            relatedProducts = products.filter(product =>{
-                return product.category.includes('manga');
-            })
-        }else{
-            relatedProducts = products.filter(product =>{
-                return product.category.includes('independiente');
-            })
-        }
 
+        if(desiredProduct.categories[0].dataValues.category.includes('DC')){
+            relatedProducts = await db.Product.findAll({
+                include: [{
+                    association: 'categories',
+                    where: { category_id: 1 }
+                }],
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }else if(desiredProduct.categories[0].dataValues.category.includes('Marvel')){
+            relatedProducts = await db.Product.findAll({
+                include: [{
+                    association: 'categories',
+                    where: { category_id: 2 }
+                }],
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }else if(desiredProduct.categories[0].dataValues.category.includes('Independiente')){
+            relatedProducts = await db.Product.findAll({
+                include: [{
+                    association: 'categories',
+                    where: { category_id: 3 }
+                }],
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }else if(desiredProduct.categories[0].dataValues.category.includes('Manga')){
+            relatedProducts = await db.Product.findAll({
+                include: [{
+                    association: 'categories',
+                    where: { category_id: 4 }
+                }],
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }
+        
 		res.render('products/productDetail', { desiredProduct, relatedProducts });
 	},
 
     // Formulario de creación de productos
-    create: (req, res) => {
-        res.render('admin/productCreation');
+    create: async(req, res) => {
+        
+        let categories = await db.Category.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+
+        let formats = await db.Format.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+
+        res.render('admin/productCreation', {
+            categories,
+            formats
+        });
     },
 
     // Método para almacenar los productos creados
-	store: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        let nextId = products[products.length - 1].id + 1;
+	store: async(req, res) => {
 
 		let filename = req.file.filename;
 
-        let isfeatured = false;
+        let isfeatured = 0;
         if (req.body.featured == "on"){
-            isfeatured = true;
+            isfeatured = 1;
         }
 
-        let isOnSale = false;
+        let isOnSale = 0;
         if (req.body.onSale == "on"){
-            isOnSale = true;
+            isOnSale = 1;
         }
 
+        let stringCategories = req.body.category;
         let allcategories = [];
-        allcategories.push(req.body.category);
-        let storedCategories = allcategories.join(', ');
 
-		
-		let newProduct = {
-			id: nextId,
+        for(let i = 0; i < stringCategories.length; i++){
+            allcategories[i] = Number(stringCategories[i]);
+        }
+        
+        let newProduct = await db.Product.create({
 			name: req.body.name,
             description: req.body.description,
 			image: filename,
-            category: storedCategories,
             author: req.body.author,
-            format: req.body.format,
+            format_id: req.body.format,
             pages: Number(req.body.pages),
             price: Number(req.body.price),
             featured: isfeatured,
-            onSale: isOnSale,
+            on_sale: isOnSale,
             discount: Number(req.body.discount),
-		}
+            stock: Number(req.body.stock),
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-		products.push(newProduct);
+        let newProductDB = await db.Product.findOne({
+            where:{
+                image: filename,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        allcategories.forEach(async (category) => {
+            let newCategories = await db.productsCategories.create({
+                product_id: newProductDB.product_id,
+                category_id: category
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        });
 
 		res.redirect('/products');
 	},
 
     // Formulario de edición de productos
-    edit: (req, res) =>{
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    edit: async(req, res) =>{
 
         let idProduct = req.params.id;
 
-        let productToEdit = products.find(product => product.id == idProduct);
+        let productToEdit = await db.Product.findByPk(idProduct, {
+            include: [
+                {association: 'formats'},
+                {association: 'categories'},
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-        res.render('admin/productEdition', { productToEdit });
+        let categories = await db.Category.findAll()
+        .catch(function(errors){
+            console.log(errors);
+        });
+
+        let formats = await db.Format.findAll()
+        .catch(function(errors){
+            console.log(errors);
+        });
+
+        res.render('admin/productEdition', { 
+            productToEdit,
+            categories,
+            formats
+        });
+
     },
 
     // Método para actualizar los productos almacenados
-    update: (req, res) => {
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    update: async(req, res) => {
 
         let idProduct = req.params.id;
 
-        let filename = '';
-        if(req.file){
-            filename = req.file.filename;
-        };
-
-        let allcategories = [];
-        allcategories.push(req.body.category);
-        let storedCategories = allcategories.join(', ');
-
-        let isfeatured = false;
+        let isfeatured = 0;
         if (req.body.featured == "on"){
-            isfeatured = true;
+            isfeatured = 1;
         }
 
-        let isOnSale = false;
+        let isOnSale = 0;
         if (req.body.onSale == "on"){
-            isOnSale = true;
+            isOnSale = 1;
         }
 
-		products.forEach(product => {
-            if(product.id == idProduct){
-                product.name = req.body.name;
-                product.description= req.body.description;
-                if(filename != ''){
-					product.image = filename;
-				};
-                product.category = storedCategories;
-                product.author = req.body.author;
-                product.format = req.body.format;
-                product.pages = Number(req.body.pages);
-                product.price = Number(req.body.price);
-                product.featured = isfeatured;
-                product.onSale = isOnSale;
-                product.discount = Number(req.body.discount);
-            }
-        })
+        let stringCategories = req.body.category;
+        let allcategories = [];
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2));
+        for(let i = 0; i < stringCategories.length; i++){
+            allcategories[i] = Number(stringCategories[i]);
+        }
+
+        if(req.file){
+            let filename = req.file.filename;
+
+            let updatedProduct = await db.Product.update({
+                name: req.body.name,
+                description: req.body.description,
+                image: filename,
+                author: req.body.author,
+                format_id: req.body.format,
+                pages: Number(req.body.pages),
+                price: Number(req.body.price),
+                featured: isfeatured,
+                on_sale: isOnSale,
+                discount: Number(req.body.discount),
+                stock: Number(req.body.stock),
+            }, {
+                where: {
+                    product_id: idProduct,
+                }
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }else{
+            let updatedProduct = await db.Product.update({
+                name: req.body.name,
+                description: req.body.description,
+                author: req.body.author,
+                format_id: req.body.format,
+                pages: Number(req.body.pages),
+                price: Number(req.body.price),
+                featured: isfeatured,
+                on_sale: isOnSale,
+                discount: Number(req.body.discount),
+                stock: Number(req.body.stock),
+            }, {
+                where:{
+                    product_id: idProduct,
+                }
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }
+
+        let previousCategories = await db.productsCategories.destroy({
+            where:{
+                product_id: idProduct,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+        for(let i = 0; i < stringCategories.length; i++){
+            allcategories[i] = Number(stringCategories[i]);
+        }
+
+        allcategories.forEach(async (category) => {
+            let newCategories = await db.productsCategories.create({
+                product_id: idProduct,
+                category_id: category
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        });
 
 		res.redirect('/products/detail/' + idProduct);
 	},
 
     // Método para eliminar productos almacenados
-	destroy : (req, res) => {
-        		
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		let idProduct = req.params.id;
+	destroy : async(req, res) => {
 
-		let remainingProducts = products.filter(product => product.id != idProduct);
+        let idProduct = req.params.id;
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(remainingProducts, null, 2));
+        let categories = await db.productsCategories.destroy({
+            where:{
+                product_id: idProduct,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-		products = remainingProducts;
+        let deletedProduct = await db.Product.destroy({
+            where: {
+                product_id: idProduct,
+            },
+            force: true
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
 		res.redirect('/products');
 	},
 
     // Categorias
-    marvelCategory: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        const productsInCategory = products.filter(product => product.category.includes('marvel'));
+    marvelCategory: async(req, res) => {
+        
+        const productsInCategory = await db.Product.findAll({
+            include: [{
+                association: 'categories',
+                where: { category_id: 2 }
+            }],
+            order: [
+                ['name', 'ASC']
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
         res.render('products/productsMarvel', { productsInCategory });
 
     },
-    dcCategory: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    dcCategory: async(req, res) => {
 
-        const productsInCategory = products.filter(product => product.category.includes('dc'));
+        const productsInCategory = await db.Product.findAll({
+            include: [{
+                association: 'categories',
+                where: { category_id: 1 }
+            }],
+            order: [
+                ['name', 'ASC']
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
         res.render('products/productsDC', { productsInCategory });
 
     },
-    mangaCategory: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    mangaCategory: async(req, res) => {
 
-        const productsInCategory = products.filter(product => product.category.includes('manga'));
+        const productsInCategory = await db.Product.findAll({
+            include: [{
+                association: 'categories',
+                where: { category_id: 4 }
+            }],
+            order: [
+                ['name', 'ASC']
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
         res.render('products/productsManga', { productsInCategory });
 
     },
-    independentCategory: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    independentCategory: async(req, res) => {
 
-        const productsInCategory = products.filter(product => product.category.includes('independiente'));
+        const productsInCategory = await db.Product.findAll({
+            include: [{
+                association: 'categories',
+                where: { category_id: 3 }
+            }],
+            order: [
+                ['name', 'ASC']
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
         res.render('products/productsIndependent', { productsInCategory });
 
     },
-    comicCategory: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    comicCategory: async(req, res) => {
 
-        const productsInCategoryMarvel = products.filter(product => product.category.includes('marvel'));
-        const productsInCategoryDC = products.filter(product => product.category.includes('dc'));
-        const productsInCategoryIndependent = products.filter(product => product.category.includes('independiente'));
-
-        const productsInCategory = [
-            ...productsInCategoryMarvel,
-            ...productsInCategoryDC,
-            ...productsInCategoryIndependent
-        ]
+        const productsInCategory = await db.Product.findAll({
+            include: [{
+                association: 'categories',
+                where: {
+                    category_id: { [Op.or]: [1, 2, 3]},
+                }
+            }],
+            order: [
+                ['name', 'ASC']
+            ]
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
         res.render('products/productsComic', { productsInCategory });
 

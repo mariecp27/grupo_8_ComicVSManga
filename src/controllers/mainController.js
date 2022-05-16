@@ -1,22 +1,38 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const db = require('../database/models');
 
 let mainController = {
     // Página de inicio
-    index: (req, res) =>{
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		
-        let featuredProducts = products.filter(product => product.featured == true);
+    index: async(req, res) =>{
 
-        res.render('web/index', { featuredProducts });
+       let featuredProducts = await db.Product.findAll({
+           where:{
+               featured: 1,
+           },
+           order: [
+                ['name', 'ASC']
+            ],
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+       return res.render('web/index', { featuredProducts });
     },
 
-    carrito: (req, res) =>{
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		
-        let featuredProducts = products.filter(product => product.featured == true);
+    // Carrito de compras
+    carrito: async(req, res) =>{
+
+        let featuredProducts = await db.Product.findAll({
+            where:{
+                featured: 1,
+            },
+            order: [
+                 ['name', 'ASC']
+            ],
+            limit: 4
+         }).catch(function(errors){
+             console.log(errors);
+         });
+ 
 
         return res.render('web/productCart',{ featuredProducts });
     },

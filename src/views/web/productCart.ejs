@@ -93,7 +93,7 @@
             <div class="featured-products__container-all">
                 <% for(let i = 0; i < featuredProducts.length; i++) { %>
                     <article class="featured-products__container">
-                        <a href="/products/detail/<%= featuredProducts[i].id %>">
+                        <a href="/products/detail/<%= featuredProducts[i].product_id %>">
                             <img src="/images/products/<%= featuredProducts[i].image %>" alt="Imagen del producto" class="featured-products__img">
                             <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                             <h3><%= featuredProducts[i].name %></h3>

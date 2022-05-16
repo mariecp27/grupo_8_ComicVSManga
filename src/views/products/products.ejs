@@ -27,7 +27,7 @@
         <section class="main__products">
             <% for(let i = 0; i < wantedProducts.length; i++) {%>
                 <article class="product__container">
-                    <a href="/products/detail/<%= wantedProducts[i].id %>">
+                    <a href="/products/detail/<%= wantedProducts[i].product_id %>">
                         <img src="/images/products/<%= wantedProducts[i].image %>" alt="Imagen de producto" class="products__img">
                         <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
                         <h3><%= wantedProducts[i].name %></h3>

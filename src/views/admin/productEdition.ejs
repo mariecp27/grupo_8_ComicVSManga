@@ -12,7 +12,7 @@
     <main>
         <div class="main-container">
             <h2 class="main__form-tittle">Producto a editar: <%= productToEdit.name %></h2>
-            <form action="/products/<%= productToEdit.id %>/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
+            <form action="/products/<%= productToEdit.product_id %>/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
                 <div>
                     <label for="name" class="main__form-label">Nombre del producto</label>
                     <input type="text" name="name" id="name" class="" value="<%= productToEdit.name %>" required>
@@ -30,14 +30,20 @@
 
                 <div>
                     <label for="category" class="main__form-label">Categorías</label>
-                    <label><input type="checkbox" name="category" value="dc" class="" <%= locals.productToEdit && productToEdit.category.includes('dc') ? 'checked' : ''; %>>Cómic DC</label>
-                    <label><input type="checkbox" name="category" value="marvel" class="" <%= locals.productToEdit && productToEdit.category.includes('marvel') ? 'checked' : ''; %>>Cómic Marvel</label>
-                    <label><input type="checkbox" name="category" value="independiente" class="" <%= locals.productToEdit && productToEdit.category.includes('independiente') ? 'checked' : ''; %>>Cómic Independiente</label>
-                    <label><input type="checkbox" name="category" value="manga" class="" <%= locals.productToEdit && productToEdit.category.includes('manga') ? 'checked' : ''; %>>Manga</label>
-                    <label><input type="checkbox" name="category" value="fantasia" class="" <%= locals.productToEdit && productToEdit.category.includes('fantasia') ? 'checked' : ''; %>>Fantasía</label>
-                    <label><input type="checkbox" name="category" value="terror" class="" <%= locals.productToEdit && productToEdit.category.includes('terror') ? 'checked' : ''; %>>Terror</label>
-                    <label><input type="checkbox" name="category" value="ficcion" class="" <%= locals.productToEdit && productToEdit.category.includes('ficcion') ? 'checked' : ''; %>>Ciencia Ficción</label>
-                    <label><input type="checkbox" name="category" value="drama" class="" <%= locals.productToEdit && productToEdit.category.includes('drama') ? 'checked' : ''; %>>Drama</label>
+                    <% for(let i = 0; i < categories.length; i++) { %>
+                        <label>
+                            <input
+                                type="checkbox"
+                                value="<%= categories[i].category_id %>" 
+                                <% for( let j = 0; j < productToEdit.categories.length; j++ ) { %>
+                                    <% if (categories[i].category_id == productToEdit.categories[j].category_id) { %>
+                                        checked
+                                    <% } %>    
+                                <% } %>
+                                name="category">
+                                <%= categories[i].category %>  
+                        </label>
+                    <% } %>
                 </div>
 
                 <div>
@@ -47,9 +53,13 @@
 
                 <select name="format" class="" required>
                     <option disabled>Seleccione formato</option>
-                    <option value="blanda" <%= locals.productToEdit && productToEdit.format === 'blanda' ? 'selected' : ''; %>>Tapa blanda</option>
-                    <option value="dura" <%= locals.productToEdit && productToEdit.format === 'dura' ? 'selected' : ''; %>>Tapa dura</option>
-                    <option value="deluxe" <%= locals.productToEdit && productToEdit.format === 'deluxe' ? 'selected' : ''; %>>Deluxe</option>
+                    <% for(let i = 0; i < formats.length; i++) { %>
+                        <% if (formats[i].format_id == productToEdit.formats.format_id) { %>
+                            <option value="<%= formats[i].format_id %>" selected><%= formats[i].format %></option>
+                        <% } else{%>
+                            <option value="<%= formats[i].format_id %>"><%= formats[i].format %> </option>
+                        <% } %>
+                    <% } %>
                 </select>
 
                 <div>
@@ -63,16 +73,21 @@
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="featured" class="" id="featured" <%= locals.productToEdit && productToEdit.featured === true ? 'checked' : ''; %>>Producto destacado</label>
+                    <label><input type="checkbox" name="featured" class="" id="featured" <%= locals.productToEdit && productToEdit.featured == 1 ? 'checked' : ''; %>>Producto destacado</label>
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="onSale" class="" id="onSale" <%= locals.productToEdit && productToEdit.onSale === true ? 'checked' : ''; %>>Producto en oferta</label>
+                    <label><input type="checkbox" name="onSale" class="" id="onSale" <%= locals.productToEdit && productToEdit.on_sale == 1 ? 'checked' : ''; %>>Producto en oferta</label>
                 </div>
 
                 <div>
                     <label for="discount" class="main__form-label">Descuento</label>
                     <input type="number" name="discount" value="<%= productToEdit.discount %>" class="" required placeholder="Si no está en oferta, es cero (0)">
+                </div>
+
+                <div>
+                    <label for="stock" class="main__form-label">Stock</label>
+                    <input type="number" name="stock" class="" value="<%= productToEdit.stock %>" required>
                 </div>
 
                 <div class="main__form-buttons">
@@ -82,7 +97,7 @@
 
             </form>
 
-            <form action="/products/<%= productToEdit.id %>/delete?_method=DELETE" method="POST" class="delete-button">
+            <form action="/products/<%= productToEdit.product_id %>/delete?_method=DELETE" method="POST" class="delete-button">
                 <div class="main__form-buttons">
                     <button type="submit">Eliminar producto</button>
                 </div>

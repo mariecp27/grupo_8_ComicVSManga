@@ -30,14 +30,9 @@
     
                 <div>
                     <label for="category" class="main__form-label">Categorías</label>
-                    <label><input type="checkbox" name="category" value="dc" class="">Cómic DC</label>
-                    <label><input type="checkbox" name="category" value="marvel" class="">Cómic Marvel</label>
-                    <label><input type="checkbox" name="category" value="independiente" class="">Cómic Independiente</label>
-                    <label><input type="checkbox" name="category" value="manga" class="">Manga</label>
-                    <label><input type="checkbox" name="category" value="fantasia" class="">Fantasía</label>
-                    <label><input type="checkbox" name="category" value="terror" class="">Terror</label>
-                    <label><input type="checkbox" name="category" value="ficcion" class="">Ciencia Ficción</label>
-                    <label><input type="checkbox" name="category" value="drama" class="">Drama</label>
+                    <% for( let i = 0; i < categories.length; i++ ) { %>
+                        <label><input type="checkbox" name="category" value="<%= categories[i].category_id %>" class=""><%= categories[i].category %></label>
+                    <% } %>
                 </div>
                 
                 <div>
@@ -47,9 +42,9 @@
                 
                 <select name="format" class="" required>
                     <option disabled selected>Seleccione formato</option>
-                    <option value="blanda">Tapa blanda</option>
-                    <option value="dura">Tapa dura</option>
-                    <option value="deluxe">Deluxe</option>
+                    <% for( let i = 0; i < formats.length; i++ ) { %>
+                        <option value="<%= formats[i].format_id %>"><%= formats[i].format %></option>
+                    <% } %>
                 </select>
                 
                 <div>
@@ -73,6 +68,11 @@
                 <div>
                     <label for="discount" class="main__form-label">Descuento</label>
                     <input type="number" name="discount" class="" required placeholder="Si no está en oferta, es cero (0)">
+                </div>
+
+                <div>
+                    <label for="stock" class="main__form-label">Stock</label>
+                    <input type="number" name="stock" class="" required>
                 </div>
                 
                 <div class="main__form-buttons">
