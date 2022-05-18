@@ -1,0 +1,220 @@
+/* Paleta de colores y fuente seleccionadas */
+:root{
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+/* Normalización de estilos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Permite controlar el tamaño de fuente en rem: 1rem = 10px */
+html{
+    font-size: 62.5%;
+    background-color: #ffffff;
+}
+
+/* =========ESTILOS PARA EL TÍTULO=========*/
+.main__title{
+    width: 95%;
+    margin: 10px auto;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    height: 30vh;
+    background-color: var(--myYellow);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.main__title h1{
+    font-family: var(--myTitles);
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 0;
+    margin-right: 10px;
+}
+
+/* =========ESTILOS DEL FORMULARIO=========*/
+.main__information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main__information form{
+    width: 80%;
+}
+
+.main__information-img{
+    width: 50vw;
+    min-height: 30vh;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--myBlue);
+    margin-bottom: 10px;
+}
+
+/* Estilos label del formulario */
+.main__form label{
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 2px;
+    font-family: var(--myTitles);
+    letter-spacing: 1px;
+    text-align: left;
+    color: var(--myBlue);
+}
+
+/* Estilos de los inputs de texto y números */
+.main__form input[type=text],
+.main__form input[type=email],
+.main__form input[type=password]{
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 1px solid var(--myBlue);
+    font-family: var(--myText);
+    font-size: 1.5rem;
+    width: 100%;
+    resize: none;
+}
+
+.main__form input:focus {
+    outline: none;
+    border: 1px solid var(--myYellow);
+}
+
+
+/* Estilos input para subir la imagen */
+input[type="file"]{
+    display: none;
+}
+
+label.main__form-upload{
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 1px solid var(--myBlue);
+    font-family: var(--myText);
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: var(--myBlue);
+    font-family: var(--myTitles);
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 0;
+}
+
+.main__form-upload:hover{
+    border: 1px solid #ffffff;
+    background-color: var(--myYellow);
+    color: #ffffff;
+}
+
+.main__form-buttons button{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--myTitles);
+    border-radius: 30px;
+    border: 1px solid var(--myBlue);
+    background-color: var(--myBlue);
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    margin: 15px 0;
+    padding: 10px 20px;
+}
+
+.main__form-buttons button:hover{
+    background-color: var(--myYellow);
+}
+
+/* =========ESTILOS IMAGEN INFERIOR=========*/
+.main__botton-img{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main__botton-img img{
+    width: 50vw;
+}
+
+/* Estilos para los errores */
+.main__form div input.invalid-value{
+    border: 1px solid var(--myPink);
+}
+
+.form-errors{
+    font-family: var(--myText);
+    color: var(--myPink);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
+
+@media(min-width: 481px){
+
+    /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN TABLET==========*/
+
+    .main__information form{
+        width: 65%;
+    }
+
+    .main__information-img{
+        width: 30vw;
+        min-height: 20vh;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    /* =========ESTILOS IMAGEN INFERIOR PARA RESOLUCIÓN TABLET==========*/
+
+    .main__botton-img img{
+        width: 45vw;
+    }
+    
+}
+
+/* =========ESTILOS PARA RESOLUCIÓN COMPUTADOR=========*/
+
+@media(min-width: 769px){
+    /* =========ESTILOS PARA EL TÍTULO PARA RESOLUCIÓN COMPUTADOR=========*/
+    .main__title{
+        width: 99%;
+    }
+
+    /* =========ESTILOS PARA EL TÍTULO PARA RESOLUCIÓN COMPUTADOR=========*/
+    .main__title h1{
+        font-size: 5rem;
+    }
+    /* =========ESTILOS DEL FORMULARIO PARA RESOLUCIÓN COMPUTADOR==========*/
+    .main__information form{
+        width: 35%;
+    }
+
+    .main__information-img{
+        width: 20vw;
+    }
+
+    /* =========ESTILOS IMAGEN INFERIOR=========*/
+    .main__botton-img img{
+        width: 30vw;
+    }
+}

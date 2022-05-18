@@ -1,19 +1,16 @@
-const fs = require('fs');
-const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
 let usersController = {
     // Formulario de registro de usuarios
     register: (req, res) =>{
-        return res.render('users/register');
+		return res.render('users/register');
     },
 
     // Almacenamiento de los usuarios registrados
-    store: (req, res) => {
-        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    store: async(req, res) => {
 
         // Verificación de errores
         const resultValidation = validationResult(req);
@@ -25,10 +22,16 @@ let usersController = {
 			});
 		}
 
-		// Verificar que el nombre de usuario o email no sea usado por otro usuario
-        let nameInDB = users.find(user => user.user === req.body.user);
+		// Verificar que el nombre de usuario no sea usado por otro usuario
+		let nameInDB = await db.User.findAll({
+            where:{
+                user: req.body.user,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-		if(nameInDB){
+		if(nameInDB.length > 0){
 			return res.render('users/register', {
 				errors: {
 					user:{
@@ -39,9 +42,16 @@ let usersController = {
 			});
 		}
 
-		let emailInDB = users.find(user => user.email === req.body.email);
+		// Verificar que el email no sea usado por otro usuario
+		let emailInDB = await db.User.findAll({
+            where:{
+                email: req.body.email,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
-		if(emailInDB){
+		if(emailInDB.length > 0){
 			return res.render('users/register', {
 				errors: {
 					email:{
@@ -53,43 +63,45 @@ let usersController = {
 		}
 
         //Creación del nuevo usuario
-        let nextId = users[users.length - 1].id + 1;
+		if(req.file){
+            let filename = req.file.filename;
 
-		let filename = '';
-
-        if(req.file){
-            filename = req.file.filename;
-        } else{
-            filename = 'default.png'
+            let newUser = await db.User.create({
+                user: req.body.user,
+				name: req.body.name,
+				last_name: req.body.lastName,
+				email: req.body.email,
+				password: bcryptjs.hashSync(req.body.password1, 10),
+				image: filename,
+				user_type_id: 1,
+            }).catch(function(errors){
+                console.log(errors);
+            });
+        }else{
+            let newUser = await db.User.create({
+                user: req.body.user,
+				name: req.body.name,
+				last_name: req.body.lastName,
+				email: req.body.email,
+				password: bcryptjs.hashSync(req.body.password1, 10),
+				image: 'default.png',
+				user_type_id: 1,
+            }).catch(function(errors){
+                console.log(errors);
+            });
         }
-        
-		newUser = {
-            id: nextId,
-			user: req.body.user,
-            name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password1, 10),
-			image: filename,
-            userType: 'user',
-		}
-
-		users.push(newUser);
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 
 		return res.redirect('/users/login');
     },
 
 	// Formulario de inicio de sesión
     login: (req, res) =>{
-        return res.render('users/login');
+		return res.render('users/login');
     },
 
 	// Procesar inicio de sesión
-	access: (req, res) => {
-		let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
+	access: async(req, res) => {
+		
         // Verificación de errores
         const resultValidation = validationResult(req);
 		
@@ -101,7 +113,13 @@ let usersController = {
 		}
 
 		// Búsqueda del email
-		let userToLogin = users.find(user => user.email == req.body.email);
+		let userToLogin = await db.User.findOne({
+            where:{
+                email: req.body.email,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
 
 		if(userToLogin){
 			let passwordProvided = bcryptjs.compareSync(req.body.password, userToLogin.password);
@@ -144,6 +162,148 @@ let usersController = {
 	// Perfil del usuario
 	profile: (req, res) => {
 		res.render('users/userProfile',{
+			user: req.session.userLogged,
+		});
+	},
+
+	// Edición del perfil
+	profileEdition: async(req, res) => {
+
+		// Búsqueda del usuario
+		let loggedUser = await db.User.findByPk(req.session.userLogged.user_id)
+			.catch(function(errors){
+            console.log(errors);
+        	});
+
+		res.render('users/userProfileEdition',{
+			user: loggedUser,
+		});
+	},
+
+	// Actualizar datos personales
+	profileUpdate: async(req, res) => {
+
+		// Búsqueda del usuario
+		let loggedUser = await db.User.findByPk(req.session.userLogged.user_id)
+			.catch(function(errors){
+            console.log(errors);
+        	});
+
+		let userId = loggedUser.user_id;
+
+		// Verificación de errores
+		const resultValidation = validationResult(req);
+				
+		if (resultValidation.errors.length > 0) {
+			return res.render('users/userProfileEdition', {
+				errors:resultValidation.mapped(),
+				oldData: req.body,
+				user: loggedUser
+			});
+		}
+
+		// Verificar que el nombre de usuario no sea usado por otro usuario
+		let nameInDB = await db.User.findAll({
+            where:{
+                user: req.body.user,
+				user_id: { [ Op.not ]: userId }
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+		if(nameInDB.length > 0){
+			return res.render('users/userProfileEdition', {
+				errors: {
+					user:{
+						msg: 'Este nombre de usuario ya está en uso',
+					}
+				},
+				oldData: req.body,
+				user: loggedUser
+			});
+		}
+
+		// Verificar que el email no sea usado por otro usuario
+		let emailInDB = await db.User.findAll({
+            where:{
+                email: req.body.email,
+				user_id: { [ Op.not ]: userId }
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+		if(emailInDB.length > 0){
+			return res.render('users/userProfileEdition', {
+				errors: {
+					email:{
+						msg: 'Este email ya está en uso',
+					}
+				},
+				oldData: req.body,
+				user: loggedUser
+			});
+		}
+
+		// Confirmar contraseña 
+		let previousPassword = bcryptjs.compareSync(req.body.password1, loggedUser.password);
+		
+		if(!previousPassword){
+			return res.render('users/userProfileEdition', {
+				errors: {
+					password1: {
+						msg: 'Verifica la contraseña ingresada',
+					}
+				},
+				user: loggedUser
+			});
+		}
+
+        // Actualizar usuario
+		if(req.file){
+            let filename = req.file.filename;
+
+            let updatedUser = await db.User.update({
+                user: req.body.user,
+				name: req.body.name,
+				last_name: req.body.lastName,
+				email: req.body.email,
+				password: bcryptjs.hashSync(req.body.password2, 10),
+				image: filename,
+            }, {
+				where: {
+					user_id: userId,
+				}
+			}).catch(function(errors){
+                console.log(errors);
+            });
+        }else{
+            let updatedUser = await db.User.update({
+                user: req.body.user,
+				name: req.body.name,
+				last_name: req.body.lastName,
+				email: req.body.email,
+				password: bcryptjs.hashSync(req.body.password2, 10),
+            },{
+				where: {
+					user_id: userId,
+				}
+			}).catch(function(errors){
+                console.log(errors);
+            });
+        }
+
+		let newInfoUser = await db.User.findByPk(userId)
+				.catch(function(errors){
+				console.log(errors);
+				});
+
+		delete newInfoUser.password;
+
+		req.session.userLogged = newInfoUser;
+
+		return res.render('users/userProfile',{
 			user: req.session.userLogged,
 		});
 	},

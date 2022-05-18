@@ -23,11 +23,12 @@
                 <h4>Nombre:</h4>
                 <p><%= user.name %></p>
                 <h4>Apellido:</h4>
-                <p><%= user.lastName %></p>
+                <p><%= user.last_name %></p>
                 <h4>Correo electrónico:</h4>
                 <p><%= user.email %></p>
                 <div class="main__information-buttons">
-                    <% if (locals.isLogged && locals.userLogged.userType == 'administrator') { %>
+                    <a href="/users/profile/edit">Editar datos</a>
+                    <% if (locals.isLogged && locals.userLogged.user_type_id == 2) { %>
                         <a href="/products/create">Crear producto</a>
                     <% } %>
                     <a href="/users/logout">Cerrar sesión</a>

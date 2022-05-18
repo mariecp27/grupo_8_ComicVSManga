@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs', {title: 'Perfil'}) %>
+    <link rel="stylesheet" href="/css/styleProfileEdition.css">
+</head>
+<body>
+    <header>
+        <%- include('../partials/header.ejs') %>
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section class="main__title">
+            <h1>Editar perfil</h1>
+        </section>
+
+        <!-- Perfil -->
+        <section class="main__information">
+            <form action="/users/profile/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
+                <div>
+                    <img src="/images/users/<%= user.image %>" alt="Foto de perfil" class="main__information-img">
+                    <label for="avatar" class="main__form-upload">Actualizar imagen</label>
+                    <input 
+                        type="file"
+                        name="avatar"
+                        id="avatar"
+                        class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.avatar) { %>
+                        <div class="form-errors">
+                            <%= errors.avatar.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="user" class="main__form-label">Usuario</label>
+                    <input
+                        type="text"
+                        name="user"
+                        id="user"
+                        value="<%= locals.oldData ? oldData.user : user.user %>"
+                        class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.user) { %>
+                        <div class="form-errors">
+                            <%= errors.user.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="name" class="main__form-label">Nombre(s)</label>
+                    <input 
+                        type="text"
+                        name="name" 
+                        id="name"
+                        value="<%= locals.oldData ? oldData.name : user.name %>"
+                        class="<%= locals.errors && errors.name ? "invalid-value" : null %>" 
+                    >
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="form-errors">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="lastName" class="main__form-label">Apellido(s)</label>
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        value="<%= locals.oldData ? oldData.lastName : user.last_name %>"
+                        class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.lastName) { %>
+                        <div class="form-errors">
+                            <%= errors.lastName.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="email" class="main__form-label">Correo electrónico</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        value="<%= locals.oldData ? oldData.email : user.email %>"
+                        class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="form-errors">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="password2" class="main__form-label">Nueva contraseña</label>
+                    <input
+                        type="password"
+                        name="password2"
+                        id="password2"
+                        class="<%= locals.errors && errors.password2 ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.password2) { %>
+                        <div class="form-errors">
+                            <%= errors.password2.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="password3" class="main__form-label">Confirmar contraseña</label>
+                    <input
+                        type="password"
+                        name="password3" 
+                        id="password3"
+                        class="<%= locals.errors && errors.password3 ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.password3) { %>
+                        <div class="form-errors">
+                            <%= errors.password3.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div>
+                    <label for="password1" class="main__form-label">Ingresa tu contraseña actual para confirmar el cambio</label>
+                    <input
+                        type="password"
+                        name="password1"
+                        id="password1"
+                        class="<%= locals.errors && errors.password1 ? "invalid-value" : null %>"
+                    >
+                    <% if (locals.errors && errors.password1) { %>
+                        <div class="form-errors">
+                            <%= errors.password1.msg %> 
+                        </div>
+                    <% } %>
+                </div>
+
+                <div class="main__form-buttons">
+                    <button type="submit">Actualizar</button>
+                    <button type="reset">Resetear datos</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Imágen inferior -->
+        <section class="main__botton-img">
+            <img src="/images/choperProfile.png" alt="Chopper">
+        </section>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer.ejs') %>
+    </footer>
+</body>
+</html>

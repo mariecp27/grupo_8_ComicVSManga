@@ -22,11 +22,11 @@ router.get('/', productsController.list);
 router.get('/detail/:id', productsController.detail);
 
 // Formulario de creación de productos
-router.get('/create', productsController.create);
+router.get('/create', onlyAdminMiddleware, productsController.create);
 router.post('/create', uploadFileProduct.single('image'), productsController.store);
 
 // Formulario de edición de productos
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', onlyAdminMiddleware,productsController.edit);
 router.put('/:id/edit', uploadFileProduct.single('image'), productsController.update);
 
 // Acción de eliminación
