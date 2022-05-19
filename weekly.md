@@ -203,3 +203,20 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+  ## Semana 21 (Mayo 16/2022 - Mayo 22/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: 
+  - ***¿Encontró con algún impedimento?***: 
+  - ***¿Qué va a hacer durante la presente semana?***: 
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: Se socializaron los cambios de llenado de tablas por parte de la compañera, y se verificaron las diferentes tareas relacionadas a la base de datos.
+  - ***¿Encontró con algún impedimento?***: Tengo problemas de conectividad y energia en mi sector, eso me retrasa en las clases y playground. Todo debido a las lluvias.
+  - ***¿Qué va a hacer durante la presente semana?***: Continuación de las tareas para el sexto *Sprint*, con la implementación en Sequelize del modelo propuesto, explicación por parte de la compañera que esta haciendo los ajustes del sequelize.
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
