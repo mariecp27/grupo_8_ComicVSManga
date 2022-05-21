@@ -186,6 +186,8 @@ main{
     box-shadow: 0px 10px 10px #000000;
     position: relative;
     background-color: #ffffff;
+    flex-direction: column;
+    text-align: center;
 }
 
 .product__container:hover{
@@ -225,12 +227,18 @@ main{
 }
 
 /* Estilos carrito de compras de los productos destacados */
+button.shopping-cart__container{
+    margin: 0;
+    margin-top: -25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .fa-cart-shopping-products{
     background-color: #ffffff;
     padding: 10px;
     border-radius: 50%;
-    margin: 0;
-    margin-top: -20px;
     border: 2px solid #ffffff;
 }
 
@@ -266,6 +274,7 @@ main{
 .product__container h3{
     font-family: var(--myTitles);
     font-size: 2rem;
+    margin: 0 20px;
 }
 
 .product__container:hover h3,
@@ -282,6 +291,8 @@ main{
 .product__container p{
     font-family: var(--myText);
     font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .product__container:hover p,
@@ -312,6 +323,11 @@ main{
     .product__container{
         width: 40vw;
         margin-bottom: 10px;
+    }
+
+    /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+    .product__container a{
+        width: 35vw;
     }
 }
 
@@ -371,6 +387,12 @@ main{
     .product__container:hover p{
         opacity: 100;
     }
+
+    /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+    .product__container a{
+        width: 14vw;
+    }
+
 
     /* Estilos imagen lateral */
     .main__side-container{

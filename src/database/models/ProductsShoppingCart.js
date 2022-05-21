@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'ProductShoppingCart';
     
     let cols = {
-        product_category_id: {
+        product_shopping_cart_id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
-        total: {
+        product_total: {
             type: dataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
@@ -33,19 +33,6 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const ProductShoppingCart = sequelize.define(alias, cols, config);
-
-    ProductShoppingCart.associate = function (models) {
-
-        ProductShoppingCart.hasMany(models.ShoppingCart, {
-            as: 'shoppingCartsP',
-            foreignKey: 'shopping_cart_id',
-        });
-
-        ProductShoppingCart.hasMany(models.Product, {
-            as: 'productsP',
-            foreignKey: 'product_id',
-        });
-    }
 
     return ProductShoppingCart;
 };

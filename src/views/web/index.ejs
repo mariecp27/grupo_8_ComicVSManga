@@ -182,7 +182,12 @@
                     <article class="featured-products__container">
                         <a href="/products/detail/<%= featuredProducts[i].product_id %>">
                             <img src="/images/products/<%= featuredProducts[i].image %>" alt="Imagen del producto" class="featured-products__img">
-                            <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                            <form action="/shopping-cart" method="post">
+                                <input type="hidden" value="<%= featuredProducts[i].product_id %>" name="id">
+                                <button type="submit" href="/shopping-cart" class="shopping-cart__container">
+                                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                                </button>
+                            </form>
                             <h3><%= featuredProducts[i].name %></h3>
                             <p><b><%= featuredProducts[i].price %></b> COP</p>
                         </a>

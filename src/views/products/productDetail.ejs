@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs', {title: desiredProduct.name}) %>
-    <link rel="stylesheet" href="/css/productDetailsStyle.css">
+    <link rel="stylesheet" href="/css/styleProductDetails.css">
+    <script defer src="/js/productCount.js"></script>
 </head>
 <body>
     <header>
@@ -26,19 +27,20 @@
                         <h4>Formato:</h4>
                         <p><%= desiredProduct.formats.format %></p>
                     </div>
-                    <div class="main__product-shopping">
+                    <form action="/shopping-cart" method="post" class="main__product-shopping">
                         <div class="main__product-count">
-                            <button class="main__product-button-count minus">-</button>
-                            <input type="number" value="1">
-                            <button class="main__product-button-count plus">+</button>
+                            <input type="hidden" value="<%= desiredProduct.product_id %>" name="id">
+                            <button class="main__product-button-count minus" id="minus" data-id="<%= desiredProduct.product_id %>">-</button>
+                            <input type="number" class="numberInput" name="amount" data-id="<%= desiredProduct.product_id %>" value="1">
+                            <button class="main__product-button-count plus" id="plus" data-id="<%= desiredProduct.product_id %>">+</button>
                         </div>
-                        <button type="submit" class="main__product-button-shopping">Añadir al carrito</button>
-                        <% if (locals.isLogged && locals.userLogged.user_type_id == 2) { %>
-                            <a href="/products/<%= desiredProduct.product_id %>/edit">
-                                <button type="submit" class="main__product-button-shopping">EDITAR</button>
-                            </a>
-                        <% } %>
-                    </div>
+                        <input type="submit" class="main__product-button-shopping" value="Añadir al carrito">
+                    </form>
+                    <% if (locals.isLogged && locals.userLogged.user_type_id == 2) { %>
+                        <a href="/products/<%= desiredProduct.product_id %>/edit">
+                            <button class="main__product-button-shopping">EDITAR</button>
+                        </a>
+                    <% } %>
                 </div>
             </article>
         </section>
@@ -68,7 +70,12 @@
                         <article class="main__related-products-container">
                             <a href="/products/detail/<%= relatedProducts[i].product_id %>">
                                 <img src="/images/products/<%= relatedProducts[i].image %>" alt="Imagen del producto" class="main__related-products-img">
-                                <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                                <form action="/shopping-cart"  method="post">
+                                    <input type="hidden" value="<%= relatedProducts[i].product_id %>" name="id">
+                                    <button type="submit" class="shopping-cart__container">
+                                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                                    </button>
+                                </form>
                                 <h3><%= relatedProducts[i].name %></h3>
                                 <p><b><%= relatedProducts[i].price %></b> COP</p>
                             </a>

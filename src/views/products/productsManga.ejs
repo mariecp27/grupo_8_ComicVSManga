@@ -27,7 +27,12 @@
                 <article class="product__container product__container-manga">
                     <a href="/products/detail/<%= productsInCategory[i].product_id %>">
                         <img src="/images/products/<%= productsInCategory[i].image %>" alt="Imagen de producto" class="products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products fa-cart-shopping-products-manga"></i>
+                        <form action="/shopping-cart"  method="post">
+                            <input type="hidden" value="<%= productsInCategory[i].product_id %>" name="id">
+                            <button type="submit" class="shopping-cart__container">
+                                <i class="fa-solid fa-cart-shopping fa-cart-shopping-products fa-cart-shopping-products-manga"></i>
+                            </button>
+                        </form>
                         <h3><%= productsInCategory[i].name %></h3>
                         <p><b><%= productsInCategory[i].price %></b> COP</p>
                     </a>

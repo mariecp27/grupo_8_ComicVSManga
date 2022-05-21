@@ -76,12 +76,12 @@ CREATE TABLE shopping_cart (
 
 DROP TABLE IF EXISTS products_shopping_cart;
 CREATE TABLE products_shopping_cart (
-	product_category_id INT NOT NULL AUTO_INCREMENT,
+	product_shopping_cart_id INT NOT NULL AUTO_INCREMENT,
 	shopping_cart_id INT NOT NULL,
 	product_id INT NOT NULL,
 	amount INT NOT NULL,
 	product_total DECIMAL(10,2) NOT NULL,
-	PRIMARY KEY( product_category_id),
+	PRIMARY KEY(product_shopping_cart_id),
 	FOREIGN KEY (shopping_cart_id) REFERENCES shopping_cart(shopping_cart_id),
 	FOREIGN KEY (product_id) REFERENCES products (product_id)
 );

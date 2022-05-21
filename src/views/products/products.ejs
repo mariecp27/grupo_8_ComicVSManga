@@ -29,7 +29,12 @@
                 <article class="product__container">
                     <a href="/products/detail/<%= wantedProducts[i].product_id %>">
                         <img src="/images/products/<%= wantedProducts[i].image %>" alt="Imagen de producto" class="products__img">
-                        <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                        <form action="/shopping-cart"  method="post">
+                            <input type="hidden" value="<%= wantedProducts[i].product_id %>" name="id">
+                            <button type="submit" class="shopping-cart__container">
+                                <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                            </button>
+                        </form>
                         <h3><%= wantedProducts[i].name %></h3>
                         <p>$<%= wantedProducts[i].price %></p>
                     </a>

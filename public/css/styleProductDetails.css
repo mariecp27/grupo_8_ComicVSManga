@@ -1,12 +1,11 @@
 /* Paleta de colores y fuente seleccionadas */
 :root{
-    --myTitles: 'Bebas Neue', cursive;
-    --myTitles2: 'Lato', sans-serif;
-    --myText: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
-    --myYellow: #FEB431;
-    --myRed: #FE303D;
-    --myPurple: #AC2194;
-    --myBlue: #1572A1;
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
 }
 
 /* Normalización de estilos */
@@ -48,7 +47,7 @@ html{
 }
 
 .main__product-img:hover{
-    background-color: var(--myRed);
+    background-color: var(--myBlue);
 }
 
 /* Estilos título del producto */
@@ -56,6 +55,7 @@ html{
     font-family: var(--myTitles);
     font-size: 2.2rem;
     margin-top: 10px;
+    text-transform: uppercase;
 }
 
 /* Estilos precio del producto */
@@ -110,13 +110,13 @@ html{
 }
 
 .minus{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .plus{
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .main__product-button-count:active{
@@ -147,7 +147,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Estilos botón de añadir al carrito */
-.main__product-button-shopping{
+input.main__product-button-shopping,
+button.main__product-button-shopping{
     background: var(--myBlue);
     font-family: var(--myTitles);
     color: #ffffff;
@@ -156,9 +157,24 @@ input[type=number]::-webkit-outer-spin-button {
     border: none;
     border-radius: 5px;
     text-align: center;
-    border: #ffffff solid 1px;
     cursor: pointer;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--myBlue);
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: auto;
+}
+
+.main__product-text a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button.main__product-button-shopping{
+    display: block;
+    text-decoration: none;
 }
 
 .main__product-button-shopping:hover{
@@ -178,6 +194,8 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 2rem;
     color: var(--myBlue);
     margin: 5px 0;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .main__description-review p{
@@ -196,7 +214,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: linear-gradient(to top, var(--myBlue) , #ffffff00);
+    background-image: linear-gradient(to top, var(--myYellow) , #ffffff00);
 }
 
 /* Estilos título principal de la sección */
@@ -206,6 +224,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 20px;
     padding: 5px;
     color: #000000;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 /* Estilo contenedor de todos los productos */
@@ -223,10 +243,12 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0px 10px 10px #000000;
     position: relative;
     background-color: #ffffff;
+    flex-direction: column;
+    text-align: center;
 }
 
 .main__related-products-container:hover{
-    background-color: var(--myRed);
+    background-color: var(--myBlue);
 }
 
 /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
@@ -234,9 +256,10 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     color: #000000;
     text-decoration: none;
-    width: 60vw;
+    width: 45vw;
     margin: 10px;
     position: relative;
+    text-transform: uppercase;
 }
 
 .main__related-products-img{
@@ -244,26 +267,32 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* Estilos carrito de compras de los productos relacionados */
+button.shopping-cart__container{
+    margin: 0;
+    margin-top: -25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .fa-cart-shopping-products{
-    position: relative;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 50%;
-    top: -20px;
-    margin: 0;
     border: 2px solid #ffffff;
 }
 
 .fa-cart-shopping-products:hover{
     color: #ffffff;
     transform: scale(1.1);
-    background-color: var(--myRed)
+    background-color: var(--myBlue)
 }
 
 /* Estilos título de cada producto */
 .main__related-products-container h3{
     font-family: var(--myTitles);
     font-size: 2.2rem;
+    margin: 0 20px;
 }
 
 .main__related-products-container:hover h3{
@@ -274,6 +303,8 @@ input[type=number]::-webkit-outer-spin-button {
 .main__related-products-container p{
     font-family: var(--myText);
     font-size: 1.5rem;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .main__related-products-container:hover p{
@@ -312,6 +343,11 @@ input[type=number]::-webkit-outer-spin-button {
     .main__related-products-container{
         width: 25vw;
         margin: 0;
+    }
+
+    /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+    .main__related-products-container a{
+        width: 22vw;
     }
 
     /* Estilos título de cada producto */
@@ -395,12 +431,21 @@ input[type=number]::-webkit-outer-spin-button {
         margin: 0 20px 0 20px;
     }
 
-    .main__related-products-container:hover{
-        transform: scale(1.1);
+    /* Elimina los estilos de tipo enlace y define el tamaño de la imagen */
+    .main__related-products-container a{
+        width: 14vw;
     }
 
     /* Estilos título de cada producto */
     .main__related-products-container h3{
         font-size: 2.2rem;
+    }
+
+    .main__related-products-container p{
+        opacity: 0;
+    }
+
+    .main__related-products-container:hover p{
+        opacity: 100;
     }
 }

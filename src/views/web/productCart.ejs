@@ -4,8 +4,9 @@
     <%- include('../partials/head.ejs', {title: 'Carrito de compras'}) %>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/styleProductDetails.css">
-    <link rel="stylesheet" href="/css/stylecarrito.css">
+    <link rel="stylesheet" href="/css/styleProductCart.css">
     <link rel="stylesheet" href="/css/productsStyle.css">
+    <script defer src="/js/productCount.js"></script>
 </head>
 <body>
     <header>
@@ -21,70 +22,50 @@
             </div>
 
             <!-- Sección del carrito de compras-->
+
+            <% if (currentProducts.length == 0) { %>
+                <h2 class="main__no-products">¡Oh!, de momento no has agregado productos a tu carrito</h2>
+            <% } else { %> 
             <div class="site-content" id="lista">
                 <h2 class="shopCartTitle">Tus Productos Elegidos</h2>
                 <div class="row">
                     <div class="columns">
-                        <div class="article">
-                            <img src="/images/products/product2.png" alt="Producto 1" class="image-product">
-                            <div class="info-card">
-                                <h4 class="name-card">LA NOCHE MÁS OSCURA</h4>
-                                <h4 class="unities-card"> 1 Unidad</h4>
-                                <p class="type-price">$<span class="price">375000</span> </p>
-                                <hr>
-                                <div class="main__product-shopping">
-                                    <div class="main__product-count">
-                                        <button class="main__product-button-count minus">-</button>
-                                        <input type="number" value="1">
-                                        <button class="main__product-button-count plus">+</button>
+                        <% for( let i = 0; i < currentProducts.length; i++ ) { %>
+                            <div class="article">
+                                <img src="/images/products/<%= currentProducts[i].image %>" alt="Producto" class="image-product">
+                                <div class="info-card">
+                                    <h4 class="name-card"><%= currentProducts[i].name %></h4>
+                                    <% for( let j = 0; j < currentProductsCart.length; j++ ) { %>
+                                        <% if (currentProductsCart[j].product_id == currentProducts[i].product_id) { %>
+                                            <h4 class="unities-card"><%= currentProductsCart[j].amount %> Unidad(es)</h4>
+                                            <p class="type-price">$<span class="price"><%= currentProductsCart[j].product_total %></span> </p>
+                                        <% } %>
+                                    <% } %>
+                                    <hr>
+                                    <div class="main__product-shopping">
+                                        <div class="main__product-count">
+                                            <button class="main__product-button-count minus" id="minus" data-id="<%= currentProducts[i].product_id %>">-</button>
+                                            <input type="number" class="numberInput" data-id="<%= currentProducts[i].product_id %>" value="1">
+                                            <button class="main__product-button-count plus" id="plus" data-id="<%= currentProducts[i].product_id %>">+</button>
+                                        </div>
                                     </div>
+                                    <form action="/shopping-cart/delete?_method=DELETE" method="post">
+                                        <input type="hidden" value="<%= currentProducts[i].product_id %>" name="id">
+                                        <button type="submit" class="delete-button">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="article">
-                            <img src="/images/products/product1.png" alt="Producto 1" class="image-product">
-                            <div class="info-card">
-                                <h4 class="name-card">VOTA A LOKI</h4>
-                                <h4 class="unities-card"> 1 Unidad</h4>
-                                <p class="type-price">$<span class="price">81000</span> </p>
-                                <hr>
-                                <div class="main__product-shopping">
-                                    <div class="main__product-count">
-                                        <button class="main__product-button-count minus">-</button>
-                                        <input type="number" value="1">
-                                        <button class="main__product-button-count plus">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article">
-                            <img src="/images/products/product3.png" alt="Producto 1" class="image-product">
-                            <div class="info-card">
-                                <h4 class="name-card">SHINGEKI NO KYOJIN </h4>
-                                <h4 class="unities-card"> 1 Unidad</h4>
-                                <p class="type-price">$<span class="price">56000</span> </p>
-                                <hr>
-                                <div class="main__product-shopping">
-                                    <div class="main__product-count">
-                                        <button class="main__product-button-count minus">-</button>
-                                        <input type="number" value="1">
-                                        <button class="main__product-button-count plus">+</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        <% } %>
                     </div>
                 </div>
                 
                 <div class="subtotal-section-container">
-                        <p class="subtotal">Subtotal $  <Span class=" span-price"> 512.000</Span></p>
-                        <p class="pesos">  </p>
-                        
+                    <p class="subtotal">Subtotal $  <Span class=" span-price"><%= newShoppingCart.total %></Span></p>
+                    <p class="pesos">  </p>    
                 </div>
-
-
+            <% } %>
 
         <!-- Productos destacados -->
         <div class="main__featured-products1"></div>
@@ -95,16 +76,23 @@
                     <article class="featured-products__container">
                         <a href="/products/detail/<%= featuredProducts[i].product_id %>">
                             <img src="/images/products/<%= featuredProducts[i].image %>" alt="Imagen del producto" class="featured-products__img">
-                            <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                            <form action="/shopping-cart"  method="post">
+                                <input type="hidden" value="<%= featuredProducts[i].product_id %>" name="id">
+                                <button type="submit" class="shopping-cart__container">
+                                    <i class="fa-solid fa-cart-shopping fa-cart-shopping-products"></i>
+                                </button>
+                            </form>
                             <h3><%= featuredProducts[i].name %></h3>
                             <p>$<%= featuredProducts[i].price %></p>
                         </a>
                     </article>
                 <% } %>
             </div>
-            <div class="second_section_button">
-                <a href="#" class="btn-flotante">Finalizar compra</a>
-            </div>
+            <% if (currentProducts.length > 0) { %>
+                <div class="second_section_button">
+                    <a href="#" class="btn-flotante">Finalizar compra</a>
+                </div>
+            <% } %> 
         </section>
     </main>
     <footer>
