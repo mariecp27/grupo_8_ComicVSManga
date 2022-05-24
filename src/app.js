@@ -5,6 +5,7 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLogged = require('./middlewares/userLoggedMiddleware');
+const productCartMiddleware = require('./middlewares/productsInCartMiddleware');
 
 // Ejecución
 const app = express();
@@ -22,6 +23,7 @@ app.use(session({
 }));
 app.use(cookies());
 app.use(userLogged);
+app.use(productCartMiddleware);
 
 // Motor de vistas
 app.set('view engine', 'ejs');

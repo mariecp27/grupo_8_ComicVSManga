@@ -27,6 +27,11 @@
                 <a href="/shopping-cart" class="header__shopping">
                     <div class="header__shopping-container">
                         <i class="fa-solid fa-cart-shopping"></i>
+                        <% if (locals.isLogged && locals.counter > 0) { %>
+                            <span class="header__nav-number">
+                                    <%= locals.counter %> 
+                            </span>
+                        <% } %>
                     </div>
                 </a>
             </li>
@@ -63,7 +68,13 @@
                 </ul>
             </li>
             <li><a href="/products/manga" class="header__nav-link">MANGAS</a></li>
-            <li><a href="/carrito" class="header__nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="/shopping-cart" class="header__nav-link"><i class="fa-solid fa-cart-shopping"></i>
+                <% if (locals.isLogged && locals.counter > 0) { %>
+                    <span class="header__nav-number">
+                            <%= locals.counter %> 
+                    </span>
+                <% } %>
+            </a></li>
             <% if (locals.isLogged) { %>
                 <li><a href="/users/profile" class="header__nav-link">TU PERFIL</a></li>
                 <li><a href="/users/logout" class="header__nav-link">CERRAR SESIÓN</a></li>

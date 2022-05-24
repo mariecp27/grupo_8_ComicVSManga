@@ -32,23 +32,35 @@
                     <div class="columns">
                         <% for( let i = 0; i < currentProducts.length; i++ ) { %>
                             <div class="article">
-                                <img src="/images/products/<%= currentProducts[i].image %>" alt="Producto" class="image-product">
+                                <a href="/products/detail/<%= currentProducts[i].product_id %>">
+                                    <img src="/images/products/<%= currentProducts[i].image %>" alt="Producto" class="image-product">
+                                </a>
                                 <div class="info-card">
                                     <h4 class="name-card"><%= currentProducts[i].name %></h4>
                                     <% for( let j = 0; j < currentProductsCart.length; j++ ) { %>
                                         <% if (currentProductsCart[j].product_id == currentProducts[i].product_id) { %>
                                             <h4 class="unities-card"><%= currentProductsCart[j].amount %> Unidad(es)</h4>
-                                            <p class="type-price">$<span class="price"><%= currentProductsCart[j].product_total %></span> </p>
+                                            <p class="type-price"><b><span class="price"><%= currentProductsCart[j].product_total %></span></b> COP</p>
                                         <% } %>
                                     <% } %>
                                     <hr>
-                                    <div class="main__product-shopping">
-                                        <div class="main__product-count">
-                                            <button class="main__product-button-count minus" id="minus" data-id="<%= currentProducts[i].product_id %>">-</button>
-                                            <input type="number" class="numberInput" data-id="<%= currentProducts[i].product_id %>" value="1">
-                                            <button class="main__product-button-count plus" id="plus" data-id="<%= currentProducts[i].product_id %>">+</button>
+                                    <form action="/shopping-cart/update?_method=PUT" method="post">
+                                        <div class="main__product-shopping">
+                                            <div class="main__product-count">
+                                                <button class="main__product-button-count minus" id="minus" data-id="<%= currentProducts[i].product_id %>">-</button>
+                                                <% for( let j = 0; j < currentProductsCart.length; j++ ) { %>
+                                                    <% if (currentProductsCart[j].product_id == currentProducts[i].product_id) { %>
+                                                        <input type="number" class="numberInput" data-id="<%= currentProducts[i].product_id %>" value="<%= currentProductsCart[j].amount %>" name="amount">
+                                                    <% } %>
+                                                <% } %>
+                                                <button class="main__product-button-count plus" id="plus" data-id="<%= currentProducts[i].product_id %>">+</button>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div>
+                                            <input type="hidden" value="<%= currentProducts[i].product_id %>" name="id">
+                                            <button type="submit" class="update-button">Actualizar cantidad</button>
+                                        </div>
+                                    </form>
                                     <form action="/shopping-cart/delete?_method=DELETE" method="post">
                                         <input type="hidden" value="<%= currentProducts[i].product_id %>" name="id">
                                         <button type="submit" class="delete-button">
@@ -62,7 +74,7 @@
                 </div>
                 
                 <div class="subtotal-section-container">
-                    <p class="subtotal">Subtotal $  <Span class=" span-price"><%= newShoppingCart.total %></Span></p>
+                    <p class="subtotal">Subtotal <Span class=" span-price"><%= newShoppingCart.total %> COP</Span></p>
                     <p class="pesos">  </p>    
                 </div>
             <% } %>
@@ -83,7 +95,7 @@
                                 </button>
                             </form>
                             <h3><%= featuredProducts[i].name %></h3>
-                            <p>$<%= featuredProducts[i].price %></p>
+                            <p><b><%= featuredProducts[i].price %></b> COP</p>
                         </a>
                     </article>
                 <% } %>

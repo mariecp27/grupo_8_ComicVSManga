@@ -11,7 +11,7 @@ minusButton.forEach(button => {
 
         let counter = numberInput.value;
 
-        if(numberInput.value > 0){
+        if(numberInput.value > 1){
             
             numberInput.value = Number(counter) - 1;
     

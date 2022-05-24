@@ -271,6 +271,119 @@ let mainController = {
         });
     },
 
+    // Actualización de productos
+    shoppingCartUpdate: async(req, res) =>{
+        let  idProduct = req.body.id;
+
+        // Carrito actual desde base de datos
+        let shoppingCart = await db.ShoppingCart.findOne({
+            where: {
+                user_id: req.session.userLogged.user_id,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+        // Extracción del total en el carrito existente en base de datos
+        let total = Number(shoppingCart.total);
+
+        // Almacenamiento del producto a ser actualizado
+        let productToBeUpdated = await db.Product.findOne({
+            where: {
+                product_id: idProduct,
+            },
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+        // Cantidad del producto en el carrito
+        let amountInCart = await db.ProductShoppingCart.findOne({
+            where: {
+                product_id: idProduct,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+        // Actualización del total del carrito
+        total -= Number(productToBeUpdated.price)*Number(amountInCart.amount);
+        total += Number(productToBeUpdated.price)*Number(req.body.amount);
+
+        let updatedCart = await db.ShoppingCart.update({
+            total: total,
+        }, {
+            where: {
+                user_id: req.session.userLogged.user_id,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        }); 
+    
+        // Actualización del producto
+        let productTotal = Number(productToBeUpdated.price)*Number(req.body.amount);
+
+        let updateProduct = await db.ProductShoppingCart.update({
+            amount: req.body.amount,
+            product_total: productTotal,
+        },{
+            where: {
+                product_id: idProduct,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
+        // Información de los productos en el carrito
+        let currentProducts = await db.Product.findAll({
+            include: [{
+                association: 'shoppingCarts',
+                where: {
+                    shopping_cart_id: shoppingCart.shopping_cart_id,
+                }
+            }]
+        }).catch(function(errors){
+                console.log(errors);
+        });
+        
+        // Detalle de los productos en el carrito (cantidad y total parcial)
+        let currentProductsCart = await db.ProductShoppingCart.findAll({
+            where: {
+                shopping_cart_id: shoppingCart.shopping_cart_id
+            }
+        }).catch(function(errors){
+                console.log(errors);
+        });
+
+        // Actualización información carrito
+        let newShoppingCart = await db.ShoppingCart.findOne({
+            where: {
+                user_id: req.session.userLogged.user_id,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+        
+        // Productos destacados
+        let featuredProducts = await db.Product.findAll({
+            where:{
+                featured: 1,
+            },
+            order: [
+                ['name', 'ASC']
+            ],
+            limit: 4
+        }).catch(function(errors){
+                console.log(errors);
+        });
+        
+        return res.render('web/productCart',{
+            currentProducts,
+            currentProductsCart,
+            newShoppingCart,
+            featuredProducts
+        });
+    },
+
     // Eliminación de productos
     shoppingCartDelete: async(req, res) =>{
         
@@ -297,8 +410,17 @@ let mainController = {
             console.log(errors);
         });
 
+        // Cantidad del producto en el carrito
+        let amountInCart = await db.ProductShoppingCart.findOne({
+            where: {
+                product_id: idProduct,
+            }
+        }).catch(function(errors){
+            console.log(errors);
+        });
+
         // Actualización del total del carrito
-        total -= Number(productToBeDeleted.price);
+        total -= Number(productToBeDeleted.price)*Number(amountInCart.amount);
 
         let updatedCart = await db.ShoppingCart.update({
             total: total,

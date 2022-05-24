@@ -208,6 +208,17 @@ header{
     transform: rotate(90deg);
 }
 
+/* Estilos número del carrito */
+.header__nav-number{
+    border: 1px solid #ffffff;
+    padding: 0 5px;
+}
+
+.header__nav-link:hover .header__nav-number,
+.header__shopping-container:hover .header__nav-number{
+    border: 1px solid var(--myPink);
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
