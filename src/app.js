@@ -1,4 +1,6 @@
 // Módulos
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const methodOverride =  require('method-override');
@@ -41,6 +43,6 @@ app.use('/products', productsRoutes);
 
 
 // Servidor
-app.listen(3030, () => {
+app.listen(process.env.PORT || 3030, () => {
     console.log("Servidor corriendo en el puerto 3030, ¡vamos al Manga!");
 });
