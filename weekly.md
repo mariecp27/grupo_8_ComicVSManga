@@ -231,9 +231,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del sexto *Sprint*. Se tiene por objetivo, además, implementar el dinamismo deseado al carrito de compras.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***: 
-  - ***¿Encontró con algún impedimento?***: 
-  - ***¿Qué va a hacer durante la presente semana?***: 
+  - ***¿Qué hizo durante la semana anterior?***: Se finalizaron los CRUD de productos y de usuarios, y se han explicado todas las mejoras.
+  - ***¿Encontró con algún impedimento?***: Crear el dinamismo al carrito de compras. Se ha estado haciendo cambios para quedar funcional.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del sexto *Sprint*. y comenzar actividades del siguiente *Sprint*.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
