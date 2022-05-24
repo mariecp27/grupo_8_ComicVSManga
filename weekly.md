@@ -204,17 +204,36 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
 
-  ## Semana 21 (Mayo 16/2022 - Mayo 22/2022)
+
+## Semana 21 (Mayo 16/2022 - Mayo 22/2022)
 
 * **María Herlandia Copete Perea**
-  - ***¿Qué hizo durante la semana anterior?***: 
-  - ***¿Encontró con algún impedimento?***: 
-  - ***¿Qué va a hacer durante la presente semana?***: 
+  - ***¿Qué hizo durante la semana anterior?***: Se realizó la implementación de Sequelize para el modelo propuesto y se dio inicio al CRUD de productos y usuarios empleando la base de datos creada.
+  - ***¿Encontró con algún impedimento?***: La implementación del CRUD en las tablas pivot representó un desafío.
+  - ***¿Qué va a hacer durante la presente semana?***: Finalización del CRUD empleando la base de datos creada y añadir funciones adicionales al carrito de compras, tal que funcione según el usuario lo requiera.
 
 * **Erick José Leones Reyes**
   - ***¿Qué hizo durante la semana anterior?***: Se socializaron los cambios de llenado de tablas por parte de la compañera, y se verificaron las diferentes tareas relacionadas a la base de datos.
   - ***¿Encontró con algún impedimento?***: Tengo problemas de conectividad y energia en mi sector, eso me retrasa en las clases y playground. Todo debido a las lluvias.
   - ***¿Qué va a hacer durante la presente semana?***: Continuación de las tareas para el sexto *Sprint*, con la implementación en Sequelize del modelo propuesto, explicación por parte de la compañera que esta haciendo los ajustes del sequelize.
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
+  - ***¿Encontró con algún impedimento?***: **EN PAUSA**
+  - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 22 (Mayo 23/2022 - Mayo 29/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Se finalizó el CRUD de productos y usuarios, compartiendo los hallazgos y mejoras con el equipo.
+  - ***¿Encontró con algún impedimento?***: Se desea aplicar dinamismo al carrito de compras. De momento no ha sido posible a través del front-end.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del sexto *Sprint*. Se tiene por objetivo, además, implementar el dinamismo deseado al carrito de compras.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***: 
+  - ***¿Encontró con algún impedimento?***: 
+  - ***¿Qué va a hacer durante la presente semana?***: 
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
