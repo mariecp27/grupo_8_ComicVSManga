@@ -150,3 +150,31 @@ Desarrollamos una pequeña reunión para revisar nuestras actividades en los ult
 
 ### Stop doing:
 * No hay nuevas conductas negativas para detener hasta el momento.
+
+# Starfish Retrospective 6
+Desarrollamos una pequeña reunión para revisar nuestras actividades en los ultimos 30 dias. Las cosas fluyeron de igual forma a lo realizado en los anteriores Sprint, aprovechando la cantidad de tiempo del sprint se hizo un aprovechamiento de los recursos.
+
+## Conclusiones:
+
+### Start doing:
+* Asignar due dates.
+
+### More of:
+* Aumentar el compromiso de actividades que aporten valor al proyecto.
+* Compromiso por parte de Erick Leones.
+* Compromiso por parte de Felipe Vargas.
+
+### Keep doing:
+* Continuar con el registro de actividades semanales en el archivo weekly.md
+* Mantener las reuniones de seguimiento para fortalecer la comunicación y realizar una buena revisión de las tareas del proyecto.
+* Continuar con la planeación, actualización y finalización de tareas en Trello.
+* Solicitar asistencia oportuna de parte de los compañeros por si se presentan inconvenientes durante la realización de tareas.
+* Solicitar explicaciones de las actividades realizadas por los compañeros cuando no se entienda una parte.
+* Investigar diferentes temáticas relacionas al proyecto, tal que se puedan incluir en el futuro.
+* Presentar ideas creativas para la mejora de la comunicación y relación en el grupo.
+
+### Less of:
+* No hay conductas negativas descubiertas hasta el momento.
+
+### Stop doing:
+* No hay nuevas conductas negativas para detener hasta el momento.
