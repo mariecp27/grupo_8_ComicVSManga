@@ -192,6 +192,21 @@ select:hover{
     text-align: center;
 }
 
+/* Estilos para los errores */
+.main__form input.invalid-value,
+.main__form textarea.invalid-value,
+.main__form label.invalid-value,
+.main__form select.invalid-value{
+    border: 1px solid var(--myYellow);
+}
+
+.form-errors{
+    font-family: var(--myText);
+    color: var(--myYellow);
+    font-weight: bold;
+    font-size: 16px;
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){

@@ -20,13 +20,13 @@
             <form action="/users/profile/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
                 <div>
                     <img src="/images/users/<%= user.image %>" alt="Foto de perfil" class="main__information-img">
-                    <label for="avatar" class="main__form-upload">Actualizar imagen</label>
-                    <input 
-                        type="file"
-                        name="avatar"
-                        id="avatar"
-                        class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                    <label
+                        for="avatar"
+                        class="main__form-upload <%= locals.errors && errors.user ? "invalid-value" : null %>"
                     >
+                        Actualizar imagen
+                    </label>
+                    <input type="file" name="avatar" id="avatar">
                     <% if (locals.errors && errors.avatar) { %>
                         <div class="form-errors">
                             <%= errors.avatar.msg %> 
@@ -104,12 +104,23 @@
                         type="password"
                         name="password2"
                         id="password2"
-                        class="<%= locals.errors && errors.password2 ? "invalid-value" : null %>"
+                        <% if (locals.errorsArray) { %>
+                            <% locals.errorsArray.forEach(error => { %> 
+                                <% if (error.param == 'password2') { %>
+                                    class="invalid-value"
+                                <% } %>
+                            <% }); %> 
+                        <% } %>
+                        value="<%= locals.oldData ? oldData.password2 : null %>"
                     >
-                    <% if (locals.errors && errors.password2) { %>
-                        <div class="form-errors">
-                            <%= errors.password2.msg %> 
-                        </div>
+                    <% if (locals.errorsArray) { %>
+                        <% locals.errorsArray.forEach(error => { %> 
+                            <% if (error.param == 'password2') { %>
+                                <div class="form-errors">
+                                    <%= error.msg %> 
+                                </div>
+                            <% } %>
+                        <% }); %> 
                     <% } %>
                 </div>
 

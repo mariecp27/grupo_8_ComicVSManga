@@ -17,7 +17,7 @@ let usersController = {
 		
 		if (resultValidation.errors.length > 0) {
 			return res.render('users/register', {
-				errors:resultValidation.mapped(),
+				errors: resultValidation.array(),
 				oldData: req.body
 			});
 		}
@@ -34,7 +34,7 @@ let usersController = {
 		if(nameInDB.length > 0){
 			return res.render('users/register', {
 				errors: {
-					user:{
+					user: {
 						msg: 'Este nombre de usuario ya está en uso',
 					}
 				},
@@ -54,7 +54,7 @@ let usersController = {
 		if(emailInDB.length > 0){
 			return res.render('users/register', {
 				errors: {
-					email:{
+					email: {
 						msg: 'Este email ya está en uso',
 					}
 				},
@@ -195,8 +195,10 @@ let usersController = {
 		const resultValidation = validationResult(req);
 				
 		if (resultValidation.errors.length > 0) {
+			
 			return res.render('users/userProfileEdition', {
-				errors:resultValidation.mapped(),
+				errors: resultValidation.mapped(),
+				errorsArray: resultValidation.array(),
 				oldData: req.body,
 				user: loggedUser
 			});
@@ -256,8 +258,17 @@ let usersController = {
 						msg: 'Verifica la contraseña ingresada',
 					}
 				},
+				oldData: req.body,
 				user: loggedUser
 			});
+		}
+
+		let password = '';
+
+		if(req.body.password2){
+			password = bcryptjs.hashSync(req.body.password2, 10);
+		} else{
+			password = loggedUser.password;
 		}
 
         // Actualizar usuario
@@ -269,7 +280,7 @@ let usersController = {
 				name: req.body.name,
 				last_name: req.body.lastName,
 				email: req.body.email,
-				password: bcryptjs.hashSync(req.body.password2, 10),
+				password: password,
 				image: filename,
             }, {
 				where: {
@@ -284,7 +295,7 @@ let usersController = {
 				name: req.body.name,
 				last_name: req.body.lastName,
 				email: req.body.email,
-				password: bcryptjs.hashSync(req.body.password2, 10),
+				password: password,
             },{
 				where: {
 					user_id: userId,

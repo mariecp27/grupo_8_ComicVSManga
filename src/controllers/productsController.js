@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
@@ -115,6 +116,29 @@ let mainController = {
     // Método para almacenar los productos creados
 	store: async(req, res) => {
 
+        // Verificación de errores
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+
+            let categories = await db.Category.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+
+            let formats = await db.Format.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+
+			return res.render('admin/productCreation', {
+				errors: resultValidation.mapped(),
+				oldData: req.body,
+                categories,
+                formats
+			});
+		}
+
 		let filename = req.file.filename;
 
         let isfeatured = 0;
@@ -204,6 +228,41 @@ let mainController = {
 
     // Método para actualizar los productos almacenados
     update: async(req, res) => {
+
+        // Verificación de errores
+        const resultValidation = validationResult(req);
+ 
+        if (resultValidation.errors.length > 0) {
+
+            let idProduct = req.params.id;
+
+            let productToEdit = await db.Product.findByPk(idProduct, {
+                include: [
+                    {association: 'formats'},
+                    {association: 'categories'},
+                ]
+            }).catch(function(errors){
+                console.log(errors);
+            });
+
+            let categories = await db.Category.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+
+            let formats = await db.Format.findAll()
+            .catch(function(errors){
+                console.log(errors);
+            });
+ 
+            return res.render('admin/productEdition', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                productToEdit,
+                categories,
+                formats
+            });
+        }
 
         let idProduct = req.params.id;
 

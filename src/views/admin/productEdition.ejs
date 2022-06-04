@@ -15,17 +15,48 @@
             <form action="/products/<%= productToEdit.product_id %>/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
                 <div>
                     <label for="name" class="main__form-label">Nombre del producto</label>
-                    <input type="text" name="name" id="name" class="" value="<%= productToEdit.name %>" required>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="<%= locals.errors && errors.name ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.name : productToEdit.name %>"
+                    >
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="form-errors">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
                     <label for="description" class="main__form-label">Descripción</label>
-                    <textarea name="description" id="description" class="" rows="5"><%= productToEdit.description %></textarea>
+                    <textarea
+                        name="description"
+                        id="description"
+                        class="<%= locals.errors && errors.description ? "invalid-value" : null %>"
+                        rows="5"
+                    ><%= locals.oldData ? oldData.description : productToEdit.description %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="form-errors">
+                            <%= errors.description.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
-                    <label for="image" class="main__form-upload">Subir imagen</label>
-                    <input type="file" name="image" id="image" accept="image/*" class="">
+                    <label
+                        for="image"
+                        class="main__form-upload <%= locals.errors && errors.image ? "invalid-value" : null %>"
+                    >
+                        Subir imagen
+                    </label>
+                    <input type="file" name="image" id="image">
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="form-errors">
+                            <%= errors.image.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
@@ -34,60 +65,163 @@
                         <label>
                             <input
                                 type="checkbox"
-                                value="<%= categories[i].category_id %>" 
-                                <% for( let j = 0; j < productToEdit.categories.length; j++ ) { %>
-                                    <% if (categories[i].category_id == productToEdit.categories[j].category_id) { %>
-                                        checked
-                                    <% } %>    
+                                value="<%= categories[i].category_id %>"
+                                <% if (locals.oldData && oldData.category) { %>
+                                    <% for( let j = 0; j < oldData.category.length; j++ ) { %>
+                                        <% if (categories[i].category_id == oldData.category[j]) { %>
+                                            checked
+                                        <% } %>    
+                                    <% } %>
+                                <% } else { %>
+                                    <% for( let j = 0; j < productToEdit.categories.length; j++ ) { %>
+                                        <% if (categories[i].category_id == productToEdit.categories[j].category_id) { %>
+                                            checked
+                                        <% } %>    
+                                    <% } %>
                                 <% } %>
                                 name="category">
                                 <%= categories[i].category %>  
                         </label>
                     <% } %>
+                    <% if (locals.errors && errors.category) { %>
+                        <div class="form-errors">
+                            <%= errors.category.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
                     <label for="author" class="main__form-label">Autores</label>
-                    <input type="text" name="author" id="author" value="<%= productToEdit.author %>" class="" required>
+                    <input
+                        type="text"
+                        name="author"
+                        id="author"
+                        class="<%= locals.errors && errors.author ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.author : productToEdit.author %>"
+                    >
+                    <% if (locals.errors && errors.author) { %>
+                        <div class="form-errors">
+                            <%= errors.author.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
-                <select name="format" class="" required>
+                <select name="format" class="<%= locals.errors && errors.format ? "invalid-value" : null %>">
                     <option disabled>Seleccione formato</option>
-                    <% for(let i = 0; i < formats.length; i++) { %>
-                        <% if (formats[i].format_id == productToEdit.formats.format_id) { %>
-                            <option value="<%= formats[i].format_id %>" selected><%= formats[i].format %></option>
-                        <% } else{%>
-                            <option value="<%= formats[i].format_id %>"><%= formats[i].format %> </option>
-                        <% } %>
+                    <% for( let i = 0; i < formats.length; i++ ) { %>
+                        <option
+                            <% if (locals.oldData && oldData.format) { %>
+                                <% if (formats[i].format_id == oldData.format) { %>
+                                    selected
+                                <% } %>
+                            <% } else { %>
+                                <% if (formats[i].format_id == productToEdit.formats.format_id) { %>
+                                    selected
+                                <% } %>
+                            <% } %>
+                            value="<%= formats[i].format_id %>">
+                            <%= formats[i].format %>
+                        </option>
                     <% } %>
                 </select>
+                <% if (locals.errors && errors.format) { %>
+                    <div class="form-errors">
+                        <%= errors.format.msg %> 
+                    </div>
+                <% } %>
 
                 <div>
                     <label for="pages" class="main__form-label">Páginas</label>
-                    <input type="number" name="pages" id="pages" value="<%= productToEdit.pages %>" class="" required>
+                    <input
+                        type="number"
+                        name="pages"
+                        id="pages"
+                        class="<%= locals.errors && errors.pages ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.pages : productToEdit.pages %>"
+                    >
+                    <% if (locals.errors && errors.pages) { %>
+                        <div class="form-errors">
+                            <%= errors.pages.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
                     <label for="price" class="main__form-label">Precio</label>
-                    <input type="number" name="price" id="price" value="<%= productToEdit.price %>" class="" required>
+                    <input
+                        type="number"
+                        name="price"
+                        class="<%= locals.errors && errors.price ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.price : productToEdit.price %>"
+                    >
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="form-errors">
+                            <%= errors.price.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="featured" class="" id="featured" <%= locals.productToEdit && productToEdit.featured == 1 ? 'checked' : ''; %>>Producto destacado</label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="featured"
+                            class="" 
+                            id="featured"
+                            <% if (locals.oldData) { %>
+                                <%= oldData.featured == 'on' ? 'checked' : ''; %>
+                            <% } else { %>
+                                <%= locals.productToEdit && productToEdit.featured == 1 ? 'checked' : ''; %>
+                            <% } %>
+                        >Producto destacado
+                    </label>
                 </div>
 
                 <div>
-                    <label><input type="checkbox" name="onSale" class="" id="onSale" <%= locals.productToEdit && productToEdit.on_sale == 1 ? 'checked' : ''; %>>Producto en oferta</label>
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="onSale"
+                            class=""
+                            id="onSale"
+                            <% if (locals.oldData) { %>
+                                <%= oldData.onSale == 'on' ? 'checked' : ''; %>
+                            <% } else { %>
+                                <%= locals.productToEdit && productToEdit.on_sale == 1 ? 'checked' : ''; %>
+                            <% } %>
+                        >Producto en oferta
+                    </label>
                 </div>
 
                 <div>
                     <label for="discount" class="main__form-label">Descuento</label>
-                    <input type="number" name="discount" value="<%= productToEdit.discount %>" class="" required placeholder="Si no está en oferta, es cero (0)">
+                    <input
+                        type="number"
+                        name="discount"
+                        class="<%= locals.errors && errors.discount ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.discount : productToEdit.discount %>"
+                        placeholder="Si no está en oferta, es cero (0)"
+                    >
+                    <% if (locals.errors && errors.discount) { %>
+                        <div class="form-errors">
+                            <%= errors.discount.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div>
                     <label for="stock" class="main__form-label">Stock</label>
-                    <input type="number" name="stock" class="" value="<%= productToEdit.stock %>" required>
+                    <input 
+                        type="number"
+                        name="stock"
+                        class="<%= locals.errors && errors.stock ? "invalid-value" : null %>"
+                        value="<%= locals.oldData ? oldData.stock : productToEdit.stock %>"
+                    >
+                    <% if (locals.errors && errors.stock) { %>
+                        <div class="form-errors">
+                            <%= errors.stock.msg %> 
+                        </div>
+                    <% } %>
                 </div>
 
                 <div class="main__form-buttons">

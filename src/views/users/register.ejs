@@ -21,13 +21,23 @@
                         <input 
                             type="text" 
                             name="user"
-                            class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'user') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
                             value="<%= locals.oldData ? oldData.user : null %>"
                         >
-                        <% if (locals.errors && errors.user) { %>
-                            <div class="form-errors">
-                                <%= errors.user.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'user') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
@@ -35,13 +45,23 @@
                         <input
                             type="text"
                             name="name"
-                            class="<%= locals.errors && errors.name ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'name') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
                             value="<%= locals.oldData ? oldData.name : null %>"
                         >
-                        <% if (locals.errors && errors.name) { %>
-                            <div class="form-errors">
-                                <%= errors.name.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'name') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
@@ -49,13 +69,23 @@
                         <input
                             type="text"
                             name="lastName"
-                            class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'lastName') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
                             value="<%= locals.oldData ? oldData.lastName : null %>"
                         >
-                        <% if (locals.errors && errors.lastName) { %>
-                            <div class="form-errors">
-                                <%= errors.lastName.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'lastName') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
@@ -63,13 +93,23 @@
                         <input
                             type="email"
                             name="email"
-                            class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'email') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
                             value="<%= locals.oldData ? oldData.email : null %>"
                         >
-                        <% if (locals.errors && errors.email) { %>
-                            <div class="form-errors">
-                                <%= errors.email.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'email') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
@@ -77,12 +117,23 @@
                         <input
                             type="password"
                             name="password1"
-                            class="<%= locals.errors && errors.password1 ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'password1') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
+                            value="<%= locals.oldData ? oldData.password1 : null %>"
                         >
-                        <% if (locals.errors && errors.password1) { %>
-                            <div class="form-errors">
-                                <%= errors.password1.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'password1') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
@@ -90,21 +141,43 @@
                         <input
                             type="password"
                             name="password2"
-                            class="<%= locals.errors && errors.password2 ? "invalid-value" : null %>"
+                            <% if (locals.errors) { %>
+                                <% locals.errors.forEach(error => { %> 
+                                    <% if (error.param == 'password2') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
                         >
-                        <% if (locals.errors && errors.password2) { %>
-                            <div class="form-errors">
-                                <%= errors.password2.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'password2') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
-                        <label for="avatar" class="main__form-upload">Imagen de perfil</label>
+                        <label for="avatar" class="main__form-upload
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'avatar') { %>
+                                    invalid-value
+                                <% } %>
+                            <% }); %> 
+                        <% } %>
+                        ">Imagen de perfil</label>
                         <input type="file" name="avatar" id="avatar">
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div class="form-errors">
-                                <%= errors.avatar.msg %> 
-                            </div>
+                        <% if (locals.errors) { %>
+                            <% locals.errors.forEach(error => { %> 
+                                <% if (error.param == 'avatar') { %>
+                                    <div class="form-errors">
+                                        <%= error.msg %> 
+                                    </div>
+                                <% } %>
+                            <% }); %> 
                         <% } %>
                     </div>
                     <div class="inputBx">
