@@ -172,6 +172,42 @@ section .contentBx .formBx .inputBx .invalid-value{
     font-size: 16px;
 }
 
+.inputIcon{
+    position: relative;
+    width: 100%;
+}
+
+.fa-triangle-exclamation,
+.fa-circle-check{
+    display: none;
+}
+
+.triangleUser{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myPink);
+    top: 10px;
+    right: 10px;
+}
+
+section .contentBx .formBx .inputBx .valid-value{
+    border: 1px solid var(--myGreen);
+}
+
+.checkUser{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myGreen);
+    top: 10px;
+    right: 10px;
+}
+
+#password1Error{
+    list-style: none;
+}
+
 @media (max-width:768px){
     section .imgBx{
         position: absolute;

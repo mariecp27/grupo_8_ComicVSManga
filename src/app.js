@@ -41,6 +41,9 @@ app.use('/users', userRoutes);
 const productsRoutes = require('./routes/productsRouter');
 app.use('/products', productsRoutes);
 
+// Api
+const userApiRoutes = require('./routes/api/usersRouter');
+app.use('/api/users', userApiRoutes);
 
 // Servidor
 app.listen(process.env.PORT || 3030, () => {
