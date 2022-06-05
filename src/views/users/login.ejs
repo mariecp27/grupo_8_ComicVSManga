@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head.ejs', {title: 'Inicio de Sesión'}) %>
     <link rel="stylesheet" href="/css/loginStyle.css">
+    <script defer src="/js/validateLogin.js"></script>
 </head>
 <body>
     <header>
@@ -15,40 +16,56 @@
         <div class="contentBx">
             <div class="formBx">
                 <h2>Inicio de sesión</h2>
-                <form action="/users/login" method="post">
+                <form action="/users/login" method="post" id="form">
                     <div class="inputBx">
                         <span>Correo electrónico</span>
-                        <input
-                            type="text"
-                            name="email"
-                            class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
-                            value="<%= locals.oldData ? oldData.email : null %>"
-                        >
+                        <div class="inputIcon">
+                            <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                                value="<%= locals.oldData ? oldData.email : null %>"
+                            >
+                            <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationEmail"></i>
+                            <i class="fa-solid fa-circle-check fa-circle-checkEmail"></i>
+                        </div>
                         <% if (locals.errors && errors.email) { %>
                             <div class="form-errors">
                                 <%= errors.email.msg %> 
                             </div>
                         <% } %>
+                        <small class="form-errors" id="emailError"></small>
                     </div>
+
                     <div class="inputBx">
                         <span>Contraseña</span>
-                        <input
-                            type="password"
-                            name="password"
-                            class="<%= locals.errors && errors.password ? "invalid-value" : null %>"
-                        >
+                        <div class="inputIcon">
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                class="<%= locals.errors && errors.password ? "invalid-value" : null %>"
+                            >
+                            <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPassword"></i>
+                            <i class="fa-solid fa-circle-check fa-circle-checkPassword"></i>
+                        </div>
                         <% if (locals.errors && errors.password) { %>
                             <div class="form-errors">
                                 <%= errors.password.msg %> 
                             </div>
                         <% } %>
+                        <small class="form-errors" id="passwordError"></small>
                     </div>
+
                     <div class="remember">
                         <label><input type="checkbox" name="rememberMe"> Recuérdame</label>
                     </div>
+
                     <div class="inputBx">
                         <input type="submit" value="Ingresar">
                     </div>
+                    
                     <div class="inputBx">
                         <p>¿No tienes una cuenta? <a href="/users/sign-up">Crear cuenta</a></p>
                     </div>

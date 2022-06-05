@@ -65,19 +65,19 @@ window.addEventListener('load', function(){
             userError.innerHTML = 'Ingresa tu nombre de usuario';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
         } else if(user.value.length > 10){
             userError.innerHTML = 'El máximo de caracteres es de 10';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
         } else if(user.value.length > 0 && user.value.length <= 10 ){
             usersInDB.forEach(userDB => {
@@ -85,19 +85,19 @@ window.addEventListener('load', function(){
                     userError.innerHTML = 'Este nombre de usuario ya está en uso';
     
                     user.classList.add('invalid-value');
-                    triangleUser.classList.add('triangleUser');
+                    triangleUser.classList.add('triangleWarning');
     
                     user.classList.remove('valid-value');
-                    checkUser.classList.remove('checkUser');    
+                    checkUser.classList.remove('circleCheck');    
                 }
             })
         }else{
             userError.innerHTML = '';
             user.classList.remove('invalid-value');
-            triangleUser.classList.remove('triangleUser');
+            triangleUser.classList.remove('triangleWarning');
 
             user.classList.add('valid-value');
-            checkUser.classList.add('checkUser');
+            checkUser.classList.add('circleCheck');
         }
     });
 
@@ -106,27 +106,27 @@ window.addEventListener('load', function(){
             userError.innerHTML = 'Tu nombre de usuario no debe contener espacios';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
         } else if(user.value.length > 10){
             userError.innerHTML = 'El máximo de caracteres es de 10';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
         } else{
             userError.innerHTML = '';
             user.classList.remove('invalid-value');
-            triangleUser.classList.remove('triangleUser');
+            triangleUser.classList.remove('triangleWarning');
 
             user.classList.add('valid-value');
-            checkUser.classList.add('checkUser');
+            checkUser.classList.add('circleCheck');
 
         }
     });
@@ -138,27 +138,27 @@ window.addEventListener('load', function(){
             nameError.innerHTML = 'Ingresa tu(s) nombre(s)';
 
             name.classList.add('invalid-value');
-            triangleName.classList.add('triangleUser');
+            triangleName.classList.add('triangleWarning');
 
             name.classList.remove('valid-value');
-            checkName.classList.remove('checkUser');
+            checkName.classList.remove('circleCheck');
 
         } else if(name.value.length < 2){
             nameError.innerHTML = 'Tu nombre debe tener al menos 2 caracteres';
 
             name.classList.add('invalid-value');
-            triangleName.classList.add('triangleUser');
+            triangleName.classList.add('triangleWarning');
 
             name.classList.remove('valid-value');
-            checkName.classList.remove('checkUser');
+            checkName.classList.remove('circleCheck');
 
         } else{
             nameError.innerHTML = '';
             name.classList.remove('invalid-value');
-            triangleName.classList.remove('triangleUser');
+            triangleName.classList.remove('triangleWarning');
 
             name.classList.add('valid-value');
-            checkName.classList.add('checkUser');
+            checkName.classList.add('circleCheck');
         }
     });
 
@@ -169,27 +169,27 @@ window.addEventListener('load', function(){
             lastNameError.innerHTML = 'Ingresa tu(s) apellido(s)';
 
             lastName.classList.add('invalid-value');
-            triangleLastName.classList.add('triangleUser');
+            triangleLastName.classList.add('triangleWarning');
 
             lastName.classList.remove('valid-value');
-            checkLastName.classList.remove('checkUser');
+            checkLastName.classList.remove('circleCheck');
 
         } else if(lastName.value.length < 2){
             lastNameError.innerHTML = 'Tu apellido debe tener al menos 2 caracteres';
 
             lastName.classList.add('invalid-value');
-            triangleLastName.classList.add('triangleUser');
+            triangleLastName.classList.add('triangleWarning');
 
             lastName.classList.remove('valid-value');
-            checkLastName.classList.remove('checkUser');
+            checkLastName.classList.remove('circleCheck');
 
         } else{
             lastNameError.innerHTML = '';
             lastName.classList.remove('invalid-value');
-            triangleLastName.classList.remove('triangleUser');
+            triangleLastName.classList.remove('triangleWarning');
 
             lastName.classList.add('valid-value');
-            checkLastName.classList.add('checkUser');
+            checkLastName.classList.add('circleCheck');
         }
     });
 
@@ -202,19 +202,19 @@ window.addEventListener('load', function(){
             emailError.innerHTML = 'Escribe un correo electrónico';
 
             email.classList.add('invalid-value');
-            triangleEmail.classList.add('triangleUser');
+            triangleEmail.classList.add('triangleWarning');
 
             email.classList.remove('valid-value');
-            checkEmail.classList.remove('checkUser');
+            checkEmail.classList.remove('circleCheck');
 
         } else if(!email.value.match(emailRegex)){
             emailError.innerHTML = 'Escribe un formato de correo válido';
 
             email.classList.add('invalid-value');
-            triangleEmail.classList.add('triangleUser');
+            triangleEmail.classList.add('triangleWarning');
 
             email.classList.remove('valid-value');
-            checkEmail.classList.remove('checkUser');
+            checkEmail.classList.remove('circleCheck');
 
         } else if(email.value.length > 0){
             let noMatch = true;
@@ -224,29 +224,29 @@ window.addEventListener('load', function(){
                     emailError.innerHTML = 'Este email ya está en uso';
     
                     email.classList.add('invalid-value');
-                    triangleEmail.classList.add('triangleUser');
+                    triangleEmail.classList.add('triangleWarning');
     
                     email.classList.remove('valid-value');
-                    checkEmail.classList.remove('checkUser');
+                    checkEmail.classList.remove('circleCheck');
                     
                     noMatch = false;
 
                 }else if(noMatch){
                     emailError.innerHTML = '';
                     email.classList.remove('invalid-value');
-                    triangleEmail.classList.remove('triangleUser');
+                    triangleEmail.classList.remove('triangleWarning');
 
                     email.classList.add('valid-value');
-                    checkEmail.classList.add('checkUser');
+                    checkEmail.classList.add('circleCheck');
                 }
             })
         }else{
             emailError.innerHTML = '';
             email.classList.remove('invalid-value');
-            triangleEmail.classList.remove('triangleUser');
+            triangleEmail.classList.remove('triangleWarning');
 
             email.classList.add('valid-value');
-            checkEmail.classList.add('checkUser');
+            checkEmail.classList.add('circleCheck');
         }
     });
 
@@ -257,10 +257,10 @@ window.addEventListener('load', function(){
             password1Error.innerHTML = 'Escribe una contraseña';
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
 
         }
     });
@@ -272,50 +272,50 @@ window.addEventListener('load', function(){
             passwordErrors.push('Tu contraseña debe tener al menos 8 caracteres')
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
         }
 
         if(!password1.value.match(/(?=.*?[a-z])/)){
             passwordErrors.push('Ingresa al menos una letra minúscula')
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
         }
 
         if(!password1.value.match(/(?=.*?[A-Z])/)){
             passwordErrors.push('Ingresa al menos una letra mayúscula')
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
         }
 
         if(!password1.value.match(/(?=.*?[0-9])/)){
             passwordErrors.push('Ingresa al menos un número')
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
         }
 
         if(!password1.value.match(/(?=.*?[#?!@$%^&*-])/)){
             passwordErrors.push('Ingresa al menos un carácter especial')
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
         }
 
         if(passwordErrors.length > 0){
@@ -327,10 +327,10 @@ window.addEventListener('load', function(){
         }else if(passwordErrors.length == 0) {
             password1Error.innerHTML = '';
             password1.classList.remove('invalid-value');
-            trianglePassword1.classList.remove('triangleUser');
+            trianglePassword1.classList.remove('triangleWarning');
 
             password1.classList.add('valid-value');
-            checkPassword1.classList.add('checkUser');
+            checkPassword1.classList.add('circleCheck');
         }
     });
 
@@ -341,10 +341,10 @@ window.addEventListener('load', function(){
             password2Error.innerHTML = 'Confirma la contraseña';
 
             password2.classList.add('invalid-value');
-            trianglePassword2.classList.add('triangleUser');
+            trianglePassword2.classList.add('triangleWarning');
 
             password2.classList.remove('valid-value');
-            checkPassword2.classList.remove('checkUser');
+            checkPassword2.classList.remove('circleCheck');
 
         }
     });
@@ -355,18 +355,18 @@ window.addEventListener('load', function(){
             password2Error.innerHTML = 'Las contraseñas deben coincidir';
 
             password2.classList.add('invalid-value');
-            trianglePassword2.classList.add('triangleUser');
+            trianglePassword2.classList.add('triangleWarning');
 
             password2.classList.remove('valid-value');
-            checkPassword2.classList.remove('checkUser');
+            checkPassword2.classList.remove('circleCheck');
 
         }else{
             password2Error.innerHTML = '';
             password2.classList.remove('invalid-value');
-            trianglePassword2.classList.remove('triangleUser');
+            trianglePassword2.classList.remove('triangleWarning');
 
             password2.classList.add('valid-value');
-            checkPassword2.classList.add('checkUser');
+            checkPassword2.classList.add('circleCheck');
         }
     });
 
@@ -392,17 +392,17 @@ window.addEventListener('load', function(){
         if(!extensionMatch){
             avatarError.innerHTML = 'Las extensiones de archivo permitidas son .jpg, .jpeg, .png y .gif';
             avatarL.classList.add('invalid-value');
-            triangleAvatar.classList.add('triangleUser');
+            triangleAvatar.classList.add('triangleWarning');
 
             avatarL.classList.remove('valid-value');
-            checkAvatar.classList.remove('checkUser');
+            checkAvatar.classList.remove('circleCheck');
         }else{
             avatarError.innerHTML = '';
             avatarL.classList.remove('invalid-value');
-            triangleAvatar.classList.remove('triangleUser');
+            triangleAvatar.classList.remove('triangleWarning');
 
             avatarL.classList.add('valid-value');
-            checkAvatar.classList.add('checkUser');
+            checkAvatar.classList.add('circleCheck');
         }
     });
 
@@ -418,10 +418,10 @@ window.addEventListener('load', function(){
             userError.innerHTML = 'Ingresa tu nombre de usuario';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
             errorsAmount += 1;
 
@@ -429,10 +429,10 @@ window.addEventListener('load', function(){
             userError.innerHTML = 'El máximo de caracteres es de 10';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
             errorsAmount += 1;
 
@@ -442,10 +442,10 @@ window.addEventListener('load', function(){
                     userError.innerHTML = 'Este nombre de usuario ya está en uso';
     
                     user.classList.add('invalid-value');
-                    triangleUser.classList.add('triangleUser');
+                    triangleUser.classList.add('triangleWarning');
     
                     user.classList.remove('valid-value');
-                    checkUser.classList.remove('checkUser');
+                    checkUser.classList.remove('circleCheck');
                     
                     errorsAmount += 1;
                 }
@@ -454,10 +454,10 @@ window.addEventListener('load', function(){
             userError.innerHTML = 'Tu nombre de usuario no debe contener espacios';
 
             user.classList.add('invalid-value');
-            triangleUser.classList.add('triangleUser');
+            triangleUser.classList.add('triangleWarning');
 
             user.classList.remove('valid-value');
-            checkUser.classList.remove('checkUser');
+            checkUser.classList.remove('circleCheck');
 
             errorsAmount += 1;
         }
@@ -467,10 +467,10 @@ window.addEventListener('load', function(){
             nameError.innerHTML = 'Ingresa tu(s) nombre(s)';
 
             name.classList.add('invalid-value');
-            triangleName.classList.add('triangleUser');
+            triangleName.classList.add('triangleWarning');
 
             name.classList.remove('valid-value');
-            checkName.classList.remove('checkUser');
+            checkName.classList.remove('circleCheck');
 
             errorsAmount += 1;
 
@@ -478,10 +478,10 @@ window.addEventListener('load', function(){
             nameError.innerHTML = 'Tu nombre debe tener al menos 2 caracteres';
 
             name.classList.add('invalid-value');
-            triangleName.classList.add('triangleUser');
+            triangleName.classList.add('triangleWarning');
 
             name.classList.remove('valid-value');
-            checkName.classList.remove('checkUser');
+            checkName.classList.remove('circleCheck');
 
             errorsAmount += 1;
         }
@@ -491,10 +491,10 @@ window.addEventListener('load', function(){
             lastNameError.innerHTML = 'Ingresa tu(s) apellido(s)';
 
             lastName.classList.add('invalid-value');
-            triangleLastName.classList.add('triangleUser');
+            triangleLastName.classList.add('triangleWarning');
 
             lastName.classList.remove('valid-value');
-            checkLastName.classList.remove('checkUser');
+            checkLastName.classList.remove('circleCheck');
 
             errorsAmount += 1;
 
@@ -502,10 +502,10 @@ window.addEventListener('load', function(){
             lastNameError.innerHTML = 'Tu apellido debe tener al menos 2 caracteres';
 
             lastName.classList.add('invalid-value');
-            triangleLastName.classList.add('triangleUser');
+            triangleLastName.classList.add('triangleWarning');
 
             lastName.classList.remove('valid-value');
-            checkLastName.classList.remove('checkUser');
+            checkLastName.classList.remove('circleCheck');
             
             errorsAmount += 1;
         }
@@ -517,10 +517,10 @@ window.addEventListener('load', function(){
             emailError.innerHTML = 'Escribe un correo electrónico';
 
             email.classList.add('invalid-value');
-            triangleEmail.classList.add('triangleUser');
+            triangleEmail.classList.add('triangleWarning');
 
             email.classList.remove('valid-value');
-            checkEmail.classList.remove('checkUser');
+            checkEmail.classList.remove('circleCheck');
             
             errorsAmount += 1;
 
@@ -528,10 +528,10 @@ window.addEventListener('load', function(){
             emailError.innerHTML = 'Escribe un formato de correo válido';
 
             email.classList.add('invalid-value');
-            triangleEmail.classList.add('triangleUser');
+            triangleEmail.classList.add('triangleWarning');
 
             email.classList.remove('valid-value');
-            checkEmail.classList.remove('checkUser');
+            checkEmail.classList.remove('circleCheck');
 
             errorsAmount += 1;
 
@@ -541,10 +541,10 @@ window.addEventListener('load', function(){
                     emailError.innerHTML = 'Este email ya está en uso';
     
                     email.classList.add('invalid-value');
-                    triangleEmail.classList.add('triangleUser');
+                    triangleEmail.classList.add('triangleWarning');
     
                     email.classList.remove('valid-value');
-                    checkEmail.classList.remove('checkUser');
+                    checkEmail.classList.remove('circleCheck');
                     
                     noMatch = false;
 
@@ -560,10 +560,10 @@ window.addEventListener('load', function(){
             password1Error.innerHTML = 'Escribe una contraseña';
 
             password1.classList.add('invalid-value');
-            trianglePassword1.classList.add('triangleUser');
+            trianglePassword1.classList.add('triangleWarning');
 
             password1.classList.remove('valid-value');
-            checkPassword1.classList.remove('checkUser');
+            checkPassword1.classList.remove('circleCheck');
             
             errorsAmount += 1;
 
@@ -572,10 +572,10 @@ window.addEventListener('load', function(){
                 passwordErrorsT.push('Tu contraseña debe tener al menos 8 caracteres')
     
                 password1.classList.add('invalid-value');
-                trianglePassword1.classList.add('triangleUser');
+                trianglePassword1.classList.add('triangleWarning');
     
                 password1.classList.remove('valid-value');
-                checkPassword1.classList.remove('checkUser');
+                checkPassword1.classList.remove('circleCheck');
     
                 errorsAmount += 1;
     
@@ -585,10 +585,10 @@ window.addEventListener('load', function(){
                 passwordErrorsT.push('Ingresa al menos una letra minúscula')
     
                 password1.classList.add('invalid-value');
-                trianglePassword1.classList.add('triangleUser');
+                trianglePassword1.classList.add('triangleWarning');
     
                 password1.classList.remove('valid-value');
-                checkPassword1.classList.remove('checkUser');
+                checkPassword1.classList.remove('circleCheck');
     
                 errorsAmount += 1;
     
@@ -598,10 +598,10 @@ window.addEventListener('load', function(){
                 passwordErrorsT.push('Ingresa al menos una letra mayúscula')
     
                 password1.classList.add('invalid-value');
-                trianglePassword1.classList.add('triangleUser');
+                trianglePassword1.classList.add('triangleWarning');
     
                 password1.classList.remove('valid-value');
-                checkPassword1.classList.remove('checkUser');
+                checkPassword1.classList.remove('circleCheck');
     
                 errorsAmount += 1;
     
@@ -611,10 +611,10 @@ window.addEventListener('load', function(){
                 passwordErrorsT.push('Ingresa al menos un número')
     
                 password1.classList.add('invalid-value');
-                trianglePassword1.classList.add('triangleUser');
+                trianglePassword1.classList.add('triangleWarning');
     
                 password1.classList.remove('valid-value');
-                checkPassword1.classList.remove('checkUser');
+                checkPassword1.classList.remove('circleCheck');
     
                 errorsAmount += 1;
     
@@ -624,10 +624,10 @@ window.addEventListener('load', function(){
                 passwordErrorsT.push('Ingresa al menos un carácter especial')
     
                 password1.classList.add('invalid-value');
-                trianglePassword1.classList.add('triangleUser');
+                trianglePassword1.classList.add('triangleWarning');
     
                 password1.classList.remove('valid-value');
-                checkPassword1.classList.remove('checkUser');
+                checkPassword1.classList.remove('circleCheck');
     
                 errorsAmount += 1;
             }
@@ -638,10 +638,10 @@ window.addEventListener('load', function(){
             password2Error.innerHTML = 'Confirma la contraseña';
 
             password2.classList.add('invalid-value');
-            trianglePassword2.classList.add('triangleUser');
+            trianglePassword2.classList.add('triangleWarning');
 
             password2.classList.remove('valid-value');
-            checkPassword2.classList.remove('checkUser');
+            checkPassword2.classList.remove('circleCheck');
             
             errorsAmount += 1;
 
@@ -649,10 +649,10 @@ window.addEventListener('load', function(){
             password2Error.innerHTML = 'Las contraseñas deben coincidir';
 
             password2.classList.add('invalid-value');
-            trianglePassword2.classList.add('triangleUser');
+            trianglePassword2.classList.add('triangleWarning');
 
             password2.classList.remove('valid-value');
-            checkPassword2.classList.remove('checkUser');
+            checkPassword2.classList.remove('circleCheck');
 
             errorsAmount += 1;
         }
@@ -677,10 +677,10 @@ window.addEventListener('load', function(){
         if(!extensionMatchF){
             avatarError.innerHTML = 'Las extensiones de archivo permitidas son .jpg, .jpeg, .png y .gif';
             avatarL.classList.add('invalid-value');
-            triangleAvatar.classList.add('triangleUser');
+            triangleAvatar.classList.add('triangleWarning');
 
             avatarL.classList.remove('valid-value');
-            checkAvatar.classList.remove('checkUser');
+            checkAvatar.classList.remove('circleCheck');
             
             errorsAmount += 1;
         }

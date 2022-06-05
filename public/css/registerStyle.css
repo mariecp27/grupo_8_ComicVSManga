@@ -182,7 +182,7 @@ section .contentBx .formBx .inputBx .invalid-value{
     display: none;
 }
 
-.triangleUser{
+.triangleWarning{
     display: block;
     position: absolute;
     font-size: 16px;
@@ -195,7 +195,7 @@ section .contentBx .formBx .inputBx .valid-value{
     border: 1px solid var(--myGreen);
 }
 
-.checkUser{
+.circleCheck{
     display: block;
     position: absolute;
     font-size: 16px;
