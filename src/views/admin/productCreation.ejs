@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head.ejs', {title: 'Creación de Productos'}) %>
     <link rel="stylesheet" href="/css/styleProductCreation.css">
+    <script defer src="/js/validateProductCreation.js"></script>
 </head>
 <body>
     <header>
@@ -12,55 +13,75 @@
     <main>
         <div class="main-container">
             <h2 class="main__form-tittle">Creación de productos</h2>
-            <form action="/products/create" method="post" class="main__form" enctype="multipart/form-data">
+            <form action="/products/create" method="post" class="main__form" enctype="multipart/form-data" id="form">
                 <div>
                     <label for="name" class="main__form-label">Nombre del producto</label>
-                    <input
-                        type="text"
-                        name="name" 
-                        id="name" 
-                        class="<%= locals.errors && errors.name ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.name : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="text"
+                            name="name" 
+                            id="name" 
+                            class="<%= locals.errors && errors.name ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.name : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationName"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkName"></i>
+                    </div>
                     <% if (locals.errors && errors.name) { %>
                         <div class="form-errors">
                             <%= errors.name.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="nameError"></small>
                 </div>
                 
                 <div>
                     <label for="description" class="main__form-label">Descripción</label>
-                    <textarea 
-                        name="description"
-                        id="description"
-                        class="<%= locals.errors && errors.description ? "invalid-value" : null %>"
-                        rows="5"
-                    ><%= locals.oldData ? oldData.description : '' %></textarea>
+                    <div class="inputIcon">
+                        <textarea 
+                            name="description"
+                            id="description"
+                            class="<%= locals.errors && errors.description ? "invalid-value" : null %>"
+                            rows="5"
+                        ><%= locals.oldData ? oldData.description : '' %></textarea>
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationDescription"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkDescription"></i>
+                    </div>
                     <% if (locals.errors && errors.description) { %>
                         <div class="form-errors">
                             <%= errors.description.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="descriptionError"></small>
                 </div>
     
                 <div>
-                    <label
-                        for="image"
-                        class="main__form-upload <%= locals.errors && errors.image ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <label
+                            for="image"
+                            class="main__form-upload <%= locals.errors && errors.image ? "invalid-value" : null %>"
+                            id="imageL"
+                        >
                         Subir imagen
-                    </label>
+                        </label>
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationImage"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkImage"></i>
+                    </div>
                     <input type="file" name="image" id="image">
                     <% if (locals.errors && errors.image) { %>
                         <div class="form-errors">
                             <%= errors.image.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="imageError"></small>
                 </div>
     
                 <div>
-                    <label for="category" class="main__form-label">Categorías</label>
+                    <div class="inputIcon">
+                        <label for="category" class="main__form-label" id="categoryL">Categorías</label>
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationCategory"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkCategory"></i>
+                    </div>
                     <% for( let i = 0; i < categories.length; i++ ) { %>
                         <label>
                             <input
@@ -74,7 +95,7 @@
                                         <% } %>    
                                     <% } %>
                                 <% } %>
-                                class="">
+                                class="category">
                                 <%= categories[i].category %>
                         </label>
                     <% } %>
@@ -83,74 +104,95 @@
                             <%= errors.category.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="categoryError"></small>
                 </div>
                 
                 <div>
                     <label for="author" class="main__form-label">Autores</label>
-                    <input
-                        type="text"
-                        name="author"
-                        id="author"
-                        class="<%= locals.errors && errors.author ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.author : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="text"
+                            name="author"
+                            id="author"
+                            class="<%= locals.errors && errors.author ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.author : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationAuthor"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkAuthor"></i>
+                    </div>
                     <% if (locals.errors && errors.author) { %>
                         <div class="form-errors">
                             <%= errors.author.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="authorError"></small>
                 </div>
                 
-                <select name="format" class="<%= locals.errors && errors.format ? "invalid-value" : null %>">
-                    <option disabled selected>Seleccione formato</option>
-                    <% for( let i = 0; i < formats.length; i++ ) { %>
-                        <option
-                            <% if (locals.oldData && oldData.format) { %>
-                                <% if (formats[i].format_id == oldData.format) { %>
-                                    selected
+                <div class="inputIcon">
+                    <select name="format" id="format" class="<%= locals.errors && errors.format ? "invalid-value" : null %>">
+                        <option disabled selected>Seleccione formato</option>
+                        <% for( let i = 0; i < formats.length; i++ ) { %>
+                            <option
+                                <% if (locals.oldData && oldData.format) { %>
+                                    <% if (formats[i].format_id == oldData.format) { %>
+                                        selected
+                                    <% } %>
                                 <% } %>
-                            <% } %>
-                            value="<%= formats[i].format_id %>">
-                            <%= formats[i].format %>
-                        </option>
-                    <% } %>
-                </select>
+                                value="<%= formats[i].format_id %>">
+                                <%= formats[i].format %>
+                            </option>
+                        <% } %>
+                    </select>
+                    <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationFormat"></i>
+                    <i class="fa-solid fa-circle-check fa-circle-checkFormat"></i>
+                </div>
                 <% if (locals.errors && errors.format) { %>
                     <div class="form-errors">
                         <%= errors.format.msg %> 
                     </div>
                 <% } %>
+                <small class="form-errors" id="formatError"></small>
                 
                 <div>
                     <label for="pages" class="main__form-label">Páginas</label>
-                    <input 
-                        type="number"
-                        name="pages"
-                        id="pages"
-                        class="<%= locals.errors && errors.pages ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.pages : null %>" 
-                    >
+                    <div class="inputIcon">
+                        <input 
+                            type="number"
+                            name="pages"
+                            id="pages"
+                            class="<%= locals.errors && errors.pages ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.pages : null %>" 
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPages"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkPages"></i>
+                    </div>
                     <% if (locals.errors && errors.pages) { %>
                         <div class="form-errors">
                             <%= errors.pages.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="pagesError"></small>
                 </div>
                 
                 <div>
                     <label for="price" class="main__form-label">Precio</label>
-                    <input 
-                        type="number" 
-                        name="price" 
-                        id="price"
-                        class="<%= locals.errors && errors.price ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.price : null %>" 
-                    >
+                    <div class="inputIcon">
+                        <input 
+                            type="number" 
+                            name="price" 
+                            id="price"
+                            class="<%= locals.errors && errors.price ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.price : null %>" 
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPrice"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkPrice"></i>
+                    </div>
                     <% if (locals.errors && errors.price) { %>
                         <div class="form-errors">
                             <%= errors.price.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="priceError"></small>
                 </div>
 
                 <div>
@@ -163,33 +205,45 @@
 
                 <div>
                     <label for="discount" class="main__form-label">Descuento</label>
-                    <input
-                        type="number"
-                        name="discount"
-                        placeholder="Si no está en oferta, es cero (0)"
-                        class="<%= locals.errors && errors.discount ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.discount : null %>" 
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="number"
+                            name="discount"
+                            id="discount"
+                            placeholder="Si no está en oferta, es cero (0)"
+                            class="<%= locals.errors && errors.discount ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.discount : null %>" 
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationDiscount"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkDiscount"></i>
+                    </div>
                     <% if (locals.errors && errors.discount) { %>
                         <div class="form-errors">
                             <%= errors.discount.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="discountError"></small>
                 </div>
 
                 <div>
                     <label for="stock" class="main__form-label">Stock</label>
-                    <input
-                        type="number"
-                        name="stock"
-                        class="<%= locals.errors && errors.stock ? "invalid-value" : null %>"
-                        value="<%= locals.oldData ? oldData.stock : null %>" 
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="number"
+                            name="stock"
+                            id="stock"
+                            class="<%= locals.errors && errors.stock ? "invalid-value" : null %>"
+                            value="<%= locals.oldData ? oldData.stock : null %>" 
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationStock"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkStock"></i>
+                    </div>
                     <% if (locals.errors && errors.stock) { %>
                         <div class="form-errors">
                             <%= errors.stock.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="stockError"></small>
                 </div>
                 
                 <div class="main__form-buttons">

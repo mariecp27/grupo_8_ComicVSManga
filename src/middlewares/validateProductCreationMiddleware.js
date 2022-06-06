@@ -100,16 +100,16 @@ const productCreationValidations = [
 	
 	body('pages').notEmpty().withMessage('Ingresa la cantidad de páginas del producto'), 
 	
-	body('price').notEmpty().withMessage('Ingresa el precio del producto'), 
+	body('price').notEmpty().withMessage('Ingresa el precio del producto (COP)'), 
 
 	body('discount').notEmpty().withMessage('Ingresa el descuento. Recuerda: Si no está en oferta, el descuento es "0" (cero)').bail()
 		.custom((value, { req }) => {
 			let discount = req.body.onSale;
 
 			if(discount == 'on' && value <= 0){
-				throw new Error('Puesto que el productor está en oferta, el descuento debe ser mayor a "0" (cero)');
+				throw new Error('Puesto que el producto está en oferta, el descuento debe ser mayor a "0" (cero)');
 			} else if(discount != 'on' && value > 0) {
-				throw new Error('Puesto que el productor no está en oferta, el descuento debe ser igual "0" (cero)');
+				throw new Error('Puesto que el producto no está en oferta, el descuento debe ser igual "0" (cero)');
 			} 
 
 			return true;

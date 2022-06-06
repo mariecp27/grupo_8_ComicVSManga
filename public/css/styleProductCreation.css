@@ -207,6 +207,41 @@ select:hover{
     font-size: 16px;
 }
 
+.inputIcon{
+    position: relative;
+    width: 100%;
+}
+
+.fa-triangle-exclamation,
+.fa-circle-check{
+    display: none;
+}
+
+.triangleWarning{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myYellow);
+    top: 10px;
+    right: 10px;
+}
+
+.main__form input.valid-value,
+.main__form textarea.valid-value,
+.main__form label.valid-value,
+.main__form select.valid-value{
+    border: 1px solid var(--myBlue);
+}
+
+.circleCheck{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myBlue);
+    top: 10px;
+    right: 10px;
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){
