@@ -155,7 +155,8 @@ label.main__form-upload{
 }
 
 /* Estilos para los errores */
-.main__form div input.invalid-value{
+.main__form div input.invalid-value,
+.main__form div label.invalid-value{
     border: 1px solid var(--myPink);
 }
 
@@ -165,6 +166,45 @@ label.main__form-upload{
     font-weight: bold;
     font-size: 16px;
     text-align: left;
+}
+
+.inputIcon{
+    position: relative;
+    width: 100%;
+}
+
+.fa-triangle-exclamation,
+.fa-circle-check{
+    display: none;
+}
+
+.triangleWarning{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myPink);
+    top: 10px;
+    right: 10px;
+}
+
+.main__form input[type=text].valid-value,
+.main__form input[type=email].valid-value,
+.main__form input[type=password].valid-value,
+.main__form label.valid-value{
+    border: 1px solid var(--myGreen);
+}
+
+.circleCheck{
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    color: var(--myGreen);
+    top: 10px;
+    right: 10px;
+}
+
+#password2Error{
+    list-style: none;
 }
 
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/

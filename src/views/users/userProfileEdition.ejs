@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/head.ejs', {title: 'Perfil'}) %>
     <link rel="stylesheet" href="/css/styleProfileEdition.css">
+    <script defer src="/js/validateProfileEdition.js"></script>
 </head>
 <body>
     <header>
@@ -17,102 +18,133 @@
 
         <!-- Perfil -->
         <section class="main__information">
-            <form action="/users/profile/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data">
+            <form action="/users/profile/edit?_method=PUT" method="post" class="main__form" enctype="multipart/form-data" id="form">
+                <input type="hidden" value="<%= user.user_id %>" id="id">
                 <div>
                     <img src="/images/users/<%= user.image %>" alt="Foto de perfil" class="main__information-img">
-                    <label
-                        for="avatar"
-                        class="main__form-upload <%= locals.errors && errors.user ? "invalid-value" : null %>"
-                    >
-                        Actualizar imagen
-                    </label>
+                    <div class="inputIcon">
+                        <label
+                            for="avatar"
+                            class="main__form-upload <%= locals.errors && errors.user ? "invalid-value" : null %>"
+                            id="avatarL"
+                        >
+                            Actualizar imagen
+                        </label>
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationAvatar"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkAvatar"></i>
+                    </div>
                     <input type="file" name="avatar" id="avatar">
                     <% if (locals.errors && errors.avatar) { %>
                         <div class="form-errors">
                             <%= errors.avatar.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="avatarError"></small>
                 </div>
 
                 <div>
                     <label for="user" class="main__form-label">Usuario</label>
-                    <input
-                        type="text"
-                        name="user"
-                        id="user"
-                        value="<%= locals.oldData ? oldData.user : user.user %>"
-                        class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="text"
+                            name="user"
+                            id="user"
+                            value="<%= locals.oldData ? oldData.user : user.user %>"
+                            class="<%= locals.errors && errors.user ? "invalid-value" : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationUser"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkUser"></i>
+                    </div>
                     <% if (locals.errors && errors.user) { %>
                         <div class="form-errors">
                             <%= errors.user.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="userError"></small>
                 </div>
 
                 <div>
                     <label for="name" class="main__form-label">Nombre(s)</label>
-                    <input 
-                        type="text"
-                        name="name" 
-                        id="name"
-                        value="<%= locals.oldData ? oldData.name : user.name %>"
-                        class="<%= locals.errors && errors.name ? "invalid-value" : null %>" 
-                    >
+                    <div class="inputIcon">
+                        <input 
+                            type="text"
+                            name="name" 
+                            id="name"
+                            value="<%= locals.oldData ? oldData.name : user.name %>"
+                            class="<%= locals.errors && errors.name ? "invalid-value" : null %>" 
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationName"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkName"></i>
+                    </div>
                     <% if (locals.errors && errors.name) { %>
                         <div class="form-errors">
                             <%= errors.name.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="nameError"></small>
                 </div>
 
                 <div>
                     <label for="lastName" class="main__form-label">Apellido(s)</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        value="<%= locals.oldData ? oldData.lastName : user.last_name %>"
-                        class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            value="<%= locals.oldData ? oldData.lastName : user.last_name %>"
+                            class="<%= locals.errors && errors.lastName ? "invalid-value" : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationLastName"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkLastName"></i>
+                    </div>
                     <% if (locals.errors && errors.lastName) { %>
                         <div class="form-errors">
                             <%= errors.lastName.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="lastNameError"></small>
                 </div>
 
                 <div>
                     <label for="email" class="main__form-label">Correo electrónico</label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        value="<%= locals.oldData ? oldData.email : user.email %>"
-                        class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value="<%= locals.oldData ? oldData.email : user.email %>"
+                            class="<%= locals.errors && errors.email ? "invalid-value" : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationEmail"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkEmail"></i>
+                    </div>
                     <% if (locals.errors && errors.email) { %>
                         <div class="form-errors">
                             <%= errors.email.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="emailError"></small>
                 </div>
 
                 <div>
                     <label for="password2" class="main__form-label">Nueva contraseña</label>
-                    <input
-                        type="password"
-                        name="password2"
-                        id="password2"
-                        <% if (locals.errorsArray) { %>
-                            <% locals.errorsArray.forEach(error => { %> 
-                                <% if (error.param == 'password2') { %>
-                                    class="invalid-value"
-                                <% } %>
-                            <% }); %> 
-                        <% } %>
-                        value="<%= locals.oldData ? oldData.password2 : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="password"
+                            name="password2"
+                            id="password2"
+                            <% if (locals.errorsArray) { %>
+                                <% locals.errorsArray.forEach(error => { %> 
+                                    <% if (error.param == 'password2') { %>
+                                        class="invalid-value"
+                                    <% } %>
+                                <% }); %> 
+                            <% } %>
+                            value="<%= locals.oldData ? oldData.password2 : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPassword2"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkPassword2"></i>
+                    </div>
                     <% if (locals.errorsArray) { %>
                         <% locals.errorsArray.forEach(error => { %> 
                             <% if (error.param == 'password2') { %>
@@ -122,36 +154,47 @@
                             <% } %>
                         <% }); %> 
                     <% } %>
+                    <ul class="form-errors" id="password2Error"></ul>
                 </div>
 
                 <div>
                     <label for="password3" class="main__form-label">Confirmar contraseña</label>
-                    <input
-                        type="password"
-                        name="password3" 
-                        id="password3"
-                        class="<%= locals.errors && errors.password3 ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="password"
+                            name="password3" 
+                            id="password3"
+                            class="<%= locals.errors && errors.password3 ? "invalid-value" : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPassword3"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkPassword3"></i>
+                    </div>
                     <% if (locals.errors && errors.password3) { %>
                         <div class="form-errors">
                             <%= errors.password3.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="password3Error"></small>
                 </div>
 
                 <div>
                     <label for="password1" class="main__form-label">Ingresa tu contraseña actual para confirmar el cambio</label>
-                    <input
-                        type="password"
-                        name="password1"
-                        id="password1"
-                        class="<%= locals.errors && errors.password1 ? "invalid-value" : null %>"
-                    >
+                    <div class="inputIcon">
+                        <input
+                            type="password"
+                            name="password1"
+                            id="password1"
+                            class="<%= locals.errors && errors.password1 ? "invalid-value" : null %>"
+                        >
+                        <i class="fa-solid fa-triangle-exclamation fa-triangle-exclamationPassword1"></i>
+                        <i class="fa-solid fa-circle-check fa-circle-checkPassword1"></i>
+                    </div>
                     <% if (locals.errors && errors.password1) { %>
                         <div class="form-errors">
                             <%= errors.password1.msg %> 
                         </div>
                     <% } %>
+                    <small class="form-errors" id="password1Error"></small>
                 </div>
 
                 <div class="main__form-buttons">
