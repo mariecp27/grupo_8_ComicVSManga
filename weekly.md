@@ -249,9 +249,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Dar inicio a las tareas del séptimo *Sprint* según se acuerde con los miembros del equipo. Inicialmente a través de las validaciones del back-end, con express-validator.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se realizó la entrega del sexto *Sprint*. Y estamos a la espera de incluir el dinamismo del carrito de compras.
+  - ***¿Encontró con algún impedimento?***: El tema del carrito de compras no pudo ser terminado y se solicitó ayuda a la compañera para poder validarlo.
+  - ***¿Qué va a hacer durante la presente semana?***: Revisar las tareas del siguiente *Sprint* y continuaremos comentando las tareas con los miembros del equipo.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: Pude volver al desarrollo del proyecto, con el fin de ponerme al dia con el codigo que mis compañeros han creado decidi tomarme las semanas para entenderlo y analizarlo y poder volver bien y a gusto al equipo.
@@ -267,9 +267,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del séptimo *Sprint*. Se verificarán con los miembros del equipo qué validaciones no han sido finalizadas para trabajar en ellas.
 
 * **Erick José Leones Reyes**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Se conversó con los compañeros para revisar el ajuste de las validaciones del fron-end. (custom) Se revisaron junto a la compañera las validaciones de los diferentes formularios.
+  - ***¿Encontró con algún impedimento?***: Se ha revisado con la compañera las validaciones con la herramienta propuesta pero su aplicación es confusa.
+  - ***¿Qué va a hacer durante la presente semana?***: Se revisará junto con la compañera para acompañar en la finalización de las validaciónes de los elementos que hacen falta.
 
 * **Felipe Vargas Sánchez**
   - ***¿Qué hizo durante la semana anterior?***: Durante la semana anterior me propuse a entender el codigo que mis compañeros han creado con el fin de poder ayudarlos a finalizar el proyecto.
