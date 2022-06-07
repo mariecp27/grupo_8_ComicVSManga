@@ -239,3 +239,39 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué hizo durante la semana anterior?***: **EN PAUSA**
   - ***¿Encontró con algún impedimento?***: **EN PAUSA**
   - ***¿Qué va a hacer durante la presente semana?***: **EN PAUSA**
+
+
+## Semana 23 (Mayo 30/2022 - Junio 05/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Se realizó la entrega del sexto *Sprint*. Se espera incluir el dinamismo en el carrito de compras posteriormente.
+  - ***¿Encontró con algún impedimento?***: No se finalizaron las investigaciones necesarias para aplicar del dinamismo del carrito de compras.
+  - ***¿Qué va a hacer durante la presente semana?***: Dar inicio a las tareas del séptimo *Sprint* según se acuerde con los miembros del equipo. Inicialmente a través de las validaciones del back-end, con express-validator.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+
+
+## Semana 24 (Junio 06/2022 - Junio 12/2022)
+
+* **María Herlandia Copete Perea**
+  - ***¿Qué hizo durante la semana anterior?***: Posterior a las validaciones de back-end, se iniciaron las de front-end (todas custom). Para las últimas mencionadas, se hicieron para el registro, inicio de sesión y creación de productos.
+  - ***¿Encontró con algún impedimento?***: Se intentó hacer las validaciones de front-end con la herramienta propuesta ([validator.js](https://github.com/validatorjs/validator.js)), pero su aplicación desde el cliente es confusa en archivos independientes de JavaScript.
+  - ***¿Qué va a hacer durante la presente semana?***: Se realizará la entrega del séptimo *Sprint*. Se verificarán con los miembros del equipo qué validaciones no han sido finalizadas para trabajar en ellas.
+
+* **Erick José Leones Reyes**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:
+
+* **Felipe Vargas Sánchez**
+  - ***¿Qué hizo durante la semana anterior?***:
+  - ***¿Encontró con algún impedimento?***:
+  - ***¿Qué va a hacer durante la presente semana?***:

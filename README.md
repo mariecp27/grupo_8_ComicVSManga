@@ -104,3 +104,4 @@ Se puede acceder a los tableros de trabajo de cada *sprint* a través de los enl
 * [Sprint 4](https://trello.com/b/kMdFB0tY/4-proyecto-integrador-digital-house-4th-sprint)
 * [Sprint 5](https://trello.com/b/qhi11btx/5-proyecto-integrador-digital-house-5th-sprint)
 * [Sprint 6](https://trello.com/b/mCqOrcSt/6-proyecto-integrador-digital-house-6th-sprint)
+* [Sprint 7](https://trello.com/b/39CgetZd/7-proyecto-integrador-digital-house-7th-sprint)
