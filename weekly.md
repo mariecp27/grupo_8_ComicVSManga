@@ -254,9 +254,9 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***:
 
 * **Felipe Vargas Sánchez**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Pude volver al desarrollo del proyecto, con el fin de ponerme al dia con el codigo que mis compañeros han creado decidi tomarme las semanas para entenderlo y analizarlo y poder volver bien y a gusto al equipo.
+  - ***¿Encontró con algún impedimento?***: El tiempo y la cantidad de codigo a explorar y a entender.
+  - ***¿Qué va a hacer durante la presente semana?***:  Realizar repasos y consultas si se me generan, ya que estoy atrasado y desatendido con el proyecto.
 
 
 ## Semana 24 (Junio 06/2022 - Junio 12/2022)
@@ -272,6 +272,6 @@ Se acuerda realizar una compilación semanal, donde cada integrante agregará la
   - ***¿Qué va a hacer durante la presente semana?***:
 
 * **Felipe Vargas Sánchez**
-  - ***¿Qué hizo durante la semana anterior?***:
-  - ***¿Encontró con algún impedimento?***:
-  - ***¿Qué va a hacer durante la presente semana?***:
+  - ***¿Qué hizo durante la semana anterior?***: Durante la semana anterior me propuse a entender el codigo que mis compañeros han creado con el fin de poder ayudarlos a finalizar el proyecto.
+  - ***¿Encontró con algún impedimento?***: La cantidad de codigo que mis compañeros han creado y han mejorado me ha llevado un tiempo entenderlo.
+  - ***¿Qué va a hacer durante la presente semana?***:  Con el fin de ayudarlos en lo mas que pueda, tanto en las validaciones y lo necesario para terminar el sprint 7 he empezado a estudiar y ver como les puedo ayudar de una manera oportuna e indicada. 
