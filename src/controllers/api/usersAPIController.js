@@ -12,8 +12,25 @@ let usersAPIController = {
             	console.log(errors);
         });
 
+		let users = [];
+		let user = '';
+		let email = '';
+		let object = '';
+		
+		usersInDB.forEach(usersInDB => {
+			user = usersInDB.dataValues.user;
+			email = usersInDB.dataValues.email;
+
+			object = {
+				user: user,
+				email: email
+			}
+
+			users.push(object);
+        });
+
 		return res.status(200).json({
-			data: usersInDB,
+			data: users,
 			status: 200
 		});
 	}	

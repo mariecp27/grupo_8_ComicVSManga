@@ -17,7 +17,15 @@ window.addEventListener('load', function(){
     // Información Api usuarios registrados
     let usersInDB = [];
 
-    fetch('http://localhost:3030/api/users/usersList')
+    let url = '';
+
+    if(document.URL.startsWith('http://localhost')){
+        url = 'localhost:3030';
+    } else{
+        url = 'comic-vs-manga.herokuapp.com';
+    }
+
+    fetch(`http://${url}/api/users/usersList`)
     .then(function(response){
         return response.json();
     })
@@ -145,10 +153,11 @@ window.addEventListener('load', function(){
             let noMatchF = true;
 
             usersInDB.forEach(userDB => {
-                if(userDB.email != email.value){
+                if(userDB.email == email.value){
                     noMatchF = false;
                 }
             })
+
 
             if(noMatchF){
                 emailError.innerHTML = 'Este correo no se encuentra en nuestra base de datos';
