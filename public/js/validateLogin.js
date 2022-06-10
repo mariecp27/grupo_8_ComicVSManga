@@ -20,12 +20,12 @@ window.addEventListener('load', function(){
     let url = '';
 
     if(document.URL.startsWith('http://localhost')){
-        url = 'localhost:3030';
+        url = 'http://localhost:3030';
     } else{
-        url = 'comic-vs-manga.herokuapp.com';
+        url = 'https://comic-vs-manga.herokuapp.com';
     }
 
-    fetch(`http://${url}/api/users/usersList`)
+    fetch(`${url}/api/users/usersList`)
     .then(function(response){
         return response.json();
     })

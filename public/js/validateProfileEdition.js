@@ -58,7 +58,15 @@ window.addEventListener('load', function(){
     // Información Api usuarios registrados
     let usersInDB = [];
 
-    fetch('http://localhost:3030/api/users/usersList')
+    let url = '';
+
+    if(document.URL.startsWith('http://localhost')){
+        url = 'http://localhost:3030';
+    } else{
+        url = 'https://comic-vs-manga.herokuapp.com';
+    }
+
+    fetch(`${url}/api/users/usersList`)
     .then(function(response){
         return response.json();
     })
