@@ -45,6 +45,9 @@ app.use('/products', productsRoutes);
 const userApiRoutes = require('./routes/api/usersRouter');
 app.use('/api/users', userApiRoutes);
 
+const productsApiRoutes = require('./routes/api/productsRouter');
+app.use('/api/products', productsApiRoutes);
+
 // Servidor
 app.listen(process.env.PORT || 3030, () => {
     console.log("Servidor corriendo en el puerto 3030, ¡vamos al Manga!");
