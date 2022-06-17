@@ -4,10 +4,16 @@ let productsAPIController = {
 	// Lista de los productos
 	productList: async(req, res) => {
 
-		let limit = 10;
+		let productsInDBAll = await db.Product.findAll()
+			.catch(function(errors){
+            	console.log(errors);
+        });
+
+		let limit = productsInDBAll.length;
 		let offset = 0;
 
 		if(req.query.page){
+			limit = 10;
 			offset = limit * parseInt(req.query.page);
 	   	}
 
@@ -27,21 +33,12 @@ let productsAPIController = {
 		let category = '';
 		let id = '';
 		let name = '';
+		let image = '';
 		let description = '';
 		let categories = [];
 		let detail = '';
 		
 		let counter = 0;
-
-		// Contadores
-		let counterDC = 0;
-		let counterMarvel = 0;
-		let counterIndependent = 0;
-		let counterManga = 0;
-		let counterFantasy = 0;
-		let counterTerror = 0;
-		let counterFiccion = 0;
-		let counterDrama = 0;
 
 		let categoriesInDb = await db.Category.findAll({
 			include: [{
@@ -52,46 +49,32 @@ let productsAPIController = {
             console.log(errors);
         });
 
+		let countByCategory = [];
+		let counterByCategory = 0;
+
 		categoriesInDb.forEach(categoryInDb => {
 			category = categoryInDb.dataValues.category;
 
-			for(let i = 0; i < categoryInDb.dataValues.products.length; i++){
-				if(category=='Cómic DC'){
-					counterDC +=1;
-				}else if(category=='Cómic Marvel'){
-					counterMarvel +=1;
-				}else if(category=='Cómic Independiente'){
-					counterIndependent +=1;
-				}else if(category=='Manga'){
-					counterManga +=1;
-				}else if(category=='Fantasía'){
-					counterFantasy +=1;
-				}else if(category=='Terror'){
-					counterTerror +=1;
-				}else if(category=='Ciencia Ficción'){
-					counterFiccion +=1;
-				}else{
-					counterDrama +=1;
-				}
-			}
-		})
+			counterByCategory = 0;
 
-		let countByCategory = {
-			dc: counterDC,
-			marvel: counterMarvel,
-			independent: counterIndependent,
-			manga: counterManga,
-			fantasy: counterFantasy,
-			terror: counterTerror,
-			ficcion: counterFiccion,
-			drama: counterDrama,
-		};
+			for(let i = 0; i < categoryInDb.dataValues.products.length; i++){
+				counterByCategory += 1;
+			}
+
+			let object = {
+				name: category,
+				amount: counterByCategory,
+			}
+
+			countByCategory.push(object);
+		})
 
 		productsInDB.forEach(productInDB => {
 			categories = [];
 
 			id = productInDB.dataValues.product_id;
 			name = productInDB.dataValues.name;
+			image = `${process.env.API_LINK}/images/products/${productInDB.dataValues.image}`;
 			description = productInDB.dataValues.description;
 
 			for(let i = 0; i < productInDB.dataValues.categories.length; i++){
@@ -100,20 +83,16 @@ let productsAPIController = {
 
 			detail = `${process.env.API_LINK}/api/products/${id}`;
 
-			object = {
+			let object = {
 				id: id,
 				name: name,
+				image: image,
 				description: description,
 				categories: categories,
 				detail: detail
 			}
 
 			products.push(object);
-        });
-
-		let productsInDBAll = await db.Product.findAll()
-			.catch(function(errors){
-            	console.log(errors);
         });
 
 		productsInDBAll.forEach(productInDB => counter += 1);
@@ -175,7 +154,7 @@ let productsAPIController = {
 			categories,
 			status: 200
 		});
-	},
+	}
 };
 
 module.exports = productsAPIController;

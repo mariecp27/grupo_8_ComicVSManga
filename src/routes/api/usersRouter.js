@@ -10,8 +10,9 @@ const usersController = require('../../controllers/api/usersAPIController');
 // Rutas
 
 // Usuarios registrados
+router.get('/usersList', usersController.userList);
+
 router.get('/', usersController.userListReact);
 router.get('/:id', usersController.userDetailReact);
-router.get('/usersList', usersController.userList);
 
 module.exports = router;
