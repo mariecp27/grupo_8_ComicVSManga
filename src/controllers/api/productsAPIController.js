@@ -1,13 +1,24 @@
 const db = require('../../database/models');
+const Op = db.Sequelize.Op;
 
 let productsAPIController = {
 	// Lista de los productos
 	productList: async(req, res) => {
 
-		let productsInDBAll = await db.Product.findAll()
+		let productsInDBAll = []
+
+		if(req.query.search){
+			productsInDBAll = await db.Product.findAll({
+				where: {
+					name: { [Op.like]: '%' + req.query.search + '%'}
+				}
+			})
+		}else{
+			productsInDBAll = await db.Product.findAll()
 			.catch(function(errors){
             	console.log(errors);
-        });
+        	});
+		}
 
 		let limit = productsInDBAll.length;
 		let offset = 0;
@@ -17,16 +28,34 @@ let productsAPIController = {
 			offset = limit * parseInt(req.query.page);
 	   	}
 
-		let productsInDB = await db.Product.findAll({
-			include: [{
-				association: 'categories'
-			}],
-			limit,
-			offset
-		})
-			.catch(function(errors){
-            	console.log(errors);
-        });
+		let productsInDB = [];
+
+		if(req.query.search){
+			productsInDB = await db.Product.findAll({
+				include: [{
+					association: 'categories'
+				}],
+				where: {
+					name: { [Op.like]: '%' + req.query.search + '%'}
+				},
+				limit,
+				offset
+			})
+				.catch(function(errors){
+					console.log(errors);
+			});
+		}else{
+			productsInDB = await db.Product.findAll({
+				include: [{
+					association: 'categories'
+				}],
+				limit,
+				offset
+			})
+				.catch(function(errors){
+					console.log(errors);
+			});
+		}
 
 		let products = [];
 
