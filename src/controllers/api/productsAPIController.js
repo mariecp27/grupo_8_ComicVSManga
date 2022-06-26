@@ -183,6 +183,32 @@ let productsAPIController = {
 			categories,
 			status: 200
 		});
+	},
+
+	// Lista de categorías
+	categoryList: async(req, res) => {
+        let categories = await db.Category.findAll()
+        .catch(function(errors){
+            console.log(errors);
+        });
+
+		return res.status(200).json({
+			categories,
+			status: 200
+		});
+	},
+
+	// Lista de formatos
+	formatList: async(req, res) => {
+        let formats = await db.Format.findAll()
+        .catch(function(errors){
+            console.log(errors);
+        });
+
+		return res.status(200).json({
+			formats,
+			status: 200
+		});
 	}
 };
 

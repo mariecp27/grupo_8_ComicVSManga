@@ -11,6 +11,11 @@ const usersController = require('../../controllers/api/productsAPIController');
 
 // Productos registrados
 router.get('/', usersController.productList);
+
+router.get('/categories', usersController.categoryList);
+
+router.get('/formats', usersController.formatList);
+
 router.get('/:id', usersController.productDetail);
 
 module.exports = router;
