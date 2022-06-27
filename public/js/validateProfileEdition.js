@@ -315,7 +315,7 @@ window.addEventListener('load', function(){
 
         if(password2.value != ''){
             if(password2.value.length < 8){
-                passwordErrors.push('Tu contraseña debe tener al menos 8 caracteres')
+                passwordErrors.push('Tu contraseña debe tener al menos 8 caracteres');
     
                 password2.classList.add('invalid-value');
                 trianglePassword2.classList.add('triangleWarning');
@@ -325,7 +325,7 @@ window.addEventListener('load', function(){
             }
     
             if(!password2.value.match(/(?=.*?[a-z])/)){
-                passwordErrors.push('Ingresa al menos una letra minúscula')
+                passwordErrors.push('Ingresa al menos una letra minúscula');
     
                 password2.classList.add('invalid-value');
                 trianglePassword2.classList.add('triangleWarning');
@@ -335,7 +335,7 @@ window.addEventListener('load', function(){
             }
     
             if(!password2.value.match(/(?=.*?[A-Z])/)){
-                passwordErrors.push('Ingresa al menos una letra mayúscula')
+                passwordErrors.push('Ingresa al menos una letra mayúscula');
     
                 password2.classList.add('invalid-value');
                 trianglePassword2.classList.add('triangleWarning');
@@ -345,7 +345,7 @@ window.addEventListener('load', function(){
             }
     
             if(!password2.value.match(/(?=.*?[0-9])/)){
-                passwordErrors.push('Ingresa al menos un número')
+                passwordErrors.push('Ingresa al menos un número');
     
                 password2.classList.add('invalid-value');
                 trianglePassword2.classList.add('triangleWarning');
@@ -355,7 +355,7 @@ window.addEventListener('load', function(){
             }
     
             if(!password2.value.match(/(?=.*?[#?!@$%^&*-])/)){
-                passwordErrors.push('Ingresa al menos un carácter especial')
+                passwordErrors.push('Ingresa al menos un carácter especial');
     
                 password2.classList.add('invalid-value');
                 trianglePassword2.classList.add('triangleWarning');

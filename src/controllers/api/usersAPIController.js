@@ -12,15 +12,18 @@ let usersAPIController = {
 			});
 
 		let users = [];
+		user_id = 0;
 		let user = '';
 		let email = '';
 		let object = '';
 
 		usersInDB.forEach(usersInDB => {
+			user_id = usersInDB.dataValues.user_id;
 			user = usersInDB.dataValues.user;
 			email = usersInDB.dataValues.email;
 
 			object = {
+				user_id: user_id,
 				user: user,
 				email: email
 			}
