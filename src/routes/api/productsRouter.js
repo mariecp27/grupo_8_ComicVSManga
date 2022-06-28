@@ -5,17 +5,23 @@ const express = require('express');
 const router = express.Router();
 
 // Controlador
-const usersController = require('../../controllers/api/productsAPIController');
+const productsController = require('../../controllers/api/productsAPIController');
+
+// Middlewares
+const uploadFileProduct = require('../../middlewares/multerMiddlewareProducts');
+const validateProductCreation = require('../../middlewares/validateProductCreationMiddleware');
 
 // Rutas
 
 // Productos registrados
-router.get('/', usersController.productList);
+router.get('/', productsController.productList);
 
-router.get('/categories', usersController.categoryList);
+router.get('/categories', productsController.categoryList);
 
-router.get('/formats', usersController.formatList);
+router.get('/formats', productsController.formatList);
 
-router.get('/:id', usersController.productDetail);
+router.get('/:id', productsController.productDetail);
+
+router.post('/create', uploadFileProduct.single('image'), validateProductCreation, productsController.store);
 
 module.exports = router;

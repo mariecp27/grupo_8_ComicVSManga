@@ -1,5 +1,7 @@
 const db = require('../../database/models');
 const Op = db.Sequelize.Op;
+const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 
 let productsAPIController = {
 	// Lista de los productos
@@ -209,7 +211,94 @@ let productsAPIController = {
 			formats,
 			status: 200
 		});
-	}
+	},
+
+	// Método para almacenar los productos creados
+	store: async(req, res) => {
+
+		const token = await req.headers['authorization'];
+
+		if (!token){
+			return res.status(401).json({
+				error: 'Ingresa tus datos'
+			});
+		} else{
+			jwt.verify(token, 'secret', async function (err, decoded) {
+				if (err) {
+					return res.status(401).json({
+						error: 'No tienes permiso de acceso'
+					});
+				} else{
+					// Verificación de errores
+					const resultValidation = validationResult(req);
+
+					if (resultValidation.errors.length > 0) {
+
+						return res.status(400).json({
+							errors: resultValidation.array()
+						});
+					}
+
+					let filename = req.file.filename;
+
+					let isfeatured = 0;
+					if (req.body.featured == "on"){
+						isfeatured = 1;
+					}
+
+					let isOnSale = 0;
+					if (req.body.onSale == "on"){
+						isOnSale = 1;
+					}
+
+					let stringCategories = req.body.category;
+					let allcategories = [];
+
+					for(let i = 0; i < stringCategories.length; i++){
+						allcategories[i] = Number(stringCategories[i]);
+					}
+					
+					let newProduct = await db.Product.create({
+						name: req.body.name,
+						description: req.body.description,
+						image: filename,
+						author: req.body.author,
+						format_id: req.body.format,
+						pages: Number(req.body.pages),
+						price: Number(req.body.price),
+						featured: isfeatured,
+						on_sale: isOnSale,
+						discount: Number(req.body.discount),
+						stock: Number(req.body.stock),
+					}).catch(function(errors){
+						console.log(errors);
+					});
+
+					let newProductDB = await db.Product.findOne({
+						where:{
+							image: filename,
+						}
+					}).catch(function(errors){
+						console.log(errors);
+					});
+
+					allcategories.forEach(async (category) => {
+						let newCategories = await db.productsCategories.create({
+							product_id: newProductDB.product_id,
+							category_id: category
+						}).catch(function(errors){
+							console.log(errors);
+						});
+					});
+
+					return res.status(201).json({
+						newProduct,
+						newCategories
+					});
+				}
+			});
+		}
+	},
 };
 
 module.exports = productsAPIController;
