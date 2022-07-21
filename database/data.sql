@@ -6,7 +6,8 @@ INSERT INTO users_types VALUES (
     
 INSERT INTO users VALUES (
 	NULL, 'userPrueba', 'User', 'User', 'user@email.com', '$2a$10$etSr70X/vY4OeVcxRPDMA.8vNKOKHIs4quSTrZ/2Ur5ORfRUUlc52', DEFAULT, 1),
-	(NULL, 'marie27', 'María', 'Copete', 'maria@email.com', '$2a$10$dm/TUZgmLnQTxyPdGDH25.C/NdOxar8Vv5Wkbi.SiD09GtRi3v8vO', 'user_1650666569840.png', 2);
+	(NULL, 'marie27', 'María', 'Copete', 'maria@email.com', '$2a$10$dm/TUZgmLnQTxyPdGDH25.C/NdOxar8Vv5Wkbi.SiD09GtRi3v8vO', 'user_1650666569840.png', 2),
+    (NULL, 'admin', 'Admin', 'Admin', 'admin@admin.com', '$2a$10$y54I5fBqtXha3sU8qKa5M.pYuZBeLQwiwhG1.JouPVmg1wKTdINVC', DEFAULT, 2);
 
 INSERT INTO formats VALUES (
 	NULL, 'Tapa blanda'),

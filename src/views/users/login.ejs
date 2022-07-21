@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <%- include('../partials/head.ejs', {title: 'Inicio de Sesión'}) %>
     <link rel="stylesheet" href="/css/loginStyle.css">
@@ -68,6 +68,11 @@
                     
                     <div class="inputBx">
                         <p>¿No tienes una cuenta? <a href="/users/sign-up">Crear cuenta</a></p>
+                        <div class="admin-data">
+                            <small><i class="fa-solid fa-circle-info"></i> Para verificar las funciones de administrador:</small>
+                            <small><strong>Correo:</strong> admin@admin.com</small>
+                            <small><strong>Contraseña:</strong> Hola1234*</small>
+                        </div>
                     </div>
                 </form>
             </div>

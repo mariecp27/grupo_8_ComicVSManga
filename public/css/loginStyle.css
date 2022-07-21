@@ -188,6 +188,23 @@ section .contentBx .formBx .inputBx .valid-value{
     right: 10px;
 }
 
+.admin-data{
+    margin-top: 30px;
+}
+
+.admin-data small{
+    display: block;
+    text-align: center;
+    font-family: var(--myText);
+    font-size: 13px;
+    color: #607d8b;
+    margin-bottom: 10px;
+}
+
+.admin-data small i{
+    color: var(--myPink);
+}
+
 @media (max-width:768px){
     section .imgBx{
         position: absolute;
