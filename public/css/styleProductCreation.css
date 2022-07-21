@@ -242,6 +242,31 @@ select:hover{
     right: 10px;
 }
 
+/* =========ESTILOS ADVERTENCIA========= */
+.swal2-popup.warning__popup{
+    width: auto;
+}
+
+.warning__title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+}
+
+.warning__text{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.swal2-styled.swal2-confirm.warning__confirm,
+.swal2-styled.swal2-cancel.warning__cancel{
+    font-family: var(--myTitles);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 30px;
+}
+
 /* =========ESTILOS PARA RESOLUCIÓN TABLET=========*/
 
 @media(min-width: 481px){

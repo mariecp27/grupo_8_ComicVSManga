@@ -637,6 +637,26 @@ window.addEventListener('load', function(){
 
         if(errorsAmount > 0){
             e.preventDefault();
+        }else{
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¡Creación de producto exitosa!',
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#251854',
+                confirmButtonText: 'Ver producto',
+  
+                customClass: {
+                  title:'warning__title',
+                  confirmButton: 'warning__confirm',
+                }
+  
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            })
         }
     })
 })

@@ -4,6 +4,8 @@
     <%- include('../partials/head.ejs', {title: 'Edición de Productos'}) %>
     <link rel="stylesheet" href="/css/styleProductCreation.css">
     <script defer src="/js/validateProductEdition.js"></script>
+    <script defer src="/js/confirmDelete.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -289,7 +291,7 @@
 
             <form action="/products/<%= productToEdit.product_id %>/delete?_method=DELETE" method="POST" class="delete-button">
                 <div class="main__form-buttons">
-                    <button type="submit">Eliminar producto</button>
+                    <button type="submit" class="deleteButton">Eliminar producto</button>
                 </div>
             </form>
         </div>

@@ -711,6 +711,26 @@ window.addEventListener('load', function(){
 
         if(errorsAmount > 0){
             e.preventDefault();
+        }else{
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¡Datos actualizados!',
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#251854',
+                confirmButtonText: 'Volver al perfil',
+  
+                customClass: {
+                  title:'warning__title',
+                  confirmButton: 'warning__confirm',
+                }
+  
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            })
         }
     })
 })

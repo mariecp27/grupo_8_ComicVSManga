@@ -191,7 +191,7 @@ let mainController = {
             });
         });
 
-		res.redirect('/products');
+		res.redirect(`/products/detail/${newProductDB.product_id}`);
 	},
 
     // Formulario de edición de productos

@@ -154,6 +154,30 @@ label.main__form-upload{
     width: 50vw;
 }
 
+/* =========ESTILOS ADVERTENCIA========= */
+.swal2-popup.warning__popup{
+    width: auto;
+}
+
+.warning__title{
+    font-family: var(--myTitles);
+    font-size: 2.5rem;
+}
+
+.warning__text{
+    font-family: var(--myText);
+    font-size: 1.5rem;
+}
+
+.swal2-styled.swal2-confirm.warning__confirm{
+    font-family: var(--myTitles);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 30px;
+}
+
 /* Estilos para los errores */
 .main__form div input.invalid-value,
 .main__form div label.invalid-value{

@@ -703,6 +703,26 @@ window.addEventListener('load', function(){
                     password1Error.innerHTML += '<li>' + error + '</li>';
                 });
             } 
+        }else{
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¡Registro exitoso!',
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#251854',
+                confirmButtonText: 'Iniciar sesión',
+  
+                customClass: {
+                  title:'warning__title',
+                  confirmButton: 'warning__confirm',
+                }
+  
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            })
         }
     })
 })
