@@ -3,7 +3,7 @@ Proyecto integrador Digital House / cohorte 6 Protalento
 
 
 ### Tabla de contenidos
-1. [Visualizar proyecto](#1-visualizar-proyecto)
+1. [Demo](#1-demo)
 2. [Ejecución del proyecto](#2-ejecución-del-proyecto)
 3. [Descripción de la oferta de productos](#3-descripción-de-la-oferta-de-productos)
 4. [Público objetivo](#4-público-objetivo)
@@ -12,7 +12,7 @@ Proyecto integrador Digital House / cohorte 6 Protalento
 7. [Tableros de trabajo](#7-tableros-de-trabajo)
 
 
-### 1. Visualizar proyecto
+### 1. Demo
 El proyecto hasta la fecha está disponible en el siguiente [enlace](https://comic-vs-manga.herokuapp.com/).
 
 ### 2. Ejecución del proyecto
@@ -24,12 +24,13 @@ El proyecto hasta la fecha está disponible en el siguiente [enlace](https://com
   2. Ejecutar en consola el comando: ```npm install```
   3. Esperar que los módulos requeridos sean instalados
   4. Crear la base de datos a través de los archivos [structure.sql](https://github.com/mariecp27/grupo_8_ComicVSManga/blob/main/database/structure.sql) y [data.sql](https://github.com/mariecp27/grupo_8_ComicVSManga/blob/main/database/data.sql)
-  5. Crear un archivo **.env** en la raiz del proyecto con la siguiente estructura:
+  6. Ejecutar en consola el comando: ```cp .env.example .env```. Se creará un archivo .env con la siguiente estructura:
   ```
   DB_HOST=
   DB_USER=
   DB_PASS=
   DB_NAME=
+  API_LINK=http://localhost:3030
   ```
     *Los datos deben ser completados por el host, nombre de usuario, contraseña y nombre de la base de datos; según se hayan generado en el IDE de elección.*
    
